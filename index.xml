@@ -11,6 +11,62 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Creating this website</title>
+      <link>/post/2018-12-7-create-website/</link>
+      <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2018-12-7-create-website/</guid>
+      <description>
+
+
+&lt;div id=&#34;getting-started&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Getting started&lt;/h2&gt;
+&lt;p&gt;I’ve been contemplating the idea of creating a website for sometime, but my initial (mostly half-hearted) attempts ran into some serious technological glitches. I started out trying to create a GitHub site using Jekyll, since I knew I wanted my website to be hosted via GitHub to keep all of my code in the same place. After about an hour of unsuccessful commits that resulted in a lovely white page with my name on it, I scrapped the whole venture until I heard about the &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;&lt;code&gt;blogdown&lt;/code&gt;&lt;/a&gt; R package. Since R is my programming language of choice, the idea of being able to write posts in RMarkdown and preview my site from the comfort of RStudio was tremendously appealing. I saw a research site created through Hugo’s Academic theme using &lt;code&gt;blogdown&lt;/code&gt; that referenced some helpful tutorials and decided to give the process another shot.&lt;/p&gt;
+&lt;div id=&#34;hugo-blogdown&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Hugo + &lt;code&gt;blogdown&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;After my initial failures with Jekyll, I knew enough about the process (and my own skills) to be wary of the Academic theme’s optimistic tagline “Create a beautifully simple site in under 10 minutes”. So fair warning: getting this site up and semi-running was the work of an afternoon plus. I am not going to provide a full tutorial here, since several excellent ones already exist, but I will give my input on which resources worked for me and where I had difficulties.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;useful-resources&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Useful resources&lt;/h2&gt;
+&lt;p&gt;I started out following &lt;a href=&#34;https://amber.rbind.io/blog/2016/12/19/creatingsite/&#34;&gt;Amber Thomas’s instructions&lt;/a&gt; for using &lt;code&gt;blogdown&lt;/code&gt;, Hugo, and GitHub pages to create a website. I probably should have taken better note of her initial disclaimer that simpler methods of creating a site exist, but nonetheless I found her instructions useful for wrapping my head around the method behind the whole process. As she explains, GitHub pages and Hugo work in different ways: GitHub pages uses information from the master branch of the repository to build your website, while Hugo builds a website inside the public folder. The solution she presents in her tutorial creates a sub branch within GitHub. She provides some shell scripts written by &lt;a href=&#34;https://www.hjdskes.nl&#34;&gt;Jente Hidskes&lt;/a&gt; that create the sub branch and also update the site. These did not run for me for whatever reason – I believe Hidskes has written an updated tutorial to fix them, however.&lt;/p&gt;
+&lt;p&gt;While I was reading the comments on Thomas’s tutorials to try to troubleshoot the shell script problems, I found a different &lt;a href=&#34;http://robertmyles.github.io/2017/02/01/how-to-make-a-github-pages-blog-with-rstudio-and-hugo/&#34;&gt;tutorial by Robert McDonnell&lt;/a&gt; that promised a more streamlined approach. McDonnell gets around the GitHub/Hugo conflicts by creating two GitHub repositories, one for the website (for example, my repo is called &lt;a href=&#34;https://github.com/babichmorrowc/babichmorrowc.github.io&#34;&gt;babichmorrowc.github.io&lt;/a&gt;) and one for all of the Hugo and &lt;code&gt;blogdown&lt;/code&gt; content (mine is called &lt;a href=&#34;https://github.com/babichmorrowc/website-hugo&#34;&gt;website-hugo&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;To link these two repositories, Thomas has users create a &lt;a href=&#34;https://blog.github.com/2016-02-01-working-with-submodules/&#34;&gt;Git Submodule&lt;/a&gt; using the following code:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git submodule add -b master git@github.com:&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io.git public&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is where, once again, I ran into difficulties. I kept getting the error:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Cloning into &amp;#39;&amp;lt;filepath&amp;gt;/website-hugo/public&amp;#39;...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+fatal: clone of &amp;#39;git@github.com:babichmorrowc/babichmorrowc.github.io.git&amp;#39; into submodule path &amp;#39;&amp;lt;filepath&amp;gt;/website-hugo/public&amp;#39; failed
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Fortunately, there turned out to be an easy fix for this – the code McDonnell provides uses the SSH URL, which is something I do not have set up. I replaced it with the HTTPS URL (code below), and went on my merry way.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git submodule add -b master https://github.com/babichmorrowc/babichmorrowc.github.io.git public&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pushing-to-github&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Pushing to GitHub&lt;/h2&gt;
+&lt;p&gt;From that point forward, I had a functioning site that I could preview in RStudio using the &lt;code&gt;serve_site()&lt;/code&gt; function. Using the following Git commands, I could push those changes and get that same site up and running online:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# From the folder for the repo website-hugo
+cd public
+git add .
+git commit -m &amp;quot;new commit!&amp;quot;
+git push origin master
+
+cd ..
+git add .
+git commit -m &amp;quot;new commit part 2&amp;quot;
+git push&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;editing-my-site&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Editing my site&lt;/h2&gt;
+&lt;p&gt;I’m still learning my way around the format of the Hugo site, but by some trial and error I’ve started the process of customizing the site. I am using the &lt;a href=&#34;https://themes.gohugo.io/academic/&#34;&gt;Academic&lt;/a&gt; theme. So far I’ve managed to update my bio, add a publication, and take a stab at creating projects. As I get more familiarity with the format, I will try for a more comprehensive blog post explaining how to add your own content.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Example Page</title>
       <link>/tutorial/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 -0400</pubDate>
@@ -537,57 +593,6 @@ git submodule update --init --recursive
 &lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>
-
-
-&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     
