@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Cecina Babich Morrow</title>
-    <link>/publication/</link>
+    <link>https://babichmorrowc.github.io/publication/</link>
     <description>Recent content in Publications on Cecina Babich Morrow</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0500</lastBuildDate>
     
-	<atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://babichmorrowc.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>New approaches for delineating n‐dimensional hypervolumes</title>
-      <link>/publication/hypervolumes/</link>
+      <link>https://babichmorrowc.github.io/publication/hypervolumes/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
       
-      <guid>/publication/hypervolumes/</guid>
-      <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
+      <guid>https://babichmorrowc.github.io/publication/hypervolumes/</guid>
+      <description></description>
     </item>
     
   </channel>
