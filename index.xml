@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cecina Babich Morrow on Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/</link>
+    <link>/</link>
     <description>Recent content in Cecina Babich Morrow on Cecina Babich Morrow</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Creating this website</title>
-      <link>https://babichmorrowc.github.io/post/2018-12-7-create-website/</link>
+      <link>/post/2018-12-7-create-website/</link>
       <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
       
-      <guid>https://babichmorrowc.github.io/post/2018-12-7-create-website/</guid>
+      <guid>/post/2018-12-7-create-website/</guid>
       <description>
 
 
@@ -68,19 +68,19 @@ git push&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Distribution modelling of Bradypus</title>
-      <link>https://babichmorrowc.github.io/project/bradypus/</link>
+      <link>/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
       
-      <guid>https://babichmorrowc.github.io/project/bradypus/</guid>
+      <guid>/project/bradypus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Example Page</title>
-      <link>https://babichmorrowc.github.io/tutorial/example/</link>
+      <link>/tutorial/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 -0400</pubDate>
       
-      <guid>https://babichmorrowc.github.io/tutorial/example/</guid>
+      <guid>/tutorial/example/</guid>
       <description>
 
 &lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
@@ -96,20 +96,30 @@ git push&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>New approaches for delineating n‐dimensional hypervolumes</title>
-      <link>https://babichmorrowc.github.io/publication/hypervolumes/</link>
+      <link>/publication/hypervolumes/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
       
-      <guid>https://babichmorrowc.github.io/publication/hypervolumes/</guid>
+      <guid>/publication/hypervolumes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Example Talk</title>
-      <link>https://babichmorrowc.github.io/talk/example/</link>
+      <link>/talk/example/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
       
-      <guid>https://babichmorrowc.github.io/talk/example/</guid>
+      <guid>/talk/example/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
 
@@ -130,38 +140,38 @@ git push&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Hypervolume package testing</title>
-      <link>https://babichmorrowc.github.io/project/hypervolumes/</link>
+      <link>/project/hypervolumes/</link>
       <pubDate>Wed, 27 Jul 2016 00:00:00 -0400</pubDate>
       
-      <guid>https://babichmorrowc.github.io/project/hypervolumes/</guid>
+      <guid>/project/hypervolumes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://babichmorrowc.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
-      <guid>https://babichmorrowc.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>&lt;p&gt;This is a &amp;ldquo;hello world&amp;rdquo; example website for the &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;blogdown&lt;/strong&gt;&lt;/a&gt; package. The theme was forked from &lt;a href=&#34;https://github.com/jrutheiser/hugo-lithium-theme&#34; target=&#34;_blank&#34;&gt;@jrutheiser/hugo-lithium-theme&lt;/a&gt; and modified by &lt;a href=&#34;https://github.com/yihui/hugo-lithium&#34; target=&#34;_blank&#34;&gt;Yihui Xie&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Tetrapod life history traits</title>
-      <link>https://babichmorrowc.github.io/project/life_history/</link>
+      <link>/project/life_history/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>https://babichmorrowc.github.io/project/life_history/</guid>
+      <guid>/project/life_history/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Slides</title>
-      <link>https://babichmorrowc.github.io/slides/example-slides/</link>
+      <link>/slides/example-slides/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://babichmorrowc.github.io/slides/example-slides/</guid>
+      <guid>/slides/example-slides/</guid>
       <description>
 
 &lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;

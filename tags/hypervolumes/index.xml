@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hypervolumes on Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/tags/hypervolumes/</link>
+    <link>/tags/hypervolumes/</link>
     <description>Recent content in hypervolumes on Cecina Babich Morrow</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Wed, 27 Jul 2016 00:00:00 -0400</lastBuildDate>
     
-	<atom:link href="https://babichmorrowc.github.io/tags/hypervolumes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/hypervolumes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hypervolume package testing</title>
-      <link>https://babichmorrowc.github.io/project/hypervolumes/</link>
+      <link>/project/hypervolumes/</link>
       <pubDate>Wed, 27 Jul 2016 00:00:00 -0400</pubDate>
       
-      <guid>https://babichmorrowc.github.io/project/hypervolumes/</guid>
+      <guid>/project/hypervolumes/</guid>
       <description></description>
     </item>
     

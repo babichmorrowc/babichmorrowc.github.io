@@ -4,7 +4,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/post/2018-12-7-create-website/</loc>
+      <loc>/post/2018-12-7-create-website/</loc>
       <lastmod>2018-12-07T21:13:14-05:00</lastmod>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/project/bradypus/</loc>
+      <loc>/project/bradypus/</loc>
       <lastmod>2018-09-27T00:00:00-04:00</lastmod>
     </url>
     
@@ -20,7 +20,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/tutorial/example/</loc>
+      <loc>/tutorial/example/</loc>
       <lastmod>2018-09-09T00:00:00-04:00</lastmod>
     </url>
     
@@ -28,7 +28,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/tutorial/</loc>
+      <loc>/tutorial/</loc>
       <lastmod>2018-09-09T00:00:00-04:00</lastmod>
     </url>
     
@@ -36,7 +36,15 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/publication/hypervolumes/</loc>
+      <loc>/privacy/</loc>
+      <lastmod>2018-06-28T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication/hypervolumes/</loc>
       <lastmod>2017-08-09T00:00:00-04:00</lastmod>
     </url>
     
@@ -44,7 +52,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/talk/example/</loc>
+      <loc>/talk/example/</loc>
       <lastmod>2017-01-01T00:00:00-05:00</lastmod>
     </url>
     
@@ -52,7 +60,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/post/</loc>
+      <loc>/post/</loc>
       <lastmod>2017-01-01T00:00:00-05:00</lastmod>
     </url>
     
@@ -60,7 +68,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/publication/</loc>
+      <loc>/publication/</loc>
       <lastmod>2017-01-01T00:00:00-05:00</lastmod>
     </url>
     
@@ -68,7 +76,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/talk/</loc>
+      <loc>/talk/</loc>
       <lastmod>2017-01-01T00:00:00-05:00</lastmod>
     </url>
     
@@ -76,7 +84,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/project/hypervolumes/</loc>
+      <loc>/project/hypervolumes/</loc>
       <lastmod>2016-07-27T00:00:00-04:00</lastmod>
     </url>
     
@@ -84,7 +92,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/about/</loc>
+      <loc>/about/</loc>
       <lastmod>2016-05-05T21:48:51-07:00</lastmod>
     </url>
     
@@ -92,7 +100,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/project/life_history/</loc>
+      <loc>/project/life_history/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
     </url>
     
@@ -100,7 +108,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/publication_types/2/</loc>
+      <loc>/publication_types/2/</loc>
       <lastmod>2017-08-09T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
@@ -109,7 +117,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/tags/bradypus/</loc>
+      <loc>/tags/bradypus/</loc>
       <lastmod>2018-09-27T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
@@ -118,7 +126,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/categories/</loc>
+      <loc>/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -126,7 +134,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/</loc>
+      <loc>/</loc>
       <lastmod>2017-10-15T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
@@ -135,7 +143,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/tags/github/</loc>
+      <loc>/tags/github/</loc>
       <lastmod>2018-12-07T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -144,7 +152,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/categories/github/</loc>
+      <loc>/categories/github/</loc>
       <lastmod>2018-12-07T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -153,7 +161,85 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/tags/life-history/</loc>
+      <loc>/project/</loc>
+      <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication_types/</loc>
+      <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/r/</loc>
+      <lastmod>2018-12-07T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/r/</loc>
+      <lastmod>2018-12-07T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/slides/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/slides/example-slides/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/</loc>
+      <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/biogeography/</loc>
+      <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/hypervolume/</loc>
+      <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/life-history/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
@@ -162,7 +248,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/project/</loc>
+      <loc>/tags/species-distribution-modelling/</loc>
       <lastmod>2018-09-27T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
@@ -171,94 +257,7 @@
     
     <url>
     
-      <loc>https://babichmorrowc.github.io/publication_types/</loc>
-      <lastmod>2017-08-09T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://babichmorrowc.github.io/tags/r/</loc>
-      <lastmod>2018-12-07T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://babichmorrowc.github.io/categories/r/</loc>
-      <lastmod>2018-12-07T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://babichmorrowc.github.io/slides/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://babichmorrowc.github.io/slides/example-slides/</loc>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://babichmorrowc.github.io/tags/</loc>
-      <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://babichmorrowc.github.io/tags/biogeography/</loc>
-      <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://babichmorrowc.github.io/tags/hypervolume/</loc>
-      <lastmod>2017-08-09T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://babichmorrowc.github.io/tags/hypervolumes/</loc>
-      <lastmod>2016-07-27T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://babichmorrowc.github.io/tags/species-distribution-modelling/</loc>
-      <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://babichmorrowc.github.io/tags/website/</loc>
+      <loc>/tags/website/</loc>
       <lastmod>2018-12-07T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
