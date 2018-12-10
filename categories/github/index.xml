@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GitHub on Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/categories/github/</link>
+    <link>/categories/github/</link>
     <description>Recent content in GitHub on Cecina Babich Morrow</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Fri, 07 Dec 2018 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="https://babichmorrowc.github.io/categories/github/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Creating this website</title>
-      <link>https://babichmorrowc.github.io/post/2018-12-7-create-website/</link>
+      <link>/post/2018-12-7-create-website/</link>
       <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
       
-      <guid>https://babichmorrowc.github.io/post/2018-12-7-create-website/</guid>
+      <guid>/post/2018-12-7-create-website/</guid>
       <description>Getting started I’ve been contemplating the idea of creating a website for sometime, but my initial (mostly half-hearted) attempts ran into some serious technological glitches. I started out trying to create a GitHub site using Jekyll, since I knew I wanted my website to be hosted via GitHub to keep all of my code in the same place. After about an hour of unsuccessful commits that resulted in a lovely white page with my name on it, I scrapped the whole venture until I heard about the blogdown R package.</description>
     </item>
     
