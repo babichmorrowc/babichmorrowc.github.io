@@ -18,7 +18,8 @@
       <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
       
       <guid>/post/2018-12-7-create-website/</guid>
-      <description>Getting started I’ve been contemplating the idea of creating a website for sometime, but my initial (mostly half-hearted) attempts ran into some serious technological glitches. I started out trying to create a GitHub site using Jekyll, since I knew I wanted my website to be hosted via GitHub to keep all of my code in the same place. After about an hour of unsuccessful commits that resulted in a lovely white page with my name on it, I scrapped the whole venture until I heard about the blogdown R package.</description>
+      <description>website hex logos
+ Getting started I’ve been contemplating the idea of creating a website for sometime, but my initial (mostly half-hearted) attempts ran into some serious technological glitches. I started out trying to create a GitHub site using Jekyll, since I knew I wanted my website to be hosted via GitHub to keep all of my code in the same place. After about an hour of unsuccessful commits that resulted in a lovely white page with my name on it, I scrapped the whole venture until I heard about the blogdown R package.</description>
     </item>
     
   </channel>

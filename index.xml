@@ -19,6 +19,10 @@
       <description>
 
 
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/Users/hellenfellows/Desktop/website-hugo/static/img/website_fig.png&#34; alt=&#34;website hex logos&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;website hex logos&lt;/p&gt;
+&lt;/div&gt;
 &lt;div id=&#34;getting-started&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Getting started&lt;/h2&gt;
 &lt;p&gt;I’ve been contemplating the idea of creating a website for sometime, but my initial (mostly half-hearted) attempts ran into some serious technological glitches. I started out trying to create a GitHub site using Jekyll, since I knew I wanted my website to be hosted via GitHub to keep all of my code in the same place. After about an hour of unsuccessful commits that resulted in a lovely white page with my name on it, I scrapped the whole venture until I heard about the &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;&lt;code&gt;blogdown&lt;/code&gt;&lt;/a&gt; R package. Since R is my programming language of choice, the idea of being able to write posts in RMarkdown and preview my site from the comfort of RStudio was tremendously appealing. I saw a research site created through Hugo’s Academic theme using &lt;code&gt;blogdown&lt;/code&gt; that referenced some helpful tutorials and decided to give the process another shot.&lt;/p&gt;
