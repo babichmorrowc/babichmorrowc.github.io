@@ -20,8 +20,8 @@
 
 
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/Users/hellenfellows/Desktop/website-hugo/static/img/website_fig.png&#34; alt=&#34;website hex logos&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;website hex logos&lt;/p&gt;
+&lt;img src=&#34;/img/website_fig.png&#34; style=&#34;height:50.0%&#34; /&gt;
+
 &lt;/div&gt;
 &lt;div id=&#34;getting-started&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Getting started&lt;/h2&gt;
