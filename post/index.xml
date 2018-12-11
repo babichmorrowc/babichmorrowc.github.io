@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Ordering website components</title>
+      <link>/post/2018-12-11-order-items/</link>
+      <pubDate>Tue, 11 Dec 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2018-12-11-order-items/</guid>
+      <description>As I continue setting up this site, one of the major things irking me was the order of content on the website. For example, I wasn’t loving that the first thing you saw when visiting the site was the giant picture of my face. I wanted to be able to put content at the top of the site and move information like my bio and work experience towards the bottom.</description>
+    </item>
+    
+    <item>
       <title>Creating this website</title>
       <link>/post/2018-12-7-create-website/</link>
       <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
