@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0500</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BIEN</title>
+      <link>/tags/bien/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/bien/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bradypus</title>
@@ -51,7 +60,7 @@
     <item>
       <title>hypervolume</title>
       <link>/tags/hypervolume/</link>
-      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <pubDate>Tue, 01 May 2018 00:00:00 -0400</pubDate>
       
       <guid>/tags/hypervolume/</guid>
       <description></description>
@@ -60,9 +69,18 @@
     <item>
       <title>life history</title>
       <link>/tags/life-history/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      <pubDate>Tue, 01 May 2018 00:00:00 -0400</pubDate>
       
       <guid>/tags/life-history/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plant biodiversity</title>
+      <link>/tags/plant-biodiversity/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/plant-biodiversity/</guid>
       <description></description>
     </item>
     

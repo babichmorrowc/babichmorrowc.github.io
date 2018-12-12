@@ -7,17 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 01 May 2018 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="/tags/life-history/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Macroevolution of Dimensionless Life History Metrics in Tetrapods</title>
-      <link>/talk/example/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      <title>Talk: Macroevolution of dimensionless life history metrics in tetrapods</title>
+      <link>/talk/honors_presentation/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 -0400</pubDate>
       
-      <guid>/talk/example/</guid>
+      <guid>/talk/honors_presentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Poster: Macroevolution of dimensionless life histories in amniotes</title>
+      <link>/talk/tree_2017/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 -0400</pubDate>
+      
+      <guid>/talk/tree_2017/</guid>
       <description></description>
     </item>
     
