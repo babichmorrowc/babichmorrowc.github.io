@@ -11,6 +11,49 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Adding Google Docs to website</title>
+      <link>/post/add-google-doc/</link>
+      <pubDate>Wed, 12 Dec 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/post/add-google-doc/</guid>
+      <description>
+
+
+&lt;p&gt;Given that the Academic website theme comes with a place to upload talks, I thought I might as well upload the slides for my Senior Honors presentation. Unfortunately, this was a slightly more difficult task than I anticipated. The default format for slides in Hugo appears to be Markdown slides, which is fine, except when your talk was made in Google Slides.&lt;/p&gt;
+&lt;div id=&#34;google-slides-to-markdown&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Google Slides to Markdown?&lt;/h2&gt;
+&lt;p&gt;My first thought was that there must be some tool to convert a Google slides talk into a Markdown document. For whatever reason, there are several tools (like &lt;a href=&#34;https://github.com/gsuitedevs/md2googleslides&#34;&gt;this GitHub repo&lt;/a&gt;) to go the other direction, from Markdown to Google slides. I found a GitHub repo &lt;a href=&#34;https://github.com/mangini/gdocs2md&#34;&gt;&lt;code&gt;gdocs2md&lt;/code&gt;&lt;/a&gt; that claimed to go in the other direction, but the script provided doesn’t currently run (if anyone is a whiz at Google Apps and wants to take a stab at fixing up this code, it would be a great tool!). There is a Google Drive add-on called &lt;a href=&#34;https://chrome.google.com/webstore/detail/gd2md-html/igffnbdfnodiaphfmfaiiaegmoljbghf&#34;&gt;GD2md-html&lt;/a&gt; that converts Google Docs to Markdown or HTML, which should be useful for the future, but it doesn’t help with Google Slides.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;embedding-google-slides-in-hugo&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Embedding Google Slides in Hugo&lt;/h2&gt;
+&lt;p&gt;Having abandoned the idea of just converting my current slides into Markdown and going on my merry way, I started looking for a way to embed the Google Slides themselves into my website.&lt;/p&gt;
+&lt;div id=&#34;hugo-shortcodes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Hugo shortcodes&lt;/h3&gt;
+&lt;p&gt;Hugo has certain snippets called &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/&#34;&gt;shortcodes&lt;/a&gt; that are designed to address the problem of having to add raw HTML into Markdown. These shortcodes help render a content file according to a template created by Hugo. For example, the shortcode &lt;code&gt;figure&lt;/code&gt; adds HTML functionality to the Markdown image syntax. There are shortcodes for Instagram (&lt;code&gt;instagram&lt;/code&gt;), Vimeo (&lt;code&gt;vimeo&lt;/code&gt;) and Twitter (&lt;code&gt;tweet&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-gdocs-shortcode&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The &lt;code&gt;gdocs&lt;/code&gt; shortcode&lt;/h3&gt;
+&lt;p&gt;One of these shortcodes, &lt;code&gt;gdocs&lt;/code&gt;, allows you to embed all Google doc types (Slides, Docs, Sheets, etc.) into your website. The HTML code for the shortcode can be found in the &lt;code&gt;hugo-academic&lt;/code&gt; GitHub repo: &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/layouts/shortcodes/gdocs.html&#34; class=&#34;uri&#34;&gt;https://github.com/gcushen/hugo-academic/blob/master/layouts/shortcodes/gdocs.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I tried inserting the following into the &lt;code&gt;index.md&lt;/code&gt; file for my talk below the line with three &lt;code&gt;+&lt;/code&gt; signs:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;{{&amp;lt; gdocs &amp;quot;https://docs.google.com/presentation/d/e/2PACX-1vTsSj-oftLksGEKTkzCoBSIpzooO61ZMGAUzoGBv7u20OzMQK8ctX3gCpWTMm4UowrrWumFrdQsY0Cd/embed?start=false&amp;amp;loop=false&amp;amp;delayms=5000&amp;quot; &amp;gt;}}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I got the URL by going to my Google Slides, and clicking File &amp;gt; Publish to the web. I selected Embed and copied the link following &lt;code&gt;src=&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Unfortunately, this didn’t result in anything showing up on my page besides a large blank space where I assume Hugo was trying to put my presentation. I tried some variations on the above code, including adding &lt;code&gt;src=&lt;/code&gt; before the URL (no change), and moving the entire code snippet above the &lt;code&gt;+++&lt;/code&gt; line in &lt;code&gt;index.md&lt;/code&gt; (results in the error &amp;quot; unmarshal failed: Near line 65 (last key parsed ‘image’): bare keys cannot contain ‘{’ “).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;html-code&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;HTML code&lt;/h3&gt;
+&lt;p&gt;At this point, I was feeling pretty discouraged, when I happened upon a &lt;a href=&#34;https://discourse.gohugo.io/t/shortcode-for-google-slide-presentation-embed/3464&#34;&gt;Hugo forum post&lt;/a&gt; with the HTML code someone used to embed a Google Slides presentation. I have hardly any familiarity with HTML, but clearly shortcodes and I weren’t getting along very well, so I decided to give it a shot. I copied and pasted the code from the forum, replacing the URL following &lt;code&gt;src=&lt;/code&gt; with my link from above, and voila! My slides appeared on the post.&lt;/p&gt;
+&lt;p&gt;Here is the code for reference:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;iframe src=&amp;quot;https://docs.google.com/presentation/d/e/2PACX-1vTsSj-oftLksGEKTkzCoBSIpzooO61ZMGAUzoGBv7u20OzMQK8ctX3gCpWTMm4UowrrWumFrdQsY0Cd/embed?start=false&amp;amp;loop=false&amp;amp;delayms=5000&amp;quot; frameborder=&amp;quot;0&amp;quot; width=&amp;quot;800&amp;quot; height=&amp;quot;600&amp;quot; allowfullscreen=&amp;quot;true&amp;quot; mozallowfullscreen=&amp;quot;true&amp;quot; webkitallowfullscreen=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;moral-of-the-story&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Moral of the story&lt;/h2&gt;
+&lt;p&gt;It seems like shortcodes can be a really valuable feature of Hugo, especially should I ever need to include a video of some kind (or if I actually start using Twitter again &lt;em&gt;and&lt;/em&gt; tweet something worth sharing, two improbable events). In the case of Google Docs/Sheets/etc., however, just using the HTML code snippet seems like the easiest option (and is a good motivation to learn HTML at a later date).&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Ordering website components</title>
       <link>/post/2018-12-11-order-items/</link>
       <pubDate>Tue, 11 Dec 2018 21:13:14 -0500</pubDate>
@@ -155,26 +198,12 @@ git push&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
-      <title>Example Talk</title>
+      <title>Macroevolution of Dimensionless Life History Metrics in Tetrapods</title>
       <link>/talk/example/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
       
       <guid>/talk/example/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s &lt;em&gt;Slides&lt;/em&gt; feature and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vTsSj-oftLksGEKTkzCoBSIpzooO61ZMGAUzoGBv7u20OzMQK8ctX3gCpWTMm4UowrrWumFrdQsY0Cd/embed?start=false&amp;loop=false&amp;delayms=5000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
 </description>
     </item>
     

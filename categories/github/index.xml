@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 11 Dec 2018 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 12 Dec 2018 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/categories/github/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Adding Google Docs to website</title>
+      <link>/post/add-google-doc/</link>
+      <pubDate>Wed, 12 Dec 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/post/add-google-doc/</guid>
+      <description>Given that the Academic website theme comes with a place to upload talks, I thought I might as well upload the slides for my Senior Honors presentation. Unfortunately, this was a slightly more difficult task than I anticipated. The default format for slides in Hugo appears to be Markdown slides, which is fine, except when your talk was made in Google Slides.
+Google Slides to Markdown? My first thought was that there must be some tool to convert a Google slides talk into a Markdown document.</description>
+    </item>
     
     <item>
       <title>Ordering website components</title>
