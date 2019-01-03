@@ -11,6 +11,77 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Debugging in R</title>
+      <link>/post/debug-r/</link>
+      <pubDate>Thu, 03 Jan 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/debug-r/</guid>
+      <description>
+
+
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/PhD_Debugging.png&#34; /&gt;
+&lt;figcaption&gt;
+PhD comics Jorge Cham (www.phdcomics.com)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Recently I’ve been part of beta testing a new R package. The package allows users to apply different masks to spcies distribution models to create more ecologically realistic range models. The package itself is very cool, but since it hasn’t been released yet, this post will be short on ecology. Instead, I’m going to focus on the process I’ve been using to debug the package. This debugging thought process and the different functions that make it possible are things I wish I’d been formally taught while learning R (but better late than never!).&lt;/p&gt;
+&lt;div id=&#34;traceback&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;&lt;code&gt;traceback&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;traceback()&lt;/code&gt; function is definitely one of those that I wished I learned sooner. Basically, &lt;code&gt;traceback()&lt;/code&gt; shows you the series of functions called, including the one resulting in the last error. For example, when I ran &lt;code&gt;traceback()&lt;/code&gt; after the function I was testing threw an error, I got the following readout:&lt;/p&gt;
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/traceback_example.png&#34; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;When I tried to use the function &lt;code&gt;rangeSVM()&lt;/code&gt;, I got an error, as we can see in the first line of code I ran. By running &lt;code&gt;traceback()&lt;/code&gt;, I can see the order of functions that &lt;code&gt;rangeSVM()&lt;/code&gt; uses: first, it called the &lt;code&gt;svm()&lt;/code&gt; function from the R package &lt;code&gt;e1071&lt;/code&gt;, which in turn called &lt;code&gt;svm.formula()&lt;/code&gt;, which finally called &lt;code&gt;svm.default()&lt;/code&gt;. This last function, &lt;code&gt;svm.default()&lt;/code&gt; is what produced the error (as we can see from the error message, as well).&lt;/p&gt;
+&lt;p&gt;Running &lt;code&gt;traceback()&lt;/code&gt; can be especially helpful in situations like this, where the error message comes from a function called internally by the function you actually ran. Here, the error does not come from the &lt;code&gt;rangeSVM()&lt;/code&gt; function, so reading the documentation for &lt;code&gt;rangeSVM()&lt;/code&gt; could not save me. Now I know that the error actually comes from a function in the &lt;code&gt;e1071&lt;/code&gt; package, so I could check out the source code to figure out what kind of issue causes that error message.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;checking-source-code&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Checking source code&lt;/h1&gt;
+&lt;p&gt;There is a &lt;a href=&#34;https://github.com/cran&#34;&gt;CRAN GitHub account&lt;/a&gt; that is an unofficial read-only mirror of all CRAN packages. Typically, when I want to read through the code for a particular function in a package, this is what I use. To dig a little deeper into what was going wrong with the &lt;code&gt;svm()&lt;/code&gt; function, I found the code &lt;a href=&#34;https://github.com/cran/e1071/blob/master/R/svm.R&#34;&gt;here&lt;/a&gt;. This allowed me to look at the function definitions for &lt;code&gt;svm.formula()&lt;/code&gt; as well as &lt;code&gt;svm.default()&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;debug&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;&lt;code&gt;debug&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;Reading through the source code is helpful, but wouldn’t it be even better if you could watch R step through the function line by line until the error? Fortunately the handy &lt;code&gt;debug()&lt;/code&gt; function does exactly that. By running the following:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;debug(rangeSVM)
+svmHYB_weight &amp;lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::stack(var_sdm, tri_sdm), nrep = 3, weight = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I could see that the error occurred at line 100 of &lt;code&gt;svm.R&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Browse[2]&amp;gt; 
+# debug at /Users/hellenfellows/OneDrive - AMNH/Wallace/maskRangerBetaTesting/maskRangeR/R/svm.R#100: m &amp;lt;- e1071::svm(sp ~ ., data = xy, gamma = params_best_df_mostFreq$gamma[1], 
+#     cost = params_best_df_mostFreq$cost[1], class.weights = cw)
+# Browse[2]&amp;gt; 
+# Error in svm.default(x, y, scale = scale, ..., na.action = na.action) : 
+#   NA/NaN/Inf in foreign function call (arg 10)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;Browse&amp;gt;&lt;/code&gt; prompt at the beginning of the lines indicate that the debugger is working. The &lt;code&gt;debug at&lt;/code&gt; part shows the next line of code to be executed when you hit enter next. R will continue to show you the following line of code as you press enter (up until you hit the error). If you are running all of this in RStudio, it will also conveniently highlight the lines in the source code that will be run next. Also, when you want to get out of the debugger so you can run that function again later without debugging, run &lt;code&gt;undebug(rangeSVM)&lt;/code&gt;, for example.&lt;/p&gt;
+&lt;p&gt;My initial suspicion was that the function was failing during one of the runs of a for loop, however the debugger showed me that the function was making it through all the runs of the for loop. Instead, the error occurred during the final step of &lt;code&gt;rangeSVM()&lt;/code&gt; when the function attempted to integrate the results of all runs of the for loop to create a final support vector machine model.&lt;/p&gt;
+&lt;div id=&#34;get&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;code&gt;get&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;To figure out why this problem was occurring, I wanted to be able to see the values of the different variables passeed to that final step of the function. Handily enough, while in the debugger, you can use the function &lt;code&gt;get(&amp;quot;variable&amp;quot;)&lt;/code&gt; to check the status of the different variables (the name of the variable needs to be in quotation marks).&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;debug(rangeSVM)
+svmHYB &amp;lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::stack(var_sdm, tri_sdm), nrep = 3)
+# Browse[2]&amp;gt; 
+# debug at /Users/hellenfellows/OneDrive - AMNH/Wallace/maskRangerBetaTesting/maskRangeR/R/svm.R#96: params_best_df$params &amp;lt;- paste0(params_best_df$gamma, params_best_df$cost)
+
+# Browse[2]&amp;gt; get(&amp;quot;params_best_df&amp;quot;)
+#        gamma cost class.weights
+# 38 0.5000000    2             1
+# 85 0.0078125 2048             1
+# 95 0.0078125 8192             1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This was the final step of the process that actually allowed me to figure out the problem:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Browse[2]&amp;gt; get(&amp;quot;params_best_df_mostFreq&amp;quot;)
+# [1] gamma cost 
+# &amp;lt;0 rows&amp;gt; (or 0-length row.names)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Without going into too much detail about the function itself, I was able to tell that the parameters I was feeding into the support vector machine function somehow didn’t exist: the variable &lt;code&gt;params_best_df_mostFreq&lt;/code&gt; had 0 rows.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;other-tips-and-tricks&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Other tips and tricks&lt;/h1&gt;
+&lt;p&gt;I got much of these resources from a very helpful blog post called &lt;a href=&#34;https://petewerner.blogspot.com/2013/01/tracking-down-errors-in-r.html&#34;&gt;“Tracking down errors in R”&lt;/a&gt; by Pete Werner (also available as a post on &lt;a href=&#34;https://www.r-bloggers.com/tracking-down-errors-in-r/&#34;&gt;R-bloggers&lt;/a&gt;). This post goes through a slightly simpler example of debugging which is reproducible (something I have not attempted to do here), so it is very helpful for seeing the process on a simpler function. In addition to the techniques I used, Pete also explains how you can turn warning messages into errors in the case that your function is throwing a troubling warning message that you suspect is causing an error later on.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Adding Google Docs to website</title>
       <link>/post/add-google-doc/</link>
       <pubDate>Wed, 12 Dec 2018 21:13:14 -0500</pubDate>
