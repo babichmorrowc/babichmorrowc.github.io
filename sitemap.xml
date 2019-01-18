@@ -4,6 +4,22 @@
     
     <url>
     
+      <loc>/publication/lifehistory/</loc>
+      <lastmod>2019-01-16T00:00:00-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/debug-r/</loc>
+      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/post/debug-r/</loc>
       <lastmod>2019-01-03T21:13:14-05:00</lastmod>
     </url>
@@ -149,7 +165,7 @@
     <url>
     
       <loc>/publication_types/2/</loc>
-      <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+      <lastmod>2019-01-16T00:00:00-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -220,7 +236,7 @@
     <url>
     
       <loc>/publication_types/</loc>
-      <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+      <lastmod>2019-01-16T00:00:00-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -229,7 +245,7 @@
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2019-01-03T21:13:14-05:00</lastmod>
+      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -238,7 +254,7 @@
     <url>
     
       <loc>/categories/r/</loc>
-      <lastmod>2019-01-03T21:13:14-05:00</lastmod>
+      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -279,8 +295,26 @@
     
     <url>
     
+      <loc>/tags/evolution/</loc>
+      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/evolution/</loc>
+      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/hypervolume/</loc>
-      <lastmod>2018-05-01T00:00:00-04:00</lastmod>
+      <lastmod>2019-01-16T00:00:00-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -289,7 +323,25 @@
     <url>
     
       <loc>/tags/life-history/</loc>
-      <lastmod>2018-05-01T00:00:00-04:00</lastmod>
+      <lastmod>2019-01-16T00:00:00-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/phylogenetics/</loc>
+      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/phylogenetics/</loc>
+      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     

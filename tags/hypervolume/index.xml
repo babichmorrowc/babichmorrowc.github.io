@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 01 May 2018 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jan 2019 00:00:00 -0500</lastBuildDate>
     
 	<atom:link href="/tags/hypervolume/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PREPRINT: Macroevolution of dimensionless life history metrics in tetrapods</title>
+      <link>/publication/lifehistory/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/publication/lifehistory/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Talk: Macroevolution of dimensionless life history metrics in tetrapods</title>

@@ -15,7 +15,7 @@
   
     
   
-  <meta name="description" content="PhD comics Jorge Cham (www.phdcomics.com)   Recently I’ve been part of beta testing a new R package. The package allows users to apply different masks to spcies distribution models to create more ecologically realistic range models. The package itself is very cool, but since it hasn’t been released yet, this post will be short on ecology. Instead, I’m going to focus on the process I’ve been using to debug the package.">
+  <meta name="description" content="Inspiration for this post This post comes from the finishing touches I needed to put on a paper about life history evolution. The paper compares life history traits across the four groups of tetrapods (amphibians, reptiles, mammals, and birds), so when I carried out the nitty gritty phylogenetic analyses, I used four separate phylogenies. When it came time to make a figure to visualize those analyses, however, I ended up with an unwieldy (and unpublishable) 16-panel figure (four phylogenies by four traits).">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/debug-r/">
@@ -117,22 +117,25 @@
   
   <meta property="twitter:card" content="summary">
   
+  <meta property="twitter:site" content="@babichmorrowc">
+  <meta property="twitter:creator" content="@babichmorrowc">
+  
   <meta property="og:site_name" content="Cecina Babich Morrow">
   <meta property="og:url" content="/post/debug-r/">
-  <meta property="og:title" content="Debugging in R | Cecina Babich Morrow">
-  <meta property="og:description" content="PhD comics Jorge Cham (www.phdcomics.com)   Recently I’ve been part of beta testing a new R package. The package allows users to apply different masks to spcies distribution models to create more ecologically realistic range models. The package itself is very cool, but since it hasn’t been released yet, this post will be short on ecology. Instead, I’m going to focus on the process I’ve been using to debug the package."><meta property="og:image" content="/img/portrait.jpg">
+  <meta property="og:title" content="Grafting phylogenies | Cecina Babich Morrow">
+  <meta property="og:description" content="Inspiration for this post This post comes from the finishing touches I needed to put on a paper about life history evolution. The paper compares life history traits across the four groups of tetrapods (amphibians, reptiles, mammals, and birds), so when I carried out the nitty gritty phylogenetic analyses, I used four separate phylogenies. When it came time to make a figure to visualize those analyses, however, I ended up with an unwieldy (and unpublishable) 16-panel figure (four phylogenies by four traits)."><meta property="og:image" content="/img/portrait.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-01-03T21:13:14-05:00">
+  <meta property="article:published_time" content="2019-01-09T21:13:14-05:00">
   
-  <meta property="article:modified_time" content="2019-01-03T21:13:14-05:00">
-  
-
+  <meta property="article:modified_time" content="2019-01-09T21:13:14-05:00">
   
 
   
 
-  <title>Debugging in R | Cecina Babich Morrow</title>
+  
+
+  <title>Grafting phylogenies | Cecina Babich Morrow</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
@@ -329,7 +332,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Debugging in R</h1>
+  <h1 itemprop="name">Grafting phylogenies</h1>
 
   
 
@@ -347,9 +350,9 @@
 
   <span class="article-date">
     
-    <meta content="2019-01-03 21:13:14 -0500 EST" itemprop="datePublished">
-    <time datetime="2019-01-03 21:13:14 -0500 EST" itemprop="dateModified">
-      Jan 3, 2019
+    <meta content="2019-01-09 21:13:14 -0500 EST" itemprop="datePublished">
+    <time datetime="2019-01-09 21:13:14 -0500 EST" itemprop="dateModified">
+      Jan 9, 2019
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
@@ -359,7 +362,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    5 min read
+    9 min read
   </span>
   
 
@@ -376,7 +379,11 @@
   <span class="article-categories">
     <i class="fas fa-folder"></i>
     
-    <a href="/categories/r/">R</a>
+    <a href="/categories/r/">R</a>, 
+    
+    <a href="/categories/phylogenetics/">phylogenetics</a>, 
+    
+    <a href="/categories/evolution/">evolution</a>
     
   </span>
   
@@ -388,7 +395,7 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Debugging%20in%20R&amp;url=%2fpost%2fdebug-r%2f"
+         href="https://twitter.com/intent/tweet?text=Grafting%20phylogenies&amp;url=%2fpost%2fdebug-r%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
@@ -402,21 +409,21 @@
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fdebug-r%2f&amp;title=Debugging%20in%20R"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fdebug-r%2f&amp;title=Grafting%20phylogenies"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2fdebug-r%2f&amp;title=Debugging%20in%20R"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fdebug-r%2f&amp;title=Grafting%20phylogenies"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Debugging%20in%20R&amp;body=%2fpost%2fdebug-r%2f">
+         href="mailto:?subject=Grafting%20phylogenies&amp;body=%2fpost%2fdebug-r%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -456,63 +463,181 @@
 
 
 <figure>
-<img class="special-img-class" style="width:75%" src="/img/PhD_Debugging.png" />
+<img class="special-img-class" style="width:100%" src="/img/bodymass_tetrapod_tree.png" />
+</figure>
+<div id="inspiration-for-this-post" class="section level1">
+<h1>Inspiration for this post</h1>
+<p>This post comes from the finishing touches I needed to put on a paper about <a href="https://babichmorrowc.github.io/project/life_history/">life history evolution</a>. The paper compares life history traits across the four groups of tetrapods (amphibians, reptiles, mammals, and birds), so when I carried out the nitty gritty phylogenetic analyses, I used four separate phylogenies. When it came time to make a figure to visualize those analyses, however, I ended up with an unwieldy (and unpublishable) 16-panel figure (four phylogenies by four traits). One of my coauthors suggested using a tetrapod supertree to visualize the evolution of the traits across all four classes simultaneously.</p>
+<div id="uyeda-et-al.-2017" class="section level2">
+<h2>Uyeda et al. 2017</h2>
+<p>Uyeda et al. did something similar in their 2017 paper <a href="https://www.journals.uchicago.edu/doi/10.1086/692326">The evolution of energetic scaling across the vertebrate tree of life</a>. They stitched together fish, amphibian, squamate, bird, and mammal phylogenies together to visualize metabolic rate across all vertebrates:</p>
+<figure>
+<img class="special-img-class" style="width:75%" src="/img/uyeda_figure.png" />
 <figcaption>
-PhD comics Jorge Cham (www.phdcomics.com)
+Figure 1 from Uyeda et al. 2017
 </figcaption>
 </figure>
-<p>Recently I’ve been part of beta testing a new R package. The package allows users to apply different masks to spcies distribution models to create more ecologically realistic range models. The package itself is very cool, but since it hasn’t been released yet, this post will be short on ecology. Instead, I’m going to focus on the process I’ve been using to debug the package. This debugging thought process and the different functions that make it possible are things I wish I’d been formally taught while learning R (but better late than never!).</p>
-<div id="traceback" class="section level1">
-<h1><code>traceback</code></h1>
-<p>The <code>traceback()</code> function is definitely one of those that I wished I learned sooner. Basically, <code>traceback()</code> shows you the series of functions called, including the one resulting in the last error. For example, when I ran <code>traceback()</code> after the function I was testing threw an error, I got the following readout:</p>
-<figure>
-<img class="special-img-class" style="width:100%" src="/img/traceback_example.png" />
-</figure>
-<p>When I tried to use the function <code>rangeSVM()</code>, I got an error, as we can see in the first line of code I ran. By running <code>traceback()</code>, I can see the order of functions that <code>rangeSVM()</code> uses: first, it called the <code>svm()</code> function from the R package <code>e1071</code>, which in turn called <code>svm.formula()</code>, which finally called <code>svm.default()</code>. This last function, <code>svm.default()</code> is what produced the error (as we can see from the error message, as well).</p>
-<p>Running <code>traceback()</code> can be especially helpful in situations like this, where the error message comes from a function called internally by the function you actually ran. Here, the error does not come from the <code>rangeSVM()</code> function, so reading the documentation for <code>rangeSVM()</code> could not save me. Now I know that the error actually comes from a function in the <code>e1071</code> package, so I could check out the source code to figure out what kind of issue causes that error message.</p>
+<p>At first, I was very hopeful that I would be able to download this supertree and prune it to the taxa in my analysis since the authors were using the same clade specific phylogenies that I was. The phylogeny is available on Data Dryad (<a href="https://datadryad.org/resource/doi:10.5061/dryad.3c6d2" class="uri">https://datadryad.org/resource/doi:10.5061/dryad.3c6d2</a>). Unfortunately, after downloading that phylogeny and pruning it to include species I used in my analysis, I ended up with approximately 15% of the species I analyzed in the resulting tree.</p>
 </div>
-<div id="checking-source-code" class="section level1">
-<h1>Checking source code</h1>
-<p>There is a <a href="https://github.com/cran">CRAN GitHub account</a> that is an unofficial read-only mirror of all CRAN packages. Typically, when I want to read through the code for a particular function in a package, this is what I use. To dig a little deeper into what was going wrong with the <code>svm()</code> function, I found the code <a href="https://github.com/cran/e1071/blob/master/R/svm.R">here</a>. This allowed me to look at the function definitions for <code>svm.formula()</code> as well as <code>svm.default()</code>.</p>
 </div>
-<div id="debug" class="section level1">
-<h1><code>debug</code></h1>
-<p>Reading through the source code is helpful, but wouldn’t it be even better if you could watch R step through the function line by line until the error? Fortunately the handy <code>debug()</code> function does exactly that. By running the following:</p>
-<pre class="r"><code>debug(rangeSVM)
-svmHYB_weight &lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::stack(var_sdm, tri_sdm), nrep = 3, weight = TRUE)</code></pre>
-<p>I could see that the error occurred at line 100 of <code>svm.R</code>:</p>
-<pre class="r"><code># Browse[2]&gt; 
-# debug at /Users/hellenfellows/OneDrive - AMNH/Wallace/maskRangerBetaTesting/maskRangeR/R/svm.R#100: m &lt;- e1071::svm(sp ~ ., data = xy, gamma = params_best_df_mostFreq$gamma[1], 
-#     cost = params_best_df_mostFreq$cost[1], class.weights = cw)
-# Browse[2]&gt; 
-# Error in svm.default(x, y, scale = scale, ..., na.action = na.action) : 
-#   NA/NaN/Inf in foreign function call (arg 10)</code></pre>
-<p>The <code>Browse&gt;</code> prompt at the beginning of the lines indicate that the debugger is working. The <code>debug at</code> part shows the next line of code to be executed when you hit enter next. R will continue to show you the following line of code as you press enter (up until you hit the error). If you are running all of this in RStudio, it will also conveniently highlight the lines in the source code that will be run next. Also, when you want to get out of the debugger so you can run that function again later without debugging, run <code>undebug(rangeSVM)</code>, for example.</p>
-<p>My initial suspicion was that the function was failing during one of the runs of a for loop, however the debugger showed me that the function was making it through all the runs of the for loop. Instead, the error occurred during the final step of <code>rangeSVM()</code> when the function attempted to integrate the results of all runs of the for loop to create a final support vector machine model.</p>
-<div id="get" class="section level2">
-<h2><code>get</code></h2>
-<p>To figure out why this problem was occurring, I wanted to be able to see the values of the different variables passeed to that final step of the function. Handily enough, while in the debugger, you can use the function <code>get(&quot;variable&quot;)</code> to check the status of the different variables (the name of the variable needs to be in quotation marks).</p>
-<p>For example:</p>
-<pre class="r"><code>debug(rangeSVM)
-svmHYB &lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::stack(var_sdm, tri_sdm), nrep = 3)
-# Browse[2]&gt; 
-# debug at /Users/hellenfellows/OneDrive - AMNH/Wallace/maskRangerBetaTesting/maskRangeR/R/svm.R#96: params_best_df$params &lt;- paste0(params_best_df$gamma, params_best_df$cost)
+<div id="into-the-code" class="section level1">
+<h1>Into the code</h1>
+<p>Since my easy solution didn’t pan out and I couldn’t get enough information from the supplemental material for the paper to replicate their analyses, I looked on GitHub to try to find Uyeda’s code. Hooray for GitHub once again, because the repository for the paper can be found here: <a href="https://github.com/uyedaj/bmr" class="uri">https://github.com/uyedaj/bmr</a>. The <a href="https://github.com/uyedaj/bmr/blob/master/R/ManuscriptNotebook.Rmd">RMarkdown</a> details the analyses for the paper, including the process for making the full tree.</p>
+<p>Start with loading the necessary packages.</p>
+<pre class="r"><code>library(phytools)</code></pre>
+<pre><code>## Loading required package: ape</code></pre>
+<pre><code>## Loading required package: maps</code></pre>
+<pre class="r"><code>library(geiger)</code></pre>
+<div id="the-original-phylogenies" class="section level2">
+<h2>The original phylogenies</h2>
+<p>I was working with four separate phylogenies: amphibians, squamates, birds, and mammals. For amphibians, I used a congruified time-tree from the <code>PhyloOrchard</code> package (O’Meara et al. 2013) that was constructed using the Alfaro et al. timetree of gnathostomes (Alfaro et al. 2009) as the reference and the Pyron and Wiens amphibian phylogeny as the target (Pyron and Wiens 2011).</p>
+<pre class="r"><code>length(amphibiantree$tip.label)</code></pre>
+<pre><code>## [1] 2871</code></pre>
+<pre class="r"><code>plot(amphibiantree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
+<p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>For squamates, I used the Zheng and Wiens time-calibrated phylogeny (Zheng and Wiens 2016).</p>
+<pre class="r"><code>length(squamatetree$tip.label)</code></pre>
+<pre><code>## [1] 378</code></pre>
+<pre class="r"><code>plot(squamatetree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
+<p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>For birds, I used the Jetz phylogeny (Jetz et al. 2012).</p>
+<pre class="r"><code>length(birdtree$tip.label)</code></pre>
+<pre><code>## [1] 9993</code></pre>
+<pre class="r"><code>plot(birdtree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
+<p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>For mammals, I used the supertree from Fritz et al. 2009.</p>
+<pre class="r"><code>length(mammaltree$tip.label)</code></pre>
+<pre><code>## [1] 5020</code></pre>
+<pre class="r"><code>plot(mammaltree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
+<p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="reading-in-trees" class="section level2">
+<h2>Reading in trees</h2>
+<p>The first step of the process is reading in the individual phylogenies you want to stitch together. This step is straightforward, with one exception: you cannot have species that are present in multiple of the individual trees. For example, my squamate phylogeny included <em>Gallus gallus</em> (red junglefowl) and <em>Dromaius novaehollandia</em> (emu). Since these species were also present in my bird phylogeny, I got the following error: <code>Found matching tips in 'subtree' and 'phy'</code>. To solve this problem, I just removed these tips from the squamate tree:</p>
+<pre class="r"><code>squamatetree &lt;- drop.tip(phy = squamatetree, tip = c(&quot;Gallus_gallus&quot;, &quot;Dromaius_novaehollandiae&quot;))</code></pre>
+<p>I ended up with the following list of trees and corresponding tip labels:</p>
+<pre class="r"><code>tree_list &lt;- list(amphib=amphibiantree, birds=birdtree, squam=squamatetree, mamm=mammaltree)
+class(tree_list) &lt;- &quot;multiPhylo&quot;</code></pre>
+</div>
+<div id="make-a-tree-with-orders" class="section level2">
+<h2>Make a tree with orders</h2>
+<p>In Uyeda et al. (2017), the authors were creating a phylogeny for all vertebrates, but for my analyses I was only examining tetrapods, so I didn’t have a fish phylogeny to include. The original code from Uyeda et al. to create a tree with the 5 vertebrate orders looks like this:</p>
+<pre class="r"><code>tip.labels &lt;- c(&quot;fish&quot;, &quot;amphib&quot;, &quot;squam&quot;, &quot;birds&quot;, &quot;mamm&quot;)
 
-# Browse[2]&gt; get(&quot;params_best_df&quot;)
-#        gamma cost class.weights
-# 38 0.5000000    2             1
-# 85 0.0078125 2048             1
-# 95 0.0078125 8192             1</code></pre>
-<p>This was the final step of the process that actually allowed me to figure out the problem:</p>
-<pre class="r"><code># Browse[2]&gt; get(&quot;params_best_df_mostFreq&quot;)
-# [1] gamma cost 
-# &lt;0 rows&gt; (or 0-length row.names)</code></pre>
-<p>Without going into too much detail about the function itself, I was able to tell that the parameters I was feeding into the support vector machine function somehow didn’t exist: the variable <code>params_best_df_mostFreq</code> had 0 rows.</p>
+## Make a tree with just orders:
+edge &lt;- matrix(c(9, 4,
+  9, 3,
+  8, 5,
+  8, 9,
+  7, 8,
+  7, 2,
+  6, 7,
+  6, 1), byrow=TRUE, ncol=2)
+## Dates from Timetree of life (timetree.org)
+edge.length &lt;- c(274.9, 274.9, 324.5, 324.5-274.9, 382.9-324.5, 382.9, 454.6-382.9 , 454.6)
+Nnode &lt;- 4
+ordertree &lt;- list(edge=edge, Nnode=Nnode, tip.label=tip.labels, edge.length=edge.length)
+class(ordertree) &lt;- &#39;phylo&#39;
+plot(ordertree)</code></pre>
+<p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>To visualize the results, we can add tip labels, node labels, and edge labels to the tree with the branch lengths:</p>
+<pre class="r"><code>plot(ordertree)
+tiplabels()
+nodelabels()
+edgelabels(ordertree$edge.length, bg=&quot;black&quot;, col=&quot;white&quot;, font=2)</code></pre>
+<p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div id="getting-rid-of-fish" class="section level3">
+<h3>Getting rid of fish</h3>
+<p>Since I didn’t have fish, I needed to make a few modifications. First, <code>tip.labels</code> didn’t need “fish” in it anymore:</p>
+<pre class="r"><code># remove &quot;fish&quot; from tip.labels:
+tip.labels &lt;- c(&quot;amphib&quot;, &quot;squam&quot;, &quot;birds&quot;, &quot;mamm&quot;)</code></pre>
+<p>Now, for the trickier part - I needed to modify the edge matrix. The edge matrix contains the starting and ending nodes for each edge in a tree. As we can see from the plot above, numbering works in the following way: the tips are numbered starting at the top from 1 to the number of tips and the nodes are numbered starting at the root and moving towards the tips. To get rid of fish, I needed to delete one tip from the tree and one node (the original root node). I sketched out what I wanted the new order tree to look like, complete with numbered nodes and tips, and created the following edge matrix:</p>
+<pre class="r"><code>edge &lt;- matrix(c(7, 3,
+  7, 2,
+  6, 4,
+  6, 7,
+  5, 6,
+  5, 1), byrow=TRUE, ncol=2)</code></pre>
+<p>Since I was losing two edges from the phylogeny (the one going from the root to fish and the one from the root to the last common ancestor of tetrapods), I also needed to modify the edge lengths by removing 454.6-382.9 and 454.6:</p>
+<pre class="r"><code>edge.length &lt;- c(274.9, 274.9, 324.5, 324.5-274.9, 382.9-324.5, 382.9)</code></pre>
+<p>The final modification I needed was to decrease <code>Nnode</code> from 4 to 3:</p>
+<pre class="r"><code>Nnode &lt;- 3</code></pre>
+<p>So now…</p>
+<pre class="r"><code>ordertree &lt;- list(edge=edge, Nnode=Nnode, tip.label=tip.labels, edge.length=edge.length)
+class(ordertree) &lt;- &#39;phylo&#39;
+plot(ordertree)
+edgelabels(ordertree$edge.length, bg=&quot;black&quot;, col=&quot;white&quot;, font=2)</code></pre>
+<p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>…I was ready to go with an order-level tree onto which I could graft my individual phylogenies!</p>
+</div>
+<div id="node-dates" class="section level3">
+<h3>Node dates</h3>
+<p>…Not so fast. I ended up with an additional problem I needed to solve before grafting the trees together. I ran into the error <code>'split_age' is inconsistent with edge lengths in 'phy'</code>, which means that the earliest node in one of my individual phylogenies was older than the node age I gave in <code>edge.length</code>. By <a href="https://babichmorrowc.github.io/post/debug-r/">using <code>debug</code></a>, I was able to tell that the error occurred when I added the squamate tree. The oldest node in my squamate tree was 277.8 million years ago, but I had set the divergence time between birds and squamates at 274.9 mya, so R was having problems. The species causing the problem was the tuatara, which is the only surviving member of its order.</p>
+<figure>
+<img class="special-img-class" style="width:75%" src="/img/tuatara.png" />
+<figcaption>
+The pesky (yet very cute) tuatara (<a href="https://www.australiangeographic.com.au/blogs/creatura-blog/2017/12/the-tuatara/" class="uri">https://www.australiangeographic.com.au/blogs/creatura-blog/2017/12/the-tuatara/</a>)
+</figcaption>
+</figure>
+<p>I had a couple of choices: either delete the tuatara from the squamate phylogeny or increase the age of the last common ancestor of birds and squamates when I created the vector <code>edge.length</code>. I chose to do the latter because why get rid of such a cool animal!</p>
+<p>I went to <a href="http://timetree.org/" class="uri">http://timetree.org/</a> to see if I could find a reasonable range of estimates for this node. According to the website, which allows you to search for the divergence time between any two taxa, the estimated divergence of birds and squamates occurred 280 mya.</p>
+<figure>
+<img class="special-img-class" style="width:75%" src="/img/timetree_birdsquamate.png" />
+<figcaption>
+TimeTree results for divergence time of birds and squamates.
+</figcaption>
+</figure>
+<p>So I ended up with the following code and order tree:</p>
+<pre class="r"><code>tip.labels &lt;- c(&quot;amphib&quot;, &quot;squam&quot;, &quot;birds&quot;, &quot;mamm&quot;)
+edge &lt;- matrix(c(7, 3,
+  7, 2,
+  6, 4,
+  6, 7,
+  5, 6,
+  5, 1), byrow=TRUE, ncol=2)
+edge.length &lt;- c(280, 280, 324.5, 324.5-274.9, 382.9-324.5, 382.9)
+Nnode &lt;- 3
+ordertree &lt;- list(edge=edge, Nnode=Nnode, tip.label=tip.labels, edge.length=edge.length)
+class(ordertree) &lt;- &#39;phylo&#39;
+plot(ordertree)
+edgelabels(ordertree$edge.length, bg=&quot;black&quot;, col=&quot;white&quot;, font=2)</code></pre>
+<p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre class="r"><code>tree_list &lt;- list(amphib=amphibiantree, birds=birdtree, squam=squamatetree, mamm=mammaltree)
+class(tree_list) &lt;- &quot;multiPhylo&quot;</code></pre>
 </div>
 </div>
-<div id="other-tips-and-tricks" class="section level1">
-<h1>Other tips and tricks</h1>
-<p>I got much of these resources from a very helpful blog post called <a href="https://petewerner.blogspot.com/2013/01/tracking-down-errors-in-r.html">“Tracking down errors in R”</a> by Pete Werner (also available as a post on <a href="https://www.r-bloggers.com/tracking-down-errors-in-r/">R-bloggers</a>). This post goes through a slightly simpler example of debugging which is reproducible (something I have not attempted to do here), so it is very helpful for seeing the process on a simpler function. In addition to the techniques I used, Pete also explains how you can turn warning messages into errors in the case that your function is throwing a troubling warning message that you suspect is causing an error later on.</p>
+<div id="grafting-the-trees" class="section level2">
+<h2>Grafting the trees</h2>
+<p>The final step is grafting the individual trees onto the order tree in the proper place.</p>
+<pre class="r"><code>#Add taxonomic information to tree
+otax &lt;- data.frame(&quot;Class&quot;= ordertree$tip.label, &quot;Superclass&quot;=c(rep(&quot;Tetrapoda&quot;,2)))
+rownames(otax) &lt;- ordertree$tip.label
+classtree &lt;- nodelabel.phylo(ordertree, otax, ncores=1)
+
+res &lt;- glomogram.phylo(classtree, tree_list)
+plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
+<p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>Voila - a tree with 18262 species of tetrapods!</p>
+</div>
+</div>
+<div id="disclaimer" class="section level1">
+<h1>Disclaimer</h1>
+<p>I’d like to finish this post with a disclaimer: I am NOT a phylogeneticist (yet?). The supertree created in this analysis incorporates several different phylogenies from literature and adapts code from another published article (all written by people with much more phylogenetic background than I!). However, the accuracy of the tree decreases as you move back in time - there is a great deal of uncertainty about node age for the deeper nodes in the tree. Even so, this process allows us to make some cool visualizations to compare major clades across vast stretches of evolutionary time - even if precise dates are incorrect, overall patterns are still informative!</p>
+</div>
+<div id="code" class="section level1">
+<h1>Code</h1>
+<p>The entire script I used for this process can be found at <a href="https://github.com/KerkhoffLab/bodymasspatterns/blob/master/tetrapod_phylogeny_code.R" class="uri">https://github.com/KerkhoffLab/bodymasspatterns/blob/master/tetrapod_phylogeny_code.R</a>.</p>
+</div>
+<div id="literature-cited" class="section level1">
+<h1>Literature Cited</h1>
+<p>Alfaro, M. E., F. Santini, C. Brock, H. Alamillo, A. Dornburg, D. L. Rabosky, G. Carnevale, and L. J. Harmon. 2009. Nine exceptional radiations plus high turnover explain species diversity in jawed vertebrates. PNAS 106:13410-13414.</p>
+<p>Fritz, S. A., O. R. P. Bininda-Emonds, and A. Purvis. 2009. Geographical variation in predictors of mammalian extinction risk: big is bad, but only in the tropics. Ecology Letters 12:538–549.</p>
+<p>Jetz, W., G. H. Thomas, J. B. Joy, K. Hartmann, and A. O. Mooers. 2012. The global diversity of birds in space and time. Nature 491:444.</p>
+<p>O’Meara, B. C., L. J. Harmon, and J. Eastman. 2013. PhyloOrchard: Important and/or useful phylogenetic datasets.</p>
+<p>Pyron, R. A. and J. J. Wiens. 2011. A large-scale phylogeny of Amphibia including over 2800 species, and a revised classification of extant frogs, salamanders, and caecilians. Molecular Phylogenetics and Evolution 61: 543-583.</p>
+<p>Uyeda JC, Pennell MW, Miller ET, Maia R, McClain CR (2017) The evolution of energetic scaling across the vertebrate tree of life. The American Naturalist 190(2): 185-199. <a href="https://doi.org/10.1086/692326" class="uri">https://doi.org/10.1086/692326</a></p>
+<p>Uyeda JC, Pennell MW, Miller ET, Maia R, McClain CR (2017) Data from: The evolution of energetic scaling across the vertebrate tree of life. Dryad Digital Repository. <a href="https://doi.org/10.5061/dryad.3c6d2" class="uri">https://doi.org/10.5061/dryad.3c6d2</a></p>
+<p>Zheng, Y., and J. J. Wiens. 2016. Combining phylogenomic and supermatrix approaches, and a time-calibrated phylogeny for squamate reptiles (lizards and snakes) based on 52 genes and 4162 species. Molecular Phylogenetics and Evolution 94:537–547.</p>
 </div>
 
     </div>
@@ -523,6 +648,10 @@ svmHYB &lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::stack(v
 <div class="article-tags">
   
   <a class="badge badge-light" href="/tags/r/">R</a>
+  
+  <a class="badge badge-light" href="/tags/phylogenetics/">phylogenetics</a>
+  
+  <a class="badge badge-light" href="/tags/evolution/">evolution</a>
   
 </div>
 
@@ -548,40 +677,6 @@ svmHYB &lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::stack(v
       
       
       
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="/#contact" >
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="/www.linkedin.com/in/cecina-babich-morrow-240119177" >
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-      
-      
-      
-      
       
       
       
@@ -591,6 +686,23 @@ svmHYB &lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::stack(v
       <li>
         <a itemprop="sameAs" href="https://www.researchgate.net/profile/Cecina_Babich_Morrow" target="_blank" rel="noopener">
           <i class="ai ai-researchgate"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/babichmorrowc" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
         </a>
       </li>
       
@@ -621,8 +733,25 @@ svmHYB &lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::stack(v
         
       
       <li>
-        <a itemprop="sameAs" href="https://github.com/babichmorrowc" target="_blank" rel="noopener">
-          <i class="fab fa-github"></i>
+        <a itemprop="sameAs" href="/www.linkedin.com/in/cecina-babich-morrow-240119177" >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/babichmorrowc" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
         </a>
       </li>
       
@@ -639,6 +768,8 @@ svmHYB &lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::stack(v
       <div class="hr-light"></div>
       <h3>Related</h3>
       <ul>
+        
+        <li><a href="/post/debug-r/">Debugging in R</a></li>
         
         <li><a href="/post/add-google-doc/">Adding Google Docs to website</a></li>
         
