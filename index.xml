@@ -41,31 +41,31 @@ Figure 1 from Uyeda et al. 2017
 &lt;h1&gt;Into the code&lt;/h1&gt;
 &lt;p&gt;Since my easy solution didn’t pan out and I couldn’t get enough information from the supplemental material for the paper to replicate their analyses, I looked on GitHub to try to find Uyeda’s code. Hooray for GitHub once again, because the repository for the paper can be found here: &lt;a href=&#34;https://github.com/uyedaj/bmr&#34; class=&#34;uri&#34;&gt;https://github.com/uyedaj/bmr&lt;/a&gt;. The &lt;a href=&#34;https://github.com/uyedaj/bmr/blob/master/R/ManuscriptNotebook.Rmd&#34;&gt;RMarkdown&lt;/a&gt; details the analyses for the paper, including the process for making the full tree.&lt;/p&gt;
 &lt;p&gt;Start with loading the necessary packages.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(phytools)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Loading required package: ape&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Loading required package: maps&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(geiger)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(phytools)
+## Loading required package: ape
+## Loading required package: maps
+library(geiger)&lt;/code&gt;&lt;/pre&gt;
 &lt;div id=&#34;the-original-phylogenies&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;The original phylogenies&lt;/h2&gt;
 &lt;p&gt;I was working with four separate phylogenies: amphibians, squamates, birds, and mammals. For amphibians, I used a congruified time-tree from the &lt;code&gt;PhyloOrchard&lt;/code&gt; package (O’Meara et al. 2013) that was constructed using the Alfaro et al. timetree of gnathostomes (Alfaro et al. 2009) as the reference and the Pyron and Wiens amphibian phylogeny as the target (Pyron and Wiens 2011).&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(amphibiantree$tip.label)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 2871&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(amphibiantree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(amphibiantree$tip.label)
+## [1] 2871
+plot(amphibiantree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;For squamates, I used the Zheng and Wiens time-calibrated phylogeny (Zheng and Wiens 2016).&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(squamatetree$tip.label)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 378&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(squamatetree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(squamatetree$tip.label)
+## [1] 378
+plot(squamatetree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;For birds, I used the Jetz phylogeny (Jetz et al. 2012).&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(birdtree$tip.label)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 9993&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(birdtree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(birdtree$tip.label)
+## [1] 9993
+plot(birdtree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;For mammals, I used the supertree from Fritz et al. 2009.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(mammaltree$tip.label)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 5020&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(mammaltree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(mammaltree$tip.label)
+## [1] 5020
+plot(mammaltree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;reading-in-trees&#34; class=&#34;section level2&#34;&gt;
@@ -281,10 +281,10 @@ svmHYB &amp;lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::sta
     
     <item>
       <title>Adding Google Docs to website</title>
-      <link>/post/add-google-doc/</link>
+      <link>/post/2018-12-12-add-google-doc/</link>
       <pubDate>Wed, 12 Dec 2018 21:13:14 -0500</pubDate>
       
-      <guid>/post/add-google-doc/</guid>
+      <guid>/post/2018-12-12-add-google-doc/</guid>
       <description>
 
 
