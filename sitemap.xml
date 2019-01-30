@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>/post/2019-01-09-grafting-trees/</loc>
+      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/publication/lifehistory/</loc>
       <lastmod>2019-01-16T00:00:00-05:00</lastmod>
     </url>
@@ -12,15 +20,7 @@
     
     <url>
     
-      <loc>/post/debug-r/</loc>
-      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/post/debug-r/</loc>
+      <loc>/post/2019-01-03-debugging-r/</loc>
       <lastmod>2019-01-03T21:13:14-05:00</lastmod>
     </url>
     
@@ -245,7 +245,7 @@
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
+      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -254,7 +254,7 @@
     <url>
     
       <loc>/categories/r/</loc>
-      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
+      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -296,7 +296,7 @@
     <url>
     
       <loc>/tags/evolution/</loc>
-      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
+      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -305,7 +305,7 @@
     <url>
     
       <loc>/categories/evolution/</loc>
-      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
+      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -332,7 +332,7 @@
     <url>
     
       <loc>/tags/phylogenetics/</loc>
-      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
+      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -341,7 +341,7 @@
     <url>
     
       <loc>/categories/phylogenetics/</loc>
-      <lastmod>2019-01-09T21:13:14-05:00</lastmod>
+      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     

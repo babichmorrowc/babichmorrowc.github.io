@@ -11,20 +11,11 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>PREPRINT: Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>/publication/lifehistory/</link>
-      <pubDate>Wed, 16 Jan 2019 00:00:00 -0500</pubDate>
-      
-      <guid>/publication/lifehistory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Grafting phylogenies</title>
-      <link>/post/debug-r/</link>
-      <pubDate>Wed, 09 Jan 2019 21:13:14 -0500</pubDate>
+      <link>/post/2019-01-09-grafting-trees/</link>
+      <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
       
-      <guid>/post/debug-r/</guid>
+      <guid>/post/2019-01-09-grafting-trees/</guid>
       <description>
 
 
@@ -209,11 +200,20 @@ plot(res, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&l
     </item>
     
     <item>
+      <title>PREPRINT: Macroevolution of dimensionless life history metrics in tetrapods</title>
+      <link>/publication/lifehistory/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/publication/lifehistory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Debugging in R</title>
-      <link>/post/debug-r/</link>
+      <link>/post/2019-01-03-debugging-r/</link>
       <pubDate>Thu, 03 Jan 2019 21:13:14 -0500</pubDate>
       
-      <guid>/post/debug-r/</guid>
+      <guid>/post/2019-01-03-debugging-r/</guid>
       <description>
 
 
