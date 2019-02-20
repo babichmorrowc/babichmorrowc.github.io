@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.2.0">
+  <meta name="generator" content="Hugo 0.52" />
+  <meta name="author" content="Cecina Babich Morrow">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Intensity of iron in a meteorite.   Earlier this month I participated in the American Museum of Natural History’s annual hackathon (see my last post for details about the event overall). During the hackathon, I worked with Katy Abbott, another Helen Fellow at the museum with me, to use a machine learning algorithm called DBSCAN to tackle our challenge. This post explains the process we used to complete the first step of the challenge: estimating the percent weights of elements in a meteorite.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/2019-02-20-meteoritecluster1/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-130807002-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Cecina Babich Morrow">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Cecina Babich Morrow">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/2019-02-20-meteoritecluster1/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@babichmorrowc">
+  <meta property="twitter:creator" content="@babichmorrowc">
+  
+  <meta property="og:site_name" content="Cecina Babich Morrow">
+  <meta property="og:url" content="/post/2019-02-20-meteoritecluster1/">
+  <meta property="og:title" content="Hacking Meteorites Part 1: Calculating percent weights | Cecina Babich Morrow">
+  <meta property="og:description" content="Intensity of iron in a meteorite.   Earlier this month I participated in the American Museum of Natural History’s annual hackathon (see my last post for details about the event overall). During the hackathon, I worked with Katy Abbott, another Helen Fellow at the museum with me, to use a machine learning algorithm called DBSCAN to tackle our challenge. This post explains the process we used to complete the first step of the challenge: estimating the percent weights of elements in a meteorite."><meta property="og:image" content="/img/portrait.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-02-20T21:13:14-05:00">
+  
+  <meta property="article:modified_time" content="2019-02-20T21:13:14-05:00">
+  
+
+  
+
+  
+
+  <title>Hacking Meteorites Part 1: Calculating percent weights | Cecina Babich Morrow</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Cecina Babich Morrow</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>About</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Hacking Meteorites Part 1: Calculating percent weights</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cecina Babich Morrow">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2019-02-20 21:13:14 -0500 EST" itemprop="datePublished">
+    <time datetime="2019-02-20 21:13:14 -0500 EST" itemprop="dateModified">
+      Feb 20, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cecina Babich Morrow">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/2019-02-20-meteoritecluster1/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/hackathon/">Hackathon</a>, 
+    
+    <a href="/categories/meteorites/">Meteorites</a>, 
+    
+    <a href="/categories/python/">Python</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Hacking%20Meteorites%20Part%201%3a%20Calculating%20percent%20weights&amp;url=%2fpost%2f2019-02-20-meteoritecluster1%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2f2019-02-20-meteoritecluster1%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2019-02-20-meteoritecluster1%2f&amp;title=Hacking%20Meteorites%20Part%201%3a%20Calculating%20percent%20weights"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2f2019-02-20-meteoritecluster1%2f&amp;title=Hacking%20Meteorites%20Part%201%3a%20Calculating%20percent%20weights"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Hacking%20Meteorites%20Part%201%3a%20Calculating%20percent%20weights&amp;body=%2fpost%2f2019-02-20-meteoritecluster1%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+
+<figure>
+<img class="special-img-class" style="width:100%" src="/img/obj1_8bt_Fe.tif" />
+<figcaption>
+Intensity of iron in a meteorite.
+</figcaption>
+</figure>
+<p>Earlier this month I participated in the American Museum of Natural History’s annual hackathon (see my last <a href="https://babichmorrowc.github.io/post/2019-02-14-hackathon/">post</a> for details about the event overall). During the hackathon, I worked with Katy Abbott, another Helen Fellow at the museum with me, to use a machine learning algorithm called DBSCAN to tackle our challenge. This post explains the process we used to complete the first step of the challenge: estimating the percent weights of elements in a meteorite.</p>
+<div id="challenge-accepted" class="section level2">
+<h2>Challenge accepted</h2>
+<p>Our team, consisting of Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy Abbott, Meret Götschel, and myself, chose to work on the <a href="https://github.com/amnh/HackTheSolarSystem/wiki/Meteorite-Mineral-Mapping">Meteorite Mineral Mapping challenge</a>. For this challenge, our museum stakeholders, Marina Gemma and Sam Alpert, wanted a way to identify the mineral composition of meteorites.</p>
+</div>
+<div id="pixels-to-percents" class="section level2">
+<h2>Pixels to percents</h2>
+<p>The scientists scan meteorites with an electron microprobe, a device that provides the intensity of x-rays emitted from certain elements. The electron microprobe results in images with grayscale intensities corresponding to these x-ray intensities on a pixel-by-pixel basis.</p>
+<figure>
+<img class="special-img-class" style="width:100%" src="/img/meteorite_pixel_intensity.png" />
+<figcaption>
+Images of a meteorite produced by the electron microprobe showing pixel intensities for each of 10 elements - brighter grayscale values indicate greater amounts of that element in a pixel.
+</figcaption>
+</figure>
+<p>Our first step was to convert these pixel intensities to the percent weight of each element in the mineral at that pixel. To do that, we referred to a set of standard images taken of minerals with a known proportion of each element. For example, the image below shows the pixel intensities of iron in 8 minerals: you can see that the pixels are brightest in Fe, or pure iron, and lower in iron oxide (<span class="math inline">\(\text{Fe}_3\text{O}_4\)</span>) and troilite, or iron sulfide (FeS).</p>
+<figure>
+<img class="special-img-class" style="width:100%" src="/img/iron_standard.png" />
+<figcaption>
+Standard scan of the intensity of iron in each of 8 known minerals.
+</figcaption>
+</figure>
+<p>We can relate the intensity of the iron pixels in the Fe mineral, for example, to the percent weight in that mineral (100%, since iron is the only element in Fe).</p>
+<div id="import-data" class="section level3">
+<h3>Import data</h3>
+<p>We started by creating a .csv file with the percent weight of each element in the minderals from the standards:</p>
+<pre class="python"><code># import libraries
+from sklearn.cluster import DBSCAN as dbscan
+from sklearn.linear_model import LinearRegression
+import pandas as pd
+import numpy as np
+from sklearn import metrics
+import matplotlib.pyplot as plt
+import matplotlib.colors
+from sklearn.decomposition import PCA
+from pathlib import Path
+from skimage.io import imread, imshow
+import numpy.ma as ma
+from collections import Counter
+# read in percent weights by element of the minerals in the standard
+weights = pd.read_csv(&quot;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/weights_to_minerals.csv&quot;)
+print(weights.head())
+##        mineral  Mg     Ni  Al        Fe      Ca  Cr   P        S      Ti  Si
+## 0  CaTiO3std15 NaN    NaN NaN       NaN  29.481 NaN NaN      NaN  35.211 NaN
+## 1  Fe-num2std9 NaN    NaN NaN  100.0000     NaN NaN NaN      NaN     NaN NaN
+## 2      FeSstd2 NaN    NaN NaN   63.5252     NaN NaN NaN  36.4748     NaN NaN
+## 3   Fe3O4std15 NaN    NaN NaN   72.3591     NaN NaN NaN      NaN     NaN NaN
+## 4       Nistd9 NaN  100.0 NaN       NaN     NaN NaN NaN      NaN     NaN NaN</code></pre>
+<p>(Note: I was able to add the above Python chunk in R by following <a href="https://babichmorrowc.github.io/post/2019-02-20-pythonrmd/">these instructions</a>).</p>
+<p>There is a linear relationship between pixel intensity and percent weight, so we used linear regression to find the slope of this relationship. We read in the .csv of pixel intensities for each element in the standards:</p>
+<pre class="python"><code># read in the pixel intensities by element in the standard
+mineral_standards = pd.read_csv(&#39;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/mineral_standards.csv&#39;)
+print(mineral_standards.head())
+##    Mg  Ni  Al  Fe   Ca  Cr  P  S   Ti  Si      mineral
+## 0   0   0   0   0  171   0  4  0  459   0  CaTiO3std15
+## 1   0   0   0   0  148   3  2  0  462   1  CaTiO3std15
+## 2   0   2   0   0  141   6  3  0  455   2  CaTiO3std15
+## 3   1   2   2   0  122   6  3  0  502   0  CaTiO3std15
+## 4   0   0   0   0  138   5  5  0  457   1  CaTiO3std15</code></pre>
+<p>We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an “_&quot; to make looping easier.</p>
+<pre class="python"><code># create dictionary to standardize file names to chemical formulas
+# needed to separate each element in the formula with an _ to make looping easier
+mineral_dict = dict(zip(np.unique(mineral_standards[&#39;mineral&#39;]),
+    [&quot;Ca_Ti_O_3&quot;, &quot;Fe_&quot;, &quot;Fe_3O_4&quot;, &quot;Fe_S_&quot;, &quot;Ni_S_&quot;, &quot;Ni_&quot;, &quot;Ca_Fe_Mg_Mn_Ni_Si_&quot;, &quot;Ti_O_2&quot;]))
+# use dictionary to change mineral columns to underscore format
+weights[&#39;mineral&#39;] = weights[&#39;mineral&#39;].map(mineral_dict)
+mineral_standards[&#39;mineral&#39;] = mineral_standards[&#39;mineral&#39;].map(mineral_dict)</code></pre>
+<p>Next we created a list of the elements accounted for in the standards and made an empty dataframe called <code>coefs</code> to fill with the coefficients of the relationship between pixel intensity and percent weight for each element:</p>
+<pre class="python"><code># list of elements
+# need to ignore the &quot;mineral&quot; column of the data
+elements = [val for val in mineral_standards.columns if val != &#39;mineral&#39;]
+coefs = pd.DataFrame(index = [&#39;coeff&#39;], columns = elements)</code></pre>
+</div>
+<div id="linear-regressions" class="section level3">
+<h3>Linear regressions</h3>
+<p>Now we looped through the elements to create linear regressions of percent weight vs. pixel intensity based on the intensities in the standards. For these regressions, we forced the intercept to be zero because zero pixel intensity should imply zero percent weight.</p>
+<pre class="python"><code># make a linear regression forcing the intercept to be zero
+# since zero intensity should correspond to zero percent weight
+lr = LinearRegression(fit_intercept = False)
+# loop through elements to create linear regression of percent weight vs pixel intensity
+# in the minerals in the standard
+for element in elements:
+    element_df = mineral_standards[mineral_standards[&#39;mineral&#39;].str.contains(element + &quot;_&quot;)]
+    # if the element has no percent weights, skip it
+    if element_df.empty:
+        continue
+    minerals = element_df[&#39;mineral&#39;].unique()
+    xis = np.empty(0)
+    yis = np.empty(0)
+    for mine in minerals:
+        # get percent weights of the element in that mineral
+        weight = weights[weights[&#39;mineral&#39;] == mine][element]
+        intensities = element_df[element_df[&#39;mineral&#39;] == mine][element]
+        xis = np.append(xis, np.array(intensities))
+        yis = np.append(yis, np.repeat(weight, len(intensities)))
+    xis, yis = xis.reshape(-1,1), yis.reshape(-1,1)
+    # fit linear regression on percent weight vs intensity
+    reg = lr.fit(xis,yis)
+    xi_pred =  np.arange(0,900).reshape(-1,1)
+    # create predictions for range of intensity values
+    pred = reg.predict(xi_pred)
+    reg.coef_
+    # get the linear regression coefficient for each element
+    coefs[element] = float(reg.coef_)
+# print the coefficients for each element
+print(coefs)
+##              Mg        Ni   Al    ...            S        Ti        Si
+## coeff  0.118599  0.328796  NaN    ...     0.469225  0.077627  0.097906
+## 
+## [1 rows x 10 columns]</code></pre>
+<p>Thus <code>coefs</code> contains the coeficient relating pixel intensity of an element to its percent weight in the mineral: for example, the percent weight of Mg in an mineral is equal to 0.118599 times its pixel intensity.</p>
+<figure>
+<img class="special-img-class" style="width:100%" src="/img/mineral_regression.png" />
+<figcaption>
+X-axes are pixel intensity and y-axes are percent weight of the element. Blue points indicate the pixel intensities of the element for a given percent weight based on a mineral in the standard. Orange points indicate the linear regression calculated above.
+</figcaption>
+</figure>
+</div>
+<div id="calculate-percent-weights" class="section level3">
+<h3>Calculate percent weights</h3>
+<p>Finally, we used these coefficients to calculate the predicted percent weights of each element in the two meteorites we were analyzing on a pixel-by-pixel basis. The code for this portion of the analysis is available in the latter end of <a href="https://github.com/HackTheSolarSystem/MineralMapping/blob/master/backend/mineral_mapping_script.py">this script</a>. Note that for any pixel where the percent weight of an element was predicted to be higher than 100%, we set the percent weight to 100%. From these calculations, we ended up with the following files:</p>
+<pre class="python"><code># read file of predicted percent weights for meteorite 1
+df_obj1 = pd.read_csv(&#39;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/predicted_percentweight_obj1.csv&#39;)
+df_obj1 = df_obj1.fillna(0)
+df_obj1.drop(&#39;Unnamed: 0&#39;, axis = 1, inplace = True)
+print(df_obj1.head())
+# read file of predicted percent weights for meteorite 2
+##          Ca        Ti   Al   Cr    ...       P         Fe        Ni        Mg
+## 0  8.595462  0.698642  0.0  0.0    ...     0.0  51.212925  0.986388  5.692734
+## 1  4.512618  0.543388  0.0  0.0    ...     0.0  53.453490  1.972775  2.846367
+## 2  2.578639  0.465761  0.0  0.0    ...     0.0  63.696075  3.287959  1.067388
+## 3  2.148866  0.310508  0.0  0.0    ...     0.0  57.934621  3.945550  0.237197
+## 4  1.719092  0.543388  0.0  0.0    ...     0.0  58.254702  3.616755  0.118599
+## 
+## [5 rows x 10 columns]
+df_obj2 = pd.read_csv(&#39;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/predicted_percentweight_obj2.csv&#39;)
+df_obj2 = df_obj2.fillna(0)
+df_obj2.drop(&#39;Unnamed: 0&#39;, axis = 1, inplace = True)
+print(df_obj2.head())
+##           Si    P   Cr   Al    ...            Ca        Mg        Ni         Fe
+## 0  22.322556  0.0  0.0  0.0    ...      0.429773  1.304585  4.931938  14.403635
+## 1  11.650808  0.0  0.0  0.0    ...      0.000000  0.355796  2.630367  43.530986
+## 2   4.601580  0.0  0.0  0.0    ...      0.429773  0.000000  1.643979  54.093652
+## 3   2.349743  0.0  0.0  0.0    ...      0.000000  0.000000  0.986388  57.294460
+## 4   0.783248  0.0  0.0  0.0    ...      0.000000  0.000000  1.315183  48.972359
+## 
+## [5 rows x 10 columns]</code></pre>
+<p>Each row in these .csv files corresponds to a pixel in the original image. Each value gives the predicted percent weight of a given element in that pixel.</p>
+</div>
+</div>
+<div id="up-next" class="section level2">
+<h2>Up next</h2>
+<p>Now that we had converted pixel intensities to predicted percent weights, we were ready to use our clustering algorithm to identify potential minerals in the meteorite. Stay tuned for a future post showing how we used DBSCAN to accomplish this!</p>
+</div>
+<div id="further-reading" class="section level2">
+<h2>Further Reading</h2>
+<p>Jeremy Neiman, one of my team members, wrote an excellent <a href="https://towardsdatascience.com/machine-learning-meteorites-fcd8f6859ed7">post</a> describing the challenge in further detail, so check that out for more information.</p>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/hackathon/">hackathon</a>
+  
+  <a class="badge badge-light" href="/tags/meteorites/">meteorites</a>
+  
+  <a class="badge badge-light" href="/tags/earth-science/">earth science</a>
+  
+  <a class="badge badge-light" href="/tags/python/">Python</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/portrait.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Cecina Babich Morrow</a></h5>
+    <h6 class="card-subtitle">Helen Fellow</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.researchgate.net/profile/Cecina_Babich_Morrow" target="_blank" rel="noopener">
+          <i class="ai ai-researchgate"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/babichmorrowc" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://scholar.google.com/citations?user=20mEEooAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="/www.linkedin.com/in/cecina-babich-morrow-240119177" >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/babichmorrowc" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/2019-02-14-hackathon/">#HackTheSolarSystem</a></li>
+        
+        <li><a href="/post/2019-02-20-pythonrmd/">Python in RMarkdown</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "babichmorrowc-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//babichmorrowc-github-io.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+
+    
+
+  </body>
+</html>
+
