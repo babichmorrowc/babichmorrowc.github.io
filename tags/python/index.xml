@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on Cecina Babich Morrow</title>
+    <title>Python on Cecina Babich Morrow</title>
     <link>/tags/python/</link>
-    <description>Recent content in python on Cecina Babich Morrow</description>
+    <description>Recent content in Python on Cecina Babich Morrow</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 18 Jan 2019 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 20 Feb 2019 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>#HackTheSolarSystem</title>
-      <link>/post/2019-02-20-hackathon/</link>
-      <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
+      <title>Hacking Meteorites: Using DBSCAN for mineral analysis</title>
+      <link>/post/2019-02-20-meteoritecluster/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
       
-      <guid>/post/2019-02-20-hackathon/</guid>
-      <description>Last weekend I had the opportunity to participate in my first ever hackathon: the #HackTheSolarSystem hackathon hosted by the American Museum of Natural History.
-What is a hackathon, anyways? This is a question I got asked countless times this last week as I informed my friends and family that I would be at work all weekend (yes, including Friday night, yes, including Saturday night, no, I will not be able to socialize at all).</description>
+      <guid>/post/2019-02-20-meteoritecluster/</guid>
+      <description>Earlier this month I participated in the American Museum of Natural History’s annual hackathon (see my last post for details about the event overall). During the hackathon, I worked with Katy Abbott, another Helen Fellow at the museum with me, to use a machine learning algorithm called DBSCAN to tackle our challenge.
+Challenge accepted Our team, consisting of Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy Abbott, Meret Götschel, and myself, chose to work on the Meteorite Mineral Mapping challenge.</description>
+    </item>
+    
+    <item>
+      <title>Python in RMarkdown</title>
+      <link>/post/2019-02-20-pythonrmd/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-02-20-pythonrmd/</guid>
+      <description>The reticulate package logo.   Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.</description>
     </item>
     
   </channel>

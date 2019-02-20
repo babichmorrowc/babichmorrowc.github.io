@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 14 Feb 2019 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 20 Feb 2019 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/tags/meteorites/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hacking Meteorites: Using DBSCAN for mineral analysis</title>
+      <link>/post/2019-02-20-meteoritecluster/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-02-20-meteoritecluster/</guid>
+      <description>Earlier this month I participated in the American Museum of Natural History’s annual hackathon (see my last post for details about the event overall). During the hackathon, I worked with Katy Abbott, another Helen Fellow at the museum with me, to use a machine learning algorithm called DBSCAN to tackle our challenge.
+Challenge accepted Our team, consisting of Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy Abbott, Meret Götschel, and myself, chose to work on the Meteorite Mineral Mapping challenge.</description>
+    </item>
     
     <item>
       <title>#HackTheSolarSystem</title>

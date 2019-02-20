@@ -13,6 +13,25 @@
     
     
     <item>
+      <title>Hacking Meteorites: Using DBSCAN for mineral analysis</title>
+      <link>/post/2019-02-20-meteoritecluster/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-02-20-meteoritecluster/</guid>
+      <description>Earlier this month I participated in the American Museum of Natural History’s annual hackathon (see my last post for details about the event overall). During the hackathon, I worked with Katy Abbott, another Helen Fellow at the museum with me, to use a machine learning algorithm called DBSCAN to tackle our challenge.
+Challenge accepted Our team, consisting of Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy Abbott, Meret Götschel, and myself, chose to work on the Meteorite Mineral Mapping challenge.</description>
+    </item>
+    
+    <item>
+      <title>Python in RMarkdown</title>
+      <link>/post/2019-02-20-pythonrmd/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-02-20-pythonrmd/</guid>
+      <description>The reticulate package logo.   Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.</description>
+    </item>
+    
+    <item>
       <title>#HackTheSolarSystem</title>
       <link>/post/2019-02-14-hackathon/</link>
       <pubDate>Thu, 14 Feb 2019 21:13:14 -0500</pubDate>

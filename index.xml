@@ -11,6 +11,138 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Hacking Meteorites: Using DBSCAN for mineral analysis</title>
+      <link>/post/2019-02-20-meteoritecluster/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-02-20-meteoritecluster/</guid>
+      <description>
+
+
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/obj2_cluster_pred.png&#34; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;Earlier this month I participated in the American Museum of Natural History’s annual hackathon (see my last &lt;a href=&#34;https://babichmorrowc.github.io/post/2019-02-14-hackathon/&#34;&gt;post&lt;/a&gt; for details about the event overall). During the hackathon, I worked with Katy Abbott, another Helen Fellow at the museum with me, to use a machine learning algorithm called DBSCAN to tackle our challenge.&lt;/p&gt;
+&lt;div id=&#34;challenge-accepted&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Challenge accepted&lt;/h2&gt;
+&lt;p&gt;Our team, consisting of Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy Abbott, Meret Götschel, and myself, chose to work on the &lt;a href=&#34;https://github.com/amnh/HackTheSolarSystem/wiki/Meteorite-Mineral-Mapping&#34;&gt;Meteorite Mineral Mapping challenge&lt;/a&gt;. For this challenge, our museum stakeholders, Marina Gemma and Sam Alpert, wanted a way to identify the mineral composition of meteorites.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pixels-to-percents&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Pixels to percents&lt;/h2&gt;
+&lt;p&gt;The scientists scan meteorites with an electron microprobe, a device that provides the intensity of x-rays emitted from certain elements. The electron microprobe results in images with grayscale intensities corresponding to these x-ray intensities on a pixel-by-pixel basis.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/meteorite_pixel_intensity.png&#34; /&gt;
+&lt;figcaption&gt;
+Images of a meteorite produced by the electron microprobe showing pixel intensities for each of 10 elements - brighter grayscale values indicate greater amounts of that element in a pixel.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Our first step was to convert these pixel intensities to the percent weight of each element in the mineral at that pixel. To do that, we referred to a set of standard images taken of minerals with a known proportion of each element. For example, the image below shows the pixel intensities of iron in 8 minerals: you can see that the pixels are brightest in Fe, or pure iron, and lower in iron oxide (&lt;span class=&#34;math inline&#34;&gt;\(\text{Fe}_3\text{O}_4\)&lt;/span&gt;) and troilite, or iron sulfide (FeS).&lt;/p&gt;
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/iron_standard.png&#34; /&gt;
+&lt;figcaption&gt;
+Standard scan of the intensity of iron in each of 8 known minerals.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;We can relate the intensity of the iron pixels in the Fe mineral, for example, to the percent weight in that mineral (100%, since iron is the only element in Fe). There is a linear relationship between pixel intensity and percent weight, so we used linear regression to find the slope of this relationship.&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# import libraries
+from sklearn.cluster import DBSCAN as dbscan
+import pandas as pd
+import numpy as np
+from sklearn import metrics
+import matplotlib.pyplot as plt
+import matplotlib.colors
+from sklearn.decomposition import PCA
+from pathlib import Path
+from skimage.io import imread, imshow
+import numpy.ma as ma
+from collections import Counter&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(Note: I was able to add the above Python chunk in R by following &lt;a href=&#34;&#34;&gt;these instructions&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;further-reading&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Further Reading&lt;/h2&gt;
+&lt;p&gt;Jeremy Neiman, one of my team members, wrote an excellent &lt;a href=&#34;https://towardsdatascience.com/machine-learning-meteorites-fcd8f6859ed7&#34;&gt;post&lt;/a&gt; describing the challenge in further detail, so check that out for more information.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python in RMarkdown</title>
+      <link>/post/2019-02-20-pythonrmd/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-02-20-pythonrmd/</guid>
+      <description>
+
+
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/reticulate.png&#34; /&gt;
+&lt;figcaption&gt;
+The &lt;code&gt;reticulate&lt;/code&gt; package logo. &lt;/figcatption&gt;
+&lt;/figure&gt;
+&lt;div id=&#34;using-python-in-rmarkdown&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Using Python in RMarkdown&lt;/h2&gt;
+&lt;p&gt;In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.&lt;/p&gt;
+&lt;p&gt;When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt; &lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;From running Python in Atom, I knew I had the &lt;code&gt;sklearn.cluster&lt;/code&gt; module installed, so the problem must be in the connection between R and Python.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;reticulate&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;code&gt;reticulate&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;reticulate&lt;/code&gt; package in R (website &lt;a href=&#34;https://rstudio.github.io/reticulate/index.html&#34;&gt;here&lt;/a&gt; allows R to interact with Python. I installed the package from RStudio.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# install.packages(&amp;quot;reticulate&amp;quot;)
+library(reticulate)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;changing-python-versions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Changing Python versions&lt;/h2&gt;
+&lt;p&gt;Installing &lt;code&gt;reticulate&lt;/code&gt; still didn’t allow me to knit the RMarkdown with a Python code chunk, however. I followed the instructions in &lt;a href=&#34;https://rstudio-pubs-static.s3.amazonaws.com/397064_bd288708515c4b71a6e78dfe91b8bb99.html&#34;&gt;this post&lt;/a&gt; by Pablo Franco to check the Python version that &lt;code&gt;reticulate&lt;/code&gt; was using:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;py_discover_config()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I ended up with the following output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python:         /usr/bin/python
+libpython:      /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config/libpython2.7.dylib
+pythonhome:     /System/Library/Frameworks/Python.framework/Versions/2.7:/System/Library/Frameworks/Python.framework/Versions/2.7
+version:        2.7.10 (default, Aug 17 2018, 19:45:58)  [GCC 4.2.1 Compatible Apple LLVM 10.0.0 (clang-1000.0.42)]
+numpy:          /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy
+numpy_version:  1.8.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I wanted to be running Python version 3.6, which was the version I had installed using Anaconda, so I needed to change the path.&lt;/p&gt;
+&lt;div id=&#34;set-up-chunk&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Set-up chunk&lt;/h3&gt;
+&lt;p&gt;I discovered that you can set the path to a different installation of Python by modifying the setup chunk at the start of the RMarkdown. According to the &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown/language-engines.html&#34;&gt;&lt;code&gt;bookdown&lt;/code&gt; website&lt;/a&gt;, the default used is Python 2.&lt;/p&gt;
+&lt;p&gt;My default version of this set-up chunk looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can set the chunk option &lt;code&gt;engine.path&lt;/code&gt; to specify the path to the engine interpreter and change it from the default Python 2.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;finding-python-path&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Finding Python path&lt;/h3&gt;
+&lt;p&gt;I now needed to find the actual path to Python that I wanted to use. I did this by opening up Python separately from RStudio (I used Atom for this) and running the following (I got the code for this from &lt;a href=&#34;https://www.dummies.com/programming/python/how-to-find-path-information-in-python/&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import sys
+for p in sys.path:
+    print(p)
+## /anaconda3/bin
+## /anaconda3/lib/python36.zip
+## /anaconda3/lib/python3.6
+## /anaconda3/lib/python3.6/lib-dynload
+## /anaconda3/lib/python3.6/site-packages
+## /anaconda3/lib/python3.6/site-packages/aeosa
+## /Library/Frameworks/R.framework/Versions/3.5/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;From this information, I could tell I wanted to use the path &lt;code&gt;/anaconda3/lib/python3.6&lt;/code&gt;, rather than &lt;code&gt;/usr/bin/python&lt;/code&gt;, which is what RMarkdown had originally been using. I modified by set-up chunk to look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &amp;#39;/anaconda3/bin/python3.6&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;other-options&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Other options&lt;/h2&gt;
+&lt;p&gt;This solution enabled me to knit RMarkdowns with Python code chunks! It changes the engine interpreter globally, which you could do for multiple engines simultaneously, like Python and Ruby, for example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;knitr::opts_chunk$set(engine.path = list(
+  python = &amp;#39;/anaconda3/bin/python3.6&amp;#39;,
+  ruby = &amp;#39;/usr/local/bin/ruby&amp;#39;
+))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alternatively, you can specify the engine interpreter locally in each code chunk by starting the chunk with &lt;code&gt;{python, engine.path = &#39;/anaconda3/bin/python3.6&lt;/code&gt;}, for example.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>#HackTheSolarSystem</title>
       <link>/post/2019-02-14-hackathon/</link>
       <pubDate>Thu, 14 Feb 2019 21:13:14 -0500</pubDate>
@@ -515,25 +647,6 @@ git push&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
       
       <guid>/publication/hypervolumes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Poster: Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
-      <link>/talk/ibs_2017/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
-      
-      <guid>/talk/ibs_2017/</guid>
-      <description>&lt;p&gt;This poster was made using version 1.4.6 of the &lt;code&gt;hypervolume&lt;/code&gt; R package. These results should not be considered representative of the current algorithms in the package - to see current algorithm performance, refer to &lt;a href=&#34;https://babichmorrowc.github.io/publication/hypervolumes/&#34; target=&#34;_blank&#34;&gt;Blonder &lt;em&gt;et al.&lt;/em&gt; 2017&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hypervolume package testing</title>
-      <link>/project/hypervolumes/</link>
-      <pubDate>Wed, 27 Jul 2016 00:00:00 -0400</pubDate>
-      
-      <guid>/project/hypervolumes/</guid>
       <description></description>
     </item>
     

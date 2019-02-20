@@ -4,6 +4,22 @@
     
     <url>
     
+      <loc>/post/2019-02-20-meteoritecluster/</loc>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/2019-02-20-pythonrmd/</loc>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/post/2019-02-14-hackathon/</loc>
       <lastmod>2019-02-14T21:13:14-05:00</lastmod>
     </url>
@@ -216,15 +232,6 @@
     
     <url>
     
-      <loc>/categories/github/</loc>
-      <lastmod>2018-12-12T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/github/</loc>
       <lastmod>2018-12-12T21:13:14-05:00</lastmod>
       <priority>0</priority>
@@ -234,8 +241,17 @@
     
     <url>
     
+      <loc>/categories/github/</loc>
+      <lastmod>2018-12-12T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/categories/hackathon/</loc>
-      <lastmod>2019-02-14T21:13:14-05:00</lastmod>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -244,7 +260,7 @@
     <url>
     
       <loc>/categories/meteorites/</loc>
-      <lastmod>2019-02-14T21:13:14-05:00</lastmod>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -270,8 +286,17 @@
     
     <url>
     
-      <loc>/categories/r/</loc>
-      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+      <loc>/tags/python/</loc>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/python/</loc>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -280,7 +305,16 @@
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/r/</loc>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -322,16 +356,7 @@
     <url>
     
       <loc>/tags/earth-science/</loc>
-      <lastmod>2019-02-14T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/evolution/</loc>
-      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -348,8 +373,17 @@
     
     <url>
     
+      <loc>/categories/evolution/</loc>
+      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/hackathon/</loc>
-      <lastmod>2019-02-14T21:13:14-05:00</lastmod>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -376,16 +410,7 @@
     <url>
     
       <loc>/tags/meteorites/</loc>
-      <lastmod>2019-02-14T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/phylogenetics/</loc>
-      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -394,6 +419,15 @@
     <url>
     
       <loc>/tags/phylogenetics/</loc>
+      <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/phylogenetics/</loc>
       <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -421,7 +455,7 @@
     <url>
     
       <loc>/tags/website/</loc>
-      <lastmod>2018-12-12T21:13:14-05:00</lastmod>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
