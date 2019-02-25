@@ -40,6 +40,15 @@
     </item>
     
     <item>
+      <title>LGBT</title>
+      <link>/tags/lgbt/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/lgbt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Python</title>
       <link>/tags/python/</link>
       <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
@@ -67,11 +76,29 @@
     </item>
     
     <item>
+      <title>career</title>
+      <link>/tags/career/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>earth science</title>
       <link>/tags/earth-science/</link>
       <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
       
       <guid>/tags/earth-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>education</title>
+      <link>/tags/education/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/education/</guid>
       <description></description>
     </item>
     

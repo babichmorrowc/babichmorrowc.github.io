@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>/talk/la_lgbt_careertalk/</loc>
+      <lastmod>2019-02-22T00:00:00-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/post/2019-02-20-meteoritecluster1/</loc>
       <lastmod>2019-02-20T21:13:14-05:00</lastmod>
     </url>
@@ -259,6 +267,15 @@
     
     <url>
     
+      <loc>/tags/lgbt/</loc>
+      <lastmod>2019-02-22T00:00:00-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/categories/meteorites/</loc>
       <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
@@ -355,8 +372,26 @@
     
     <url>
     
+      <loc>/tags/career/</loc>
+      <lastmod>2019-02-22T00:00:00-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/earth-science/</loc>
       <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/education/</loc>
+      <lastmod>2019-02-22T00:00:00-05:00</lastmod>
       <priority>0</priority>
     </url>
     
