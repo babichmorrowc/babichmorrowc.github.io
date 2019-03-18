@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 18 Mar 2019 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/tags/species-distribution-modeling/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Converting alpha hulls to spatial objects</title>
+      <link>/post/2019-03-18-alpha-hull/</link>
+      <pubDate>Mon, 18 Mar 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-03-18-alpha-hull/</guid>
+      <description>Alpha hulls (α = 20) around occurrence points for two species of sloths.   Inspiration for this post In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur.</description>
+    </item>
+    
+    <item>
+      <title>Talk: Using SVMs to model ranges of congeneric sloth species</title>
+      <link>/talk/nysdm_march2019/</link>
+      <pubDate>Fri, 15 Mar 2019 00:00:00 -0400</pubDate>
+      
+      <guid>/talk/nysdm_march2019/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Distribution modeling of Bradypus</title>

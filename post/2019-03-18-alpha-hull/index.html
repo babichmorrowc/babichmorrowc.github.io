@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.2.0">
+  <meta name="generator" content="Hugo 0.52" />
+  <meta name="author" content="Cecina Babich Morrow">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Alpha hulls (α = 20) around occurrence points for two species of sloths.   Inspiration for this post In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/2019-03-18-alpha-hull/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-130807002-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Cecina Babich Morrow">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Cecina Babich Morrow">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/2019-03-18-alpha-hull/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@babichmorrowc">
+  <meta property="twitter:creator" content="@babichmorrowc">
+  
+  <meta property="og:site_name" content="Cecina Babich Morrow">
+  <meta property="og:url" content="/post/2019-03-18-alpha-hull/">
+  <meta property="og:title" content="Converting alpha hulls to spatial objects | Cecina Babich Morrow">
+  <meta property="og:description" content="Alpha hulls (α = 20) around occurrence points for two species of sloths.   Inspiration for this post In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur."><meta property="og:image" content="/img/portrait.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-03-18T21:13:14-05:00">
+  
+  <meta property="article:modified_time" content="2019-03-18T21:13:14-05:00">
+  
+
+  
+
+  
+
+  <title>Converting alpha hulls to spatial objects | Cecina Babich Morrow</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Cecina Babich Morrow</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>About</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Converting alpha hulls to spatial objects</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cecina Babich Morrow">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2019-03-18 21:13:14 -0500 -0500" itemprop="datePublished">
+    <time datetime="2019-03-18 21:13:14 -0500 -0500" itemprop="dateModified">
+      Mar 18, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cecina Babich Morrow">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    9 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/2019-03-18-alpha-hull/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/r/">R</a>, 
+    
+    <a href="/categories/species-distribution-modeling/">species distribution modeling</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Converting%20alpha%20hulls%20to%20spatial%20objects&amp;url=%2fpost%2f2019-03-18-alpha-hull%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2f2019-03-18-alpha-hull%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2019-03-18-alpha-hull%2f&amp;title=Converting%20alpha%20hulls%20to%20spatial%20objects"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2f2019-03-18-alpha-hull%2f&amp;title=Converting%20alpha%20hulls%20to%20spatial%20objects"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Converting%20alpha%20hulls%20to%20spatial%20objects&amp;body=%2fpost%2f2019-03-18-alpha-hull%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+
+<figure>
+<img class="special-img-class" style="width:60%" src="/img/alpha_bg_regions.png" />
+<figcaption>
+Alpha hulls (α = 20) around occurrence points for two species of sloths.
+</figcaption>
+</figure>
+<div id="inspiration-for-this-post" class="section level2">
+<h2>Inspiration for this post</h2>
+<p>In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur. The key to selecting this region is to pick an area where the species could occur but hasn’t necessarily been observed – for example, you don’t want to include an area separated from the rest of the range by a big mountain range that you don’t believe the organism could cross, but you do want to include a range of potential environments. There are many methods to delineate this region, from drawing a box around the occurrence points of the species to creating a buffered region around each occurrence point (think a collection of lots of circles around each point). One of my research mentors suggested that I try a new method using a shape known as an α-hull.</p>
+<p>I’ll describe α-hulls in more detail below, but you can get the gist from the map above, where I show occurrence points for two species of sloths surrounded by an α-hull for each species. When I tried to create this region in R, however, I ran into a roadblock: the α-hull objects were a specific kind of R object that didn’t play nicely with spatial data in R, particularly objects from the <code>sp</code> package. In particular, I needed a way to convert α objects into SpatialPolygons. This post describes a series of functions I wrote to carry out this process.</p>
+</div>
+<div id="the-alphahull-package" class="section level2">
+<h2>The <code>alphahull</code> package</h2>
+<p>The <code>alphahull</code> R package (Pateiro-Lopez et al. 2016) draws shapes (like the ones above) around sets of points based on a given parameter, α. The package creates two kinds of shapes I was interested in: α-shapes and α-convex hulls. The functions in this post convert these shapes into objects compatible with the <code>sp</code> package, which can then be used for spatial analyses, including creating background regions for species distribution modeling.</p>
+<pre class="r"><code># load packages
+library(alphahull)
+library(sp)</code></pre>
+<div id="alpha-shapes" class="section level3">
+<h3>Alpha shapes</h3>
+<p>Alpha shapes consist of a collection of lines drawn around a group of points. Probably the most familiar example of an α-shape is a convex hull, the smallest convex shape that can be drawn around a group of objects. For example, the following code draws a convex hull around some data from the iris dataset:</p>
+<pre class="r"><code>data(iris)
+iris_sepals &lt;- iris[,1:2]
+# remove duplicate datapoints
+iris_sepals &lt;- iris_sepals[!duplicated(paste(iris_sepals$Sepal.Length, iris_sepals$Sepal.Width)), ]
+
+# find points that lie on the convex hull
+convexhull &lt;- chull(iris_sepals)
+# plot the data points
+plot(iris_sepals, pch = 19, col = &quot;darkseagreen&quot;)
+hull_pts &lt;- c(convexhull, convexhull[1])
+# plot the convex hull
+lines(iris_sepals[hull_pts, ], col = &quot;magenta&quot;)</code></pre>
+<p><img src="/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>This convex hull (drawn in magenta) is an example of an α-shape: all convex hulls are α-shapes, but not all α-shapes are convex hulls. An α-shape doesn’t have to be convex – the lines making up the border of the shape can create concave edges relative to the points in the dataset. For example:</p>
+<pre class="r"><code># create a three-paneled figure
+par(mfrow = c(1,3))
+
+# create three different alpha shapes
+alphashape_0.5 &lt;- ashape(iris_sepals, alpha = 0.5)
+alphashape_1 &lt;- ashape(iris_sepals, alpha = 1)
+alphashape_2 &lt;- ashape(iris_sepals, alpha = 2)
+
+# plot alpha = 0.5
+plot(iris_sepals, pch = 19, col = &quot;darkseagreen&quot;)
+plot(alphashape_0.5, col = &quot;magenta&quot;, add = TRUE)
+# plot alpha = 1
+plot(iris_sepals, pch = 19, col = &quot;darkseagreen&quot;)
+plot(alphashape_1, col = &quot;magenta&quot;, add = TRUE)
+# plot alpha = 2
+plot(iris_sepals, pch = 19, col = &quot;darkseagreen&quot;)
+plot(alphashape_2, col = &quot;magenta&quot;, add = TRUE)</code></pre>
+<p><img src="/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code># reset plotting parameters
+par(mfrow = c(1,1))</code></pre>
+<p>Alpha shapes are created using the <code>ashape</code> function from the <code>alphahull</code> package. As you can see, increasing the α value makes the shape closer and closer to the convex hull, while low values of α make the shape more concave.</p>
+<div id="alpha-shapes-to-polygons" class="section level4">
+<h4>Alpha shapes to polygons</h4>
+<p>In order to use α-shapes with spatial data in R, I wanted to convert these shapes to polygons. To accomplish this, I modified some of the code from an <a href="https://rpubs.com/geospacedman/alphasimple">RPubs by Barry Rowlingson</a> to create the following function:</p>
+<pre class="r"><code>library(igraph)
+## 
+## Attaching package: &#39;igraph&#39;
+## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     decompose, spectrum
+## The following object is masked from &#39;package:base&#39;:
+## 
+##     union
+
+ashape2poly &lt;- function(ashape){
+  # Convert node numbers into characters
+  ashape$edges[,1] &lt;- as.character(ashape$edges[,1])
+  ashape_graph &lt;- graph_from_edgelist(ashape$edges[,1:2], directed = FALSE)
+  if (!is.connected(ashape_graph)) {
+    stop(&quot;Graph not connected&quot;)
+  }
+  if (any(degree(ashape_graph) != 2)) {
+    stop(&quot;Graph not circular&quot;)
+  }
+  if (clusters(ashape_graph)$no &gt; 1) {
+    stop(&quot;Graph composed of more than one circle&quot;)
+  }
+  # Delete one edge to create a chain
+  cut_graph &lt;- ashape_graph - E(ashape_graph)[1]
+  # Find chain end points
+  ends = names(which(degree(cut_graph) == 1))
+  path = get.shortest.paths(cut_graph, ends[1], ends[2])$vpath[[1]]
+  # this is an index into the points
+  pathX = as.numeric(V(ashape_graph)[path]$name)
+  # join the ends
+  pathX = c(pathX, pathX[1])
+  return(pathX)
+}</code></pre>
+<p>For the reasoning behind the function, check out the RPubs I referred to for guidance. For a sanity check, we can compare the resulting shape to the original α-shape we were trying to replicate:</p>
+<pre class="r"><code>alphapoly_1 &lt;- ashape2poly(alphashape_1)
+plot(iris_sepals, pch = 19, col = &quot;darkseagreen&quot;)
+# show the original alpha shape
+plot(alphashape_1, lwd = 5, col = &quot;gray&quot;, add = TRUE)
+# plot the new polygon
+lines(iris_sepals[alphapoly_1, ], col = &quot;magenta&quot;)</code></pre>
+<p><img src="/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+</div>
+<div id="alpha-hulls" class="section level3">
+<h3>Alpha hulls</h3>
+<p>Alpha hulls add another layer of complexity to this process because they can include curved lines (arcs) as edges of a shape. For example:</p>
+<pre class="r"><code>alphahull_1 &lt;- ahull(iris_sepals, alpha = 1)
+
+plot(iris_sepals, pch = 19, col = &quot;darkseagreen&quot;)
+plot(alphahull_1, col = &quot;magenta&quot;, add = TRUE)</code></pre>
+<p><img src="/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div id="arcs-to-lines" class="section level4">
+<h4>Arcs to lines</h4>
+<p>To deal with this curvature, I wrote the following function to convert the arcs between points in the hull to a series of very short line segments in order to approximate the curve.</p>
+<pre class="r"><code># function to convert an arc into line segments
+# given the center of the arc, the radius, the vector, and the angle (radians)
+arc2line &lt;- function(center, r, vector, theta, npoints = 100) {
+  # Get the angles at the extremes of the arcs
+  angles &lt;- anglesArc(vector, theta)
+  # Generate sequence of angles along the arc to determine the points
+  seqang &lt;- seq(angles[1], angles[2], length = npoints)
+  # Generate x coordinates for points along the arc
+  x &lt;- center[1] + r * cos(seqang)
+  # Generate y coordinates for points along the arc
+  y &lt;- center[2] + r * sin(seqang)
+  coords.xy &lt;- cbind(x,y)
+  line &lt;- Line(coords = coords.xy)
+  return(line)
+}</code></pre>
+</div>
+<div id="hulls-to-lines" class="section level4">
+<h4>Hulls to lines</h4>
+<p>Using the previous function, I wrote another function to take an α-hull and convert it into a set of SpatialLines objects. The function uses the <code>arc2line</code> function from above to convert each arc in the α-hull into a series of lines, before adding each of these sets of lines together.</p>
+<pre class="r"><code>ahull2lines &lt;- function(hull){
+  arclist &lt;- hull$arcs
+  lines &lt;- list()
+  for (i in 1:nrow(arclist)) {
+    # Extract the attributes of arc i
+    center_i &lt;- arclist[i, 1:2]
+    radius_i &lt;- arclist[i, 3]
+    vector_i &lt;- arclist[i, 4:5]
+    theta_i &lt;- arclist[i, 6]
+    # Convert arc i into a Line object
+    line_i &lt;- arc2line(center = center_i, r = radius_i, vector = vector_i, theta = theta_i)
+    list_length &lt;- length(lines)
+    if(list_length &gt; 0){
+      # If a line has already been added to the list of lines
+      # Define last_line_coords as the coordinates of the last line added to the list before the ith line
+      last_line_coords &lt;- lines[[list_length]]@coords
+    }
+    if(i == 1){
+      # Add the first line to the list of lines
+      lines[[i]] &lt;- line_i
+    } else if(all.equal(line_i@coords[1,], last_line_coords[nrow(last_line_coords),])){
+      # If the first coordinate in the ith line is equal to the last coordinate in the previous line
+      # then those lines should be connected
+      # Row bind the coordinates for the ith line to the coordinates of the previous line in the list
+      lines[[list_length]]@coords &lt;- rbind(last_line_coords, line_i@coords[2:nrow(line_i@coords),])
+    } else {
+      # If the first coordinate in the ith line does not match the last coordinate in the previous line
+      # then the ith line represents a new line
+      # Add the ith line to the list as a new element
+      lines[[length(lines) + 1]] &lt;- line_i
+    }
+  }
+  # Convert the list of lines to a Line object
+  lines &lt;- Lines(lines, ID = &#39;l&#39;)
+  # Convert the Line object to a SpatialLines object
+  sp_lines &lt;- SpatialLines(list(lines))
+  return(sp_lines)
+}</code></pre>
+<p>The results look like this:</p>
+<pre class="r"><code>lines_1 &lt;- ahull2lines(alphahull_1)
+# the result is a SpatialLines object
+class(lines_1)
+## [1] &quot;SpatialLines&quot;
+## attr(,&quot;package&quot;)
+## [1] &quot;sp&quot;
+
+plot(iris_sepals, pch = 19, col = &quot;darkseagreen&quot;)
+# show the original alpha shape
+plot(alphahull_1, lwd = 5, col = &quot;gray&quot;, add = TRUE)
+# plot the new polygon
+plot(lines_1, col = &quot;magenta&quot;, add = TRUE)</code></pre>
+<p><img src="/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>The resulting SpatialLines object is an almost spot-on approximation of the original α-hull (shown in gray).</p>
+</div>
+<div id="spatiallines-to-spatialpolygon" class="section level4">
+<h4>SpatialLines to SpatialPolygon</h4>
+<p>Now, I needed a way to convert the SpatialLines object into a SpatialPolygon that would cover the same shape as the original α-hull. To accomplish this, I wrote a function that takes a SpatialLines object, checks which lines are part of polygons (i.e. form closed shapes), and converts those polygons to a SpatialPolygon.</p>
+<pre class="r"><code>spLines2poly &lt;- function(sp_lines){
+  # Extract the lines slot
+  lines_slot &lt;- sp_lines@lines[[1]]
+  # Create a list of booleans indicating whether a given Line represents a polygon
+  poly_bool &lt;- sapply(lines_slot@Lines, function(x){
+    coords &lt;- lines_slot@Lines[[1]]@coords
+    # Check if the first coordinate in the line is the same as the last
+    all.equal(coords[1,], coords[nrow(coords),])
+  })
+  # Pull out the lines that form polygons
+  poly_lines &lt;- sp_lines[poly_bool]
+  poly_lines_slot &lt;- poly_lines@lines
+  # Create SpatialPolygons
+  sp_polys &lt;- SpatialPolygons(list(Polygons(lapply(poly_lines_slot, function(x) {
+    Polygon(slot(slot(x, &quot;Lines&quot;)[[1]], &quot;coords&quot;))
+  }), ID = &quot;1&quot;)))
+  return(sp_polys)
+}</code></pre>
+<p>We can apply this function to the <code>lines_1</code> object we made from the original <code>alphahull_1</code>:</p>
+<pre class="r"><code>SpPoly_1 &lt;- spLines2poly(lines_1)
+class(SpPoly_1)
+## [1] &quot;SpatialPolygons&quot;
+## attr(,&quot;package&quot;)
+## [1] &quot;sp&quot;
+
+plot(iris_sepals, pch = 19, col = &quot;darkseagreen&quot;)
+# show the original alpha shape
+plot(alphahull_1, lwd = 5, col = &quot;gray&quot;, add = TRUE)
+# plot the new polygon
+plot(SpPoly_1, border = &quot;magenta&quot;, add = TRUE)</code></pre>
+<p><img src="/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="alpha-hulls-to-spatialpolygons" class="section level4">
+<h4>Alpha hulls to SpatialPolygons</h4>
+<p>Finally, we can string all of those functions together to create a single function that will convert an α-hull directly into a SpatialPolygon:</p>
+<pre class="r"><code>ahull2poly &lt;- function(hull){
+  # Convert the alpha hull to SpatialLines
+  hull2SpatialLines &lt;- ahull2lines(hull)
+  # Convert SpatialLines to SpatialPolygon
+  SpatialLines2SpatialPolygon &lt;- spLines2poly(hull2SpatialLines)
+  return(SpatialLines2SpatialPolygon)
+}</code></pre>
+<p>As a final sanity check, we can see that the resulting shape is the same as the original shape produced by the <code>alphahull</code> package:</p>
+<pre class="r"><code>hullpoly_1 &lt;- ahull2poly(alphahull_1)
+class(hullpoly_1)
+## [1] &quot;SpatialPolygons&quot;
+## attr(,&quot;package&quot;)
+## [1] &quot;sp&quot;
+
+plot(iris_sepals, pch = 19, col = &quot;darkseagreen&quot;)
+# show the original alpha shape
+plot(alphahull_1, lwd = 5, col = &quot;gray&quot;, add = TRUE)
+# plot the new polygon
+plot(hullpoly_1, border = &quot;magenta&quot;, add = TRUE)</code></pre>
+<p><img src="/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="github" class="section level2">
+<h2>GitHub</h2>
+<p>The code for these functions is on my GitHub at <a href="https://github.com/babichmorrowc/hull2spatial" class="uri">https://github.com/babichmorrowc/hull2spatial</a>. If you have any thoughts or suggestions, please comment on this post or submit a pull request on GitHub. I hope to be formulating these functions into a package in the near future, so stay tuned!</p>
+</div>
+<div id="citations" class="section level2">
+<h2>Citations</h2>
+<p>Beatriz Pateiro-Lopez and Alberto Rodriguez-Casal. (2016). alphahull: Generalization of the Convex Hull of a Sample of Points in the Plane. R package version 2.1. <a href="https://CRAN.R-project.org/package=alphahull" class="uri">https://CRAN.R-project.org/package=alphahull</a></p>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/r/">R</a>
+  
+  <a class="badge badge-light" href="/tags/species-distribution-modeling/">species distribution modeling</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/portrait.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Cecina Babich Morrow</a></h5>
+    <h6 class="card-subtitle">Helen Fellow</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.researchgate.net/profile/Cecina_Babich_Morrow" target="_blank" rel="noopener">
+          <i class="ai ai-researchgate"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/babichmorrowc" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://scholar.google.com/citations?user=20mEEooAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="/www.linkedin.com/in/cecina-babich-morrow-240119177" >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/babichmorrowc" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/talk/nysdm_march2019/">Talk: Using SVMs to model ranges of congeneric sloth species</a></li>
+        
+        <li><a href="/post/2019-02-20-pythonrmd/">Python in RMarkdown</a></li>
+        
+        <li><a href="/post/2019-01-09-grafting-trees/">Grafting phylogenies</a></li>
+        
+        <li><a href="/post/2019-01-03-debugging-r/">Debugging in R</a></li>
+        
+        <li><a href="/post/2018-12-12-add-google-doc/">Adding Google Docs to website</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "babichmorrowc-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//babichmorrowc-github-io.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+
+    
+
+  </body>
+</html>
+

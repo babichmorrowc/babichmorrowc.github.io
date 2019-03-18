@@ -50,7 +50,7 @@
     <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      <pubDate>Mon, 18 Mar 2019 21:13:14 -0500</pubDate>
       
       <guid>/categories/r/</guid>
       <description></description>
@@ -71,6 +71,15 @@
       <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
       
       <guid>/categories/phylogenetics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>species distribution modeling</title>
+      <link>/categories/species-distribution-modeling/</link>
+      <pubDate>Mon, 18 Mar 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/categories/species-distribution-modeling/</guid>
       <description></description>
     </item>
     

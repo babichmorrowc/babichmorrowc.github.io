@@ -4,7 +4,23 @@
     
     <url>
     
-      <loc>/talk/la_lgbt_careertalk/</loc>
+      <loc>/post/2019-03-18-alpha-hull/</loc>
+      <lastmod>2019-03-18T21:13:14-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/talk/nysdm_march2019/</loc>
+      <lastmod>2019-03-15T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/talk/la_lgbt_careertalk_2019/</loc>
       <lastmod>2019-02-22T00:00:00-05:00</lastmod>
     </url>
     
@@ -116,7 +132,7 @@
     
     <url>
     
-      <loc>/talk/honors_presentation/</loc>
+      <loc>/talk/honors_presentation_2018/</loc>
       <lastmod>2018-05-01T00:00:00-04:00</lastmod>
     </url>
     
@@ -215,7 +231,7 @@
     <url>
     
       <loc>/tags/bradypus/</loc>
-      <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+      <lastmod>2019-03-15T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -240,7 +256,7 @@
     
     <url>
     
-      <loc>/tags/github/</loc>
+      <loc>/categories/github/</loc>
       <lastmod>2018-12-12T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -249,7 +265,7 @@
     
     <url>
     
-      <loc>/categories/github/</loc>
+      <loc>/tags/github/</loc>
       <lastmod>2018-12-12T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -303,15 +319,6 @@
     
     <url>
     
-      <loc>/tags/python/</loc>
-      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/categories/python/</loc>
       <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
@@ -321,7 +328,7 @@
     
     <url>
     
-      <loc>/tags/r/</loc>
+      <loc>/tags/python/</loc>
       <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -331,7 +338,16 @@
     <url>
     
       <loc>/categories/r/</loc>
-      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+      <lastmod>2019-03-18T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/r/</loc>
+      <lastmod>2019-03-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -399,7 +415,7 @@
     
     <url>
     
-      <loc>/tags/evolution/</loc>
+      <loc>/categories/evolution/</loc>
       <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -408,7 +424,7 @@
     
     <url>
     
-      <loc>/categories/evolution/</loc>
+      <loc>/tags/evolution/</loc>
       <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -444,6 +460,15 @@
     
     <url>
     
+      <loc>/tags/machine-learning/</loc>
+      <lastmod>2019-03-15T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/meteorites/</loc>
       <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
@@ -453,7 +478,7 @@
     
     <url>
     
-      <loc>/tags/phylogenetics/</loc>
+      <loc>/categories/phylogenetics/</loc>
       <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -462,7 +487,7 @@
     
     <url>
     
-      <loc>/categories/phylogenetics/</loc>
+      <loc>/tags/phylogenetics/</loc>
       <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -480,8 +505,17 @@
     
     <url>
     
+      <loc>/categories/species-distribution-modeling/</loc>
+      <lastmod>2019-03-18T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/species-distribution-modeling/</loc>
-      <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+      <lastmod>2019-03-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
