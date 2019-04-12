@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.2.0">
+  <meta name="generator" content="Hugo 0.52" />
+  <meta name="author" content="Cecina Babich Morrow">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="From left to right: unmodified species distribution model, minimum training presence threshold, and 10th percentile threshold.   Inspiration for this post Conservation is often the main motivation behind studying where a species lives – having a model of a species’ range can help scientists assess whether it is at risk of extinction, designate protected regions to preserve its habitat, and study potential impacts of human activity. When we create species distribution models using common methods like Maxent, the result is a map of predicted habitat suitability or probability of species presence, such as the one below.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/2019-04-12-sdm-threshold/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-130807002-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Cecina Babich Morrow">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Cecina Babich Morrow">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/2019-04-12-sdm-threshold/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@babichmorrowc">
+  <meta property="twitter:creator" content="@babichmorrowc">
+  
+  <meta property="og:site_name" content="Cecina Babich Morrow">
+  <meta property="og:url" content="/post/2019-04-12-sdm-threshold/">
+  <meta property="og:title" content="Thresholding species distribution models | Cecina Babich Morrow">
+  <meta property="og:description" content="From left to right: unmodified species distribution model, minimum training presence threshold, and 10th percentile threshold.   Inspiration for this post Conservation is often the main motivation behind studying where a species lives – having a model of a species’ range can help scientists assess whether it is at risk of extinction, designate protected regions to preserve its habitat, and study potential impacts of human activity. When we create species distribution models using common methods like Maxent, the result is a map of predicted habitat suitability or probability of species presence, such as the one below."><meta property="og:image" content="/img/portrait.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-04-12T21:13:14-05:00">
+  
+  <meta property="article:modified_time" content="2019-04-12T21:13:14-05:00">
+  
+
+  
+
+  
+
+  <title>Thresholding species distribution models | Cecina Babich Morrow</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Cecina Babich Morrow</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>About</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Thresholding species distribution models</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cecina Babich Morrow">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2019-04-12 21:13:14 -0500 -0500" itemprop="datePublished">
+    <time datetime="2019-04-12 21:13:14 -0500 -0500" itemprop="dateModified">
+      Apr 12, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cecina Babich Morrow">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/2019-04-12-sdm-threshold/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/r/">R</a>, 
+    
+    <a href="/categories/species-distribution-modeling/">species distribution modeling</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Thresholding%20species%20distribution%20models&amp;url=%2fpost%2f2019-04-12-sdm-threshold%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2f2019-04-12-sdm-threshold%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2019-04-12-sdm-threshold%2f&amp;title=Thresholding%20species%20distribution%20models"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2f2019-04-12-sdm-threshold%2f&amp;title=Thresholding%20species%20distribution%20models"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Thresholding%20species%20distribution%20models&amp;body=%2fpost%2f2019-04-12-sdm-threshold%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+
+<figure>
+<img class="special-img-class" style="width:60%" src="/img/thresholds.png" />
+<figcaption>
+From left to right: unmodified species distribution model, minimum training presence threshold, and 10th percentile threshold.
+</figcaption>
+</figure>
+<div id="inspiration-for-this-post" class="section level2">
+<h2>Inspiration for this post</h2>
+<p>Conservation is often the main motivation behind studying where a species lives – having a model of a species’ range can help scientists assess whether it is at risk of extinction, designate protected regions to preserve its habitat, and study potential impacts of human activity. When we create species distribution models using common methods like Maxent, the result is a map of predicted habitat suitability or probability of species presence, such as the one below. In conservation management, however, it is often more useful to present range models in the form of species presence/absence. We can convert continuous predictions of habitat suitability into binary predictions of whether a species lives in a certain region or not using thresholds: i.e. designating all regions above a certain suitability level as within the species range and all areas below that suitability level as outside of it.</p>
+<figure>
+<img class="special-img-class" style="width:60%" src="/img/threshold_ex.png" />
+<figcaption>
+Left: species distribution model with continuous habitat suitability values. Right: binary presence/absence model used by applying a threshold. (Figure from <a href="https://rspatial.org/sdm/6_sdm_methods.html#mahalanobis-distance">Spatial Data Science with R</a>)
+</figcaption>
+</figure>
+<p>I recently needed to threshold some species distribution models to convert them into these binary maps and had difficulty finding a built-in way to do this in R. The <code>dismo</code> package for species distribution modeling has a function <code>threshold</code> to find what value to use as the “cut-off”, but I needed a function to apply a given cut-off value to model and output a raster with binary values for presence and absence.</p>
+</div>
+<div id="thresholding-function" class="section level2">
+<h2>Thresholding function</h2>
+<p>I wrote an R function to take a species distribution model and threshold it by a given threshold - either minimum training presence (MTP) or 10th percentile training present (P10).</p>
+<div id="minimum-training-presence" class="section level3">
+<h3>Minimum training presence</h3>
+<p>This threshold finds the lowest predicted suitability value for an occurrence point. Essentially, it assumes that the least suitable habitat at which the species is known to occur is the minimum suitability value for the species. The MTP threshold ensures that all occurrence points fall within the area of the binary model.</p>
+</div>
+<div id="th-percentile-training-presence" class="section level3">
+<h3>10th percentile training presence</h3>
+<p>The P10, on the other hand, is a threshold which omits all regions with habitat suitability lower than the suitability values for the lowest 10% of occurrence records. It assumes that the 10% of occurrence records in the least suitable habitat aren’t occurring in regions that are representative of the species overall habitat, and thus should be omitted. This threshold omits a greater region than the MTP.</p>
+</div>
+<div id="the-function" class="section level3">
+<h3>The function</h3>
+<p>The following is the function I wrote to apply these two thresholds to an SDM. The function’s arguments are the SDM, the occurrence points of the species in the form of longitude - latitude pairs, the threshold type, and whether the user would like the output to be a binary prediction (0s for predicted absence and 1s for predicted presence), or a thresholded continuous SDM (regions with suitability below the threshold set to 0).</p>
+<pre class="r"><code>library(raster)
+## Warning: package &#39;raster&#39; was built under R version 3.5.2
+## Loading required package: sp
+
+sdm_threshold &lt;- function(sdm, occs, type = &quot;mtp&quot;, binary = FALSE){
+  occPredVals &lt;- raster::extract(sdm, occs)
+  if(type == &quot;mtp&quot;){
+    thresh &lt;- min(na.omit(occPredVals))
+  } else if(type == &quot;p10&quot;){
+    if(length(occPredVals) &lt; 10){
+      p10 &lt;- floor(length(occPredVals) * 0.9)
+    } else {
+      p10 &lt;- ceiling(length(occPredVals) * 0.9)
+    }
+    thresh &lt;- rev(sort(occPredVals))[p10]
+  }
+  sdm_thresh &lt;- sdm
+  sdm_thresh[sdm_thresh &lt; thresh] &lt;- NA
+  if(binary){
+    sdm_thresh[sdm_thresh &gt;= thresh] &lt;- 1
+  }
+  return(sdm_thresh)
+}</code></pre>
+<p>The first step of the function is to extract the SDM predictions at all occurrence points.</p>
+<pre class="r"><code>occPredVals &lt;- raster::extract(sdm, occs)</code></pre>
+<p>Next, the function calculates a threshold value <code>thresh</code> for either the MTP or P10 threshold. Finally, it sets all cells in the SDM raster with values lower than the threshold equal to 0. If the user wants a binary map, the function sets all cells above the threshold equal to 1:</p>
+<pre class="r"><code>sdm_thresh &lt;- sdm
+sdm_thresh[sdm_thresh &lt; thresh] &lt;- NA
+if(binary){
+  sdm_thresh[sdm_thresh &gt;= thresh] &lt;- 1
+}</code></pre>
+</div>
+</div>
+<div id="example" class="section level2">
+<h2>Example</h2>
+<p>Now we can apply the function to an actual SDM I generated for a species of three-toed sloth (<em>Bradypus variegatus</em>).</p>
+<pre class="r"><code># load in the SDM and occurrence points
+sloth_sdm &lt;- raster(&quot;/Users/hellenfellows/Desktop/website-hugo/static/SDMs/variegatus_sdm.tif&quot;)
+sloth_occs &lt;- read.csv(&quot;~/Desktop/website-hugo/static/SDMs/variegatus_occ.csv&quot;)
+
+plot(sloth_sdm)
+points(sloth_occs[,2:3], pch = 19, cex = 0.5)</code></pre>
+<p><img src="/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>We can apply both MTP and P10 thresholds to the SDM based on the location of the occurrence points:</p>
+<pre class="r"><code>sloth_mtp &lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &quot;mtp&quot;)
+plot(sloth_mtp)</code></pre>
+<p><img src="/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>
+sloth_p10 &lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &quot;p10&quot;)
+plot(sloth_p10)</code></pre>
+<p><img src="/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<p>We could also make either of these thresholded SDMs into a binary prediction in the following way:</p>
+<pre class="r"><code>sloth_mtp_bin &lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &quot;mtp&quot;, binary = TRUE)
+plot(sloth_mtp_bin)</code></pre>
+<p><img src="/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="generalization" class="section level2">
+<h2>Generalization</h2>
+<p>My primary motivation to write this function was to use it on SDMs, but the function could easily be generalized to threshold any raster by a given value:</p>
+<pre class="r"><code>raster_threshold &lt;- function(input_raster, points = NULL, type = NULL, threshold = NULL, binary = FALSE) {
+  if (!is.null(points)) {
+    pointVals &lt;- raster::extract(input_raster, points)
+    if (type == &quot;mtp&quot;) {
+      threshold &lt;- min(na.omit(pointVals))
+    } else if (type == &quot;p10&quot;) {
+      if (length(pointVals) &lt; 10) {
+        p10 &lt;- floor(length(pointVals) * 0.9)
+      } else {
+        p10 &lt;- ceiling(length(pointVals) * 0.9)
+      }
+      threshold &lt;- rev(sort(pointVals))[p10]
+    }
+  }
+  raster_thresh &lt;- input_raster
+  raster_thresh[raster_thresh &lt; threshold] &lt;- NA
+  if (binary) {
+    raster_thresh[raster_thresh &gt;= threshold] &lt;- 1
+  }
+  return(raster_thresh)
+}</code></pre>
+<p>I expanded the function to allow the user to input points within the raster to calculate MTP and P10 thresholds if desired, but also to enable a user-specified threshold.</p>
+<pre class="r"><code># create arbitrary raster
+raster1 &lt;- raster(nrow=10, ncol=10)
+raster1[1:25]&lt;- 1:25
+raster1[26:50] &lt;- rev(1:25)
+raster1[51:75] &lt;- 1:25
+raster1[76:100] &lt;- rev(1:25)
+
+# create a set of 20 arbitrary points within the raster
+xy &lt;- data.frame(x = runif(20, min = -150, max = 150), y = runif(20, min = -70, max = 70))
+
+plot(raster1)
+points(xy)</code></pre>
+<p><img src="/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Now we can apply the function to see the MTP and P10 thresholded rasters:</p>
+<pre class="r"><code>mtp_raster &lt;- raster_threshold(input_raster = raster1, points = xy, type = &quot;mtp&quot;, binary = TRUE)
+plot(mtp_raster)</code></pre>
+<p><img src="/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre class="r"><code>
+p10_raster &lt;- raster_threshold(input_raster = raster1, points = xy, type = &quot;p10&quot;, binary = TRUE)
+plot(p10_raster)</code></pre>
+<p><img src="/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<p>We can also use a user-inputted threshold to remove all parts of the raster with values lower than 20:</p>
+<pre class="r"><code>user_raster &lt;- raster_threshold(input_raster = raster1, threshold = 20)
+plot(user_raster)</code></pre>
+<p><img src="/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/r/">R</a>
+  
+  <a class="badge badge-light" href="/tags/species-distribution-modeling/">species distribution modeling</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/portrait.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Cecina Babich Morrow</a></h5>
+    <h6 class="card-subtitle">Helen Fellow</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.researchgate.net/profile/Cecina_Babich_Morrow" target="_blank" rel="noopener">
+          <i class="ai ai-researchgate"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/babichmorrowc" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://scholar.google.com/citations?user=20mEEooAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="/www.linkedin.com/in/cecina-babich-morrow-240119177" >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/babichmorrowc" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/2019-03-18-alpha-hull/">Converting alpha hulls to spatial objects</a></li>
+        
+        <li><a href="/talk/nysdm_march2019/">Talk: Using SVMs to model ranges of congeneric sloth species</a></li>
+        
+        <li><a href="/post/2019-02-20-pythonrmd/">Python in RMarkdown</a></li>
+        
+        <li><a href="/post/2019-01-09-grafting-trees/">Grafting phylogenies</a></li>
+        
+        <li><a href="/post/2019-01-03-debugging-r/">Debugging in R</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "babichmorrowc-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//babichmorrowc-github-io.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+
+    
+
+  </body>
+</html>
+
