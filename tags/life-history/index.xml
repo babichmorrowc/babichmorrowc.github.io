@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 16 Jan 2019 00:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 03 Apr 2019 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="/tags/life-history/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Big vs. Small: Using ratios to compare life history strategies</title>
+      <link>/talk/brownscholars_ratiotalk_2019/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate>
+      
+      <guid>/talk/brownscholars_ratiotalk_2019/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>PREPRINT: Macroevolution of dimensionless life history metrics in tetrapods</title>
