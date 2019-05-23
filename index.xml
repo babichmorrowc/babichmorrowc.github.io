@@ -11,6 +11,58 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Setting resolution and aspect ratios in R</title>
+      <link>/post/2019-05-23-highres-figures/</link>
+      <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-05-23-highres-figures/</guid>
+      <description>
+
+
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/resolution_comic.jpg&#34; /&gt;
+&lt;figcaption&gt;
+Bizarro.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;solution&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Solution&lt;/h2&gt;
+&lt;p&gt;In order to save your figure with a certain size and resolution, you just need to include your code for plotting between the two lines below:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# To save a .png file:
+png(&amp;quot;your_image.png&amp;quot;, units = &amp;quot;in&amp;quot;, width = 5, height = 4, res = 300)
+# your plotting code here
+dev.off()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can also save .bmp, .jpeg, and .tiff files in the same way with the &lt;code&gt;bmp&lt;/code&gt;, &lt;code&gt;jpeg&lt;/code&gt; and &lt;code&gt;tiff&lt;/code&gt; functions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;To see this in practice, we can plot some data from the iris dataset the “regular” way:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pairs(iris[,1:4], col = iris$Species)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-05-23-highres-figures_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Things look pretty nice in the plotting window, but when you save that figure from RStudio, this is the result:&lt;/p&gt;
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/lowres.png&#34; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;To get rid of that graininess, we can instead save the figure in the following way:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;png(&amp;quot;highres.png&amp;quot;, units = &amp;quot;in&amp;quot;, width = 5, height = 4, res = 300)
+pairs(iris[,1:4], col = iris$Species)
+dev.off()
+## quartz_off_screen 
+##                 2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The resulting figure is much clearer and ready to be inserted in presentations or publications!&lt;/p&gt;
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/highres.png&#34; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;You can also change the aspect ratio by modifying the &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; arguments. You can leave the units in inches or set it to pixels (&lt;code&gt;&amp;quot;px&amp;quot;&lt;/code&gt;), centimeters (&lt;code&gt;&amp;quot;cm&amp;quot;&lt;/code&gt;), or millimeters (&lt;code&gt;&amp;quot;mm&amp;quot;&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Thresholding species distribution models</title>
       <link>/post/2019-04-12-sdm-threshold/</link>
       <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
@@ -1148,15 +1200,6 @@ git push&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I’m still learning my way around the format of the Hugo site, but by some trial and error I’ve started the process of customizing the site. I am using the &lt;a href=&#34;https://themes.gohugo.io/academic/&#34;&gt;Academic&lt;/a&gt; theme. So far I’ve managed to update my bio, add a publication, and take a stab at creating projects. As I get more familiarity with the format, I will try for a more comprehensive blog post explaining how to add your own content.&lt;/p&gt;
 &lt;/div&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Distribution modeling of Bradypus</title>
-      <link>/project/bradypus/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
-      
-      <guid>/project/bradypus/</guid>
-      <description></description>
     </item>
     
   </channel>

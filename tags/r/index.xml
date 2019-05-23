@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Setting resolution and aspect ratios in R</title>
+      <link>/post/2019-05-23-highres-figures/</link>
+      <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-05-23-highres-figures/</guid>
+      <description>Bizarro.   Inspiration for this post I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.</description>
+    </item>
+    
+    <item>
       <title>Thresholding species distribution models</title>
       <link>/post/2019-04-12-sdm-threshold/</link>
       <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
