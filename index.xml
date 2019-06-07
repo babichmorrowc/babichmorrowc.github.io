@@ -11,9 +11,47 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Copying R libraries to a USB</title>
+      <link>/post/2019-06-07-usb/</link>
+      <pubDate>Fri, 07 Jun 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-06-07-usb/</guid>
+      <description>
+
+
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/usb_meme.jpg&#34; /&gt;
+&lt;figcaption&gt;
+From &lt;a href=&#34;https://www.facebook.com/groups/WildGreenMemesForEcologicalFiends/&#34;&gt;Wild Green Memes for Ecological Fiends&lt;/a&gt;.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;loading-r-onto-a-usb&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Loading R onto a USB&lt;/h2&gt;
+&lt;p&gt;The first step was to copy my installation of R onto the USB. To do this, I just copied R from my Applications folder onto the folder. We are not entirely sure if this will work yet to transfer R to someone else’s computer (if someone knows the answer, let me know!), but we are going to test it out shortly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;loading-r-packages-onto-a-usb&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Loading R packages onto a USB&lt;/h2&gt;
+&lt;p&gt;The next step was to transfer all of my R packages onto the USB. To do this, I first needed to figure out where the packages were saved on my computer. You can run the following in R to find where your packages are saved:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;.libPaths()
+## [1] &amp;quot;/Library/Frameworks/R.framework/Versions/3.5/Resources/library&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, I needed to figure out how to navigate to the USB in Terminal. According to this &lt;a href=&#34;https://apple.stackexchange.com/questions/60231/using-terminal-how-can-i-find-which-directory-is-my-usb-drive-mounted-in&#34;&gt;StackOverflow answer&lt;/a&gt;, all drives are mounted in &lt;code&gt;/Volumes&lt;/code&gt;, so I ran the following in Terminal:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;cd /Volumes
+ls&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;From there, I was able to see &lt;code&gt;USB DISK&lt;/code&gt; as one of the folders in &lt;code&gt;/Volumes&lt;/code&gt;. In order to copy all of the packages from my computer onto the USB, I used &lt;code&gt;cp&lt;/code&gt; to move everything from the folder found in &lt;code&gt;.libPaths()&lt;/code&gt; onto the USB:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# replace the first file path with what you get from .libPaths()
+cp -R /Library/Frameworks/R.framework/Versions/3.5/Resources/library/ /Volumes/USB\ DISK/R_packages/&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Setting resolution and aspect ratios in R</title>
       <link>/post/2019-05-23-highres-figures/</link>
-      <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
+      <pubDate>Thu, 23 May 2019 21:13:14 -0500</pubDate>
       
       <guid>/post/2019-05-23-highres-figures/</guid>
       <description>
@@ -50,9 +88,7 @@ dev.off()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;To get rid of that graininess, we can instead save the figure in the following way:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;png(&amp;quot;highres.png&amp;quot;, units = &amp;quot;in&amp;quot;, width = 5, height = 4, res = 300)
 pairs(iris[,1:4], col = iris$Species)
-dev.off()
-## quartz_off_screen 
-##                 2&lt;/code&gt;&lt;/pre&gt;
+dev.off()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The resulting figure is much clearer and ready to be inserted in presentations or publications!&lt;/p&gt;
 &lt;figure&gt;
 &lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/highres.png&#34; /&gt;
@@ -1141,63 +1177,6 @@ svmHYB &amp;lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::sta
 &lt;div id=&#34;home-page-content&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Home page content&lt;/h2&gt;
 &lt;p&gt;Initially, I confused changing the weights in the &lt;code&gt;config.toml&lt;/code&gt; file with actually changing the order of those sections on the home page, but doing that actually requires editing the Markdown files for those types of content in the &lt;code&gt;content/home/&lt;/code&gt; folder. For example, I decided I wanted to put posts first, so I went to &lt;code&gt;content/home/posts.md&lt;/code&gt; and modified the &lt;code&gt;weight&lt;/code&gt; argument so that it was lowest and continued editing the weights until everything was in the order I wanted.&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Creating this website</title>
-      <link>/post/2018-12-7-create-website/</link>
-      <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2018-12-7-create-website/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/website_fig.png&#34; /&gt;&lt;/p&gt;
-&lt;div id=&#34;getting-started&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Getting started&lt;/h2&gt;
-&lt;p&gt;I’ve been contemplating the idea of creating a website for sometime, but my initial (mostly half-hearted) attempts ran into some serious technological glitches. I started out trying to create a GitHub site using Jekyll, since I knew I wanted my website to be hosted via GitHub to keep all of my code in the same place. After about an hour of unsuccessful commits that resulted in a lovely white page with my name on it, I scrapped the whole venture until I heard about the &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;&lt;code&gt;blogdown&lt;/code&gt;&lt;/a&gt; R package. Since R is my programming language of choice, the idea of being able to write posts in RMarkdown and preview my site from the comfort of RStudio was tremendously appealing. I saw a research site created through Hugo’s Academic theme using &lt;code&gt;blogdown&lt;/code&gt; that referenced some helpful tutorials and decided to give the process another shot.&lt;/p&gt;
-&lt;div id=&#34;hugo-blogdown&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Hugo + &lt;code&gt;blogdown&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;After my initial failures with Jekyll, I knew enough about the process (and my own skills) to be wary of the Academic theme’s optimistic tagline “Create a beautifully simple site in under 10 minutes”. So fair warning: getting this site up and semi-running was the work of an afternoon plus. I am not going to provide a full tutorial here, since several excellent ones already exist, but I will give my input on which resources worked for me and where I had difficulties.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;useful-resources&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Useful resources&lt;/h2&gt;
-&lt;p&gt;I started out following &lt;a href=&#34;https://amber.rbind.io/blog/2016/12/19/creatingsite/&#34;&gt;Amber Thomas’s instructions&lt;/a&gt; for using &lt;code&gt;blogdown&lt;/code&gt;, Hugo, and GitHub pages to create a website. I probably should have taken better note of her initial disclaimer that simpler methods of creating a site exist, but nonetheless I found her instructions useful for wrapping my head around the method behind the whole process. As she explains, GitHub pages and Hugo work in different ways: GitHub pages uses information from the master branch of the repository to build your website, while Hugo builds a website inside the public folder. The solution she presents in her tutorial creates a sub branch within GitHub. She provides some shell scripts written by &lt;a href=&#34;https://www.hjdskes.nl&#34;&gt;Jente Hidskes&lt;/a&gt; that create the sub branch and also update the site. These did not run for me for whatever reason – I believe Hidskes has written an updated tutorial to fix them, however.&lt;/p&gt;
-&lt;p&gt;While I was reading the comments on Thomas’s tutorials to try to troubleshoot the shell script problems, I found a different &lt;a href=&#34;http://robertmyles.github.io/2017/02/01/how-to-make-a-github-pages-blog-with-rstudio-and-hugo/&#34;&gt;tutorial by Robert McDonnell&lt;/a&gt; that promised a more streamlined approach. McDonnell gets around the GitHub/Hugo conflicts by creating two GitHub repositories, one for the website (for example, my repo is called &lt;a href=&#34;https://github.com/babichmorrowc/babichmorrowc.github.io&#34;&gt;babichmorrowc.github.io&lt;/a&gt;) and one for all of the Hugo and &lt;code&gt;blogdown&lt;/code&gt; content (mine is called &lt;a href=&#34;https://github.com/babichmorrowc/website-hugo&#34;&gt;website-hugo&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;To link these two repositories, Thomas has users create a &lt;a href=&#34;https://blog.github.com/2016-02-01-working-with-submodules/&#34;&gt;Git Submodule&lt;/a&gt; using the following code:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git submodule add -b master git@github.com:&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io.git public&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This is where, once again, I ran into difficulties. I kept getting the error:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Cloning into &amp;#39;&amp;lt;filepath&amp;gt;/website-hugo/public&amp;#39;...
-git@github.com: Permission denied (publickey).
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-fatal: clone of &amp;#39;git@github.com:babichmorrowc/babichmorrowc.github.io.git&amp;#39; into submodule path &amp;#39;&amp;lt;filepath&amp;gt;/website-hugo/public&amp;#39; failed
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Fortunately, there turned out to be an easy fix for this – the code McDonnell provides uses the SSH URL, which is something I do not have set up. I replaced it with the HTTPS URL (code below), and went on my merry way.&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git submodule add -b master https://github.com/babichmorrowc/babichmorrowc.github.io.git public&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;pushing-to-github&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Pushing to GitHub&lt;/h2&gt;
-&lt;p&gt;From that point forward, I had a functioning site that I could preview in RStudio using the &lt;code&gt;serve_site()&lt;/code&gt; function. Using the following Git commands, I could push those changes and get that same site up and running online:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# From the folder for the repo website-hugo
-cd public
-git add .
-git commit -m &amp;quot;new commit!&amp;quot;
-git push origin master
-
-cd ..
-git add .
-git commit -m &amp;quot;new commit part 2&amp;quot;
-git push&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;editing-my-site&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Editing my site&lt;/h2&gt;
-&lt;p&gt;I’m still learning my way around the format of the Hugo site, but by some trial and error I’ve started the process of customizing the site. I am using the &lt;a href=&#34;https://themes.gohugo.io/academic/&#34;&gt;Academic&lt;/a&gt; theme. So far I’ve managed to update my bio, add a publication, and take a stab at creating projects. As I get more familiarity with the format, I will try for a more comprehensive blog post explaining how to add your own content.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

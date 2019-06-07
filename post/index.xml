@@ -13,9 +13,18 @@
     
     
     <item>
+      <title>Copying R libraries to a USB</title>
+      <link>/post/2019-06-07-usb/</link>
+      <pubDate>Fri, 07 Jun 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-06-07-usb/</guid>
+      <description>From Wild Green Memes for Ecological Fiends.   Inspiration for this post A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages.</description>
+    </item>
+    
+    <item>
       <title>Setting resolution and aspect ratios in R</title>
       <link>/post/2019-05-23-highres-figures/</link>
-      <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
+      <pubDate>Thu, 23 May 2019 21:13:14 -0500</pubDate>
       
       <guid>/post/2019-05-23-highres-figures/</guid>
       <description>Bizarro.   Inspiration for this post I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.</description>
