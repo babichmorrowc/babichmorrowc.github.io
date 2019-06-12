@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Poster: Improving species range estimates for an arboreal species group with a parapatric distribution</title>
+      <link>/talk/mammalogy_2019/</link>
+      <pubDate>Sat, 29 Jun 2019 00:00:00 -0400</pubDate>
+      
+      <guid>/talk/mammalogy_2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Copying R libraries to a USB</title>
       <link>/post/2019-06-07-usb/</link>
       <pubDate>Fri, 07 Jun 2019 21:13:14 -0500</pubDate>
@@ -1144,39 +1153,6 @@ svmHYB &amp;lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::sta
 &lt;div id=&#34;moral-of-the-story&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Moral of the story&lt;/h2&gt;
 &lt;p&gt;It seems like shortcodes can be a really valuable feature of Hugo, especially should I ever need to include a video of some kind (or if I actually start using Twitter again &lt;em&gt;and&lt;/em&gt; tweet something worth sharing, two improbable events). In the case of Google Docs/Sheets/etc., however, just using the HTML code snippet seems like the easiest option (and is a good motivation to learn HTML at a later date).&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ordering website components</title>
-      <link>/post/2018-12-11-order-items/</link>
-      <pubDate>Tue, 11 Dec 2018 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2018-12-11-order-items/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:50%&#34; src=&#34;/img/out_of_order.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;As I continue setting up this site, one of the major things irking me was the order of content on the website. For example, I wasn’t loving that the first thing you saw when visiting the site was the giant picture of my face. I wanted to be able to put content at the top of the site and move information like my bio and work experience towards the bottom. Hugo allows you to weight certain types of content to change the order, so that’s what I tackled.&lt;/p&gt;
-&lt;div id=&#34;menu-links&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Menu links&lt;/h2&gt;
-&lt;p&gt;The first order of things I could change was the order of links in the menu on the top right of my page. In this case, I wanted my information to be the first link, followed by “Publications”, “Projects”, “Posts”, “Tutorials”, and “Contact”. The weighting for these links is found in the &lt;code&gt;config.toml&lt;/code&gt; file of the website repo, where a standard entry for one of the links looks a bit like this:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;[[menu.main]]
-  name = &amp;quot;Publications&amp;quot;
-  url = &amp;quot;#publications&amp;quot;
-  weight = 2&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here you can change the “name”, which is what the menu option actually says (e.g. I changed the menu option for my bio from “Home” to “About”). The URL refers to where on the site the link will point to. If you are trying to link to a homepage widget, as in the example above, the url will be &lt;code&gt;#&lt;/code&gt; followed by the file name of that widget in the &lt;code&gt;content/home/&lt;/code&gt; folder. You want to be careful not to link to a widget that is inactive (which you can see in the first few lines of the Markdown document for that widget), otherwise the link will not go anywhere.&lt;/p&gt;
-&lt;p&gt;If you are linking to something else, you can provide the file-path relative to the &lt;code&gt;content&lt;/code&gt; folder – for example, my tutorials live in the folder &lt;code&gt;content/tutorial&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;[[menu.main]]
-  name = &amp;quot;Tutorials&amp;quot;
-  url = &amp;quot;/tutorial/&amp;quot;
-  weight = 5&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Finally, you can change the weights to reflect the order you want the links to appear in the menu: the links will appear from left to right in ascending order of weight (&lt;code&gt;weight = 1&lt;/code&gt; is the first link, etc.)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;home-page-content&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Home page content&lt;/h2&gt;
-&lt;p&gt;Initially, I confused changing the weights in the &lt;code&gt;config.toml&lt;/code&gt; file with actually changing the order of those sections on the home page, but doing that actually requires editing the Markdown files for those types of content in the &lt;code&gt;content/home/&lt;/code&gt; folder. For example, I decided I wanted to put posts first, so I went to &lt;code&gt;content/home/posts.md&lt;/code&gt; and modified the &lt;code&gt;weight&lt;/code&gt; argument so that it was lowest and continued editing the weights until everything was in the order I wanted.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
