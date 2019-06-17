@@ -12,6 +12,14 @@
     
     <url>
     
+      <loc>/talk/helenfellow_june2019/</loc>
+      <lastmod>2019-06-13T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/post/2019-06-07-usb/</loc>
       <lastmod>2019-06-07T21:13:14-05:00</lastmod>
     </url>
@@ -296,7 +304,7 @@
     
     <url>
     
-      <loc>/tags/github/</loc>
+      <loc>/categories/github/</loc>
       <lastmod>2018-12-12T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -305,7 +313,7 @@
     
     <url>
     
-      <loc>/categories/github/</loc>
+      <loc>/tags/github/</loc>
       <lastmod>2018-12-12T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -359,15 +367,6 @@
     
     <url>
     
-      <loc>/tags/python/</loc>
-      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/categories/python/</loc>
       <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
@@ -377,8 +376,8 @@
     
     <url>
     
-      <loc>/tags/r/</loc>
-      <lastmod>2019-06-07T21:13:14-05:00</lastmod>
+      <loc>/tags/python/</loc>
+      <lastmod>2019-02-20T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -387,6 +386,15 @@
     <url>
     
       <loc>/categories/r/</loc>
+      <lastmod>2019-06-07T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/r/</loc>
       <lastmod>2019-06-07T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -455,7 +463,7 @@
     
     <url>
     
-      <loc>/tags/evolution/</loc>
+      <loc>/categories/evolution/</loc>
       <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -464,7 +472,7 @@
     
     <url>
     
-      <loc>/categories/evolution/</loc>
+      <loc>/tags/evolution/</loc>
       <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -518,7 +526,7 @@
     
     <url>
     
-      <loc>/tags/phylogenetics/</loc>
+      <loc>/categories/phylogenetics/</loc>
       <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -527,7 +535,7 @@
     
     <url>
     
-      <loc>/categories/phylogenetics/</loc>
+      <loc>/tags/phylogenetics/</loc>
       <lastmod>2019-01-18T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -545,8 +553,8 @@
     
     <url>
     
-      <loc>/tags/species-distribution-modeling/</loc>
-      <lastmod>2019-06-29T00:00:00-04:00</lastmod>
+      <loc>/categories/species-distribution-modeling/</loc>
+      <lastmod>2019-04-12T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -554,8 +562,8 @@
     
     <url>
     
-      <loc>/categories/species-distribution-modeling/</loc>
-      <lastmod>2019-04-12T21:13:14-05:00</lastmod>
+      <loc>/tags/species-distribution-modeling/</loc>
+      <lastmod>2019-06-29T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
     
