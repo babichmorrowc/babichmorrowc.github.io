@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 21 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/career/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Goldwater Highlight</title>
+      <link>/post/goldwater-highlight/</link>
+      <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/goldwater-highlight/</guid>
+      <description>This is just a quick post to provide a link to the Goldwater Scholar Social Media Highlight that Nina Singh wrote about me. You can find the pdf to the article here. Huge thanks to the Goldwater social media team for including me in this!</description>
+    </item>
     
     <item>
       <title>Talk: STEM careers in museums</title>
