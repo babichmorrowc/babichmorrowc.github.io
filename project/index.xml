@@ -18,7 +18,7 @@
       <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
       
       <guid>/project/bradypus/</guid>
-      <description></description>
+      <description>Species distribution modelling of &lt;em&gt;Bradypus variegatus&lt;/em&gt;, &lt;em&gt;B. tridactylus&lt;/em&gt;, and &lt;em&gt;B. torquatus&lt;/em&gt;.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Wed, 27 Jul 2016 00:00:00 -0400</pubDate>
       
       <guid>/project/hypervolumes/</guid>
-      <description></description>
+      <description>Testing new algorithms for creating &lt;em&gt;n&lt;/em&gt;-dimensional hypervolumes.</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
       <guid>/project/life_history/</guid>
-      <description></description>
+      <description>Analyzing the evolution of dimensionless life history metrics across tetrapods.</description>
     </item>
     
   </channel>
