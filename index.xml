@@ -910,6 +910,7 @@ Figure 1 from Uyeda et al. 2017
 &lt;p&gt;Start with loading the necessary packages.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(phytools)
 ## Loading required package: ape
+## Warning: package &amp;#39;ape&amp;#39; was built under R version 3.5.2
 ## Loading required package: maps
 library(geiger)&lt;/code&gt;&lt;/pre&gt;
 &lt;div id=&#34;the-original-phylogenies&#34; class=&#34;section level2&#34;&gt;
