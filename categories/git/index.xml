@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Cecina Babich Morrow</title>
+    <link>/categories/git/</link>
+    <description>Recent content in Git on Cecina Babich Morrow</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Tue, 17 Sep 2019 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Workflow #1: Existing project, GitHub last</title>
+      <link>/post/2019-09-18-git-workflow1/</link>
+      <pubDate>Tue, 17 Sep 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-09-18-git-workflow1/</guid>
+      <description>From xkcd.   Inspiration for this post Over the coming months, I plan on sharing a series of Git workflow tutorials. Getting a Git project set up can be a pretty simple process, but depending on the order in which you do things, set-up can get complicated. This first tutorial addresses one of those fairly complicated situations.
+The schema for these tutorials is loosely based on the incredible Git + R bible by Jenny Bryan, Happy Git and GitHub for the useR.</description>
+    </item>
+    
+  </channel>
+</rss>

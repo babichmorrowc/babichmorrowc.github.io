@@ -15,10 +15,11 @@
   
     
   
-  <meta name="description" content="The reticulate package logo.   Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.">
+  <meta name="description" content="From xkcd.   Inspiration for this post Over the coming months, I plan on sharing a series of Git workflow tutorials. Getting a Git project set up can be a pretty simple process, but depending on the order in which you do things, set-up can get complicated. This first tutorial addresses one of those fairly complicated situations.
+The schema for these tutorials is loosely based on the incredible Git &#43; R bible by Jenny Bryan, Happy Git and GitHub for the useR.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/2019-02-20-pythonrmd/">
+  <link rel="alternate" hreflang="en-us" href="/post/2019-09-18-git-workflow1/">
 
   
 
@@ -106,7 +107,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/post/2019-02-20-pythonrmd/">
+  <link rel="canonical" href="/post/2019-09-18-git-workflow1/">
 
   
   
@@ -121,21 +122,22 @@
   <meta property="twitter:creator" content="@babichmorrowc">
   
   <meta property="og:site_name" content="Cecina Babich Morrow">
-  <meta property="og:url" content="/post/2019-02-20-pythonrmd/">
-  <meta property="og:title" content="Python in RMarkdown | Cecina Babich Morrow">
-  <meta property="og:description" content="The reticulate package logo.   Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk."><meta property="og:image" content="/img/portrait.jpg">
+  <meta property="og:url" content="/post/2019-09-18-git-workflow1/">
+  <meta property="og:title" content="Git Workflow #1: Existing project, GitHub last | Cecina Babich Morrow">
+  <meta property="og:description" content="From xkcd.   Inspiration for this post Over the coming months, I plan on sharing a series of Git workflow tutorials. Getting a Git project set up can be a pretty simple process, but depending on the order in which you do things, set-up can get complicated. This first tutorial addresses one of those fairly complicated situations.
+The schema for these tutorials is loosely based on the incredible Git &#43; R bible by Jenny Bryan, Happy Git and GitHub for the useR."><meta property="og:image" content="/img/portrait.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-02-20T21:13:14-05:00">
+  <meta property="article:published_time" content="2019-09-17T21:13:14-05:00">
   
-  <meta property="article:modified_time" content="2019-02-20T21:13:14-05:00">
-  
-
+  <meta property="article:modified_time" content="2019-09-17T21:13:14-05:00">
   
 
   
 
-  <title>Python in RMarkdown | Cecina Babich Morrow</title>
+  
+
+  <title>Git Workflow #1: Existing project, GitHub last | Cecina Babich Morrow</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
@@ -332,7 +334,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Python in RMarkdown</h1>
+  <h1 itemprop="name">Git Workflow #1: Existing project, GitHub last</h1>
 
   
 
@@ -350,9 +352,9 @@
 
   <span class="article-date">
     
-    <meta content="2019-02-20 21:13:14 -0500 EST" itemprop="datePublished">
-    <time datetime="2019-02-20 21:13:14 -0500 EST" itemprop="dateModified">
-      Feb 20, 2019
+    <meta content="2019-09-17 21:13:14 -0500 -0500" itemprop="datePublished">
+    <time datetime="2019-09-17 21:13:14 -0500 -0500" itemprop="dateModified">
+      Sep 17, 2019
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
@@ -362,14 +364,14 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    4 min read
   </span>
   
 
   
   
   <span class="middot-divider"></span>
-  <a href="/post/2019-02-20-pythonrmd/#disqus_thread"></a>
+  <a href="/post/2019-09-18-git-workflow1/#disqus_thread"></a>
   
 
   
@@ -379,9 +381,7 @@
   <span class="article-categories">
     <i class="fas fa-folder"></i>
     
-    <a href="/categories/r/">R</a>, 
-    
-    <a href="/categories/python/">Python</a>
+    <a href="/categories/github/">GitHub</a>
     
   </span>
   
@@ -393,35 +393,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Python%20in%20RMarkdown&amp;url=%2fpost%2f2019-02-20-pythonrmd%2f"
+         href="https://twitter.com/intent/tweet?text=Git%20Workflow%20%231%3a%20Existing%20project%2c%20GitHub%20last&amp;url=%2fpost%2f2019-09-18-git-workflow1%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=%2fpost%2f2019-02-20-pythonrmd%2f"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2f2019-09-18-git-workflow1%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2019-02-20-pythonrmd%2f&amp;title=Python%20in%20RMarkdown"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2019-09-18-git-workflow1%2f&amp;title=Git%20Workflow%20%231%3a%20Existing%20project%2c%20GitHub%20last"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2f2019-02-20-pythonrmd%2f&amp;title=Python%20in%20RMarkdown"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2f2019-09-18-git-workflow1%2f&amp;title=Git%20Workflow%20%231%3a%20Existing%20project%2c%20GitHub%20last"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Python%20in%20RMarkdown&amp;body=%2fpost%2f2019-02-20-pythonrmd%2f">
+         href="mailto:?subject=Git%20Workflow%20%231%3a%20Existing%20project%2c%20GitHub%20last&amp;body=%2fpost%2f2019-09-18-git-workflow1%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -461,69 +461,53 @@
 
 
 <figure>
-<img class="special-img-class" style="width:100%" src="/img/reticulate.png" />
+<img class="special-img-class" style="width:60%" src="/img/xkcd_git.png" />
 <figcaption>
-The <code>reticulate</code> package logo. </figcatption>
+From <a href="https://xkcd.com/1597/">xkcd</a>.
+</figcaption>
 </figure>
-<div id="using-python-in-rmarkdown" class="section level2">
-<h2>Using Python in RMarkdown</h2>
-<p>In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.</p>
-<p>When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:</p>
-<p><code>Error in py_run_string_impl(code, local, convert) :</code> <code>ImportError: No module named sklearn.cluster</code></p>
-<p>From running Python in Atom, I knew I had the <code>sklearn.cluster</code> module installed, so the problem must be in the connection between R and Python.</p>
+<div id="inspiration-for-this-post" class="section level2">
+<h2>Inspiration for this post</h2>
+<p>Over the coming months, I plan on sharing a series of Git workflow tutorials. Getting a Git project set up can be a pretty simple process, but depending on the order in which you do things, set-up can get complicated. This first tutorial addresses one of those fairly complicated situations.</p>
+<p>The schema for these tutorials is loosely based on the incredible Git + R bible by Jenny Bryan, <a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a>. The only difference is that I will be showing the workflow for setting up the project using the command line, rather than RStudio.</p>
 </div>
-<div id="reticulate" class="section level2">
-<h2><code>reticulate</code></h2>
-<p>The <code>reticulate</code> package in R (website <a href="https://rstudio.github.io/reticulate/index.html">here</a> allows R to interact with Python. I installed the package from RStudio.</p>
-<pre class="r"><code># install.packages(&quot;reticulate&quot;)
-library(reticulate)</code></pre>
+<div id="existing-project-github-last" class="section level2">
+<h2>Existing project, GitHub last</h2>
+<p>This first tutorial addresses the following situation: you have a folder for your project on your computer already. You would like this folder to be associated with a GitHub repository, but you haven’t created this repository yet, or you’ve created the GitHub repository and haven’t connected it with your local folder [^1].</p>
+<p>[^1] Throughout this tutorial, “local” refers to the copy of the repository on your computer. “Remote” refers to the copy on GitHub.</p>
+<div id="make-a-git-repo" class="section level3">
+<h3>Make a Git repo</h3>
+<p>The first step in this process is to make your local project into a Git repository. Start by using the command-line to navigate to the folder for your project (using <code>cd</code>). Once you are in the proper folder, run:</p>
+<pre class="bash"><code>git init</code></pre>
+<p>This command either creates a new Git repository, or, in our case, converts an existing project into a Git repository. If you want to read more about <code>git init</code>, particularly the difference between <code>git init</code> and <code>git clone</code>, Atlassian has a useful <a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init">article</a>.</p>
+<p>Now, since you’ve made edits / added files into your project, you want to add and commit those changes using the following commands:</p>
+<pre class="bash"><code>git add -A
+git commit -m &quot;test commit&quot;</code></pre>
+<p>You can make the commit message whatever you want. Note, <code>git add -A</code> adds all files in your repository. If you only want to add certain files, you can add them by name. For example, if you only want to add the file <code>test.txt</code>:</p>
+<pre class="bash"><code>git add test.txt
+git commit -m &quot;test commit&quot;</code></pre>
 </div>
-<div id="changing-python-versions" class="section level2">
-<h2>Changing Python versions</h2>
-<p>Installing <code>reticulate</code> still didn’t allow me to knit the RMarkdown with a Python code chunk, however. I followed the instructions in <a href="https://rstudio-pubs-static.s3.amazonaws.com/397064_bd288708515c4b71a6e78dfe91b8bb99.html">this post</a> by Pablo Franco to check the Python version that <code>reticulate</code> was using:</p>
-<pre class="r"><code>py_discover_config()</code></pre>
-<p>I ended up with the following output:</p>
-<pre><code>python:         /usr/bin/python
-libpython:      /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config/libpython2.7.dylib
-pythonhome:     /System/Library/Frameworks/Python.framework/Versions/2.7:/System/Library/Frameworks/Python.framework/Versions/2.7
-version:        2.7.10 (default, Aug 17 2018, 19:45:58)  [GCC 4.2.1 Compatible Apple LLVM 10.0.0 (clang-1000.0.42)]
-numpy:          /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy
-numpy_version:  1.8.0</code></pre>
-<p>I wanted to be running Python version 3.6, which was the version I had installed using Anaconda, so I needed to change the path.</p>
-<div id="set-up-chunk" class="section level3">
-<h3>Set-up chunk</h3>
-<p>I discovered that you can set the path to a different installation of Python by modifying the setup chunk at the start of the RMarkdown. According to the <a href="https://bookdown.org/yihui/rmarkdown/language-engines.html"><code>bookdown</code> website</a>, the default used is Python 2.</p>
-<p>My default version of this set-up chunk looks like this:</p>
-<pre><code>{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)</code></pre>
-<p>You can set the chunk option <code>engine.path</code> to specify the path to the engine interpreter and change it from the default Python 2.</p>
+<div id="make-a-github-repo" class="section level3">
+<h3>Make a GitHub repo</h3>
+<p>Next, we need to create a GitHub repository for our project. Depending on your workflow, you may have already created this repository. If not, log in to <a href="https://github.com">GitHub</a>. Click the green “New repository” button. Ideally, you want the name of your new repository to match the name of the folder on your computer (but if not, it’s not a big deal). You don’t really want to initialize the repository with a README, but if you do, you can work around this later.</p>
+<p>Once the repository has been set up, you can copy the HTTPS URL to your clipboard using the green “Clone or Download” button.</p>
 </div>
-<div id="finding-python-path" class="section level3">
-<h3>Finding Python path</h3>
-<p>I now needed to find the actual path to Python that I wanted to use. I did this by opening up Python separately from RStudio (I used Atom for this) and running the following (I got the code for this from <a href="https://www.dummies.com/programming/python/how-to-find-path-information-in-python/">here</a>):</p>
-<pre class="python"><code>import sys
-for p in sys.path:
-    print(p)
-## /Applications/anaconda3/bin
-## /Applications/anaconda3/lib/python37.zip
-## /Applications/anaconda3/lib/python3.7
-## /Applications/anaconda3/lib/python3.7/lib-dynload
-## /Applications/anaconda3/lib/python3.7/site-packages
-## /Applications/anaconda3/lib/python3.7/site-packages/aeosa
-## /Library/Frameworks/R.framework/Versions/3.5/Resources/library/reticulate/python</code></pre>
-<p>From this information, I could tell I wanted to use the path <code>/anaconda3/lib/python3.6</code>, rather than <code>/usr/bin/python</code>, which is what RMarkdown had originally been using. I modified by set-up chunk to look like this:</p>
-<pre><code>{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &#39;/anaconda3/bin/python3.6&#39;))</code></pre>
+<div id="connect-the-github-repo-to-your-project" class="section level3">
+<h3>Connect the GitHub repo to your project</h3>
+<p>Now that you have a GitHub repository and you have a Git repository on your computer, you want to connect the two. To do this, run the following in the shell, using the URL that you just copied from GitHub:</p>
+<pre class="bash"><code>git remote add origin &lt;YOUR URL HERE&gt;</code></pre>
+<p>Note, you don’t need the <code>&lt;</code> and <code>&gt;</code> on either side of the URL, just paste the URL as is.</p>
+<p>You now need to tell your computer what the upstream branch should be, i.e. what branch on GitHub to pull updates from.</p>
+<pre class="bash"><code>git branch --set-upstream-to=origin/master master</code></pre>
 </div>
+<div id="reconcile-the-remote-and-local-repositories" class="section level3">
+<h3>Reconcile the remote and local repositories</h3>
+<p>Now, assuming that you have edits both on your computer and on the GitHub repository, you need to be able to reconcile these changes so that the two are the same. This is assuming that you have files added in the folder on your computer and also something like a README or .gitignore on GitHub. To fix this problem, you first need to pull the changes from the GitHub repository onto your computer:</p>
+<pre class="bash"><code>git pull --allow-unrelated-histories</code></pre>
+<p>The <code>--allow-unrelated-histories</code> portion of the command allows you to merge these two repositories (the local and the remote) even though they don’t have a common ancestor (you created them independently and made changes to both independently).</p>
+<p>Now, you can push the changes from your local repository up to GitHub:</p>
+<pre class="bash"><code>git push</code></pre>
 </div>
-<div id="other-options" class="section level2">
-<h2>Other options</h2>
-<p>This solution enabled me to knit RMarkdowns with Python code chunks! It changes the engine interpreter globally, which you could do for multiple engines simultaneously, like Python and Ruby, for example:</p>
-<pre><code>knitr::opts_chunk$set(engine.path = list(
-  python = &#39;/anaconda3/bin/python3.6&#39;,
-  ruby = &#39;/usr/local/bin/ruby&#39;
-))</code></pre>
-<p>Alternatively, you can specify the engine interpreter locally in each code chunk by starting the chunk with <code>{python, engine.path = '/anaconda3/bin/python3.6</code>}, for example.</p>
 </div>
 
     </div>
@@ -533,11 +517,7 @@ knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &#39;/anacond
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/r/">R</a>
-  
-  <a class="badge badge-light" href="/tags/python/">Python</a>
-  
-  <a class="badge badge-light" href="/tags/website/">website</a>
+  <a class="badge badge-light" href="/tags/github/">GitHub</a>
   
 </div>
 
@@ -660,10 +640,6 @@ knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &#39;/anacond
         <li><a href="/post/2018-12-11-order-items/">Ordering website components</a></li>
         
         <li><a href="/post/2018-12-7-create-website/">Creating this website</a></li>
-        
-        <li><a href="/post/2019-02-20-meteoritecluster1/">Hacking Meteorites Part 1: Calculating percent weights</a></li>
-        
-        <li><a href="/post/2019-01-09-grafting-trees/">Grafting phylogenies</a></li>
         
       </ul>
     </div>
