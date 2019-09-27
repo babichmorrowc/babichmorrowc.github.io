@@ -11,6 +11,189 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Accessing Mode data in R</title>
+      <link>/post/2019-09-26-mode_api_instructions/</link>
+      <pubDate>Thu, 26 Sep 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-09-26-mode_api_instructions/</guid>
+      <description>
+
+
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/legos.jpg&#34; /&gt;
+&lt;figcaption&gt;
+A lego fort that I constructed this summer with the help of a good friend (not particularly relevant to the post, except that I used a lego dataset for my example and legos are more photogenic than Mode databases).
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;In the past, I’ve been used to a pretty straightforward R workflow: download my data as a csv from somewhere, save it on my computer, and go to work. Now that I work in healthcare, downloading data and saving it on my computer is no longer such a good idea (since that would be illegal) so I’ve needed other ways to get the data I need into R. My company uses the data analysis platform &lt;a href=&#34;https://mode.com/&#34;&gt;Mode Analytics&lt;/a&gt; to pull data from our database using SQL. I wanted a way to get data directly from Mode into R without needing to download the results of a report as a CSV, move them onto Google Drive, and then access them in R.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-api-access-token&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get API access token&lt;/h2&gt;
+&lt;p&gt;The first step to accessing Mode via API is to &lt;a href=&#34;https://mode.com/help/articles/user-accounts/#api-tokens&#34;&gt;generate a token&lt;/a&gt;. First, log in to Mode, click on your name in the top left corner, and select “My Account”. Then click on “API Tokens” on the left side. You can generate a token by specifying a name for the token and clikcing “Create token”. The resulting credentials consist of your token (a.k.a. username or access key) and your password (a.k.a. access secret). This token is associated with your Mode user account, not an organization, so you’ll be able to access reports from any organization you have access to.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;export-report-csv-to-dataframe&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Export report CSV to dataframe&lt;/h2&gt;
+&lt;p&gt;The following instructions essentially follow the Python code instructions on the Mode website to &lt;a href=&#34;https://mode.com/developer/api-cookbook/distribution/export-csv/&#34;&gt;export a report to a csv&lt;/a&gt;. This code doesn’t actually download the csv file, however, just imports it into R as a dataframe (so no datafiles on your computer!).&lt;/p&gt;
+&lt;p&gt;The following functions rely on the &lt;code&gt;httr&lt;/code&gt; and &lt;code&gt;jsonlite&lt;/code&gt; packages:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(httr)
+library(jsonlite)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You also need your username and password, preferably assigned to variables in R. For this example, my username is assigned to &lt;code&gt;username&lt;/code&gt; and my password is assigned to &lt;code&gt;password&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with your username and password
+username &amp;lt;- &amp;quot;YOUR_USERNAME&amp;quot;
+password &amp;lt;- &amp;quot;YOUR_PASSWORD&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You also need to find the token of the report you’re interested in. When you go to your report in Mode, the token is everything after “reports/”. So, for example, if you’re interested in Legos (which you should be), you can get the most recent run of the &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34;&gt;Lego set summary&lt;/a&gt; report. The URL is &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34; class=&#34;uri&#34;&gt;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&lt;/a&gt;, so the report token is “eb4fdefe37d8”.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with the report token of interest
+report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, you need the name of your organization on Mode. For this example, we’ll be looking at a community available Mode report, so the organization is “modeanalytics”. You can get this from the URL as well, it will be the part directly before “/reports”:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with the organization of interest
+organization &amp;lt;- &amp;quot;modeanalytics&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;get-the-latest-run-token&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Get the latest run token&lt;/h3&gt;
+&lt;p&gt;The first step is to find the run token of the most recent time the Mode report was run. The following function gets that token, or throws an error if the latest run of the report was not successful:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;get_report_latest_run &amp;lt;- function(report_token, organization, username, password){
+  # Generate the URL for runs of the report you&amp;#39;re interested in
+  url = paste0(&amp;quot;https://modeanalytics.com/api/&amp;quot;, organization, &amp;quot;/reports/&amp;quot;, report_token, &amp;quot;/runs&amp;quot;)
+  r = GET(url, authenticate(username, password, type = &amp;quot;basic&amp;quot;))
+  result = fromJSON(content(r, &amp;quot;text&amp;quot;))
+  # Find the most recent run token
+  most_recent_report_run_token &amp;lt;- result$`_embedded`$report_runs[1,]$token
+  # Find the status of the most recent run
+  status = result$`_embedded`$report_runs[1,]$state
+  if(status == &amp;quot;succeeded&amp;quot;){ # if the most recent report ran,
+    return(most_recent_report_run_token) # return that run token
+  } else{
+    stop(&amp;quot;Report latest run did not succeed.&amp;quot;) # if the most recent run failed, error
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, for our example report, the most recent run token was:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;get_report_latest_run(report_token, organization, username, password)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## No encoding supplied: defaulting to UTF-8.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;079bc1243d11&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;extract-the-data-from-the-most-recent-run&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Extract the data from the most recent run&lt;/h3&gt;
+&lt;p&gt;Now, we can use a second function (which calls &lt;code&gt;get_report_latest_run&lt;/code&gt;) to get the data from the most recent run:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;export_report_to_csv &amp;lt;- function(report_token, organization, username, password) {
+  # Get the latest run token
+  latest_report_run_token &amp;lt;- get_report_latest_run(report_token, organization, username, password)
+  # Generate the URL for the latest run of the report as a csv
+  url &amp;lt;- paste0(&amp;quot;https://modeanalytics.com/api/&amp;quot;, organization, &amp;quot;/reports/&amp;quot;, report_token, &amp;quot;/runs/&amp;quot;, latest_report_run_token, &amp;quot;/results/content.csv&amp;quot;)
+  r &amp;lt;- GET(url, authenticate(username, password, type = &amp;quot;basic&amp;quot;))
+  # Read the data as a csv
+  r_csv &amp;lt;- content(r, type = &amp;quot;text/csv&amp;quot;)
+  return(r_csv)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;To get the data from the most recent run of the &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34;&gt;Lego set summary&lt;/a&gt; report, you want to save a script file containing the above two functions (I call this script &lt;code&gt;mode_api_script.R&lt;/code&gt;. Then, run the following:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(httr)
+library(jsonlite)
+source(&amp;quot;mode_api_script.R&amp;quot;)
+
+# Set username, password, and report token
+username &amp;lt;- &amp;quot;YOUR_USERNAME&amp;quot;
+password &amp;lt;- &amp;quot;YOUR_PASSWORD&amp;quot;
+report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lego_data &amp;lt;- export_report_to_csv(report_token, organization, username, password)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## No encoding supplied: defaulting to UTF-8.
+## No encoding supplied: defaulting to UTF-8.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   year = col_integer(),
+##   white = col_double(),
+##   red = col_double(),
+##   blue = col_double(),
+##   black = col_double(),
+##   light_gray = col_double(),
+##   total = col_double(),
+##   main = col_character()
+## )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::kable(head(lego_data))&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;right&#34;&gt;year&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;white&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;red&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;blue&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;black&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;light_gray&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;total&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;main&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;1950&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;1953&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;12&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;12&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;1954&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;1955&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;21&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;21&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;1956&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;right&#34;&gt;1957&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;45&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;45&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Git Workflow #1: Existing project, GitHub last</title>
       <link>/post/2019-09-18-git-workflow1/</link>
       <pubDate>Tue, 17 Sep 2019 21:13:14 -0500</pubDate>
@@ -896,44 +1079,6 @@ knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &amp;#39;/ana
   ruby = &amp;#39;/usr/local/bin/ruby&amp;#39;
 ))&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Alternatively, you can specify the engine interpreter locally in each code chunk by starting the chunk with &lt;code&gt;{python, engine.path = &#39;/anaconda3/bin/python3.6&lt;/code&gt;}, for example.&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>#HackTheSolarSystem</title>
-      <link>/post/2019-02-14-hackathon/</link>
-      <pubDate>Thu, 14 Feb 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-02-14-hackathon/</guid>
-      <description>
-
-
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:40%&#34; src=&#34;/img/hackthesolarsystem.png&#34; /&gt;
-&lt;/figure&gt;
-&lt;p&gt;Last weekend I had the opportunity to participate in my first ever hackathon: the #HackTheSolarSystem hackathon hosted by the American Museum of Natural History.&lt;/p&gt;
-&lt;div id=&#34;what-is-a-hackathon-anyways&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;What is a hackathon, anyways?&lt;/h2&gt;
-&lt;p&gt;This is a question I got asked countless times this last week as I informed my friends and family that I would be at work &lt;strong&gt;all&lt;/strong&gt; weekend (yes, including Friday night, yes, including Saturday night, no, I will not be able to socialize at all). And, in fairness, this is a question I wouldn’t have had an answer to prior to this job. A hackathon is an event where participants come together to use technology to address a challenge. Usually, the event takes place over a few days, where hackers form teams and collaborate on their projects, before presenting their solutions.&lt;/p&gt;
-&lt;p&gt;When I learned about this concept, I was baffled by the idea that it would be possible to come up with any kind of viable solution to a problem in only 24 hours. Coming from an academic background, I’m used to months of reading papers to get oriented to a problem before I can produce any kind of meaningful code. This event forced us to dive right in, looking at the problem from a computer science standpoint, rather than striving to get the full scientific background on the problem. I was amazed by the ability of all the teams at the event to create meaningful solutions to scientific problems they had not necessarily studied before.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-ammh-hackathon&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The AMMH Hackathon&lt;/h2&gt;
-&lt;p&gt;For the past five years, the American Museum of Natural History has hosted a hackathon. #HackTheSolarSystem is the first and only hackathon I have participated in thus far, so I can’t compare it to other events, but my understanding is that the museum seeks to put on a slightly different type of event than other hackathons: AMNH wants to give technologists and scientists the opportunity to work together to create solutions to real research problems. For #HackTheSolarSystem, museum scientists from the Department of Earth and Planetary Science put forth a series of challenges they face in their research that they thought could be solved through technology. These challenges ranged from tracking dust particles through aerogel to visualizing the Sun (a full list of challenges is available &lt;a href=&#34;https://github.com/amnh/HackTheSolarSystem/wiki/Challenges&#34;&gt;here&lt;/a&gt;). In addition to the scientific challenges, there were also educational challenges for both high school students and educators.&lt;/p&gt;
-&lt;p&gt;On Friday night, the museum “stakeholders”, i.e. the scientists posing the challenges, presented their challenges and led participants on tours of various areas of the museum, like the Hall of Meteorites and the Earth and Planetary Sciences department. Then, from Saturday at 2:00 pm to Sunday at 1:00 pm, us hackers stayed at the museum to develop solutions to our chosen challenges. Most hackers worked on teams formed at the event, although some corporate teams came into the hackathon with a team already formed.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-challenge&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The Challenge&lt;/h2&gt;
-&lt;p&gt;I chose to work on the meteorite mineral mapping challenge: our “stakeholders”, museum scientists Marina Gemma and Sam Alpert, wanted a way to identify mineral composition in images of meteorites. Each meteorite slice had been imaged, resulting in data consisting of pixel intensity for a handful of elements. We also had access to a series of standards with known mineral content so we could compare the pixel intensities in these known minerals with the pixel intensities in the unknown minerals.&lt;/p&gt;
-&lt;p&gt;Our team (pictured below) used four different approaches to address this problem: linear classification via SVM, random forest classification, nearest neighbor classification, and cluster inference. You can check out more details on these solutions in the Readme of our GitHub repository: &lt;a href=&#34;https://github.com/HackTheSolarSystem/MineralMapping&#34; class=&#34;uri&#34;&gt;https://github.com/HackTheSolarSystem/MineralMapping&lt;/a&gt;. (And I will post a more detailed explanation of the clustering solution in a later post, which is the part of the code I focused on!)&lt;/p&gt;
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/hackathon_team.jpg&#34; /&gt;
-&lt;figcaption&gt;
-From left to right: Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy Abbott, Cecina Babich Morrow, Meret Götschel
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;Our solution ended up making us one of the four primary winning teams at the hackathon! We won the “LabCoat Knockout” award for creating a solution with the potential to change the nature of research. We plan to continue working with our museum stakeholders to fine-tune our code so that it can be used in their research in the future. To me, that is the most exciting part of this event - that a group of technologists from diverse backgrounds (none of which knew much about meteorites before this event!) could write code in 24 hours with the potential to solve a scientific problem with a concrete impact on research at the museum.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
