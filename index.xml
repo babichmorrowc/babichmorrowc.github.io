@@ -11,6 +11,78 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Putting Google Fonts in R graphs</title>
+      <link>/post/2019-10-11-google_fonts/</link>
+      <pubDate>Fri, 11 Oct 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-10-11-google_fonts/</guid>
+      <description>
+
+
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/lego_statue.jpg&#34; /&gt;
+&lt;figcaption&gt;
+In keeping with my Lego theme, this statue from Nathan Sawaya’s exhibition at the New York Hall of Science represents some of the frustrations of adding fonts to R.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;I’ve been working on creating a visualization cookbook for R graphics (check out &lt;a href=&#34;https://bbc.github.io/rcookbook/&#34;&gt;this great example&lt;/a&gt; from the BBC to see what I’m eventually going for). As part of this process, I wanted to be able to change the font of my plots to &lt;a href=&#34;https://fonts.google.com/specimen/Source+Sans+Pro&#34;&gt;Source Sans Pro&lt;/a&gt;, which is a Google font.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;sysfonts-package&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;code&gt;sysfonts&lt;/code&gt; package&lt;/h2&gt;
+&lt;p&gt;The first step here was to install and load the &lt;code&gt;sysfonts&lt;/code&gt; package:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(sysfonts)&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;xquartz&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;XQuartz&lt;/h3&gt;
+&lt;p&gt;If you end up getting the following error when loading &lt;code&gt;sysfonts&lt;/code&gt;: &lt;code&gt;Reason: image not found&lt;/code&gt;, you might need to do some additional work. This happened to me initially, and after doing some Googling, I found &lt;a href=&#34;https://github.com/yixuan/showtext/issues/13&#34;&gt;this GitHub issue&lt;/a&gt;. Installing XQuartz was recommended as a fix, particularly for Macs, so I downloaded it from &lt;a href=&#34;https://www.xquartz.org/&#34;&gt;here&lt;/a&gt;. After downloading XQuartz, I uninstalled, reinstalled, and loaded &lt;code&gt;sysfonts&lt;/code&gt; and things went smoothly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;downloading-font-to-your-computer&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Downloading font to your computer&lt;/h2&gt;
+&lt;p&gt;As I learned from this &lt;a href=&#34;https://github.com/kjhealy/sourcesans/blob/150207b18f4fbcc4c954715f269f8b20ce834a54/R/sourcesans.r&#34;&gt;super helpful GitHub repo&lt;/a&gt;, you need to install the font on your system as well as within R.&lt;/p&gt;
+&lt;div id=&#34;mac&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Mac&lt;/h3&gt;
+&lt;p&gt;I went through this process on a Mac, so this is what I ended up doing to install the font. I went to the &lt;a href=&#34;https://fonts.google.com/specimen/Source+Sans+Pro&#34;&gt;Google Fonts page for the font&lt;/a&gt; and clicked on “Select this font”. Then after clicking on “1 Family Selected” at the bottom, I downloaded the font by clicking on the download icon. This downloaded a zip drive into my Downloads folder. To install it as a font, I extracted the zip folder (by opening the zip drive). In a different Finder window, I opened my Applications folder and found Font Book. Then I dragged the zip folder over into Font Book.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pc&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;PC&lt;/h3&gt;
+&lt;p&gt;I modified the above instructions from these instructions on &lt;a href=&#34;https://flourishonline.com.au/download-google-fonts-mac-pc/&#34;&gt;Flourish Online&lt;/a&gt;, which also has PC instructions. If anyone gives these a try and they don’t work, let me know and I’ll try to do some troubleshooting!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;font_add_google&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;code&gt;font_add_google&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Next, I used the &lt;code&gt;font_add_google&lt;/code&gt; function from &lt;code&gt;sysfonts&lt;/code&gt; to download the Source Sans Pro fonts:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;font_add_google(&amp;quot;Source Sans Pro&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you want to install a different Google Font, you can run &lt;code&gt;font_families_google()&lt;/code&gt; to see the list of family names of fonts currently available in Google Fonts:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(font_families_google())&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;ABeeZee&amp;quot;       &amp;quot;Abel&amp;quot;          &amp;quot;Abhaya Libre&amp;quot;  &amp;quot;Abril Fatface&amp;quot;
+## [5] &amp;quot;Aclonica&amp;quot;      &amp;quot;Acme&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;To continue with my Lego theme, I’ll demonstrate using this font on data from the &lt;code&gt;legocolors&lt;/code&gt; package. We can make the following graph of approximate lego brick availability based on the year a brick was released (colored by the brick color!):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(legocolors)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;legocolors&amp;#39; was built under R version 3.5.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;ggplot2&amp;#39; was built under R version 3.5.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(legocolors, aes(x = year_released, y = bl_bp, colour = hex)) +
+  geom_point() +
+  scale_color_manual(values = legocolors$hex) +
+  theme_minimal() +
+  theme(legend.position = &amp;quot;none&amp;quot;, text = element_text(family = &amp;quot;Source Sans Pro&amp;quot;), plot.title = element_text(face = &amp;quot;bold&amp;quot;)) +
+  labs(x = &amp;quot;Year released&amp;quot;, y = &amp;quot;Brick availability&amp;quot;, title = &amp;quot;Lego availability&amp;quot;, subtitle = &amp;quot;All of the text is now in Source Sans Pro!&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: Removed 3 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-11-google_fonts_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;troubleshooting&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Troubleshooting&lt;/h2&gt;
+&lt;p&gt;This process is a little bit finicky, so there are certain errors that crop up frequently. For me, just restarting RStudio and/or my computer (or updating the computer, if necessary) has solved these. The most common errors are &lt;code&gt;No font could be found for family &amp;quot;Source Sans Pro&amp;quot;&lt;/code&gt; and &lt;code&gt;&amp;quot;Error in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : polygon edge not found&amp;quot;&lt;/code&gt;, both of which relate to R not being able to find the font. If the font is indeed installed on your computer (you can check this in Font Book, for a Mac), then restarting things should help R find the font.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Accessing Mode data in R</title>
       <link>/post/2019-09-26-mode_api_instructions/</link>
       <pubDate>Thu, 26 Sep 2019 21:13:14 -0500</pubDate>
@@ -31,7 +103,7 @@ A lego fort that I constructed this summer with the help of a good friend (not p
 &lt;/div&gt;
 &lt;div id=&#34;get-api-access-token&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Get API access token&lt;/h2&gt;
-&lt;p&gt;The first step to accessing Mode via API is to &lt;a href=&#34;https://mode.com/help/articles/user-accounts/#api-tokens&#34;&gt;generate a token&lt;/a&gt;. First, log in to Mode, click on your name in the top left corner, and select “My Account”. Then click on “API Tokens” on the left side. You can generate a token by specifying a name for the token and clikcing “Create token”. The resulting credentials consist of your token (a.k.a. username or access key) and your password (a.k.a. access secret). This token is associated with your Mode user account, not an organization, so you’ll be able to access reports from any organization you have access to.&lt;/p&gt;
+&lt;p&gt;The first step to accessing Mode via API is to &lt;a href=&#34;https://mode.com/help/articles/user-accounts/#api-tokens&#34;&gt;generate a token&lt;/a&gt;. First, log in to Mode, click on your name in the top left corner, and select “My Account”. Then click on “API Tokens” on the left side. You can generate a token by specifying a name for the token and clicking “Create token”. The resulting credentials consist of your token (a.k.a. username or access key) and your password (a.k.a. access secret). This token is associated with your Mode user account, not an organization, so you’ll be able to access reports from any organization you have access to.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;export-report-csv-to-dataframe&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Export report CSV to dataframe&lt;/h2&gt;
@@ -1002,83 +1074,6 @@ print(df_obj2.head())
 &lt;div id=&#34;further-reading&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Further Reading&lt;/h2&gt;
 &lt;p&gt;Jeremy Neiman, one of my team members, wrote an excellent &lt;a href=&#34;https://towardsdatascience.com/machine-learning-meteorites-fcd8f6859ed7&#34;&gt;post&lt;/a&gt; describing the challenge in further detail, so check that out for more information.&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Python in RMarkdown</title>
-      <link>/post/2019-02-20-pythonrmd/</link>
-      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-02-20-pythonrmd/</guid>
-      <description>
-
-
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/reticulate.png&#34; /&gt;
-&lt;figcaption&gt;
-The &lt;code&gt;reticulate&lt;/code&gt; package logo. &lt;/figcatption&gt;
-&lt;/figure&gt;
-&lt;div id=&#34;using-python-in-rmarkdown&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Using Python in RMarkdown&lt;/h2&gt;
-&lt;p&gt;In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.&lt;/p&gt;
-&lt;p&gt;When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt; &lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;From running Python in Atom, I knew I had the &lt;code&gt;sklearn.cluster&lt;/code&gt; module installed, so the problem must be in the connection between R and Python.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;reticulate&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;&lt;code&gt;reticulate&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;The &lt;code&gt;reticulate&lt;/code&gt; package in R (website &lt;a href=&#34;https://rstudio.github.io/reticulate/index.html&#34;&gt;here&lt;/a&gt; allows R to interact with Python. I installed the package from RStudio.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# install.packages(&amp;quot;reticulate&amp;quot;)
-library(reticulate)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;changing-python-versions&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Changing Python versions&lt;/h2&gt;
-&lt;p&gt;Installing &lt;code&gt;reticulate&lt;/code&gt; still didn’t allow me to knit the RMarkdown with a Python code chunk, however. I followed the instructions in &lt;a href=&#34;https://rstudio-pubs-static.s3.amazonaws.com/397064_bd288708515c4b71a6e78dfe91b8bb99.html&#34;&gt;this post&lt;/a&gt; by Pablo Franco to check the Python version that &lt;code&gt;reticulate&lt;/code&gt; was using:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;py_discover_config()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I ended up with the following output:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;python:         /usr/bin/python
-libpython:      /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config/libpython2.7.dylib
-pythonhome:     /System/Library/Frameworks/Python.framework/Versions/2.7:/System/Library/Frameworks/Python.framework/Versions/2.7
-version:        2.7.10 (default, Aug 17 2018, 19:45:58)  [GCC 4.2.1 Compatible Apple LLVM 10.0.0 (clang-1000.0.42)]
-numpy:          /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy
-numpy_version:  1.8.0&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I wanted to be running Python version 3.6, which was the version I had installed using Anaconda, so I needed to change the path.&lt;/p&gt;
-&lt;div id=&#34;set-up-chunk&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Set-up chunk&lt;/h3&gt;
-&lt;p&gt;I discovered that you can set the path to a different installation of Python by modifying the setup chunk at the start of the RMarkdown. According to the &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown/language-engines.html&#34;&gt;&lt;code&gt;bookdown&lt;/code&gt; website&lt;/a&gt;, the default used is Python 2.&lt;/p&gt;
-&lt;p&gt;My default version of this set-up chunk looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can set the chunk option &lt;code&gt;engine.path&lt;/code&gt; to specify the path to the engine interpreter and change it from the default Python 2.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;finding-python-path&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Finding Python path&lt;/h3&gt;
-&lt;p&gt;I now needed to find the actual path to Python that I wanted to use. I did this by opening up Python separately from RStudio (I used Atom for this) and running the following (I got the code for this from &lt;a href=&#34;https://www.dummies.com/programming/python/how-to-find-path-information-in-python/&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import sys
-for p in sys.path:
-    print(p)
-## /Applications/anaconda3/bin
-## /Applications/anaconda3/lib/python37.zip
-## /Applications/anaconda3/lib/python3.7
-## /Applications/anaconda3/lib/python3.7/lib-dynload
-## /Applications/anaconda3/lib/python3.7/site-packages
-## /Applications/anaconda3/lib/python3.7/site-packages/aeosa
-## /Library/Frameworks/R.framework/Versions/3.5/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;From this information, I could tell I wanted to use the path &lt;code&gt;/anaconda3/lib/python3.6&lt;/code&gt;, rather than &lt;code&gt;/usr/bin/python&lt;/code&gt;, which is what RMarkdown had originally been using. I modified by set-up chunk to look like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &amp;#39;/anaconda3/bin/python3.6&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;other-options&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Other options&lt;/h2&gt;
-&lt;p&gt;This solution enabled me to knit RMarkdowns with Python code chunks! It changes the engine interpreter globally, which you could do for multiple engines simultaneously, like Python and Ruby, for example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;knitr::opts_chunk$set(engine.path = list(
-  python = &amp;#39;/anaconda3/bin/python3.6&amp;#39;,
-  ruby = &amp;#39;/usr/local/bin/ruby&amp;#39;
-))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Alternatively, you can specify the engine interpreter locally in each code chunk by starting the chunk with &lt;code&gt;{python, engine.path = &#39;/anaconda3/bin/python3.6&lt;/code&gt;}, for example.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

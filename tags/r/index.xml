@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 26 Sep 2019 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2019 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Putting Google Fonts in R graphs</title>
+      <link>/post/2019-10-11-google_fonts/</link>
+      <pubDate>Fri, 11 Oct 2019 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2019-10-11-google_fonts/</guid>
+      <description>In keeping with my Lego theme, this statue from Nathan Sawaya’s exhibition at the New York Hall of Science represents some of the frustrations of adding fonts to R.   Inspiration for this post I’ve been working on creating a visualization cookbook for R graphics (check out this great example from the BBC to see what I’m eventually going for). As part of this process, I wanted to be able to change the font of my plots to Source Sans Pro, which is a Google font.</description>
+    </item>
     
     <item>
       <title>Accessing Mode data in R</title>
