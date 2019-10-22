@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brian Maitner | Cecina Babich Morrow</title>
+    <link>/authors/brian-maitner/</link>
+      <atom:link href="/authors/brian-maitner/index.xml" rel="self" type="application/rss+xml" />
+    <description>Brian Maitner</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>`2019`</copyright><lastBuildDate>Wed, 09 Aug 2017 00:00:00 -0400</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Brian Maitner</title>
+      <link>/authors/brian-maitner/</link>
+    </image>
+    
+    <item>
+      <title>New approaches for delineating n‐dimensional hypervolumes</title>
+      <link>/publication/hypervolumes/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <guid>/publication/hypervolumes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Poster: Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
+      <link>/talk/ibs_2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      <guid>/talk/ibs_2017/</guid>
+      <description>&lt;p&gt;This poster was made using version 1.4.6 of the &lt;code&gt;hypervolume&lt;/code&gt; R package. These results should not be considered representative of the current algorithms in the package - to see current algorithm performance, refer to &lt;a href=&#34;https://babichmorrowc.github.io/publication/hypervolumes/&#34; target=&#34;_blank&#34;&gt;Blonder &lt;em&gt;et al.&lt;/em&gt; 2017&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

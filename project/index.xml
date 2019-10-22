@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Cecina Babich Morrow</title>
+    <title>Projects | Cecina Babich Morrow</title>
     <link>/project/</link>
-    <description>Recent content in Projects on Cecina Babich Morrow</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 -0400</lastBuildDate>
-    
-	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Thu, 27 Sep 2018 00:00:00 -0400</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Projects</title>
+      <link>/project/</link>
+    </image>
     
     <item>
       <title>Distribution modeling of Bradypus</title>
       <link>/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
-      
       <guid>/project/bradypus/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>Hypervolume package testing</title>
       <link>/project/hypervolumes/</link>
       <pubDate>Wed, 27 Jul 2016 00:00:00 -0400</pubDate>
-      
       <guid>/project/hypervolumes/</guid>
       <description></description>
     </item>
@@ -34,7 +32,6 @@
       <title>Tetrapod life history traits</title>
       <link>/project/life_history/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
-      
       <guid>/project/life_history/</guid>
       <description></description>
     </item>

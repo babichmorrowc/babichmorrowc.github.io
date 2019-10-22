@@ -1,1080 +1,269 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cecina Babich Morrow on Cecina Babich Morrow</title>
+    <title>Cecina Babich Morrow</title>
     <link>/</link>
-    <description>Recent content in Cecina Babich Morrow on Cecina Babich Morrow</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <description>Cecina Babich Morrow</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Tue, 22 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Cecina Babich Morrow</title>
+      <link>/</link>
+    </image>
     
     <item>
-      <title>Putting Google Fonts in R graphs</title>
-      <link>/post/2019-10-11-google_fonts/</link>
-      <pubDate>Fri, 11 Oct 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-10-11-google_fonts/</guid>
-      <description>
-
-
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/lego_statue.jpg&#34; /&gt;
-&lt;figcaption&gt;
-In keeping with my Lego theme, this statue from Nathan Sawaya’s exhibition at the New York Hall of Science represents some of the frustrations of adding fonts to R.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
-&lt;p&gt;I’ve been working on creating a visualization cookbook for R graphics (check out &lt;a href=&#34;https://bbc.github.io/rcookbook/&#34;&gt;this great example&lt;/a&gt; from the BBC to see what I’m eventually going for). As part of this process, I wanted to be able to change the font of my plots to &lt;a href=&#34;https://fonts.google.com/specimen/Source+Sans+Pro&#34;&gt;Source Sans Pro&lt;/a&gt;, which is a Google font.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;sysfonts-package&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;&lt;code&gt;sysfonts&lt;/code&gt; package&lt;/h2&gt;
-&lt;p&gt;The first step here was to install and load the &lt;code&gt;sysfonts&lt;/code&gt; package:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(sysfonts)&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;xquartz&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;XQuartz&lt;/h3&gt;
-&lt;p&gt;If you end up getting the following error when loading &lt;code&gt;sysfonts&lt;/code&gt;: &lt;code&gt;Reason: image not found&lt;/code&gt;, you might need to do some additional work. This happened to me initially, and after doing some Googling, I found &lt;a href=&#34;https://github.com/yixuan/showtext/issues/13&#34;&gt;this GitHub issue&lt;/a&gt;. Installing XQuartz was recommended as a fix, particularly for Macs, so I downloaded it from &lt;a href=&#34;https://www.xquartz.org/&#34;&gt;here&lt;/a&gt;. After downloading XQuartz, I uninstalled, reinstalled, and loaded &lt;code&gt;sysfonts&lt;/code&gt; and things went smoothly.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;downloading-font-to-your-computer&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Downloading font to your computer&lt;/h2&gt;
-&lt;p&gt;As I learned from this &lt;a href=&#34;https://github.com/kjhealy/sourcesans/blob/150207b18f4fbcc4c954715f269f8b20ce834a54/R/sourcesans.r&#34;&gt;super helpful GitHub repo&lt;/a&gt;, you need to install the font on your system as well as within R.&lt;/p&gt;
-&lt;div id=&#34;mac&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Mac&lt;/h3&gt;
-&lt;p&gt;I went through this process on a Mac, so this is what I ended up doing to install the font. I went to the &lt;a href=&#34;https://fonts.google.com/specimen/Source+Sans+Pro&#34;&gt;Google Fonts page for the font&lt;/a&gt; and clicked on “Select this font”. Then after clicking on “1 Family Selected” at the bottom, I downloaded the font by clicking on the download icon. This downloaded a zip drive into my Downloads folder. To install it as a font, I extracted the zip folder (by opening the zip drive). In a different Finder window, I opened my Applications folder and found Font Book. Then I dragged the zip folder over into Font Book.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;pc&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;PC&lt;/h3&gt;
-&lt;p&gt;I modified the above instructions from these instructions on &lt;a href=&#34;https://flourishonline.com.au/download-google-fonts-mac-pc/&#34;&gt;Flourish Online&lt;/a&gt;, which also has PC instructions. If anyone gives these a try and they don’t work, let me know and I’ll try to do some troubleshooting!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;font_add_google&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;&lt;code&gt;font_add_google&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;Next, I used the &lt;code&gt;font_add_google&lt;/code&gt; function from &lt;code&gt;sysfonts&lt;/code&gt; to download the Source Sans Pro fonts:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;font_add_google(&amp;quot;Source Sans Pro&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If you want to install a different Google Font, you can run &lt;code&gt;font_families_google()&lt;/code&gt; to see the list of family names of fonts currently available in Google Fonts:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(font_families_google())&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;ABeeZee&amp;quot;       &amp;quot;Abel&amp;quot;          &amp;quot;Abhaya Libre&amp;quot;  &amp;quot;Abril Fatface&amp;quot;
-## [5] &amp;quot;Aclonica&amp;quot;      &amp;quot;Acme&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Example&lt;/h2&gt;
-&lt;p&gt;To continue with my Lego theme, I’ll demonstrate using this font on data from the &lt;code&gt;legocolors&lt;/code&gt; package. We can make the following graph of approximate lego brick availability based on the year a brick was released (colored by the brick color!):&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(legocolors)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;legocolors&amp;#39; was built under R version 3.5.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;ggplot2&amp;#39; was built under R version 3.5.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(legocolors, aes(x = year_released, y = bl_bp, colour = hex)) +
-  geom_point() +
-  scale_color_manual(values = legocolors$hex) +
-  theme_minimal() +
-  theme(legend.position = &amp;quot;none&amp;quot;, text = element_text(family = &amp;quot;Source Sans Pro&amp;quot;), plot.title = element_text(face = &amp;quot;bold&amp;quot;)) +
-  labs(x = &amp;quot;Year released&amp;quot;, y = &amp;quot;Brick availability&amp;quot;, title = &amp;quot;Lego availability&amp;quot;, subtitle = &amp;quot;All of the text is now in Source Sans Pro!&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: Removed 3 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-10-11-google_fonts_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;troubleshooting&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Troubleshooting&lt;/h2&gt;
-&lt;p&gt;This process is a little bit finicky, so there are certain errors that crop up frequently. For me, just restarting RStudio and/or my computer (or updating the computer, if necessary) has solved these. The most common errors are &lt;code&gt;No font could be found for family &amp;quot;Source Sans Pro&amp;quot;&lt;/code&gt; and &lt;code&gt;&amp;quot;Error in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : polygon edge not found&amp;quot;&lt;/code&gt;, both of which relate to R not being able to find the font. If the font is indeed installed on your computer (you can check this in Font Book, for a Mac), then restarting things should help R find the font.&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Accessing Mode data in R</title>
-      <link>/post/2019-09-26-mode_api_instructions/</link>
-      <pubDate>Thu, 26 Sep 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-09-26-mode_api_instructions/</guid>
-      <description>
-
-
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/legos.jpg&#34; /&gt;
-&lt;figcaption&gt;
-A lego fort that I constructed this summer with the help of a good friend (not particularly relevant to the post, except that I used a lego dataset for my example and legos are more photogenic than Mode databases).
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
-&lt;p&gt;In the past, I’ve been used to a pretty straightforward R workflow: download my data as a csv from somewhere, save it on my computer, and go to work. Now that I work in healthcare, downloading data and saving it on my computer is no longer such a good idea (since that would be illegal) so I’ve needed other ways to get the data I need into R. My company uses the data analysis platform &lt;a href=&#34;https://mode.com/&#34;&gt;Mode Analytics&lt;/a&gt; to pull data from our database using SQL. I wanted a way to get data directly from Mode into R without needing to download the results of a report as a CSV, move them onto Google Drive, and then access them in R.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;get-api-access-token&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Get API access token&lt;/h2&gt;
-&lt;p&gt;The first step to accessing Mode via API is to &lt;a href=&#34;https://mode.com/help/articles/user-accounts/#api-tokens&#34;&gt;generate a token&lt;/a&gt;. First, log in to Mode, click on your name in the top left corner, and select “My Account”. Then click on “API Tokens” on the left side. You can generate a token by specifying a name for the token and clicking “Create token”. The resulting credentials consist of your token (a.k.a. username or access key) and your password (a.k.a. access secret). This token is associated with your Mode user account, not an organization, so you’ll be able to access reports from any organization you have access to.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;export-report-csv-to-dataframe&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Export report CSV to dataframe&lt;/h2&gt;
-&lt;p&gt;The following instructions essentially follow the Python code instructions on the Mode website to &lt;a href=&#34;https://mode.com/developer/api-cookbook/distribution/export-csv/&#34;&gt;export a report to a csv&lt;/a&gt;. This code doesn’t actually download the csv file, however, just imports it into R as a dataframe (so no datafiles on your computer!).&lt;/p&gt;
-&lt;p&gt;The following functions rely on the &lt;code&gt;httr&lt;/code&gt; and &lt;code&gt;jsonlite&lt;/code&gt; packages:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(httr)
-library(jsonlite)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You also need your username and password, preferably assigned to variables in R. For this example, my username is assigned to &lt;code&gt;username&lt;/code&gt; and my password is assigned to &lt;code&gt;password&lt;/code&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with your username and password
-username &amp;lt;- &amp;quot;YOUR_USERNAME&amp;quot;
-password &amp;lt;- &amp;quot;YOUR_PASSWORD&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You also need to find the token of the report you’re interested in. When you go to your report in Mode, the token is everything after “reports/”. So, for example, if you’re interested in Legos (which you should be), you can get the most recent run of the &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34;&gt;Lego set summary&lt;/a&gt; report. The URL is &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34; class=&#34;uri&#34;&gt;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&lt;/a&gt;, so the report token is “eb4fdefe37d8”.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with the report token of interest
-report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Finally, you need the name of your organization on Mode. For this example, we’ll be looking at a community available Mode report, so the organization is “modeanalytics”. You can get this from the URL as well, it will be the part directly before “/reports”:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with the organization of interest
-organization &amp;lt;- &amp;quot;modeanalytics&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;get-the-latest-run-token&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Get the latest run token&lt;/h3&gt;
-&lt;p&gt;The first step is to find the run token of the most recent time the Mode report was run. The following function gets that token, or throws an error if the latest run of the report was not successful:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;get_report_latest_run &amp;lt;- function(report_token, organization, username, password){
-  # Generate the URL for runs of the report you&amp;#39;re interested in
-  url = paste0(&amp;quot;https://modeanalytics.com/api/&amp;quot;, organization, &amp;quot;/reports/&amp;quot;, report_token, &amp;quot;/runs&amp;quot;)
-  r = GET(url, authenticate(username, password, type = &amp;quot;basic&amp;quot;))
-  result = fromJSON(content(r, &amp;quot;text&amp;quot;))
-  # Find the most recent run token
-  most_recent_report_run_token &amp;lt;- result$`_embedded`$report_runs[1,]$token
-  # Find the status of the most recent run
-  status = result$`_embedded`$report_runs[1,]$state
-  if(status == &amp;quot;succeeded&amp;quot;){ # if the most recent report ran,
-    return(most_recent_report_run_token) # return that run token
-  } else{
-    stop(&amp;quot;Report latest run did not succeed.&amp;quot;) # if the most recent run failed, error
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;So, for our example report, the most recent run token was:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;get_report_latest_run(report_token, organization, username, password)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## No encoding supplied: defaulting to UTF-8.&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;079bc1243d11&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;extract-the-data-from-the-most-recent-run&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Extract the data from the most recent run&lt;/h3&gt;
-&lt;p&gt;Now, we can use a second function (which calls &lt;code&gt;get_report_latest_run&lt;/code&gt;) to get the data from the most recent run:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;export_report_to_csv &amp;lt;- function(report_token, organization, username, password) {
-  # Get the latest run token
-  latest_report_run_token &amp;lt;- get_report_latest_run(report_token, organization, username, password)
-  # Generate the URL for the latest run of the report as a csv
-  url &amp;lt;- paste0(&amp;quot;https://modeanalytics.com/api/&amp;quot;, organization, &amp;quot;/reports/&amp;quot;, report_token, &amp;quot;/runs/&amp;quot;, latest_report_run_token, &amp;quot;/results/content.csv&amp;quot;)
-  r &amp;lt;- GET(url, authenticate(username, password, type = &amp;quot;basic&amp;quot;))
-  # Read the data as a csv
-  r_csv &amp;lt;- content(r, type = &amp;quot;text/csv&amp;quot;)
-  return(r_csv)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Example&lt;/h2&gt;
-&lt;p&gt;To get the data from the most recent run of the &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34;&gt;Lego set summary&lt;/a&gt; report, you want to save a script file containing the above two functions (I call this script &lt;code&gt;mode_api_script.R&lt;/code&gt;. Then, run the following:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(httr)
-library(jsonlite)
-source(&amp;quot;mode_api_script.R&amp;quot;)
-
-# Set username, password, and report token
-username &amp;lt;- &amp;quot;YOUR_USERNAME&amp;quot;
-password &amp;lt;- &amp;quot;YOUR_PASSWORD&amp;quot;
-report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lego_data &amp;lt;- export_report_to_csv(report_token, organization, username, password)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## No encoding supplied: defaulting to UTF-8.
-## No encoding supplied: defaulting to UTF-8.&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
-## cols(
-##   year = col_integer(),
-##   white = col_double(),
-##   red = col_double(),
-##   blue = col_double(),
-##   black = col_double(),
-##   light_gray = col_double(),
-##   total = col_double(),
-##   main = col_character()
-## )&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::kable(head(lego_data))&lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th align=&#34;right&#34;&gt;year&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;white&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;red&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;blue&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;black&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;light_gray&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;total&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;main&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;1950&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;1953&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;12&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;12&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;1954&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;1955&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;21&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;21&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;1956&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;right&#34;&gt;1957&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;45&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;45&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;White was the main color&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Git Workflow #1: Existing project, GitHub last</title>
-      <link>/post/2019-09-18-git-workflow1/</link>
-      <pubDate>Tue, 17 Sep 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-09-18-git-workflow1/</guid>
-      <description>
-
-
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/xkcd_git.png&#34; /&gt;
-&lt;figcaption&gt;
-From &lt;a href=&#34;https://xkcd.com/1597/&#34;&gt;xkcd&lt;/a&gt;.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
-&lt;p&gt;Over the coming months, I plan on sharing a series of Git workflow tutorials. Getting a Git project set up can be a pretty simple process, but depending on the order in which you do things, set-up can get complicated. This first tutorial addresses one of those fairly complicated situations.&lt;/p&gt;
-&lt;p&gt;The schema for these tutorials is loosely based on the incredible Git + R bible by Jenny Bryan, &lt;a href=&#34;https://happygitwithr.com/&#34;&gt;Happy Git and GitHub for the useR&lt;/a&gt;. The only difference is that I will be showing the workflow for setting up the project using the command line, rather than RStudio.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;existing-project-github-last&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Existing project, GitHub last&lt;/h2&gt;
-&lt;p&gt;This first tutorial addresses the following situation: you have a folder for your project on your computer already. You would like this folder to be associated with a GitHub repository, but you haven’t created this repository yet, or you’ve created the GitHub repository and haven’t connected it with your local folder [^1].&lt;/p&gt;
-&lt;p&gt;[^1] Throughout this tutorial, “local” refers to the copy of the repository on your computer. “Remote” refers to the copy on GitHub.&lt;/p&gt;
-&lt;div id=&#34;make-a-git-repo&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Make a Git repo&lt;/h3&gt;
-&lt;p&gt;The first step in this process is to make your local project into a Git repository. Start by using the command-line to navigate to the folder for your project (using &lt;code&gt;cd&lt;/code&gt;). Once you are in the proper folder, run:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This command either creates a new Git repository, or, in our case, converts an existing project into a Git repository. If you want to read more about &lt;code&gt;git init&lt;/code&gt;, particularly the difference between &lt;code&gt;git init&lt;/code&gt; and &lt;code&gt;git clone&lt;/code&gt;, Atlassian has a useful &lt;a href=&#34;https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init&#34;&gt;article&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Now, since you’ve made edits / added files into your project, you want to add and commit those changes using the following commands:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git add -A
-git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can make the commit message whatever you want. Note, &lt;code&gt;git add -A&lt;/code&gt; adds all files in your repository. If you only want to add certain files, you can add them by name. For example, if you only want to add the file &lt;code&gt;test.txt&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git add test.txt
-git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;make-a-github-repo&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Make a GitHub repo&lt;/h3&gt;
-&lt;p&gt;Next, we need to create a GitHub repository for our project. Depending on your workflow, you may have already created this repository. If not, log in to &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt;. Click the green “New repository” button. Ideally, you want the name of your new repository to match the name of the folder on your computer (but if not, it’s not a big deal). You don’t really want to initialize the repository with a README, but if you do, you can work around this later.&lt;/p&gt;
-&lt;p&gt;Once the repository has been set up, you can copy the HTTPS URL to your clipboard using the green “Clone or Download” button.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;connect-the-github-repo-to-your-project&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Connect the GitHub repo to your project&lt;/h3&gt;
-&lt;p&gt;Now that you have a GitHub repository and you have a Git repository on your computer, you want to connect the two. To do this, run the following in the shell, using the URL that you just copied from GitHub:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git remote add origin &amp;lt;YOUR URL HERE&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Note, you don’t need the &lt;code&gt;&amp;lt;&lt;/code&gt; and &lt;code&gt;&amp;gt;&lt;/code&gt; on either side of the URL, just paste the URL as is.&lt;/p&gt;
-&lt;p&gt;You now need to tell your computer what the upstream branch should be, i.e. what branch on GitHub to pull updates from.&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git branch --set-upstream-to=origin/master master&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;reconcile-the-remote-and-local-repositories&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Reconcile the remote and local repositories&lt;/h3&gt;
-&lt;p&gt;Now, assuming that you have edits both on your computer and on the GitHub repository, you need to be able to reconcile these changes so that the two are the same. This is assuming that you have files added in the folder on your computer and also something like a README or .gitignore on GitHub. To fix this problem, you first need to pull the changes from the GitHub repository onto your computer:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git pull --allow-unrelated-histories&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;--allow-unrelated-histories&lt;/code&gt; portion of the command allows you to merge these two repositories (the local and the remote) even though they don’t have a common ancestor (you created them independently and made changes to both independently).&lt;/p&gt;
-&lt;p&gt;Now, you can push the changes from your local repository up to GitHub:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git push&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Goldwater Highlight</title>
-      <link>/post/goldwater-highlight/</link>
-      <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/goldwater-highlight/</guid>
-      <description>&lt;figure&gt;
-  &lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/goldwater_banner.png&#34; /&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;This is just a quick post to provide a &lt;a href=&#34;https://twitter.com/GoldwaterSC/status/1163980565978259456&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; to the Goldwater Scholar Social Media Highlight that Nina Singh wrote about me. You can find the pdf to the article &lt;a href=&#34;/goldwater_highlight.pdf&#34;&gt;here&lt;/a&gt;. Huge thanks to the Goldwater social media team for including me in this!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Talk: Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/ibs_2019/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/ibs_2019/</guid>
+      <title>Posts</title>
+      <link>/post/</link>
+      <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Poster: Improving species range estimates for an arboreal species group with a parapatric distribution</title>
-      <link>/talk/mammalogy_2019/</link>
-      <pubDate>Sat, 29 Jun 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/mammalogy_2019/</guid>
+      <title>Publications</title>
+      <link>/publication/</link>
+      <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Talk: Using SVMs to delineate parapatric ranges: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/helenfellow_june2019/</link>
-      <pubDate>Thu, 13 Jun 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/helenfellow_june2019/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vT29X9rGoq1GeCwrXMPJEhmwy7I_nf8fFzpIMdWyLQfROI-zVqicELakhgOgRWvDgicV3s_c6ii4njc/embed?start=false&amp;loop=false&amp;delayms=3000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+      <title>Talks and Posters</title>
+      <link>/talk/</link>
+      <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/talk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Overview</title>
+      <link>/tutorial/</link>
+      <pubDate>Mon, 21 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distribution modeling of Bradypus</title>
+      <link>/project/bradypus/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/project/bradypus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 -0400</pubDate>
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Copying R libraries to a USB</title>
-      <link>/post/2019-06-07-usb/</link>
-      <pubDate>Fri, 07 Jun 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-06-07-usb/</guid>
+      <title>Hypervolume package testing</title>
+      <link>/project/hypervolumes/</link>
+      <pubDate>Wed, 27 Jul 2016 00:00:00 -0400</pubDate>
+      <guid>/project/hypervolumes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      <guid>/about/</guid>
+      <description>&lt;p&gt;This is a &amp;ldquo;hello world&amp;rdquo; example website for the &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;blogdown&lt;/strong&gt;&lt;/a&gt; package. The theme was forked from &lt;a href=&#34;https://github.com/jrutheiser/hugo-lithium-theme&#34; target=&#34;_blank&#34;&gt;@jrutheiser/hugo-lithium-theme&lt;/a&gt; and modified by &lt;a href=&#34;https://github.com/yihui/hugo-lithium&#34; target=&#34;_blank&#34;&gt;Yihui Xie&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tetrapod life history traits</title>
+      <link>/project/life_history/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      <guid>/project/life_history/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>/slides/example-slides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/slides/example-slides/</guid>
       <description>
 
+&lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/usb_meme.jpg&#34; /&gt;
-&lt;figcaption&gt;
-From &lt;a href=&#34;https://www.facebook.com/groups/WildGreenMemesForEcologicalFiends/&#34;&gt;Wild Green Memes for Ecological Fiends&lt;/a&gt;.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
-&lt;p&gt;A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;loading-r-onto-a-usb&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Loading R onto a USB&lt;/h2&gt;
-&lt;p&gt;The first step was to copy my installation of R onto the USB. To do this, I just copied R from my Applications folder onto the folder. We are not entirely sure if this will work yet to transfer R to someone else’s computer (if someone knows the answer, let me know!), but we are going to test it out shortly.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;loading-r-packages-onto-a-usb&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Loading R packages onto a USB&lt;/h2&gt;
-&lt;p&gt;The next step was to transfer all of my R packages onto the USB. To do this, I first needed to figure out where the packages were saved on my computer. You can run the following in R to find where your packages are saved:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;.libPaths()
-## [1] &amp;quot;/Library/Frameworks/R.framework/Versions/3.5/Resources/library&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, I needed to figure out how to navigate to the USB in Terminal. According to this &lt;a href=&#34;https://apple.stackexchange.com/questions/60231/using-terminal-how-can-i-find-which-directory-is-my-usb-drive-mounted-in&#34;&gt;StackOverflow answer&lt;/a&gt;, all drives are mounted in &lt;code&gt;/Volumes&lt;/code&gt;, so I ran the following in Terminal:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;cd /Volumes
-ls&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;From there, I was able to see &lt;code&gt;USB DISK&lt;/code&gt; as one of the folders in &lt;code&gt;/Volumes&lt;/code&gt;. In order to copy all of the packages from my computer onto the USB, I used &lt;code&gt;cp&lt;/code&gt; to move everything from the folder found in &lt;code&gt;.libPaths()&lt;/code&gt; onto the USB:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# replace the first file path with what you get from .libPaths()
-cp -R /Library/Frameworks/R.framework/Versions/3.5/Resources/library/ /Volumes/USB\ DISK/R_packages/&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Setting resolution and aspect ratios in R</title>
-      <link>/post/2019-05-23-highres-figures/</link>
-      <pubDate>Thu, 23 May 2019 21:13:14 -0500</pubDate>
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
+&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
+&lt;li&gt;Supports speaker notes&lt;/li&gt;
+&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Code block:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
+if porridge == &amp;quot;blueberry&amp;quot;:
+    print(&amp;quot;Eating...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+
+&lt;p&gt;Block math:&lt;/p&gt;
+
+&lt;p&gt;$$
+f\left( x \right) = \;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
+   One
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   &lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   Three
+&lt;/span&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/aside&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+
+&lt;section data-noprocess data-shortcode-slide
+  
       
-      <guid>/post/2019-05-23-highres-figures/</guid>
-      <description>
+      data-background-image=&#34;/img/boards.jpg&#34;
+  &gt;
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/resolution_comic.jpg&#34; /&gt;
-&lt;figcaption&gt;
-Bizarro.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
-&lt;p&gt;I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;solution&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Solution&lt;/h2&gt;
-&lt;p&gt;In order to save your figure with a certain size and resolution, you just need to include your code for plotting between the two lines below:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# To save a .png file:
-png(&amp;quot;your_image.png&amp;quot;, units = &amp;quot;in&amp;quot;, width = 5, height = 4, res = 300)
-# your plotting code here
-dev.off()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can also save .bmp, .jpeg, and .tiff files in the same way with the &lt;code&gt;bmp&lt;/code&gt;, &lt;code&gt;jpeg&lt;/code&gt; and &lt;code&gt;tiff&lt;/code&gt; functions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Example&lt;/h2&gt;
-&lt;p&gt;To see this in practice, we can plot some data from the iris dataset the “regular” way:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pairs(iris[,1:4], col = iris$Species)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-05-23-highres-figures_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Things look pretty nice in the plotting window, but when you save that figure from RStudio, this is the result:&lt;/p&gt;
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/lowres.png&#34; /&gt;
-&lt;/figure&gt;
-&lt;p&gt;To get rid of that graininess, we can instead save the figure in the following way:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;png(&amp;quot;highres.png&amp;quot;, units = &amp;quot;in&amp;quot;, width = 5, height = 4, res = 300)
-pairs(iris[,1:4], col = iris$Species)
-dev.off()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The resulting figure is much clearer and ready to be inserted in presentations or publications!&lt;/p&gt;
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/highres.png&#34; /&gt;
-&lt;/figure&gt;
-&lt;p&gt;You can also change the aspect ratio by modifying the &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; arguments. You can leave the units in inches or set it to pixels (&lt;code&gt;&amp;quot;px&amp;quot;&lt;/code&gt;), centimeters (&lt;code&gt;&amp;quot;cm&amp;quot;&lt;/code&gt;), or millimeters (&lt;code&gt;&amp;quot;mm&amp;quot;&lt;/code&gt;).&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Thresholding species distribution models</title>
-      <link>/post/2019-04-12-sdm-threshold/</link>
-      <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-04-12-sdm-threshold/</guid>
-      <description>
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
 
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/thresholds.png&#34; /&gt;
-&lt;figcaption&gt;
-From left to right: unmodified species distribution model, minimum training presence threshold, and 10th percentile threshold.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
-&lt;p&gt;Conservation is often the main motivation behind studying where a species lives – having a model of a species’ range can help scientists assess whether it is at risk of extinction, designate protected regions to preserve its habitat, and study potential impacts of human activity. When we create species distribution models using common methods like Maxent, the result is a map of predicted habitat suitability or probability of species presence, such as the one below. In conservation management, however, it is often more useful to present range models in the form of species presence/absence. We can convert continuous predictions of habitat suitability into binary predictions of whether a species lives in a certain region or not using thresholds: i.e. designating all regions above a certain suitability level as within the species range and all areas below that suitability level as outside of it.&lt;/p&gt;
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/threshold_ex.png&#34; /&gt;
-&lt;figcaption&gt;
-Left: species distribution model with continuous habitat suitability values. Right: binary presence/absence model used by applying a threshold. (Figure from &lt;a href=&#34;https://rspatial.org/sdm/6_sdm_methods.html#mahalanobis-distance&#34;&gt;Spatial Data Science with R&lt;/a&gt;)
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;I recently needed to threshold some species distribution models to convert them into these binary maps and had difficulty finding a built-in way to do this in R. The &lt;code&gt;dismo&lt;/code&gt; package for species distribution modeling has a function &lt;code&gt;threshold&lt;/code&gt; to find what value to use as the “cut-off”, but I needed a function to apply a given cut-off value to model and output a raster with binary values for presence and absence.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;thresholding-function&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Thresholding function&lt;/h2&gt;
-&lt;p&gt;I wrote an R function to take a species distribution model and threshold it by a given threshold - either minimum training presence (MTP) or 10th percentile training present (P10).&lt;/p&gt;
-&lt;div id=&#34;minimum-training-presence&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Minimum training presence&lt;/h3&gt;
-&lt;p&gt;This threshold finds the lowest predicted suitability value for an occurrence point. Essentially, it assumes that the least suitable habitat at which the species is known to occur is the minimum suitability value for the species. The MTP threshold ensures that all occurrence points fall within the area of the binary model.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;th-percentile-training-presence&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;10th percentile training presence&lt;/h3&gt;
-&lt;p&gt;The P10, on the other hand, is a threshold which omits all regions with habitat suitability lower than the suitability values for the lowest 10% of occurrence records. It assumes that the 10% of occurrence records in the least suitable habitat aren’t occurring in regions that are representative of the species overall habitat, and thus should be omitted. This threshold omits a greater region than the MTP.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-function&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;The function&lt;/h3&gt;
-&lt;p&gt;The following is the function I wrote to apply these two thresholds to an SDM. The function’s arguments are the SDM, the occurrence points of the species in the form of longitude - latitude pairs, the threshold type, and whether the user would like the output to be a binary prediction (0s for predicted absence and 1s for predicted presence), or a thresholded continuous SDM (regions with suitability below the threshold set to 0).&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(raster)
-## Warning: package &amp;#39;raster&amp;#39; was built under R version 3.5.2
-## Loading required package: sp
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/boards.jpg&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
 
-sdm_threshold &amp;lt;- function(sdm, occs, type = &amp;quot;mtp&amp;quot;, binary = FALSE){
-  occPredVals &amp;lt;- raster::extract(sdm, occs)
-  if(type == &amp;quot;mtp&amp;quot;){
-    thresh &amp;lt;- min(na.omit(occPredVals))
-  } else if(type == &amp;quot;p10&amp;quot;){
-    if(length(occPredVals) &amp;lt; 10){
-      p10 &amp;lt;- floor(length(occPredVals) * 0.9)
-    } else {
-      p10 &amp;lt;- ceiling(length(occPredVals) * 0.9)
-    }
-    thresh &amp;lt;- rev(sort(occPredVals))[p10]
-  }
-  sdm_thresh &amp;lt;- sdm
-  sdm_thresh[sdm_thresh &amp;lt; thresh] &amp;lt;- NA
-  if(binary){
-    sdm_thresh[sdm_thresh &amp;gt;= thresh] &amp;lt;- 1
-  }
-  return(sdm_thresh)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The first step of the function is to extract the SDM predictions at all occurrence points.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;occPredVals &amp;lt;- raster::extract(sdm, occs)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, the function calculates a threshold value &lt;code&gt;thresh&lt;/code&gt; for either the MTP or P10 threshold. Finally, it sets all cells in the SDM raster with values lower than the threshold equal to 0. If the user wants a binary map, the function sets all cells above the threshold equal to 1:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sdm_thresh &amp;lt;- sdm
-sdm_thresh[sdm_thresh &amp;lt; thresh] &amp;lt;- NA
-if(binary){
-  sdm_thresh[sdm_thresh &amp;gt;= thresh] &amp;lt;- 1
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Example&lt;/h2&gt;
-&lt;p&gt;Now we can apply the function to an actual SDM I generated for a species of three-toed sloth (&lt;em&gt;Bradypus variegatus&lt;/em&gt;).&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load in the SDM and occurrence points
-sloth_sdm &amp;lt;- raster(&amp;quot;/Users/hellenfellows/Desktop/website-hugo/static/SDMs/variegatus_sdm.tif&amp;quot;)
-sloth_occs &amp;lt;- read.csv(&amp;quot;~/Desktop/website-hugo/static/SDMs/variegatus_occ.csv&amp;quot;)
+&lt;hr /&gt;
 
-plot(sloth_sdm)
-points(sloth_occs[,2:3], pch = 19, cex = 0.5)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We can apply both MTP and P10 thresholds to the SDM based on the location of the occurrence points:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sloth_mtp &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;mtp&amp;quot;)
-plot(sloth_mtp)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;
-sloth_p10 &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;p10&amp;quot;)
-plot(sloth_p10)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We could also make either of these thresholded SDMs into a binary prediction in the following way:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sloth_mtp_bin &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;mtp&amp;quot;, binary = TRUE)
-plot(sloth_mtp_bin)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;generalization&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Generalization&lt;/h2&gt;
-&lt;p&gt;My primary motivation to write this function was to use it on SDMs, but the function could easily be generalized to threshold any raster by a given value:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raster_threshold &amp;lt;- function(input_raster, points = NULL, type = NULL, threshold = NULL, binary = FALSE) {
-  if (!is.null(points)) {
-    pointVals &amp;lt;- raster::extract(input_raster, points)
-    if (type == &amp;quot;mtp&amp;quot;) {
-      threshold &amp;lt;- min(na.omit(pointVals))
-    } else if (type == &amp;quot;p10&amp;quot;) {
-      if (length(pointVals) &amp;lt; 10) {
-        p10 &amp;lt;- floor(length(pointVals) * 0.9)
-      } else {
-        p10 &amp;lt;- ceiling(length(pointVals) * 0.9)
-      }
-      threshold &amp;lt;- rev(sort(pointVals))[p10]
-    }
-  }
-  raster_thresh &amp;lt;- input_raster
-  raster_thresh[raster_thresh &amp;lt; threshold] &amp;lt;- NA
-  if (binary) {
-    raster_thresh[raster_thresh &amp;gt;= threshold] &amp;lt;- 1
-  }
-  return(raster_thresh)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I expanded the function to allow the user to input points within the raster to calculate MTP and P10 thresholds if desired, but also to enable a user-specified threshold.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create arbitrary raster
-raster1 &amp;lt;- raster(nrow=10, ncol=10)
-raster1[1:25]&amp;lt;- 1:25
-raster1[26:50] &amp;lt;- rev(1:25)
-raster1[51:75] &amp;lt;- 1:25
-raster1[76:100] &amp;lt;- rev(1:25)
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
 
-# create a set of 20 arbitrary points within the raster
-xy &amp;lt;- data.frame(x = runif(20, min = -150, max = 150), y = runif(20, min = -70, max = 70))
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
 
-plot(raster1)
-points(xy)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Now we can apply the function to see the MTP and P10 thresholded rasters:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtp_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;mtp&amp;quot;, binary = TRUE)
-plot(mtp_raster)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;
-p10_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;p10&amp;quot;, binary = TRUE)
-plot(p10_raster)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We can also use a user-inputted threshold to remove all parts of the raster with values lower than 20:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;user_raster &amp;lt;- raster_threshold(input_raster = raster1, threshold = 20)
-plot(user_raster)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Big vs. Small: Using ratios to compare life history strategies</title>
-      <link>/talk/brownscholars_ratiotalk_2019/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/brownscholars_ratiotalk_2019/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vQ1T_FLUSVOYZ3YCehaGJM7gFCFMOCQMllQ9A4itkVMk5IyUJugfnE8Qt95WqqFMsV5dNintG0qQjU0/embed?&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Converting alpha hulls to spatial objects</title>
-      <link>/post/2019-03-18-alpha-hull/</link>
-      <pubDate>Mon, 18 Mar 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-03-18-alpha-hull/</guid>
-      <description>
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
 
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/alpha_bg_regions.png&#34; /&gt;
-&lt;figcaption&gt;
-Alpha hulls (α = 20) around occurrence points for two species of sloths.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
-&lt;p&gt;In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur. The key to selecting this region is to pick an area where the species could occur but hasn’t necessarily been observed – for example, you don’t want to include an area separated from the rest of the range by a big mountain range that you don’t believe the organism could cross, but you do want to include a range of potential environments. There are many methods to delineate this region, from drawing a box around the occurrence points of the species to creating a buffered region around each occurrence point (think a collection of lots of circles around each point). One of my research mentors suggested that I try a new method using a shape known as an α-hull.&lt;/p&gt;
-&lt;p&gt;I’ll describe α-hulls in more detail below, but you can get the gist from the map above, where I show occurrence points for two species of sloths surrounded by an α-hull for each species. When I tried to create this region in R, however, I ran into a roadblock: the α-hull objects were a specific kind of R object that didn’t play nicely with spatial data in R, particularly objects from the &lt;code&gt;sp&lt;/code&gt; package. In particular, I needed a way to convert α objects into SpatialPolygons. This post describes a series of functions I wrote to carry out this process.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-alphahull-package&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The &lt;code&gt;alphahull&lt;/code&gt; package&lt;/h2&gt;
-&lt;p&gt;The &lt;code&gt;alphahull&lt;/code&gt; R package (Pateiro-Lopez et al. 2016) draws shapes (like the ones above) around sets of points based on a given parameter, α. The package creates two kinds of shapes I was interested in: α-shapes and α-convex hulls. The functions in this post convert these shapes into objects compatible with the &lt;code&gt;sp&lt;/code&gt; package, which can then be used for spatial analyses, including creating background regions for species distribution modeling.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load packages
-library(alphahull)
-library(sp)&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;alpha-shapes&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Alpha shapes&lt;/h3&gt;
-&lt;p&gt;Alpha shapes consist of a collection of lines drawn around a group of points. Probably the most familiar example of an α-shape is a convex hull, the smallest convex shape that can be drawn around a group of objects. For example, the following code draws a convex hull around some data from the iris dataset:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(iris)
-iris_sepals &amp;lt;- iris[,1:2]
-# remove duplicate datapoints
-iris_sepals &amp;lt;- iris_sepals[!duplicated(paste(iris_sepals$Sepal.Length, iris_sepals$Sepal.Width)), ]
+&lt;hr /&gt;
 
-# find points that lie on the convex hull
-convexhull &amp;lt;- chull(iris_sepals)
-# plot the data points
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-hull_pts &amp;lt;- c(convexhull, convexhull[1])
-# plot the convex hull
-lines(iris_sepals[hull_pts, ], col = &amp;quot;magenta&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;This convex hull (drawn in magenta) is an example of an α-shape: all convex hulls are α-shapes, but not all α-shapes are convex hulls. An α-shape doesn’t have to be convex – the lines making up the border of the shape can create concave edges relative to the points in the dataset. For example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create a three-paneled figure
-par(mfrow = c(1,3))
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
 
-# create three different alpha shapes
-alphashape_0.5 &amp;lt;- ashape(iris_sepals, alpha = 0.5)
-alphashape_1 &amp;lt;- ashape(iris_sepals, alpha = 1)
-alphashape_2 &amp;lt;- ashape(iris_sepals, alpha = 2)
+&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
 
-# plot alpha = 0.5
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-plot(alphashape_0.5, col = &amp;quot;magenta&amp;quot;, add = TRUE)
-# plot alpha = 1
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-plot(alphashape_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)
-# plot alpha = 2
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-plot(alphashape_2, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# reset plotting parameters
-par(mfrow = c(1,1))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Alpha shapes are created using the &lt;code&gt;ashape&lt;/code&gt; function from the &lt;code&gt;alphahull&lt;/code&gt; package. As you can see, increasing the α value makes the shape closer and closer to the convex hull, while low values of α make the shape more concave.&lt;/p&gt;
-&lt;div id=&#34;alpha-shapes-to-polygons&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Alpha shapes to polygons&lt;/h4&gt;
-&lt;p&gt;In order to use α-shapes with spatial data in R, I wanted to convert these shapes to polygons. To accomplish this, I modified some of the code from an &lt;a href=&#34;https://rpubs.com/geospacedman/alphasimple&#34;&gt;RPubs by Barry Rowlingson&lt;/a&gt; to create the following function:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(igraph)
-## 
-## Attaching package: &amp;#39;igraph&amp;#39;
-## The following objects are masked from &amp;#39;package:stats&amp;#39;:
-## 
-##     decompose, spectrum
-## The following object is masked from &amp;#39;package:base&amp;#39;:
-## 
-##     union
-
-ashape2poly &amp;lt;- function(ashape){
-  # Convert node numbers into characters
-  ashape$edges[,1] &amp;lt;- as.character(ashape$edges[,1])
-  ashape_graph &amp;lt;- graph_from_edgelist(ashape$edges[,1:2], directed = FALSE)
-  if (!is.connected(ashape_graph)) {
-    stop(&amp;quot;Graph not connected&amp;quot;)
-  }
-  if (any(degree(ashape_graph) != 2)) {
-    stop(&amp;quot;Graph not circular&amp;quot;)
-  }
-  if (clusters(ashape_graph)$no &amp;gt; 1) {
-    stop(&amp;quot;Graph composed of more than one circle&amp;quot;)
-  }
-  # Delete one edge to create a chain
-  cut_graph &amp;lt;- ashape_graph - E(ashape_graph)[1]
-  # Find chain end points
-  ends = names(which(degree(cut_graph) == 1))
-  path = get.shortest.paths(cut_graph, ends[1], ends[2])$vpath[[1]]
-  # this is an index into the points
-  pathX = as.numeric(V(ashape_graph)[path]$name)
-  # join the ends
-  pathX = c(pathX, pathX[1])
-  return(pathX)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For the reasoning behind the function, check out the RPubs I referred to for guidance. For a sanity check, we can compare the resulting shape to the original α-shape we were trying to replicate:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;alphapoly_1 &amp;lt;- ashape2poly(alphashape_1)
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-# show the original alpha shape
-plot(alphashape_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
-# plot the new polygon
-lines(iris_sepals[alphapoly_1, ], col = &amp;quot;magenta&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;alpha-hulls&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Alpha hulls&lt;/h3&gt;
-&lt;p&gt;Alpha hulls add another layer of complexity to this process because they can include curved lines (arcs) as edges of a shape. For example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;alphahull_1 &amp;lt;- ahull(iris_sepals, alpha = 1)
-
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-plot(alphahull_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;div id=&#34;arcs-to-lines&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Arcs to lines&lt;/h4&gt;
-&lt;p&gt;To deal with this curvature, I wrote the following function to convert the arcs between points in the hull to a series of very short line segments in order to approximate the curve.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# function to convert an arc into line segments
-# given the center of the arc, the radius, the vector, and the angle (radians)
-arc2line &amp;lt;- function(center, r, vector, theta, npoints = 100) {
-  # Get the angles at the extremes of the arcs
-  angles &amp;lt;- anglesArc(vector, theta)
-  # Generate sequence of angles along the arc to determine the points
-  seqang &amp;lt;- seq(angles[1], angles[2], length = npoints)
-  # Generate x coordinates for points along the arc
-  x &amp;lt;- center[1] + r * cos(seqang)
-  # Generate y coordinates for points along the arc
-  y &amp;lt;- center[2] + r * sin(seqang)
-  coords.xy &amp;lt;- cbind(x,y)
-  line &amp;lt;- Line(coords = coords.xy)
-  return(line)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;hulls-to-lines&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Hulls to lines&lt;/h4&gt;
-&lt;p&gt;Using the previous function, I wrote another function to take an α-hull and convert it into a set of SpatialLines objects. The function uses the &lt;code&gt;arc2line&lt;/code&gt; function from above to convert each arc in the α-hull into a series of lines, before adding each of these sets of lines together.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ahull2lines &amp;lt;- function(hull){
-  arclist &amp;lt;- hull$arcs
-  lines &amp;lt;- list()
-  for (i in 1:nrow(arclist)) {
-    # Extract the attributes of arc i
-    center_i &amp;lt;- arclist[i, 1:2]
-    radius_i &amp;lt;- arclist[i, 3]
-    vector_i &amp;lt;- arclist[i, 4:5]
-    theta_i &amp;lt;- arclist[i, 6]
-    # Convert arc i into a Line object
-    line_i &amp;lt;- arc2line(center = center_i, r = radius_i, vector = vector_i, theta = theta_i)
-    list_length &amp;lt;- length(lines)
-    if(list_length &amp;gt; 0){
-      # If a line has already been added to the list of lines
-      # Define last_line_coords as the coordinates of the last line added to the list before the ith line
-      last_line_coords &amp;lt;- lines[[list_length]]@coords
-    }
-    if(i == 1){
-      # Add the first line to the list of lines
-      lines[[i]] &amp;lt;- line_i
-    } else if(all.equal(line_i@coords[1,], last_line_coords[nrow(last_line_coords),])){
-      # If the first coordinate in the ith line is equal to the last coordinate in the previous line
-      # then those lines should be connected
-      # Row bind the coordinates for the ith line to the coordinates of the previous line in the list
-      lines[[list_length]]@coords &amp;lt;- rbind(last_line_coords, line_i@coords[2:nrow(line_i@coords),])
-    } else {
-      # If the first coordinate in the ith line does not match the last coordinate in the previous line
-      # then the ith line represents a new line
-      # Add the ith line to the list as a new element
-      lines[[length(lines) + 1]] &amp;lt;- line_i
-    }
-  }
-  # Convert the list of lines to a Line object
-  lines &amp;lt;- Lines(lines, ID = &amp;#39;l&amp;#39;)
-  # Convert the Line object to a SpatialLines object
-  sp_lines &amp;lt;- SpatialLines(list(lines))
-  return(sp_lines)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The results look like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lines_1 &amp;lt;- ahull2lines(alphahull_1)
-# the result is a SpatialLines object
-class(lines_1)
-## [1] &amp;quot;SpatialLines&amp;quot;
-## attr(,&amp;quot;package&amp;quot;)
-## [1] &amp;quot;sp&amp;quot;
-
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-# show the original alpha shape
-plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
-# plot the new polygon
-plot(lines_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The resulting SpatialLines object is an almost spot-on approximation of the original α-hull (shown in gray).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;spatiallines-to-spatialpolygon&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;SpatialLines to SpatialPolygon&lt;/h4&gt;
-&lt;p&gt;Now, I needed a way to convert the SpatialLines object into a SpatialPolygon that would cover the same shape as the original α-hull. To accomplish this, I wrote a function that takes a SpatialLines object, checks which lines are part of polygons (i.e. form closed shapes), and converts those polygons to a SpatialPolygon.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;spLines2poly &amp;lt;- function(sp_lines){
-  # Extract the lines slot
-  lines_slot &amp;lt;- sp_lines@lines[[1]]
-  # Create a list of booleans indicating whether a given Line represents a polygon
-  poly_bool &amp;lt;- sapply(lines_slot@Lines, function(x){
-    coords &amp;lt;- lines_slot@Lines[[1]]@coords
-    # Check if the first coordinate in the line is the same as the last
-    all.equal(coords[1,], coords[nrow(coords),])
-  })
-  # Pull out the lines that form polygons
-  poly_lines &amp;lt;- sp_lines[poly_bool]
-  poly_lines_slot &amp;lt;- poly_lines@lines
-  # Create SpatialPolygons
-  sp_polys &amp;lt;- SpatialPolygons(list(Polygons(lapply(poly_lines_slot, function(x) {
-    Polygon(slot(slot(x, &amp;quot;Lines&amp;quot;)[[1]], &amp;quot;coords&amp;quot;))
-  }), ID = &amp;quot;1&amp;quot;)))
-  return(sp_polys)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We can apply this function to the &lt;code&gt;lines_1&lt;/code&gt; object we made from the original &lt;code&gt;alphahull_1&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;SpPoly_1 &amp;lt;- spLines2poly(lines_1)
-class(SpPoly_1)
-## [1] &amp;quot;SpatialPolygons&amp;quot;
-## attr(,&amp;quot;package&amp;quot;)
-## [1] &amp;quot;sp&amp;quot;
-
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-# show the original alpha shape
-plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
-# plot the new polygon
-plot(SpPoly_1, border = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;alpha-hulls-to-spatialpolygons&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Alpha hulls to SpatialPolygons&lt;/h4&gt;
-&lt;p&gt;Finally, we can string all of those functions together to create a single function that will convert an α-hull directly into a SpatialPolygon:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ahull2poly &amp;lt;- function(hull){
-  # Convert the alpha hull to SpatialLines
-  hull2SpatialLines &amp;lt;- ahull2lines(hull)
-  # Convert SpatialLines to SpatialPolygon
-  SpatialLines2SpatialPolygon &amp;lt;- spLines2poly(hull2SpatialLines)
-  return(SpatialLines2SpatialPolygon)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As a final sanity check, we can see that the resulting shape is the same as the original shape produced by the &lt;code&gt;alphahull&lt;/code&gt; package:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;hullpoly_1 &amp;lt;- ahull2poly(alphahull_1)
-class(hullpoly_1)
-## [1] &amp;quot;SpatialPolygons&amp;quot;
-## attr(,&amp;quot;package&amp;quot;)
-## [1] &amp;quot;sp&amp;quot;
-
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-# show the original alpha shape
-plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
-# plot the new polygon
-plot(hullpoly_1, border = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;github&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;GitHub&lt;/h2&gt;
-&lt;p&gt;The code for these functions is on my GitHub at &lt;a href=&#34;https://github.com/babichmorrowc/hull2spatial&#34; class=&#34;uri&#34;&gt;https://github.com/babichmorrowc/hull2spatial&lt;/a&gt;. If you have any thoughts or suggestions, please comment on this post or submit a pull request on GitHub. I hope to be formulating these functions into a package in the near future, so stay tuned!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;citations&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Citations&lt;/h2&gt;
-&lt;p&gt;Beatriz Pateiro-Lopez and Alberto Rodriguez-Casal. (2016). alphahull: Generalization of the Convex Hull of a Sample of Points in the Plane. R package version 2.1. &lt;a href=&#34;https://CRAN.R-project.org/package=alphahull&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=alphahull&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Talk: Using SVMs to model ranges of congeneric sloth species</title>
-      <link>/talk/nysdm_march2019/</link>
-      <pubDate>Fri, 15 Mar 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/nysdm_march2019/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vS_w666eIt4-3dUI-z6iVlD08EphadvhGys2IarVUPk7QIdG3dn7opO1LLLeuM7vcb6j8k7_5nVOAef/embed?start=false&amp;loop=false&amp;delayms=5000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Talk: STEM careers in museums</title>
-      <link>/talk/la_lgbt_careertalk_2019/</link>
-      <pubDate>Fri, 22 Feb 2019 00:00:00 -0500</pubDate>
-      
-      <guid>/talk/la_lgbt_careertalk_2019/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vT-sB5lS2bKsitOCUenYo1xA3pMzCxfo37TAnB408noR6SJPJpePBfei6p6FMylQFdmJ-FI4z-himQc/embed?start=false&amp;loop=false&amp;delayms=5000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hacking Meteorites Part 1: Calculating percent weights</title>
-      <link>/post/2019-02-20-meteoritecluster1/</link>
-      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-02-20-meteoritecluster1/</guid>
-      <description>
-
-
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/obj1_8bt_Fe.png&#34; /&gt;
-&lt;figcaption&gt;
-Intensity of iron in a meteorite.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;Earlier this month I participated in the American Museum of Natural History’s annual hackathon (see my last &lt;a href=&#34;https://babichmorrowc.github.io/post/2019-02-14-hackathon/&#34;&gt;post&lt;/a&gt; for details about the event overall). During the hackathon, I worked with Katy Abbott, another Helen Fellow at the museum with me, to use a machine learning algorithm called DBSCAN to tackle our challenge. This post explains the process we used to complete the first step of the challenge: estimating the percent weights of elements in a meteorite.&lt;/p&gt;
-&lt;div id=&#34;challenge-accepted&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Challenge accepted&lt;/h2&gt;
-&lt;p&gt;Our team, consisting of Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy Abbott, Meret Götschel, and myself, chose to work on the &lt;a href=&#34;https://github.com/amnh/HackTheSolarSystem/wiki/Meteorite-Mineral-Mapping&#34;&gt;Meteorite Mineral Mapping challenge&lt;/a&gt;. For this challenge, our museum stakeholders, Marina Gemma and Sam Alpert, wanted a way to identify the mineral composition of meteorites.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;pixels-to-percents&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Pixels to percents&lt;/h2&gt;
-&lt;p&gt;The scientists scan meteorites with an electron microprobe, a device that provides the intensity of x-rays emitted from certain elements. The electron microprobe results in images with grayscale intensities corresponding to these x-ray intensities on a pixel-by-pixel basis.&lt;/p&gt;
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/meteorite_pixel_intensity.png&#34; /&gt;
-&lt;figcaption&gt;
-Images of a meteorite produced by the electron microprobe showing pixel intensities for each of 10 elements - brighter grayscale values indicate greater amounts of that element in a pixel.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;Our first step was to convert these pixel intensities to the percent weight of each element in the mineral at that pixel. To do that, we referred to a set of standard images taken of minerals with a known proportion of each element. For example, the image below shows the pixel intensities of iron in 8 minerals: you can see that the pixels are brightest in Fe, or pure iron, and lower in iron oxide (&lt;span class=&#34;math inline&#34;&gt;\(\text{Fe}_3\text{O}_4\)&lt;/span&gt;) and troilite, or iron sulfide (FeS).&lt;/p&gt;
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/iron_standard.png&#34; /&gt;
-&lt;figcaption&gt;
-Standard scan of the intensity of iron in each of 8 known minerals.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;We can relate the intensity of the iron pixels in the Fe mineral, for example, to the percent weight in that mineral (100%, since iron is the only element in Fe).&lt;/p&gt;
-&lt;div id=&#34;import-data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Import data&lt;/h3&gt;
-&lt;p&gt;We started by creating a .csv file with the percent weight of each element in the minderals from the standards:&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# import libraries
-from sklearn.cluster import DBSCAN as dbscan
-from sklearn.linear_model import LinearRegression
-import pandas as pd
-import numpy as np
-from sklearn import metrics
-import matplotlib.pyplot as plt
-import matplotlib.colors
-from sklearn.decomposition import PCA
-from pathlib import Path
-from skimage.io import imread, imshow
-import numpy.ma as ma
-from collections import Counter
-# read in percent weights by element of the minerals in the standard
-weights = pd.read_csv(&amp;quot;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/weights_to_minerals.csv&amp;quot;)
-print(weights.head())
-##        mineral  Mg     Ni  Al        Fe      Ca  Cr   P        S      Ti  Si
-## 0  CaTiO3std15 NaN    NaN NaN       NaN  29.481 NaN NaN      NaN  35.211 NaN
-## 1  Fe-num2std9 NaN    NaN NaN  100.0000     NaN NaN NaN      NaN     NaN NaN
-## 2      FeSstd2 NaN    NaN NaN   63.5252     NaN NaN NaN  36.4748     NaN NaN
-## 3   Fe3O4std15 NaN    NaN NaN   72.3591     NaN NaN NaN      NaN     NaN NaN
-## 4       Nistd9 NaN  100.0 NaN       NaN     NaN NaN NaN      NaN     NaN NaN&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;(Note: I was able to add the above Python chunk in R by following &lt;a href=&#34;https://babichmorrowc.github.io/post/2019-02-20-pythonrmd/&#34;&gt;these instructions&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;There is a linear relationship between pixel intensity and percent weight, so we used linear regression to find the slope of this relationship. We read in the .csv of pixel intensities for each element in the standards:&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# read in the pixel intensities by element in the standard
-mineral_standards = pd.read_csv(&amp;#39;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/mineral_standards.csv&amp;#39;)
-print(mineral_standards.head())
-##    Mg  Ni  Al  Fe   Ca  Cr  P  S   Ti  Si      mineral
-## 0   0   0   0   0  171   0  4  0  459   0  CaTiO3std15
-## 1   0   0   0   0  148   3  2  0  462   1  CaTiO3std15
-## 2   0   2   0   0  141   6  3  0  455   2  CaTiO3std15
-## 3   1   2   2   0  122   6  3  0  502   0  CaTiO3std15
-## 4   0   0   0   0  138   5  5  0  457   1  CaTiO3std15&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an “_&amp;quot; to make looping easier.&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# create dictionary to standardize file names to chemical formulas
-# needed to separate each element in the formula with an _ to make looping easier
-mineral_dict = dict(zip(np.unique(mineral_standards[&amp;#39;mineral&amp;#39;]),
-    [&amp;quot;Ca_Ti_O_3&amp;quot;, &amp;quot;Fe_&amp;quot;, &amp;quot;Fe_3O_4&amp;quot;, &amp;quot;Fe_S_&amp;quot;, &amp;quot;Ni_S_&amp;quot;, &amp;quot;Ni_&amp;quot;, &amp;quot;Ca_Fe_Mg_Mn_Ni_Si_&amp;quot;, &amp;quot;Ti_O_2&amp;quot;]))
-# use dictionary to change mineral columns to underscore format
-weights[&amp;#39;mineral&amp;#39;] = weights[&amp;#39;mineral&amp;#39;].map(mineral_dict)
-mineral_standards[&amp;#39;mineral&amp;#39;] = mineral_standards[&amp;#39;mineral&amp;#39;].map(mineral_dict)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next we created a list of the elements accounted for in the standards and made an empty dataframe called &lt;code&gt;coefs&lt;/code&gt; to fill with the coefficients of the relationship between pixel intensity and percent weight for each element:&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# list of elements
-# need to ignore the &amp;quot;mineral&amp;quot; column of the data
-elements = [val for val in mineral_standards.columns if val != &amp;#39;mineral&amp;#39;]
-coefs = pd.DataFrame(index = [&amp;#39;coeff&amp;#39;], columns = elements)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;linear-regressions&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Linear regressions&lt;/h3&gt;
-&lt;p&gt;Now we looped through the elements to create linear regressions of percent weight vs. pixel intensity based on the intensities in the standards. For these regressions, we forced the intercept to be zero because zero pixel intensity should imply zero percent weight.&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# make a linear regression forcing the intercept to be zero
-# since zero intensity should correspond to zero percent weight
-lr = LinearRegression(fit_intercept = False)
-# loop through elements to create linear regression of percent weight vs pixel intensity
-# in the minerals in the standard
-for element in elements:
-    element_df = mineral_standards[mineral_standards[&amp;#39;mineral&amp;#39;].str.contains(element + &amp;quot;_&amp;quot;)]
-    # if the element has no percent weights, skip it
-    if element_df.empty:
-        continue
-    minerals = element_df[&amp;#39;mineral&amp;#39;].unique()
-    xis = np.empty(0)
-    yis = np.empty(0)
-    for mine in minerals:
-        # get percent weights of the element in that mineral
-        weight = weights[weights[&amp;#39;mineral&amp;#39;] == mine][element]
-        intensities = element_df[element_df[&amp;#39;mineral&amp;#39;] == mine][element]
-        xis = np.append(xis, np.array(intensities))
-        yis = np.append(yis, np.repeat(weight, len(intensities)))
-    xis, yis = xis.reshape(-1,1), yis.reshape(-1,1)
-    # fit linear regression on percent weight vs intensity
-    reg = lr.fit(xis,yis)
-    xi_pred =  np.arange(0,900).reshape(-1,1)
-    # create predictions for range of intensity values
-    pred = reg.predict(xi_pred)
-    reg.coef_
-    # get the linear regression coefficient for each element
-    coefs[element] = float(reg.coef_)
-# print the coefficients for each element
-print(coefs)
-##              Mg        Ni   Al        Fe  ...    P         S        Ti        Si
-## coeff  0.118599  0.328796  NaN  0.320081  ...  NaN  0.469225  0.077627  0.097906
-## 
-## [1 rows x 10 columns]&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Thus &lt;code&gt;coefs&lt;/code&gt; contains the coeficient relating pixel intensity of an element to its percent weight in the mineral: for example, the percent weight of Mg in an mineral is equal to 0.118599 times its pixel intensity.&lt;/p&gt;
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/mineral_regression.png&#34; /&gt;
-&lt;figcaption&gt;
-X-axes are pixel intensity and y-axes are percent weight of the element. Blue points indicate the pixel intensities of the element for a given percent weight based on a mineral in the standard. Orange points indicate the linear regression calculated above.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-&lt;div id=&#34;calculate-percent-weights&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Calculate percent weights&lt;/h3&gt;
-&lt;p&gt;Finally, we used these coefficients to calculate the predicted percent weights of each element in the two meteorites we were analyzing on a pixel-by-pixel basis. The code for this portion of the analysis is available in the latter end of &lt;a href=&#34;https://github.com/HackTheSolarSystem/MineralMapping/blob/master/backend/mineral_mapping_script.py&#34;&gt;this script&lt;/a&gt;. Note that for any pixel where the percent weight of an element was predicted to be higher than 100%, we set the percent weight to 100%. From these calculations, we ended up with the following files:&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# read file of predicted percent weights for meteorite 1
-df_obj1 = pd.read_csv(&amp;#39;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/predicted_percentweight_obj1.csv&amp;#39;)
-df_obj1 = df_obj1.fillna(0)
-df_obj1.drop(&amp;#39;Unnamed: 0&amp;#39;, axis = 1, inplace = True)
-print(df_obj1.head())
-# read file of predicted percent weights for meteorite 2
-##          Ca        Ti   Al   Cr  ...    P         Fe        Ni        Mg
-## 0  8.595462  0.698642  0.0  0.0  ...  0.0  51.212925  0.986388  5.692734
-## 1  4.512618  0.543388  0.0  0.0  ...  0.0  53.453490  1.972775  2.846367
-## 2  2.578639  0.465761  0.0  0.0  ...  0.0  63.696075  3.287959  1.067388
-## 3  2.148866  0.310508  0.0  0.0  ...  0.0  57.934621  3.945550  0.237197
-## 4  1.719092  0.543388  0.0  0.0  ...  0.0  58.254702  3.616755  0.118599
-## 
-## [5 rows x 10 columns]
-df_obj2 = pd.read_csv(&amp;#39;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/predicted_percentweight_obj2.csv&amp;#39;)
-df_obj2 = df_obj2.fillna(0)
-df_obj2.drop(&amp;#39;Unnamed: 0&amp;#39;, axis = 1, inplace = True)
-print(df_obj2.head())
-##           Si    P   Cr   Al  ...        Ca        Mg        Ni         Fe
-## 0  22.322556  0.0  0.0  0.0  ...  0.429773  1.304585  4.931938  14.403635
-## 1  11.650808  0.0  0.0  0.0  ...  0.000000  0.355796  2.630367  43.530986
-## 2   4.601580  0.0  0.0  0.0  ...  0.429773  0.000000  1.643979  54.093652
-## 3   2.349743  0.0  0.0  0.0  ...  0.000000  0.000000  0.986388  57.294460
-## 4   0.783248  0.0  0.0  0.0  ...  0.000000  0.000000  1.315183  48.972359
-## 
-## [5 rows x 10 columns]&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Each row in these .csv files corresponds to a pixel in the original image. Each value gives the predicted percent weight of a given element in that pixel.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;up-next&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Up next&lt;/h2&gt;
-&lt;p&gt;Now that we had converted pixel intensities to predicted percent weights, we were ready to use our clustering algorithm to identify potential minerals in the meteorite. Stay tuned for a future post showing how we used DBSCAN to accomplish this!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;further-reading&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Further Reading&lt;/h2&gt;
-&lt;p&gt;Jeremy Neiman, one of my team members, wrote an excellent &lt;a href=&#34;https://towardsdatascience.com/machine-learning-meteorites-fcd8f6859ed7&#34;&gt;post&lt;/a&gt; describing the challenge in further detail, so check that out for more information.&lt;/p&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

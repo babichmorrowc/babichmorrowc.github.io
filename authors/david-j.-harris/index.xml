@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>David J. Harris | Cecina Babich Morrow</title>
+    <link>/authors/david-j.-harris/</link>
+      <atom:link href="/authors/david-j.-harris/index.xml" rel="self" type="application/rss+xml" />
+    <description>David J. Harris</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>`2019`</copyright><lastBuildDate>Wed, 09 Aug 2017 00:00:00 -0400</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>David J. Harris</title>
+      <link>/authors/david-j.-harris/</link>
+    </image>
+    
+    <item>
+      <title>New approaches for delineating n‐dimensional hypervolumes</title>
+      <link>/publication/hypervolumes/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <guid>/publication/hypervolumes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

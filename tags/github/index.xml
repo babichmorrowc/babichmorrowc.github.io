@@ -1,53 +1,206 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GitHub on Cecina Babich Morrow</title>
+    <title>GitHub | Cecina Babich Morrow</title>
     <link>/tags/github/</link>
-    <description>Recent content in GitHub on Cecina Babich Morrow</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 17 Sep 2019 21:13:14 -0500</lastBuildDate>
-    
-	<atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <description>GitHub</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>`2019`</copyright><lastBuildDate>Tue, 17 Sep 2019 21:13:14 -0500</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>GitHub</title>
+      <link>/tags/github/</link>
+    </image>
     
     <item>
       <title>Git Workflow #1: Existing project, GitHub last</title>
       <link>/post/2019-09-18-git-workflow1/</link>
       <pubDate>Tue, 17 Sep 2019 21:13:14 -0500</pubDate>
-      
       <guid>/post/2019-09-18-git-workflow1/</guid>
-      <description>From xkcd.   Inspiration for this post Over the coming months, I plan on sharing a series of Git workflow tutorials. Getting a Git project set up can be a pretty simple process, but depending on the order in which you do things, set-up can get complicated. This first tutorial addresses one of those fairly complicated situations.
-The schema for these tutorials is loosely based on the incredible Git + R bible by Jenny Bryan, Happy Git and GitHub for the useR.</description>
+      <description>
+
+
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/xkcd_git.png&#34; /&gt;
+&lt;figcaption&gt;
+From &lt;a href=&#34;https://xkcd.com/1597/&#34;&gt;xkcd&lt;/a&gt;.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;Over the coming months, I plan on sharing a series of Git workflow tutorials. Getting a Git project set up can be a pretty simple process, but depending on the order in which you do things, set-up can get complicated. This first tutorial addresses one of those fairly complicated situations.&lt;/p&gt;
+&lt;p&gt;The schema for these tutorials is loosely based on the incredible Git + R bible by Jenny Bryan, &lt;a href=&#34;https://happygitwithr.com/&#34;&gt;Happy Git and GitHub for the useR&lt;/a&gt;. The only difference is that I will be showing the workflow for setting up the project using the command line, rather than RStudio.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;existing-project-github-last&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Existing project, GitHub last&lt;/h2&gt;
+&lt;p&gt;This first tutorial addresses the following situation: you have a folder for your project on your computer already. You would like this folder to be associated with a GitHub repository, but you haven’t created this repository yet, or you’ve created the GitHub repository and haven’t connected it with your local folder [^1].&lt;/p&gt;
+&lt;p&gt;[^1] Throughout this tutorial, “local” refers to the copy of the repository on your computer. “Remote” refers to the copy on GitHub.&lt;/p&gt;
+&lt;div id=&#34;make-a-git-repo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Make a Git repo&lt;/h3&gt;
+&lt;p&gt;The first step in this process is to make your local project into a Git repository. Start by using the command-line to navigate to the folder for your project (using &lt;code&gt;cd&lt;/code&gt;). Once you are in the proper folder, run:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This command either creates a new Git repository, or, in our case, converts an existing project into a Git repository. If you want to read more about &lt;code&gt;git init&lt;/code&gt;, particularly the difference between &lt;code&gt;git init&lt;/code&gt; and &lt;code&gt;git clone&lt;/code&gt;, Atlassian has a useful &lt;a href=&#34;https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init&#34;&gt;article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now, since you’ve made edits / added files into your project, you want to add and commit those changes using the following commands:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git add -A
+git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can make the commit message whatever you want. Note, &lt;code&gt;git add -A&lt;/code&gt; adds all files in your repository. If you only want to add certain files, you can add them by name. For example, if you only want to add the file &lt;code&gt;test.txt&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git add test.txt
+git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;make-a-github-repo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Make a GitHub repo&lt;/h3&gt;
+&lt;p&gt;Next, we need to create a GitHub repository for our project. Depending on your workflow, you may have already created this repository. If not, log in to &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt;. Click the green “New repository” button. Ideally, you want the name of your new repository to match the name of the folder on your computer (but if not, it’s not a big deal). You don’t really want to initialize the repository with a README, but if you do, you can work around this later.&lt;/p&gt;
+&lt;p&gt;Once the repository has been set up, you can copy the HTTPS URL to your clipboard using the green “Clone or Download” button.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;connect-the-github-repo-to-your-project&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Connect the GitHub repo to your project&lt;/h3&gt;
+&lt;p&gt;Now that you have a GitHub repository and you have a Git repository on your computer, you want to connect the two. To do this, run the following in the shell, using the URL that you just copied from GitHub:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git remote add origin &amp;lt;YOUR URL HERE&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note, you don’t need the &lt;code&gt;&amp;lt;&lt;/code&gt; and &lt;code&gt;&amp;gt;&lt;/code&gt; on either side of the URL, just paste the URL as is.&lt;/p&gt;
+&lt;p&gt;You now need to tell your computer what the upstream branch should be, i.e. what branch on GitHub to pull updates from.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git branch --set-upstream-to=origin/master master&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;reconcile-the-remote-and-local-repositories&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Reconcile the remote and local repositories&lt;/h3&gt;
+&lt;p&gt;Now, assuming that you have edits both on your computer and on the GitHub repository, you need to be able to reconcile these changes so that the two are the same. This is assuming that you have files added in the folder on your computer and also something like a README or .gitignore on GitHub. To fix this problem, you first need to pull the changes from the GitHub repository onto your computer:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git pull --allow-unrelated-histories&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;--allow-unrelated-histories&lt;/code&gt; portion of the command allows you to merge these two repositories (the local and the remote) even though they don’t have a common ancestor (you created them independently and made changes to both independently).&lt;/p&gt;
+&lt;p&gt;Now, you can push the changes from your local repository up to GitHub:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git push&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Adding Google Docs to website</title>
       <link>/post/2018-12-12-add-google-doc/</link>
       <pubDate>Wed, 12 Dec 2018 21:13:14 -0500</pubDate>
-      
       <guid>/post/2018-12-12-add-google-doc/</guid>
-      <description>Given that the Academic website theme comes with a place to upload talks, I thought I might as well upload the slides for my Senior Honors presentation. Unfortunately, this was a slightly more difficult task than I anticipated. The default format for slides in Hugo appears to be Markdown slides, which is fine, except when your talk was made in Google Slides.
-Google Slides to Markdown? My first thought was that there must be some tool to convert a Google slides talk into a Markdown document.</description>
+      <description>
+
+
+&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/google_docs_fig.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Given that the Academic website theme comes with a place to upload talks, I thought I might as well upload the slides for my Senior Honors presentation. Unfortunately, this was a slightly more difficult task than I anticipated. The default format for slides in Hugo appears to be Markdown slides, which is fine, except when your talk was made in Google Slides.&lt;/p&gt;
+&lt;div id=&#34;google-slides-to-markdown&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Google Slides to Markdown?&lt;/h2&gt;
+&lt;p&gt;My first thought was that there must be some tool to convert a Google slides talk into a Markdown document. For whatever reason, there are several tools (like &lt;a href=&#34;https://github.com/gsuitedevs/md2googleslides&#34;&gt;this GitHub repo&lt;/a&gt;) to go the other direction, from Markdown to Google slides. I found a GitHub repo &lt;a href=&#34;https://github.com/mangini/gdocs2md&#34;&gt;&lt;code&gt;gdocs2md&lt;/code&gt;&lt;/a&gt; that claimed to go in the other direction, but the script provided doesn’t currently run (if anyone is a whiz at Google Apps and wants to take a stab at fixing up this code, it would be a great tool!). There is a Google Drive add-on called &lt;a href=&#34;https://chrome.google.com/webstore/detail/gd2md-html/igffnbdfnodiaphfmfaiiaegmoljbghf&#34;&gt;GD2md-html&lt;/a&gt; that converts Google Docs to Markdown or HTML, which should be useful for the future, but it doesn’t help with Google Slides.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;embedding-google-slides-in-hugo&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Embedding Google Slides in Hugo&lt;/h2&gt;
+&lt;p&gt;Having abandoned the idea of just converting my current slides into Markdown and going on my merry way, I started looking for a way to embed the Google Slides themselves into my website.&lt;/p&gt;
+&lt;div id=&#34;hugo-shortcodes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Hugo shortcodes&lt;/h3&gt;
+&lt;p&gt;Hugo has certain snippets called &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/&#34;&gt;shortcodes&lt;/a&gt; that are designed to address the problem of having to add raw HTML into Markdown. These shortcodes help render a content file according to a template created by Hugo. For example, the shortcode &lt;code&gt;figure&lt;/code&gt; adds HTML functionality to the Markdown image syntax. There are shortcodes for Instagram (&lt;code&gt;instagram&lt;/code&gt;), Vimeo (&lt;code&gt;vimeo&lt;/code&gt;) and Twitter (&lt;code&gt;tweet&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-gdocs-shortcode&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The &lt;code&gt;gdocs&lt;/code&gt; shortcode&lt;/h3&gt;
+&lt;p&gt;One of these shortcodes, &lt;code&gt;gdocs&lt;/code&gt;, allows you to embed all Google doc types (Slides, Docs, Sheets, etc.) into your website. The HTML code for the shortcode can be found in the &lt;code&gt;hugo-academic&lt;/code&gt; GitHub repo: &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/layouts/shortcodes/gdocs.html&#34; class=&#34;uri&#34;&gt;https://github.com/gcushen/hugo-academic/blob/master/layouts/shortcodes/gdocs.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I tried inserting the following into the &lt;code&gt;index.md&lt;/code&gt; file for my talk below the line with three &lt;code&gt;+&lt;/code&gt; signs:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;{{&amp;lt; gdocs &amp;quot;https://docs.google.com/presentation/d/e/2PACX-1vTsSj-oftLksGEKTkzCoBSIpzooO61ZMGAUzoGBv7u20OzMQK8ctX3gCpWTMm4UowrrWumFrdQsY0Cd/embed?start=false&amp;amp;loop=false&amp;amp;delayms=5000&amp;quot; &amp;gt;}}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I got the URL by going to my Google Slides, and clicking File &amp;gt; Publish to the web. I selected Embed and copied the link following &lt;code&gt;src=&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Unfortunately, this didn’t result in anything showing up on my page besides a large blank space where I assume Hugo was trying to put my presentation. I tried some variations on the above code, including adding &lt;code&gt;src=&lt;/code&gt; before the URL (no change), and moving the entire code snippet above the &lt;code&gt;+++&lt;/code&gt; line in &lt;code&gt;index.md&lt;/code&gt; (results in the error &amp;quot; unmarshal failed: Near line 65 (last key parsed ‘image’): bare keys cannot contain ‘{’ “).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;html-code&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;HTML code&lt;/h3&gt;
+&lt;p&gt;At this point, I was feeling pretty discouraged, when I happened upon a &lt;a href=&#34;https://discourse.gohugo.io/t/shortcode-for-google-slide-presentation-embed/3464&#34;&gt;Hugo forum post&lt;/a&gt; with the HTML code someone used to embed a Google Slides presentation. I have hardly any familiarity with HTML, but clearly shortcodes and I weren’t getting along very well, so I decided to give it a shot. I copied and pasted the code from the forum, replacing the URL following &lt;code&gt;src=&lt;/code&gt; with my link from above, and voila! My slides appeared on the post.&lt;/p&gt;
+&lt;p&gt;Here is the code for reference:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;iframe src=&amp;quot;https://docs.google.com/presentation/d/e/2PACX-1vTsSj-oftLksGEKTkzCoBSIpzooO61ZMGAUzoGBv7u20OzMQK8ctX3gCpWTMm4UowrrWumFrdQsY0Cd/embed?start=false&amp;amp;loop=false&amp;amp;delayms=5000&amp;quot; frameborder=&amp;quot;0&amp;quot; width=&amp;quot;800&amp;quot; height=&amp;quot;600&amp;quot; allowfullscreen=&amp;quot;true&amp;quot; mozallowfullscreen=&amp;quot;true&amp;quot; webkitallowfullscreen=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;moral-of-the-story&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Moral of the story&lt;/h2&gt;
+&lt;p&gt;It seems like shortcodes can be a really valuable feature of Hugo, especially should I ever need to include a video of some kind (or if I actually start using Twitter again &lt;em&gt;and&lt;/em&gt; tweet something worth sharing, two improbable events). In the case of Google Docs/Sheets/etc., however, just using the HTML code snippet seems like the easiest option (and is a good motivation to learn HTML at a later date).&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Ordering website components</title>
       <link>/post/2018-12-11-order-items/</link>
       <pubDate>Tue, 11 Dec 2018 21:13:14 -0500</pubDate>
-      
       <guid>/post/2018-12-11-order-items/</guid>
-      <description>As I continue setting up this site, one of the major things irking me was the order of content on the website. For example, I wasn’t loving that the first thing you saw when visiting the site was the giant picture of my face. I wanted to be able to put content at the top of the site and move information like my bio and work experience towards the bottom.</description>
+      <description>
+
+
+&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:50%&#34; src=&#34;/img/out_of_order.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As I continue setting up this site, one of the major things irking me was the order of content on the website. For example, I wasn’t loving that the first thing you saw when visiting the site was the giant picture of my face. I wanted to be able to put content at the top of the site and move information like my bio and work experience towards the bottom. Hugo allows you to weight certain types of content to change the order, so that’s what I tackled.&lt;/p&gt;
+&lt;div id=&#34;menu-links&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Menu links&lt;/h2&gt;
+&lt;p&gt;The first order of things I could change was the order of links in the menu on the top right of my page. In this case, I wanted my information to be the first link, followed by “Publications”, “Projects”, “Posts”, “Tutorials”, and “Contact”. The weighting for these links is found in the &lt;code&gt;config.toml&lt;/code&gt; file of the website repo, where a standard entry for one of the links looks a bit like this:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;[[menu.main]]
+  name = &amp;quot;Publications&amp;quot;
+  url = &amp;quot;#publications&amp;quot;
+  weight = 2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here you can change the “name”, which is what the menu option actually says (e.g. I changed the menu option for my bio from “Home” to “About”). The URL refers to where on the site the link will point to. If you are trying to link to a homepage widget, as in the example above, the url will be &lt;code&gt;#&lt;/code&gt; followed by the file name of that widget in the &lt;code&gt;content/home/&lt;/code&gt; folder. You want to be careful not to link to a widget that is inactive (which you can see in the first few lines of the Markdown document for that widget), otherwise the link will not go anywhere.&lt;/p&gt;
+&lt;p&gt;If you are linking to something else, you can provide the file-path relative to the &lt;code&gt;content&lt;/code&gt; folder – for example, my tutorials live in the folder &lt;code&gt;content/tutorial&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;[[menu.main]]
+  name = &amp;quot;Tutorials&amp;quot;
+  url = &amp;quot;/tutorial/&amp;quot;
+  weight = 5&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, you can change the weights to reflect the order you want the links to appear in the menu: the links will appear from left to right in ascending order of weight (&lt;code&gt;weight = 1&lt;/code&gt; is the first link, etc.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;home-page-content&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Home page content&lt;/h2&gt;
+&lt;p&gt;Initially, I confused changing the weights in the &lt;code&gt;config.toml&lt;/code&gt; file with actually changing the order of those sections on the home page, but doing that actually requires editing the Markdown files for those types of content in the &lt;code&gt;content/home/&lt;/code&gt; folder. For example, I decided I wanted to put posts first, so I went to &lt;code&gt;content/home/posts.md&lt;/code&gt; and modified the &lt;code&gt;weight&lt;/code&gt; argument so that it was lowest and continued editing the weights until everything was in the order I wanted.&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Creating this website</title>
       <link>/post/2018-12-7-create-website/</link>
       <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
-      
       <guid>/post/2018-12-7-create-website/</guid>
-      <description>Getting started I’ve been contemplating the idea of creating a website for sometime, but my initial (mostly half-hearted) attempts ran into some serious technological glitches. I started out trying to create a GitHub site using Jekyll, since I knew I wanted my website to be hosted via GitHub to keep all of my code in the same place. After about an hour of unsuccessful commits that resulted in a lovely white page with my name on it, I scrapped the whole venture until I heard about the blogdown R package.</description>
+      <description>
+
+
+&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/website_fig.png&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;getting-started&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Getting started&lt;/h2&gt;
+&lt;p&gt;I’ve been contemplating the idea of creating a website for sometime, but my initial (mostly half-hearted) attempts ran into some serious technological glitches. I started out trying to create a GitHub site using Jekyll, since I knew I wanted my website to be hosted via GitHub to keep all of my code in the same place. After about an hour of unsuccessful commits that resulted in a lovely white page with my name on it, I scrapped the whole venture until I heard about the &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;&lt;code&gt;blogdown&lt;/code&gt;&lt;/a&gt; R package. Since R is my programming language of choice, the idea of being able to write posts in RMarkdown and preview my site from the comfort of RStudio was tremendously appealing. I saw a research site created through Hugo’s Academic theme using &lt;code&gt;blogdown&lt;/code&gt; that referenced some helpful tutorials and decided to give the process another shot.&lt;/p&gt;
+&lt;div id=&#34;hugo-blogdown&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Hugo + &lt;code&gt;blogdown&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;After my initial failures with Jekyll, I knew enough about the process (and my own skills) to be wary of the Academic theme’s optimistic tagline “Create a beautifully simple site in under 10 minutes”. So fair warning: getting this site up and semi-running was the work of an afternoon plus. I am not going to provide a full tutorial here, since several excellent ones already exist, but I will give my input on which resources worked for me and where I had difficulties.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;useful-resources&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Useful resources&lt;/h2&gt;
+&lt;p&gt;I started out following &lt;a href=&#34;https://amber.rbind.io/blog/2016/12/19/creatingsite/&#34;&gt;Amber Thomas’s instructions&lt;/a&gt; for using &lt;code&gt;blogdown&lt;/code&gt;, Hugo, and GitHub pages to create a website. I probably should have taken better note of her initial disclaimer that simpler methods of creating a site exist, but nonetheless I found her instructions useful for wrapping my head around the method behind the whole process. As she explains, GitHub pages and Hugo work in different ways: GitHub pages uses information from the master branch of the repository to build your website, while Hugo builds a website inside the public folder. The solution she presents in her tutorial creates a sub branch within GitHub. She provides some shell scripts written by &lt;a href=&#34;https://www.hjdskes.nl&#34;&gt;Jente Hidskes&lt;/a&gt; that create the sub branch and also update the site. These did not run for me for whatever reason – I believe Hidskes has written an updated tutorial to fix them, however.&lt;/p&gt;
+&lt;p&gt;While I was reading the comments on Thomas’s tutorials to try to troubleshoot the shell script problems, I found a different &lt;a href=&#34;http://robertmyles.github.io/2017/02/01/how-to-make-a-github-pages-blog-with-rstudio-and-hugo/&#34;&gt;tutorial by Robert McDonnell&lt;/a&gt; that promised a more streamlined approach. McDonnell gets around the GitHub/Hugo conflicts by creating two GitHub repositories, one for the website (for example, my repo is called &lt;a href=&#34;https://github.com/babichmorrowc/babichmorrowc.github.io&#34;&gt;babichmorrowc.github.io&lt;/a&gt;) and one for all of the Hugo and &lt;code&gt;blogdown&lt;/code&gt; content (mine is called &lt;a href=&#34;https://github.com/babichmorrowc/website-hugo&#34;&gt;website-hugo&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;To link these two repositories, Thomas has users create a &lt;a href=&#34;https://blog.github.com/2016-02-01-working-with-submodules/&#34;&gt;Git Submodule&lt;/a&gt; using the following code:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git submodule add -b master git@github.com:&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io.git public&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is where, once again, I ran into difficulties. I kept getting the error:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Cloning into &amp;#39;&amp;lt;filepath&amp;gt;/website-hugo/public&amp;#39;...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+fatal: clone of &amp;#39;git@github.com:babichmorrowc/babichmorrowc.github.io.git&amp;#39; into submodule path &amp;#39;&amp;lt;filepath&amp;gt;/website-hugo/public&amp;#39; failed
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Fortunately, there turned out to be an easy fix for this – the code McDonnell provides uses the SSH URL, which is something I do not have set up. I replaced it with the HTTPS URL (code below), and went on my merry way.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git submodule add -b master https://github.com/babichmorrowc/babichmorrowc.github.io.git public&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pushing-to-github&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Pushing to GitHub&lt;/h2&gt;
+&lt;p&gt;From that point forward, I had a functioning site that I could preview in RStudio using the &lt;code&gt;serve_site()&lt;/code&gt; function. Using the following Git commands, I could push those changes and get that same site up and running online:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# From the folder for the repo website-hugo
+cd public
+git add .
+git commit -m &amp;quot;new commit!&amp;quot;
+git push origin master
+
+cd ..
+git add .
+git commit -m &amp;quot;new commit part 2&amp;quot;
+git push&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;editing-my-site&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Editing my site&lt;/h2&gt;
+&lt;p&gt;I’m still learning my way around the format of the Hugo site, but by some trial and error I’ve started the process of customizing the site. I am using the &lt;a href=&#34;https://themes.gohugo.io/academic/&#34;&gt;Academic&lt;/a&gt; theme. So far I’ve managed to update my bio, add a publication, and take a stab at creating projects. As I get more familiarity with the format, I will try for a more comprehensive blog post explaining how to add your own content.&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

@@ -1,76 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>species distribution modeling on Cecina Babich Morrow</title>
+    <title>species distribution modeling | Cecina Babich Morrow</title>
     <link>/tags/species-distribution-modeling/</link>
-    <description>Recent content in species distribution modeling on Cecina Babich Morrow</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 -0400</lastBuildDate>
-    
-	<atom:link href="/tags/species-distribution-modeling/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Talk: Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/ibs_2019/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/ibs_2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Poster: Improving species range estimates for an arboreal species group with a parapatric distribution</title>
-      <link>/talk/mammalogy_2019/</link>
-      <pubDate>Sat, 29 Jun 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/mammalogy_2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Talk: Using SVMs to delineate parapatric ranges: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/helenfellow_june2019/</link>
-      <pubDate>Thu, 13 Jun 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/helenfellow_june2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Thresholding species distribution models</title>
-      <link>/post/2019-04-12-sdm-threshold/</link>
-      <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-04-12-sdm-threshold/</guid>
-      <description>From left to right: unmodified species distribution model, minimum training presence threshold, and 10th percentile threshold.   Inspiration for this post Conservation is often the main motivation behind studying where a species lives – having a model of a species’ range can help scientists assess whether it is at risk of extinction, designate protected regions to preserve its habitat, and study potential impacts of human activity. When we create species distribution models using common methods like Maxent, the result is a map of predicted habitat suitability or probability of species presence, such as the one below.</description>
-    </item>
-    
-    <item>
-      <title>Converting alpha hulls to spatial objects</title>
-      <link>/post/2019-03-18-alpha-hull/</link>
-      <pubDate>Mon, 18 Mar 2019 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2019-03-18-alpha-hull/</guid>
-      <description>Alpha hulls (α = 20) around occurrence points for two species of sloths.   Inspiration for this post In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur.</description>
-    </item>
-    
-    <item>
-      <title>Talk: Using SVMs to model ranges of congeneric sloth species</title>
-      <link>/talk/nysdm_march2019/</link>
-      <pubDate>Fri, 15 Mar 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/nysdm_march2019/</guid>
-      <description></description>
-    </item>
+      <atom:link href="/tags/species-distribution-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <description>species distribution modeling</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Thu, 27 Sep 2018 00:00:00 -0400</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>species distribution modeling</title>
+      <link>/tags/species-distribution-modeling/</link>
+    </image>
     
     <item>
       <title>Distribution modeling of Bradypus</title>
       <link>/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
-      
       <guid>/project/bradypus/</guid>
       <description></description>
     </item>

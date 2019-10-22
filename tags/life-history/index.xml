@@ -1,58 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>life history on Cecina Babich Morrow</title>
+    <title>life history | Cecina Babich Morrow</title>
     <link>/tags/life-history/</link>
-    <description>Recent content in life history on Cecina Babich Morrow</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 03 Apr 2019 00:00:00 -0400</lastBuildDate>
-    
-	<atom:link href="/tags/life-history/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Big vs. Small: Using ratios to compare life history strategies</title>
-      <link>/talk/brownscholars_ratiotalk_2019/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/brownscholars_ratiotalk_2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PREPRINT: Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>/publication/lifehistory/</link>
-      <pubDate>Wed, 16 Jan 2019 00:00:00 -0500</pubDate>
-      
-      <guid>/publication/lifehistory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Talk: Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>/talk/honors_presentation_2018/</link>
-      <pubDate>Tue, 01 May 2018 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/honors_presentation_2018/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Poster: Macroevolution of dimensionless life histories in amniotes</title>
-      <link>/talk/tree_2017/</link>
-      <pubDate>Fri, 01 Sep 2017 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/tree_2017/</guid>
-      <description></description>
-    </item>
+      <atom:link href="/tags/life-history/index.xml" rel="self" type="application/rss+xml" />
+    <description>life history</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Wed, 27 Apr 2016 00:00:00 -0400</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>life history</title>
+      <link>/tags/life-history/</link>
+    </image>
     
     <item>
       <title>Tetrapod life history traits</title>
       <link>/project/life_history/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
-      
       <guid>/project/life_history/</guid>
       <description></description>
     </item>

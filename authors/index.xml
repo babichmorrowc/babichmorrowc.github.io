@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | Cecina Babich Morrow</title>
+    <link>/authors/</link>
+      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Authors</title>
+      <link>/authors/</link>
+    </image>
+    
+    <item>
+      <title></title>
+      <link>/authors/babichmorrowc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/authors/babichmorrowc/</guid>
+      <description>&lt;p&gt;Cecina Babich Morrow is currently a data scientist at &lt;a href=&#34;https://www.springhealth.com&#34; target=&#34;_blank&#34;&gt;Spring Health&lt;/a&gt;. She works to harness the power of data to provide precision mental healthcare.&lt;/p&gt;
+
+&lt;p&gt;Previously, Cecina was a &lt;a href=&#34;https://www.amnh.org/learn-teach/higher-education/helen-fellowship&#34; target=&#34;_blank&#34;&gt;Helen Fellow&lt;/a&gt; at the American Museum of Natural History. She works with Mary Blair in the Center for Biodiversity and Conservation on the open-source species distribution modeling software &lt;a href=&#34;https://wallaceecomod.github.io/&#34; target=&#34;_blank&#34;&gt;Wallace&lt;/a&gt;. In addition to working on testing and expanding the Wallace software, she is modeling the distributions of three species of three-toed sloths to better understand the biogeography of these species.&lt;/p&gt;
+
+&lt;p&gt;While at Kenyon College, Cecina worked with Drew Kerkhoff in the &lt;a href=&#34;https://kerkhofflab.org/&#34; target=&#34;_blank&#34;&gt;Kenyon Macroecology Laboratory&lt;/a&gt;. As a Kenyon Summer Science Scholar in 2016, Cecina collaborated with researchers at the University of Arizona and Oxford University to develop and test new hypervolume methods for quantifying plant functional diversity and environmental niches. Her senior honors thesis used these hypervolume methods to compare dimensionless life history stratgies across tetrapods to examine how these traits have evolved in response to different evolutionary pressures.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

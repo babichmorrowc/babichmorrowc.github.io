@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Morgan Ernest | Cecina Babich Morrow</title>
+    <link>/authors/morgan-ernest/</link>
+      <atom:link href="/authors/morgan-ernest/index.xml" rel="self" type="application/rss+xml" />
+    <description>Morgan Ernest</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>`2019`</copyright><lastBuildDate>Tue, 01 May 2018 13:00:00 -0400</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Morgan Ernest</title>
+      <link>/authors/morgan-ernest/</link>
+    </image>
+    
+    <item>
+      <title>Talk: Macroevolution of dimensionless life history metrics in tetrapods</title>
+      <link>/talk/honors_presentation_2018/</link>
+      <pubDate>Tue, 01 May 2018 13:00:00 -0400</pubDate>
+      <guid>/talk/honors_presentation_2018/</guid>
+      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vTsSj-oftLksGEKTkzCoBSIpzooO61ZMGAUzoGBv7u20OzMQK8ctX3gCpWTMm4UowrrWumFrdQsY0Cd/embed?start=false&amp;loop=false&amp;delayms=5000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Poster: Macroevolution of dimensionless life histories in amniotes</title>
+      <link>/talk/tree_2017/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 -0400</pubDate>
+      <guid>/talk/tree_2017/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

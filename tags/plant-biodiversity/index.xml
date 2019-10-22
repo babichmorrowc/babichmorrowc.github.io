@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>plant biodiversity on Cecina Babich Morrow</title>
+    <title>plant biodiversity | Cecina Babich Morrow</title>
     <link>/tags/plant-biodiversity/</link>
-    <description>Recent content in plant biodiversity on Cecina Babich Morrow</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0500</lastBuildDate>
-    
-	<atom:link href="/tags/plant-biodiversity/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/plant-biodiversity/index.xml" rel="self" type="application/rss+xml" />
+    <description>plant biodiversity</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>`2019`</copyright><lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0500</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>plant biodiversity</title>
+      <link>/tags/plant-biodiversity/</link>
+    </image>
     
     <item>
       <title>Poster: Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
       <link>/talk/ibs_2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
-      
       <guid>/talk/ibs_2017/</guid>
-      <description>This poster was made using version 1.4.6 of the hypervolume R package. These results should not be considered representative of the current algorithms in the package - to see current algorithm performance, refer to Blonder et al. 2017.</description>
+      <description>&lt;p&gt;This poster was made using version 1.4.6 of the &lt;code&gt;hypervolume&lt;/code&gt; R package. These results should not be considered representative of the current algorithms in the package - to see current algorithm performance, refer to &lt;a href=&#34;https://babichmorrowc.github.io/publication/hypervolumes/&#34; target=&#34;_blank&#34;&gt;Blonder &lt;em&gt;et al.&lt;/em&gt; 2017&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

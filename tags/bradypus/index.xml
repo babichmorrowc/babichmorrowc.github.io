@@ -1,58 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bradypus on Cecina Babich Morrow</title>
+    <title>Bradypus | Cecina Babich Morrow</title>
     <link>/tags/bradypus/</link>
-    <description>Recent content in Bradypus on Cecina Babich Morrow</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 -0400</lastBuildDate>
-    
-	<atom:link href="/tags/bradypus/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Talk: Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/ibs_2019/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/ibs_2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Poster: Improving species range estimates for an arboreal species group with a parapatric distribution</title>
-      <link>/talk/mammalogy_2019/</link>
-      <pubDate>Sat, 29 Jun 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/mammalogy_2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Talk: Using SVMs to delineate parapatric ranges: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/helenfellow_june2019/</link>
-      <pubDate>Thu, 13 Jun 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/helenfellow_june2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Talk: Using SVMs to model ranges of congeneric sloth species</title>
-      <link>/talk/nysdm_march2019/</link>
-      <pubDate>Fri, 15 Mar 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/talk/nysdm_march2019/</guid>
-      <description></description>
-    </item>
+      <atom:link href="/tags/bradypus/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bradypus</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Thu, 27 Sep 2018 00:00:00 -0400</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Bradypus</title>
+      <link>/tags/bradypus/</link>
+    </image>
     
     <item>
       <title>Distribution modeling of Bradypus</title>
       <link>/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
-      
       <guid>/project/bradypus/</guid>
       <description></description>
     </item>

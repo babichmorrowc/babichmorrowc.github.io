@@ -1,85 +1,71 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homes on Cecina Babich Morrow</title>
+    <title>Homes | Cecina Babich Morrow</title>
     <link>/home/</link>
-    <description>Recent content in Homes on Cecina Babich Morrow</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
-    
-	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
+    <description>Homes</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>`2019`</copyright><lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Homes</title>
+      <link>/home/</link>
+    </image>
     
     <item>
       <title></title>
       <link>/home/hero_carousel/</link>
       <pubDate>Sun, 15 Oct 2017 00:00:00 -0400</pubDate>
-      
       <guid>/home/hero_carousel/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/home/hero/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 -0400</pubDate>
-      
-      <guid>/home/hero/</guid>
-      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 # Latest release   # #Star # #</description>
     </item>
     
     <item>
       <title>Skills</title>
       <link>/home/skills/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 -0400</pubDate>
-      
       <guid>/home/skills/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Recent Posts</title>
-      <link>/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
-      <guid>/home/posts/</guid>
+      <title>Academic</title>
+      <link>/home/hero/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/home/hero/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The Best Way to Create the Website You Want from Markdown (or RStudio/Jupyter)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Build &lt;strong&gt;Anything&lt;/strong&gt; with Widgets&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&#34;text-shadow: none;&#34;&gt;&lt;a class=&#34;github-button&#34; href=&#34;https://github.com/gcushen/hugo-academic&#34; data-icon=&#34;octicon-star&#34; data-size=&#34;large&#34; data-show-count=&#34;true&#34; aria-label=&#34;Star this on GitHub&#34;&gt;Star&lt;/a&gt;&lt;script async defer src=&#34;https://buttons.github.io/buttons.js&#34;&gt;&lt;/script&gt;&lt;/span&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Featured Publications</title>
+      <link>/home/featured/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/home/featured/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Selected Publications</title>
-      <link>/home/publications_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
-      <guid>/home/publications_selected/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Publications</title>
+      <title>Recent Publications</title>
       <link>/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/home/publications/</guid>
-      <description></description>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Quickly discover relevant content by &lt;a href=&#34;/publication/&#34;&gt;filtering publications&lt;/a&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
-      <title>Selected Talks</title>
-      <link>/home/talks_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
-      <guid>/home/talks_selected/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Talks &amp; Posters</title>
+      <title>Recent &amp; Upcoming Talks</title>
       <link>/home/talks/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/home/talks/</guid>
       <description></description>
     </item>
@@ -87,9 +73,16 @@
     <item>
       <title>Projects</title>
       <link>/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/home/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Posts</title>
+      <link>/home/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/home/posts/</guid>
       <description></description>
     </item>
     
@@ -97,26 +90,40 @@
       <title>Teaching</title>
       <link>/home/teaching/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
       <guid>/home/teaching/</guid>
-      <description>I teach high school women computer programming skills. You can find a description of their internship and lesson plans in the following GitHub repository: https://github.com/babichmorrowc/SlothSquad2018-9. If you have any questions about these resources, please let me know!</description>
+      <description>&lt;p&gt;I teach high school women computer programming skills. You can find a description of their internship and lesson plans in the following GitHub repository: &lt;a href=&#34;https://github.com/babichmorrowc/SlothSquad2018-9&#34; target=&#34;_blank&#34;&gt;https://github.com/babichmorrowc/SlothSquad2018-9&lt;/a&gt;. If you have any questions about these resources, please let me know!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Accomplish&amp;shy;ments</title>
+      <link>/home/accomplishments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/home/accomplishments/</guid>
+      <description></description>
     </item>
     
     <item>
       <title></title>
       <link>/home/about/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
       <guid>/home/about/</guid>
-      <description>Biography Cecina Babich Morrow is currently a data scientist at Spring Health. She works to harness the power of data to provide precision mental healthcare.
-Previously, Cecina was a Helen Fellow at the American Museum of Natural History. She works with Mary Blair in the Center for Biodiversity and Conservation on the open-source species distribution modeling software Wallace. In addition to working on testing and expanding the Wallace software, she is modeling the distributions of three species of three-toed sloths to better understand the biogeography of these species.</description>
+      <description>
+
+&lt;h1 id=&#34;biography&#34;&gt;Biography&lt;/h1&gt;
+
+&lt;p&gt;Cecina Babich Morrow is currently a data scientist at &lt;a href=&#34;https://www.springhealth.com/&#34; target=&#34;_blank&#34;&gt;Spring Health&lt;/a&gt;. She works to harness the power of data to provide precision mental healthcare.&lt;/p&gt;
+
+&lt;p&gt;Previously, Cecina was a &lt;a href=&#34;https://www.amnh.org/learn-teach/higher-education/helen-fellowship&#34; target=&#34;_blank&#34;&gt;Helen Fellow&lt;/a&gt; at the American Museum of Natural History. She works with Mary Blair in the Center for Biodiversity and Conservation on the open-source species distribution modeling software &lt;a href=&#34;https://wallaceecomod.github.io/&#34; target=&#34;_blank&#34;&gt;Wallace&lt;/a&gt;. In addition to working on testing and expanding the Wallace software, she is modeling the distributions of three species of three-toed sloths to better understand the biogeography of these species.&lt;/p&gt;
+
+&lt;p&gt;While at Kenyon College, Cecina worked with Drew Kerkhoff in the &lt;a href=&#34;https://kerkhofflab.org/&#34; target=&#34;_blank&#34;&gt;Kenyon Macroecology Laboratory&lt;/a&gt;. As a Kenyon Summer Science Scholar in 2016, Cecina collaborated with researchers at the University of Arizona and Oxford University to develop and test new hypervolume methods for quantifying plant functional diversity and environmental niches. Her senior honors thesis used these hypervolume methods to compare dimensionless life history stratgies across tetrapods to examine how these traits have evolved in response to different evolutionary pressures.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Tags</title>
       <link>/home/tags/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 -0400</pubDate>
-      
       <guid>/home/tags/</guid>
       <description></description>
     </item>
@@ -125,7 +132,6 @@ Previously, Cecina was a Helen Fellow at the American Museum of Natural History.
       <title>Contact</title>
       <link>/home/contact/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
       <guid>/home/contact/</guid>
       <description></description>
     </item>
@@ -134,7 +140,6 @@ Previously, Cecina was a Helen Fellow at the American Museum of Natural History.
       <title>Experience</title>
       <link>/home/experience/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/home/experience/</guid>
       <description></description>
     </item>
