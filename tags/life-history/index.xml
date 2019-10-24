@@ -5,12 +5,46 @@
     <link>/tags/life-history/</link>
       <atom:link href="/tags/life-history/index.xml" rel="self" type="application/rss+xml" />
     <description>life history</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Wed, 27 Apr 2016 00:00:00 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Wed, 03 Apr 2019 00:00:00 -0400</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>life history</title>
       <link>/tags/life-history/</link>
     </image>
+    
+    <item>
+      <title>Big vs. Small: Using ratios to compare life history strategies</title>
+      <link>/talk/brownscholars_ratiotalk_2019/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate>
+      <guid>/talk/brownscholars_ratiotalk_2019/</guid>
+      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vQ1T_FLUSVOYZ3YCehaGJM7gFCFMOCQMllQ9A4itkVMk5IyUJugfnE8Qt95WqqFMsV5dNintG0qQjU0/embed?&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Macroevolution of dimensionless life history metrics in tetrapods</title>
+      <link>/publication/lifehistory/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 -0500</pubDate>
+      <guid>/publication/lifehistory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Talk: Macroevolution of dimensionless life history metrics in tetrapods</title>
+      <link>/talk/honors_presentation_2018/</link>
+      <pubDate>Tue, 01 May 2018 13:00:00 -0400</pubDate>
+      <guid>/talk/honors_presentation_2018/</guid>
+      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vTsSj-oftLksGEKTkzCoBSIpzooO61ZMGAUzoGBv7u20OzMQK8ctX3gCpWTMm4UowrrWumFrdQsY0Cd/embed?start=false&amp;loop=false&amp;delayms=5000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Poster: Macroevolution of dimensionless life histories in amniotes</title>
+      <link>/talk/tree_2017/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 -0400</pubDate>
+      <guid>/talk/tree_2017/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tetrapod life history traits</title>

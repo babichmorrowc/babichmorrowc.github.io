@@ -5,12 +5,148 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Fri, 09 Aug 2019 00:00:00 -0400</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Authors</title>
       <link>/authors/</link>
     </image>
+    
+    <item>
+      <title>Cecina Babich Morrow</title>
+      <link>/authors/cecina-babich-morrow/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
+      <guid>/authors/cecina-babich-morrow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jamie M. Kass</title>
+      <link>/authors/jamie-m.-kass/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
+      <guid>/authors/jamie-m.-kass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mary E. Blair</title>
+      <link>/authors/mary-e.-blair/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
+      <guid>/authors/mary-e.-blair/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Peter J. Galante</title>
+      <link>/authors/peter-j.-galante/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
+      <guid>/authors/peter-j.-galante/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robert P. Anderson</title>
+      <link>/authors/robert-p.-anderson/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
+      <guid>/authors/robert-p.-anderson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Andrew J. Kerkhoff</title>
+      <link>/authors/andrew-j.-kerkhoff/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 -0500</pubDate>
+      <guid>/authors/andrew-j.-kerkhoff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>S.K. Morgan Ernest</title>
+      <link>/authors/s.k.-morgan-ernest/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 -0500</pubDate>
+      <guid>/authors/s.k.-morgan-ernest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Drew Kerkhoff</title>
+      <link>/authors/drew-kerkhoff/</link>
+      <pubDate>Tue, 01 May 2018 13:00:00 -0400</pubDate>
+      <guid>/authors/drew-kerkhoff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Morgan Ernest</title>
+      <link>/authors/morgan-ernest/</link>
+      <pubDate>Tue, 01 May 2018 13:00:00 -0400</pubDate>
+      <guid>/authors/morgan-ernest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Benjamin Blonder</title>
+      <link>/authors/benjamin-blonder/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <guid>/authors/benjamin-blonder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brian J. Enquist</title>
+      <link>/authors/brian-j.-enquist/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <guid>/authors/brian-j.-enquist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brian Maitner</title>
+      <link>/authors/brian-maitner/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <guid>/authors/brian-maitner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Christine Lamanna</title>
+      <link>/authors/christine-lamanna/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <guid>/authors/christine-lamanna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cyrille Violle</title>
+      <link>/authors/cyrille-violle/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <guid>/authors/cyrille-violle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>David J. Harris</title>
+      <link>/authors/david-j.-harris/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <guid>/authors/david-j.-harris/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Andrew Kerkhoff</title>
+      <link>/authors/andrew-kerkhoff/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      <guid>/authors/andrew-kerkhoff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brian Enquist</title>
+      <link>/authors/brian-enquist/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      <guid>/authors/brian-enquist/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title></title>

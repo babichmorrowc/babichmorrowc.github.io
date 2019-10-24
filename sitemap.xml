@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/</loc>
-    <lastmod>2019-10-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/</loc>
     <lastmod>2019-10-22T00:00:00+00:00</lastmod>
   </url>
@@ -23,18 +18,323 @@
   </url>
   
   <url>
+    <loc>/</loc>
+    <lastmod>2019-10-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutorial/</loc>
     <lastmod>2019-10-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2019-10-11T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-10-11-google_fonts/</loc>
+    <lastmod>2019-10-11T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2019-10-11T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2019-10-11T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-10-11T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-09-26-mode_api_instructions/</loc>
+    <lastmod>2019-09-26T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-09-18-git-workflow1/</loc>
+    <lastmod>2019-09-17T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/github/</loc>
+    <lastmod>2019-09-17T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/github/</loc>
+    <lastmod>2019-09-17T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/career/</loc>
+    <lastmod>2019-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/career/</loc>
+    <lastmod>2019-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/goldwater-highlight/</loc>
+    <lastmod>2019-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/biogeography/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/bradypus/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/cecina-babich-morrow/</loc>
+    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/jamie-m.-kass/</loc>
+    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/mary-e.-blair/</loc>
+    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/peter-j.-galante/</loc>
+    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/robert-p.-anderson/</loc>
+    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/species-distribution-modeling/</loc>
+    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/ibs_2019/</loc>
+    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/machine-learning/</loc>
+    <lastmod>2019-06-29T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/mammalogy_2019/</loc>
+    <lastmod>2019-06-29T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/helenfellow_june2019/</loc>
+    <lastmod>2019-06-13T11:30:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-06-07-usb/</loc>
+    <lastmod>2019-06-07T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-05-23-highres-figures/</loc>
+    <lastmod>2019-05-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/species-distribution-modeling/</loc>
+    <lastmod>2019-04-12T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-04-12-sdm-threshold/</loc>
+    <lastmod>2019-04-12T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/brownscholars_ratiotalk_2019/</loc>
+    <lastmod>2019-04-03T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/education/</loc>
+    <lastmod>2019-04-03T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/life-history/</loc>
+    <lastmod>2019-04-03T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-03-18-alpha-hull/</loc>
+    <lastmod>2019-03-18T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/nysdm_march2019/</loc>
+    <lastmod>2019-03-15T14:30:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/lgbt/</loc>
+    <lastmod>2019-02-22T17:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/la_lgbt_careertalk_2019/</loc>
+    <lastmod>2019-02-22T17:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/earth-science/</loc>
+    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/hackathon/</loc>
+    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/hackathon/</loc>
+    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-02-20-meteoritecluster1/</loc>
+    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/meteorites/</loc>
+    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/meteorites/</loc>
+    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-02-20-pythonrmd/</loc>
+    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/website/</loc>
+    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-02-14-hackathon/</loc>
+    <lastmod>2019-02-14T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/evolution/</loc>
+    <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/evolution/</loc>
+    <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-01-09-grafting-trees/</loc>
+    <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/phylogenetics/</loc>
+    <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/phylogenetics/</loc>
+    <lastmod>2019-01-18T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/3/</loc>
+    <lastmod>2019-01-16T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/andrew-j.-kerkhoff/</loc>
+    <lastmod>2019-01-16T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/hypervolume/</loc>
+    <lastmod>2019-01-16T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/lifehistory/</loc>
+    <lastmod>2019-01-16T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+    <lastmod>2019-01-16T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/s.k.-morgan-ernest/</loc>
+    <lastmod>2019-01-16T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019-01-03-debugging-r/</loc>
+    <lastmod>2019-01-03T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018-12-12-add-google-doc/</loc>
+    <lastmod>2018-12-12T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018-12-11-order-items/</loc>
+    <lastmod>2018-12-11T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018-12-7-create-website/</loc>
+    <lastmod>2018-12-07T21:13:14-05:00</lastmod>
   </url>
   
   <url>
@@ -48,23 +348,93 @@
   </url>
   
   <url>
-    <loc>/tags/species-distribution-modeling/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/privacy/</loc>
     <lastmod>2018-06-28T00:00:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/hypervolume/</loc>
-    <lastmod>2016-07-27T00:00:00-04:00</lastmod>
+    <loc>/authors/drew-kerkhoff/</loc>
+    <lastmod>2018-05-01T13:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/morgan-ernest/</loc>
+    <lastmod>2018-05-01T13:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/honors_presentation_2018/</loc>
+    <lastmod>2018-05-01T13:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/tree_2017/</loc>
+    <lastmod>2017-09-01T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/2/</loc>
+    <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/benjamin-blonder/</loc>
+    <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/brian-j.-enquist/</loc>
+    <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/brian-maitner/</loc>
+    <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/christine-lamanna/</loc>
+    <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/cyrille-violle/</loc>
+    <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/david-j.-harris/</loc>
+    <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/hypervolumes/</loc>
+    <lastmod>2017-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/andrew-kerkhoff/</loc>
+    <lastmod>2017-01-01T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/bien/</loc>
+    <lastmod>2017-01-01T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/brian-enquist/</loc>
+    <lastmod>2017-01-01T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/plant-biodiversity/</loc>
+    <lastmod>2017-01-01T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/ibs_2017/</loc>
+    <lastmod>2017-01-01T00:00:00-05:00</lastmod>
   </url>
   
   <url>
@@ -78,29 +448,12 @@
   </url>
   
   <url>
-    <loc>/tags/life-history/</loc>
-    <lastmod>2016-04-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/project/life_history/</loc>
     <lastmod>2016-04-27T00:00:00-04:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/babichmorrowc/</loc>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
   </url>
   
   <url>

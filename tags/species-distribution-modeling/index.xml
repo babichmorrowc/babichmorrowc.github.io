@@ -5,12 +5,461 @@
     <link>/tags/species-distribution-modeling/</link>
       <atom:link href="/tags/species-distribution-modeling/index.xml" rel="self" type="application/rss+xml" />
     <description>species distribution modeling</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Thu, 27 Sep 2018 00:00:00 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Fri, 09 Aug 2019 00:00:00 -0400</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>species distribution modeling</title>
       <link>/tags/species-distribution-modeling/</link>
     </image>
+    
+    <item>
+      <title>Talk: Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
+      <link>/talk/ibs_2019/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
+      <guid>/talk/ibs_2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Poster: Improving species range estimates for an arboreal species group with a parapatric distribution</title>
+      <link>/talk/mammalogy_2019/</link>
+      <pubDate>Sat, 29 Jun 2019 00:00:00 -0400</pubDate>
+      <guid>/talk/mammalogy_2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Talk: Using SVMs to delineate parapatric ranges: An example with three-toed sloths (Bradypus)</title>
+      <link>/talk/helenfellow_june2019/</link>
+      <pubDate>Thu, 13 Jun 2019 11:30:00 -0400</pubDate>
+      <guid>/talk/helenfellow_june2019/</guid>
+      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vT29X9rGoq1GeCwrXMPJEhmwy7I_nf8fFzpIMdWyLQfROI-zVqicELakhgOgRWvDgicV3s_c6ii4njc/embed?start=false&amp;loop=false&amp;delayms=3000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Thresholding species distribution models</title>
+      <link>/post/2019-04-12-sdm-threshold/</link>
+      <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
+      <guid>/post/2019-04-12-sdm-threshold/</guid>
+      <description>
+
+
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/thresholds.png&#34; /&gt;
+&lt;figcaption&gt;
+From left to right: unmodified species distribution model, minimum training presence threshold, and 10th percentile threshold.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;Conservation is often the main motivation behind studying where a species lives – having a model of a species’ range can help scientists assess whether it is at risk of extinction, designate protected regions to preserve its habitat, and study potential impacts of human activity. When we create species distribution models using common methods like Maxent, the result is a map of predicted habitat suitability or probability of species presence, such as the one below. In conservation management, however, it is often more useful to present range models in the form of species presence/absence. We can convert continuous predictions of habitat suitability into binary predictions of whether a species lives in a certain region or not using thresholds: i.e. designating all regions above a certain suitability level as within the species range and all areas below that suitability level as outside of it.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/threshold_ex.png&#34; /&gt;
+&lt;figcaption&gt;
+Left: species distribution model with continuous habitat suitability values. Right: binary presence/absence model used by applying a threshold. (Figure from &lt;a href=&#34;https://rspatial.org/sdm/6_sdm_methods.html#mahalanobis-distance&#34;&gt;Spatial Data Science with R&lt;/a&gt;)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;I recently needed to threshold some species distribution models to convert them into these binary maps and had difficulty finding a built-in way to do this in R. The &lt;code&gt;dismo&lt;/code&gt; package for species distribution modeling has a function &lt;code&gt;threshold&lt;/code&gt; to find what value to use as the “cut-off”, but I needed a function to apply a given cut-off value to model and output a raster with binary values for presence and absence.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;thresholding-function&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Thresholding function&lt;/h2&gt;
+&lt;p&gt;I wrote an R function to take a species distribution model and threshold it by a given threshold - either minimum training presence (MTP) or 10th percentile training present (P10).&lt;/p&gt;
+&lt;div id=&#34;minimum-training-presence&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Minimum training presence&lt;/h3&gt;
+&lt;p&gt;This threshold finds the lowest predicted suitability value for an occurrence point. Essentially, it assumes that the least suitable habitat at which the species is known to occur is the minimum suitability value for the species. The MTP threshold ensures that all occurrence points fall within the area of the binary model.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;th-percentile-training-presence&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;10th percentile training presence&lt;/h3&gt;
+&lt;p&gt;The P10, on the other hand, is a threshold which omits all regions with habitat suitability lower than the suitability values for the lowest 10% of occurrence records. It assumes that the 10% of occurrence records in the least suitable habitat aren’t occurring in regions that are representative of the species overall habitat, and thus should be omitted. This threshold omits a greater region than the MTP.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-function&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The function&lt;/h3&gt;
+&lt;p&gt;The following is the function I wrote to apply these two thresholds to an SDM. The function’s arguments are the SDM, the occurrence points of the species in the form of longitude - latitude pairs, the threshold type, and whether the user would like the output to be a binary prediction (0s for predicted absence and 1s for predicted presence), or a thresholded continuous SDM (regions with suitability below the threshold set to 0).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(raster)
+## Warning: package &amp;#39;raster&amp;#39; was built under R version 3.5.2
+## Loading required package: sp
+
+sdm_threshold &amp;lt;- function(sdm, occs, type = &amp;quot;mtp&amp;quot;, binary = FALSE){
+  occPredVals &amp;lt;- raster::extract(sdm, occs)
+  if(type == &amp;quot;mtp&amp;quot;){
+    thresh &amp;lt;- min(na.omit(occPredVals))
+  } else if(type == &amp;quot;p10&amp;quot;){
+    if(length(occPredVals) &amp;lt; 10){
+      p10 &amp;lt;- floor(length(occPredVals) * 0.9)
+    } else {
+      p10 &amp;lt;- ceiling(length(occPredVals) * 0.9)
+    }
+    thresh &amp;lt;- rev(sort(occPredVals))[p10]
+  }
+  sdm_thresh &amp;lt;- sdm
+  sdm_thresh[sdm_thresh &amp;lt; thresh] &amp;lt;- NA
+  if(binary){
+    sdm_thresh[sdm_thresh &amp;gt;= thresh] &amp;lt;- 1
+  }
+  return(sdm_thresh)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first step of the function is to extract the SDM predictions at all occurrence points.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;occPredVals &amp;lt;- raster::extract(sdm, occs)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, the function calculates a threshold value &lt;code&gt;thresh&lt;/code&gt; for either the MTP or P10 threshold. Finally, it sets all cells in the SDM raster with values lower than the threshold equal to 0. If the user wants a binary map, the function sets all cells above the threshold equal to 1:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sdm_thresh &amp;lt;- sdm
+sdm_thresh[sdm_thresh &amp;lt; thresh] &amp;lt;- NA
+if(binary){
+  sdm_thresh[sdm_thresh &amp;gt;= thresh] &amp;lt;- 1
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;Now we can apply the function to an actual SDM I generated for a species of three-toed sloth (&lt;em&gt;Bradypus variegatus&lt;/em&gt;).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load in the SDM and occurrence points
+sloth_sdm &amp;lt;- raster(&amp;quot;/Users/hellenfellows/Desktop/website-hugo/static/SDMs/variegatus_sdm.tif&amp;quot;)
+sloth_occs &amp;lt;- read.csv(&amp;quot;~/Desktop/website-hugo/static/SDMs/variegatus_occ.csv&amp;quot;)
+
+plot(sloth_sdm)
+points(sloth_occs[,2:3], pch = 19, cex = 0.5)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We can apply both MTP and P10 thresholds to the SDM based on the location of the occurrence points:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sloth_mtp &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;mtp&amp;quot;)
+plot(sloth_mtp)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;
+sloth_p10 &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;p10&amp;quot;)
+plot(sloth_p10)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We could also make either of these thresholded SDMs into a binary prediction in the following way:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sloth_mtp_bin &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;mtp&amp;quot;, binary = TRUE)
+plot(sloth_mtp_bin)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;generalization&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Generalization&lt;/h2&gt;
+&lt;p&gt;My primary motivation to write this function was to use it on SDMs, but the function could easily be generalized to threshold any raster by a given value:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raster_threshold &amp;lt;- function(input_raster, points = NULL, type = NULL, threshold = NULL, binary = FALSE) {
+  if (!is.null(points)) {
+    pointVals &amp;lt;- raster::extract(input_raster, points)
+    if (type == &amp;quot;mtp&amp;quot;) {
+      threshold &amp;lt;- min(na.omit(pointVals))
+    } else if (type == &amp;quot;p10&amp;quot;) {
+      if (length(pointVals) &amp;lt; 10) {
+        p10 &amp;lt;- floor(length(pointVals) * 0.9)
+      } else {
+        p10 &amp;lt;- ceiling(length(pointVals) * 0.9)
+      }
+      threshold &amp;lt;- rev(sort(pointVals))[p10]
+    }
+  }
+  raster_thresh &amp;lt;- input_raster
+  raster_thresh[raster_thresh &amp;lt; threshold] &amp;lt;- NA
+  if (binary) {
+    raster_thresh[raster_thresh &amp;gt;= threshold] &amp;lt;- 1
+  }
+  return(raster_thresh)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I expanded the function to allow the user to input points within the raster to calculate MTP and P10 thresholds if desired, but also to enable a user-specified threshold.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create arbitrary raster
+raster1 &amp;lt;- raster(nrow=10, ncol=10)
+raster1[1:25]&amp;lt;- 1:25
+raster1[26:50] &amp;lt;- rev(1:25)
+raster1[51:75] &amp;lt;- 1:25
+raster1[76:100] &amp;lt;- rev(1:25)
+
+# create a set of 20 arbitrary points within the raster
+xy &amp;lt;- data.frame(x = runif(20, min = -150, max = 150), y = runif(20, min = -70, max = 70))
+
+plot(raster1)
+points(xy)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Now we can apply the function to see the MTP and P10 thresholded rasters:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtp_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;mtp&amp;quot;, binary = TRUE)
+plot(mtp_raster)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;
+p10_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;p10&amp;quot;, binary = TRUE)
+plot(p10_raster)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We can also use a user-inputted threshold to remove all parts of the raster with values lower than 20:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;user_raster &amp;lt;- raster_threshold(input_raster = raster1, threshold = 20)
+plot(user_raster)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Converting alpha hulls to spatial objects</title>
+      <link>/post/2019-03-18-alpha-hull/</link>
+      <pubDate>Mon, 18 Mar 2019 21:13:14 -0500</pubDate>
+      <guid>/post/2019-03-18-alpha-hull/</guid>
+      <description>
+
+
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/alpha_bg_regions.png&#34; /&gt;
+&lt;figcaption&gt;
+Alpha hulls (α = 20) around occurrence points for two species of sloths.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur. The key to selecting this region is to pick an area where the species could occur but hasn’t necessarily been observed – for example, you don’t want to include an area separated from the rest of the range by a big mountain range that you don’t believe the organism could cross, but you do want to include a range of potential environments. There are many methods to delineate this region, from drawing a box around the occurrence points of the species to creating a buffered region around each occurrence point (think a collection of lots of circles around each point). One of my research mentors suggested that I try a new method using a shape known as an α-hull.&lt;/p&gt;
+&lt;p&gt;I’ll describe α-hulls in more detail below, but you can get the gist from the map above, where I show occurrence points for two species of sloths surrounded by an α-hull for each species. When I tried to create this region in R, however, I ran into a roadblock: the α-hull objects were a specific kind of R object that didn’t play nicely with spatial data in R, particularly objects from the &lt;code&gt;sp&lt;/code&gt; package. In particular, I needed a way to convert α objects into SpatialPolygons. This post describes a series of functions I wrote to carry out this process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-alphahull-package&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The &lt;code&gt;alphahull&lt;/code&gt; package&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;alphahull&lt;/code&gt; R package (Pateiro-Lopez et al. 2016) draws shapes (like the ones above) around sets of points based on a given parameter, α. The package creates two kinds of shapes I was interested in: α-shapes and α-convex hulls. The functions in this post convert these shapes into objects compatible with the &lt;code&gt;sp&lt;/code&gt; package, which can then be used for spatial analyses, including creating background regions for species distribution modeling.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load packages
+library(alphahull)
+library(sp)&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;alpha-shapes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Alpha shapes&lt;/h3&gt;
+&lt;p&gt;Alpha shapes consist of a collection of lines drawn around a group of points. Probably the most familiar example of an α-shape is a convex hull, the smallest convex shape that can be drawn around a group of objects. For example, the following code draws a convex hull around some data from the iris dataset:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(iris)
+iris_sepals &amp;lt;- iris[,1:2]
+# remove duplicate datapoints
+iris_sepals &amp;lt;- iris_sepals[!duplicated(paste(iris_sepals$Sepal.Length, iris_sepals$Sepal.Width)), ]
+
+# find points that lie on the convex hull
+convexhull &amp;lt;- chull(iris_sepals)
+# plot the data points
+plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
+hull_pts &amp;lt;- c(convexhull, convexhull[1])
+# plot the convex hull
+lines(iris_sepals[hull_pts, ], col = &amp;quot;magenta&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This convex hull (drawn in magenta) is an example of an α-shape: all convex hulls are α-shapes, but not all α-shapes are convex hulls. An α-shape doesn’t have to be convex – the lines making up the border of the shape can create concave edges relative to the points in the dataset. For example:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create a three-paneled figure
+par(mfrow = c(1,3))
+
+# create three different alpha shapes
+alphashape_0.5 &amp;lt;- ashape(iris_sepals, alpha = 0.5)
+alphashape_1 &amp;lt;- ashape(iris_sepals, alpha = 1)
+alphashape_2 &amp;lt;- ashape(iris_sepals, alpha = 2)
+
+# plot alpha = 0.5
+plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
+plot(alphashape_0.5, col = &amp;quot;magenta&amp;quot;, add = TRUE)
+# plot alpha = 1
+plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
+plot(alphashape_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)
+# plot alpha = 2
+plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
+plot(alphashape_2, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# reset plotting parameters
+par(mfrow = c(1,1))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alpha shapes are created using the &lt;code&gt;ashape&lt;/code&gt; function from the &lt;code&gt;alphahull&lt;/code&gt; package. As you can see, increasing the α value makes the shape closer and closer to the convex hull, while low values of α make the shape more concave.&lt;/p&gt;
+&lt;div id=&#34;alpha-shapes-to-polygons&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Alpha shapes to polygons&lt;/h4&gt;
+&lt;p&gt;In order to use α-shapes with spatial data in R, I wanted to convert these shapes to polygons. To accomplish this, I modified some of the code from an &lt;a href=&#34;https://rpubs.com/geospacedman/alphasimple&#34;&gt;RPubs by Barry Rowlingson&lt;/a&gt; to create the following function:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(igraph)
+## 
+## Attaching package: &amp;#39;igraph&amp;#39;
+## The following objects are masked from &amp;#39;package:stats&amp;#39;:
+## 
+##     decompose, spectrum
+## The following object is masked from &amp;#39;package:base&amp;#39;:
+## 
+##     union
+
+ashape2poly &amp;lt;- function(ashape){
+  # Convert node numbers into characters
+  ashape$edges[,1] &amp;lt;- as.character(ashape$edges[,1])
+  ashape_graph &amp;lt;- graph_from_edgelist(ashape$edges[,1:2], directed = FALSE)
+  if (!is.connected(ashape_graph)) {
+    stop(&amp;quot;Graph not connected&amp;quot;)
+  }
+  if (any(degree(ashape_graph) != 2)) {
+    stop(&amp;quot;Graph not circular&amp;quot;)
+  }
+  if (clusters(ashape_graph)$no &amp;gt; 1) {
+    stop(&amp;quot;Graph composed of more than one circle&amp;quot;)
+  }
+  # Delete one edge to create a chain
+  cut_graph &amp;lt;- ashape_graph - E(ashape_graph)[1]
+  # Find chain end points
+  ends = names(which(degree(cut_graph) == 1))
+  path = get.shortest.paths(cut_graph, ends[1], ends[2])$vpath[[1]]
+  # this is an index into the points
+  pathX = as.numeric(V(ashape_graph)[path]$name)
+  # join the ends
+  pathX = c(pathX, pathX[1])
+  return(pathX)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For the reasoning behind the function, check out the RPubs I referred to for guidance. For a sanity check, we can compare the resulting shape to the original α-shape we were trying to replicate:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;alphapoly_1 &amp;lt;- ashape2poly(alphashape_1)
+plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
+# show the original alpha shape
+plot(alphashape_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
+# plot the new polygon
+lines(iris_sepals[alphapoly_1, ], col = &amp;quot;magenta&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;alpha-hulls&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Alpha hulls&lt;/h3&gt;
+&lt;p&gt;Alpha hulls add another layer of complexity to this process because they can include curved lines (arcs) as edges of a shape. For example:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;alphahull_1 &amp;lt;- ahull(iris_sepals, alpha = 1)
+
+plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
+plot(alphahull_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;arcs-to-lines&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Arcs to lines&lt;/h4&gt;
+&lt;p&gt;To deal with this curvature, I wrote the following function to convert the arcs between points in the hull to a series of very short line segments in order to approximate the curve.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# function to convert an arc into line segments
+# given the center of the arc, the radius, the vector, and the angle (radians)
+arc2line &amp;lt;- function(center, r, vector, theta, npoints = 100) {
+  # Get the angles at the extremes of the arcs
+  angles &amp;lt;- anglesArc(vector, theta)
+  # Generate sequence of angles along the arc to determine the points
+  seqang &amp;lt;- seq(angles[1], angles[2], length = npoints)
+  # Generate x coordinates for points along the arc
+  x &amp;lt;- center[1] + r * cos(seqang)
+  # Generate y coordinates for points along the arc
+  y &amp;lt;- center[2] + r * sin(seqang)
+  coords.xy &amp;lt;- cbind(x,y)
+  line &amp;lt;- Line(coords = coords.xy)
+  return(line)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hulls-to-lines&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Hulls to lines&lt;/h4&gt;
+&lt;p&gt;Using the previous function, I wrote another function to take an α-hull and convert it into a set of SpatialLines objects. The function uses the &lt;code&gt;arc2line&lt;/code&gt; function from above to convert each arc in the α-hull into a series of lines, before adding each of these sets of lines together.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ahull2lines &amp;lt;- function(hull){
+  arclist &amp;lt;- hull$arcs
+  lines &amp;lt;- list()
+  for (i in 1:nrow(arclist)) {
+    # Extract the attributes of arc i
+    center_i &amp;lt;- arclist[i, 1:2]
+    radius_i &amp;lt;- arclist[i, 3]
+    vector_i &amp;lt;- arclist[i, 4:5]
+    theta_i &amp;lt;- arclist[i, 6]
+    # Convert arc i into a Line object
+    line_i &amp;lt;- arc2line(center = center_i, r = radius_i, vector = vector_i, theta = theta_i)
+    list_length &amp;lt;- length(lines)
+    if(list_length &amp;gt; 0){
+      # If a line has already been added to the list of lines
+      # Define last_line_coords as the coordinates of the last line added to the list before the ith line
+      last_line_coords &amp;lt;- lines[[list_length]]@coords
+    }
+    if(i == 1){
+      # Add the first line to the list of lines
+      lines[[i]] &amp;lt;- line_i
+    } else if(all.equal(line_i@coords[1,], last_line_coords[nrow(last_line_coords),])){
+      # If the first coordinate in the ith line is equal to the last coordinate in the previous line
+      # then those lines should be connected
+      # Row bind the coordinates for the ith line to the coordinates of the previous line in the list
+      lines[[list_length]]@coords &amp;lt;- rbind(last_line_coords, line_i@coords[2:nrow(line_i@coords),])
+    } else {
+      # If the first coordinate in the ith line does not match the last coordinate in the previous line
+      # then the ith line represents a new line
+      # Add the ith line to the list as a new element
+      lines[[length(lines) + 1]] &amp;lt;- line_i
+    }
+  }
+  # Convert the list of lines to a Line object
+  lines &amp;lt;- Lines(lines, ID = &amp;#39;l&amp;#39;)
+  # Convert the Line object to a SpatialLines object
+  sp_lines &amp;lt;- SpatialLines(list(lines))
+  return(sp_lines)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The results look like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lines_1 &amp;lt;- ahull2lines(alphahull_1)
+# the result is a SpatialLines object
+class(lines_1)
+## [1] &amp;quot;SpatialLines&amp;quot;
+## attr(,&amp;quot;package&amp;quot;)
+## [1] &amp;quot;sp&amp;quot;
+
+plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
+# show the original alpha shape
+plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
+# plot the new polygon
+plot(lines_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The resulting SpatialLines object is an almost spot-on approximation of the original α-hull (shown in gray).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;spatiallines-to-spatialpolygon&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;SpatialLines to SpatialPolygon&lt;/h4&gt;
+&lt;p&gt;Now, I needed a way to convert the SpatialLines object into a SpatialPolygon that would cover the same shape as the original α-hull. To accomplish this, I wrote a function that takes a SpatialLines object, checks which lines are part of polygons (i.e. form closed shapes), and converts those polygons to a SpatialPolygon.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;spLines2poly &amp;lt;- function(sp_lines){
+  # Extract the lines slot
+  lines_slot &amp;lt;- sp_lines@lines[[1]]
+  # Create a list of booleans indicating whether a given Line represents a polygon
+  poly_bool &amp;lt;- sapply(lines_slot@Lines, function(x){
+    coords &amp;lt;- lines_slot@Lines[[1]]@coords
+    # Check if the first coordinate in the line is the same as the last
+    all.equal(coords[1,], coords[nrow(coords),])
+  })
+  # Pull out the lines that form polygons
+  poly_lines &amp;lt;- sp_lines[poly_bool]
+  poly_lines_slot &amp;lt;- poly_lines@lines
+  # Create SpatialPolygons
+  sp_polys &amp;lt;- SpatialPolygons(list(Polygons(lapply(poly_lines_slot, function(x) {
+    Polygon(slot(slot(x, &amp;quot;Lines&amp;quot;)[[1]], &amp;quot;coords&amp;quot;))
+  }), ID = &amp;quot;1&amp;quot;)))
+  return(sp_polys)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can apply this function to the &lt;code&gt;lines_1&lt;/code&gt; object we made from the original &lt;code&gt;alphahull_1&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;SpPoly_1 &amp;lt;- spLines2poly(lines_1)
+class(SpPoly_1)
+## [1] &amp;quot;SpatialPolygons&amp;quot;
+## attr(,&amp;quot;package&amp;quot;)
+## [1] &amp;quot;sp&amp;quot;
+
+plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
+# show the original alpha shape
+plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
+# plot the new polygon
+plot(SpPoly_1, border = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;alpha-hulls-to-spatialpolygons&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Alpha hulls to SpatialPolygons&lt;/h4&gt;
+&lt;p&gt;Finally, we can string all of those functions together to create a single function that will convert an α-hull directly into a SpatialPolygon:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ahull2poly &amp;lt;- function(hull){
+  # Convert the alpha hull to SpatialLines
+  hull2SpatialLines &amp;lt;- ahull2lines(hull)
+  # Convert SpatialLines to SpatialPolygon
+  SpatialLines2SpatialPolygon &amp;lt;- spLines2poly(hull2SpatialLines)
+  return(SpatialLines2SpatialPolygon)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As a final sanity check, we can see that the resulting shape is the same as the original shape produced by the &lt;code&gt;alphahull&lt;/code&gt; package:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;hullpoly_1 &amp;lt;- ahull2poly(alphahull_1)
+class(hullpoly_1)
+## [1] &amp;quot;SpatialPolygons&amp;quot;
+## attr(,&amp;quot;package&amp;quot;)
+## [1] &amp;quot;sp&amp;quot;
+
+plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
+# show the original alpha shape
+plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
+# plot the new polygon
+plot(hullpoly_1, border = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;github&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;GitHub&lt;/h2&gt;
+&lt;p&gt;The code for these functions is on my GitHub at &lt;a href=&#34;https://github.com/babichmorrowc/hull2spatial&#34; class=&#34;uri&#34;&gt;https://github.com/babichmorrowc/hull2spatial&lt;/a&gt;. If you have any thoughts or suggestions, please comment on this post or submit a pull request on GitHub. I hope to be formulating these functions into a package in the near future, so stay tuned!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;citations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Citations&lt;/h2&gt;
+&lt;p&gt;Beatriz Pateiro-Lopez and Alberto Rodriguez-Casal. (2016). alphahull: Generalization of the Convex Hull of a Sample of Points in the Plane. R package version 2.1. &lt;a href=&#34;https://CRAN.R-project.org/package=alphahull&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=alphahull&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Talk: Using SVMs to model ranges of congeneric sloth species</title>
+      <link>/talk/nysdm_march2019/</link>
+      <pubDate>Fri, 15 Mar 2019 14:30:00 -0400</pubDate>
+      <guid>/talk/nysdm_march2019/</guid>
+      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vS_w666eIt4-3dUI-z6iVlD08EphadvhGys2IarVUPk7QIdG3dn7opO1LLLeuM7vcb6j8k7_5nVOAef/embed?start=false&amp;loop=false&amp;delayms=5000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Distribution modeling of Bradypus</title>

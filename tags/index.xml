@@ -5,7 +5,7 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Thu, 27 Sep 2018 00:00:00 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Fri, 11 Oct 2019 21:13:14 -0500</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Tags</title>
@@ -13,9 +13,33 @@
     </image>
     
     <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Fri, 11 Oct 2019 21:13:14 -0500</pubDate>
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>/tags/github/</link>
+      <pubDate>Tue, 17 Sep 2019 21:13:14 -0500</pubDate>
+      <guid>/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>career</title>
+      <link>/tags/career/</link>
+      <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>biogeography</title>
       <link>/tags/biogeography/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
       <guid>/tags/biogeography/</guid>
       <description></description>
     </item>
@@ -23,7 +47,7 @@
     <item>
       <title>Bradypus</title>
       <link>/tags/bradypus/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
       <guid>/tags/bradypus/</guid>
       <description></description>
     </item>
@@ -31,24 +55,120 @@
     <item>
       <title>species distribution modeling</title>
       <link>/tags/species-distribution-modeling/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
       <guid>/tags/species-distribution-modeling/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>hypervolume</title>
-      <link>/tags/hypervolume/</link>
-      <pubDate>Wed, 27 Jul 2016 00:00:00 -0400</pubDate>
-      <guid>/tags/hypervolume/</guid>
+      <title>machine learning</title>
+      <link>/tags/machine-learning/</link>
+      <pubDate>Sat, 29 Jun 2019 00:00:00 -0400</pubDate>
+      <guid>/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>education</title>
+      <link>/tags/education/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate>
+      <guid>/tags/education/</guid>
       <description></description>
     </item>
     
     <item>
       <title>life history</title>
       <link>/tags/life-history/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate>
       <guid>/tags/life-history/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LGBT</title>
+      <link>/tags/lgbt/</link>
+      <pubDate>Fri, 22 Feb 2019 17:00:00 -0500</pubDate>
+      <guid>/tags/lgbt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>earth science</title>
+      <link>/tags/earth-science/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      <guid>/tags/earth-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hackathon</title>
+      <link>/tags/hackathon/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      <guid>/tags/hackathon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meteorites</title>
+      <link>/tags/meteorites/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      <guid>/tags/meteorites/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>/tags/website/</link>
+      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
+      <guid>/tags/website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>evolution</title>
+      <link>/tags/evolution/</link>
+      <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
+      <guid>/tags/evolution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>phylogenetics</title>
+      <link>/tags/phylogenetics/</link>
+      <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
+      <guid>/tags/phylogenetics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hypervolume</title>
+      <link>/tags/hypervolume/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 -0500</pubDate>
+      <guid>/tags/hypervolume/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BIEN</title>
+      <link>/tags/bien/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      <guid>/tags/bien/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plant biodiversity</title>
+      <link>/tags/plant-biodiversity/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      <guid>/tags/plant-biodiversity/</guid>
       <description></description>
     </item>
     
