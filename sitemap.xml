@@ -53,17 +53,17 @@
   </url>
   
   <url>
-    <loc>/post/2019-10-11-google_fonts/</loc>
+    <loc>/post/2019-10-11-google-fonts/</loc>
     <lastmod>2019-10-11T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2019-09-26-mode_api_instructions/</loc>
+    <loc>/post/2019-09-26-mode-api-instructions/</loc>
     <lastmod>2019-09-26T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2019-09-18-git-workflow1/</loc>
+    <loc>/post/2019-09-26-git-workflow1/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url>
   
@@ -243,12 +243,12 @@
   </url>
   
   <url>
-    <loc>/tags/python/</loc>
+    <loc>/categories/python/</loc>
     <lastmod>2019-02-20T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2019-02-20T21:13:14-05:00</lastmod>
   </url>
   
@@ -268,12 +268,12 @@
   </url>
   
   <url>
-    <loc>/tags/evolution/</loc>
+    <loc>/categories/evolution/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/evolution/</loc>
+    <loc>/tags/evolution/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
@@ -283,12 +283,12 @@
   </url>
   
   <url>
-    <loc>/categories/phylogenetics/</loc>
+    <loc>/tags/phylogenetics/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/phylogenetics/</loc>
+    <loc>/categories/phylogenetics/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   

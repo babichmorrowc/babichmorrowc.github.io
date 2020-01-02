@@ -63,18 +63,12 @@ output:
     
     <item>
       <title>Putting Google Fonts in R graphs</title>
-      <link>/post/2019-10-11-google_fonts/</link>
+      <link>/post/2019-10-11-google-fonts/</link>
       <pubDate>Fri, 11 Oct 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-10-11-google_fonts/</guid>
+      <guid>/post/2019-10-11-google-fonts/</guid>
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/lego_statue.jpg&#34; /&gt;
-&lt;figcaption&gt;
-In keeping with my Lego theme, this statue from Nathan Sawaya’s exhibition at the New York Hall of Science represents some of the frustrations of adding fonts to R.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
 &lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Inspiration for this post&lt;/h2&gt;
 &lt;p&gt;I’ve been working on creating a visualization cookbook for R graphics (check out &lt;a href=&#34;https://bbc.github.io/rcookbook/&#34;&gt;this great example&lt;/a&gt; from the BBC to see what I’m eventually going for). As part of this process, I wanted to be able to change the font of my plots to &lt;a href=&#34;https://fonts.google.com/specimen/Source+Sans+Pro&#34;&gt;Source Sans Pro&lt;/a&gt;, which is a Google font.&lt;/p&gt;
@@ -112,40 +106,33 @@ In keeping with my Lego theme, this statue from Nathan Sawaya’s exhibition at 
 &lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Example&lt;/h2&gt;
 &lt;p&gt;To continue with my Lego theme, I’ll demonstrate using this font on data from the &lt;code&gt;legocolors&lt;/code&gt; package. We can make the following graph of approximate lego brick availability based on the year a brick was released (colored by the brick color!):&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(legocolors)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;legocolors&amp;#39; was built under R version 3.5.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;ggplot2&amp;#39; was built under R version 3.5.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(legocolors, aes(x = year_released, y = bl_bp, colour = hex)) +
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(legocolors)
+library(ggplot2)
+
+ggplot(legocolors, aes(x = year_released, y = bl_bp, colour = hex)) +
   geom_point() +
   scale_color_manual(values = legocolors$hex) +
   theme_minimal() +
   theme(legend.position = &amp;quot;none&amp;quot;, text = element_text(family = &amp;quot;Source Sans Pro&amp;quot;), plot.title = element_text(face = &amp;quot;bold&amp;quot;)) +
   labs(x = &amp;quot;Year released&amp;quot;, y = &amp;quot;Brick availability&amp;quot;, title = &amp;quot;Lego availability&amp;quot;, subtitle = &amp;quot;All of the text is now in Source Sans Pro!&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 3 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-10-11-google_fonts_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-11-google-fonts/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;troubleshooting&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Troubleshooting&lt;/h2&gt;
-&lt;p&gt;This process is a little bit finicky, so there are certain errors that crop up frequently. For me, just restarting RStudio and/or my computer (or updating the computer, if necessary) has solved these. The most common errors are &lt;code&gt;No font could be found for family &amp;quot;Source Sans Pro&amp;quot;&lt;/code&gt; and &lt;code&gt;&amp;quot;Error in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : polygon edge not found&amp;quot;&lt;/code&gt;, both of which relate to R not being able to find the font. If the font is indeed installed on your computer (you can check this in Font Book, for a Mac), then restarting things should help R find the font.&lt;/p&gt;
+&lt;p&gt;This process is a little bit finicky, so there are certain errors that crop up frequently. For me, just restarting RStudio and/or my computer (or updating the computer, if necessary) has solved these. The most common errors are &lt;code&gt;No font could be found for family &#34;Source Sans Pro&#34;&lt;/code&gt; and &lt;code&gt;&#34;Error in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : polygon edge not found&#34;&lt;/code&gt;, both of which relate to R not being able to find the font. If the font is indeed installed on your computer (you can check this in Font Book, for a Mac), then restarting things should help R find the font.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Accessing Mode data in R</title>
-      <link>/post/2019-09-26-mode_api_instructions/</link>
+      <link>/post/2019-09-26-mode-api-instructions/</link>
       <pubDate>Thu, 26 Sep 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-09-26-mode_api_instructions/</guid>
+      <guid>/post/2019-09-26-mode-api-instructions/</guid>
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/legos.jpg&#34; /&gt;
-&lt;figcaption&gt;
-A lego fort that I constructed this summer with the help of a good friend (not particularly relevant to the post, except that I used a lego dataset for my example and legos are more photogenic than Mode databases).
-&lt;/figcaption&gt;
-&lt;/figure&gt;
 &lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Inspiration for this post&lt;/h2&gt;
 &lt;p&gt;In the past, I’ve been used to a pretty straightforward R workflow: download my data as a csv from somewhere, save it on my computer, and go to work. Now that I work in healthcare, downloading data and saving it on my computer is no longer such a good idea (since that would be illegal) so I’ve needed other ways to get the data I need into R. My company uses the data analysis platform &lt;a href=&#34;https://mode.com/&#34;&gt;Mode Analytics&lt;/a&gt; to pull data from our database using SQL. I wanted a way to get data directly from Mode into R without needing to download the results of a report as a CSV, move them onto Google Drive, and then access them in R.&lt;/p&gt;
@@ -164,7 +151,8 @@ library(jsonlite)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with your username and password
 username &amp;lt;- &amp;quot;YOUR_USERNAME&amp;quot;
 password &amp;lt;- &amp;quot;YOUR_PASSWORD&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You also need to find the token of the report you’re interested in. When you go to your report in Mode, the token is everything after “reports/”. So, for example, if you’re interested in Legos (which you should be), you can get the most recent run of the &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34;&gt;Lego set summary&lt;/a&gt; report. The URL is &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34; class=&#34;uri&#34;&gt;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&lt;/a&gt;, so the report token is “eb4fdefe37d8”.&lt;/p&gt;
+&lt;p&gt;You also need to find the token of the report you’re interested in. When you go to your report in Mode, the token is everything after “reports/”. So, for example, if you’re interested in Legos (which you should be), you can get the most recent run of the &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34;&gt;Lego set summary&lt;/a&gt; report.
+The URL is &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34; class=&#34;uri&#34;&gt;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&lt;/a&gt;, so the report token is “eb4fdefe37d8”.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with the report token of interest
 report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Finally, you need the name of your organization on Mode. For this example, we’ll be looking at a community available Mode report, so the organization is “modeanalytics”. You can get this from the URL as well, it will be the part directly before “/reports”:&lt;/p&gt;
@@ -191,7 +179,7 @@ organization &amp;lt;- &amp;quot;modeanalytics&amp;quot;&lt;/code&gt;&lt;/pre&gt
 &lt;p&gt;So, for our example report, the most recent run token was:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;get_report_latest_run(report_token, organization, username, password)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## No encoding supplied: defaulting to UTF-8.&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;079bc1243d11&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2c17666a589b&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;extract-the-data-from-the-most-recent-run&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Extract the data from the most recent run&lt;/h3&gt;
@@ -224,7 +212,7 @@ report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 ## No encoding supplied: defaulting to UTF-8.&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parsed with column specification:
 ## cols(
-##   year = col_integer(),
+##   year = col_double(),
 ##   white = col_double(),
 ##   red = col_double(),
 ##   blue = col_double(),
@@ -316,18 +304,12 @@ report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Git Workflow #1: Existing project, GitHub last</title>
-      <link>/post/2019-09-18-git-workflow1/</link>
+      <link>/post/2019-09-26-git-workflow1/</link>
       <pubDate>Tue, 17 Sep 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-09-18-git-workflow1/</guid>
+      <guid>/post/2019-09-26-git-workflow1/</guid>
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/xkcd_git.png&#34; /&gt;
-&lt;figcaption&gt;
-From &lt;a href=&#34;https://xkcd.com/1597/&#34;&gt;xkcd&lt;/a&gt;.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
 &lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Inspiration for this post&lt;/h2&gt;
 &lt;p&gt;Over the coming months, I plan on sharing a series of Git workflow tutorials. Getting a Git project set up can be a pretty simple process, but depending on the order in which you do things, set-up can get complicated. This first tutorial addresses one of those fairly complicated situations.&lt;/p&gt;
@@ -379,11 +361,7 @@ git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
       <link>/post/goldwater-highlight/</link>
       <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
       <guid>/post/goldwater-highlight/</guid>
-      <description>&lt;figure&gt;
-  &lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/goldwater_banner.png&#34; /&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;This is just a quick post to provide a &lt;a href=&#34;https://twitter.com/GoldwaterSC/status/1163980565978259456&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; to the Goldwater Scholar Social Media Highlight that Nina Singh wrote about me. You can find the pdf to the article &lt;a href=&#34;/goldwater_highlight.pdf&#34;&gt;here&lt;/a&gt;. Huge thanks to the Goldwater social media team for including me in this!&lt;/p&gt;
+      <description>&lt;p&gt;This is just a quick post to provide a &lt;a href=&#34;https://twitter.com/GoldwaterSC/status/1163980565978259456&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; to the Goldwater Scholar Social Media Highlight that Nina Singh wrote about me. You can find the pdf to the article &lt;a href=&#34;/goldwater_highlight.pdf&#34;&gt;here&lt;/a&gt;. Huge thanks to the Goldwater social media team for including me in this!&lt;/p&gt;
 </description>
     </item>
     

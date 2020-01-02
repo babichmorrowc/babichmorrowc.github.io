@@ -14,18 +14,12 @@
     
     <item>
       <title>Git Workflow #1: Existing project, GitHub last</title>
-      <link>/post/2019-09-18-git-workflow1/</link>
+      <link>/post/2019-09-26-git-workflow1/</link>
       <pubDate>Tue, 17 Sep 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-09-18-git-workflow1/</guid>
+      <guid>/post/2019-09-26-git-workflow1/</guid>
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/xkcd_git.png&#34; /&gt;
-&lt;figcaption&gt;
-From &lt;a href=&#34;https://xkcd.com/1597/&#34;&gt;xkcd&lt;/a&gt;.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
 &lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Inspiration for this post&lt;/h2&gt;
 &lt;p&gt;Over the coming months, I plan on sharing a series of Git workflow tutorials. Getting a Git project set up can be a pretty simple process, but depending on the order in which you do things, set-up can get complicated. This first tutorial addresses one of those fairly complicated situations.&lt;/p&gt;
