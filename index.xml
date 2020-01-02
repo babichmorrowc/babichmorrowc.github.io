@@ -5,12 +5,61 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Cecina Babich Morrow</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2019</copyright><lastBuildDate>Mon, 21 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2020</copyright><lastBuildDate>Thu, 02 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Cecina Babich Morrow</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Changing fonts in RMarkdown PDFs</title>
+      <link>/post/changing-fonts-in-rmarkdown-pdfs/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/changing-fonts-in-rmarkdown-pdfs/</guid>
+      <description>
+
+
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;After learning how to &lt;a href=&#34;https://babichmorrowc.github.io/post/2019-10-11-google_fonts/&#34;&gt;change the fonts within a graph&lt;/a&gt; in R, I wanted to be able to change the fonts in the body of an RMarkdown to match. I specifically wanted to be able to knit an RMarkdown to PDF using the &lt;a href=&#34;https://fonts.google.com/specimen/Source+Sans+Pro&#34;&gt;Source Sans Pro&lt;/a&gt; Google font, but these instructions should work for any Google font.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;cairo&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Cairo&lt;/h2&gt;
+&lt;p&gt;To embed custom fonts in PDFs, you can use the &lt;a href=&#34;https://www.cairographics.org/&#34;&gt;Cairo graphics library&lt;/a&gt;. This library is installed with R, but if you are using a Mac, you do need to install &lt;a href=&#34;https://www.xquartz.org/&#34;&gt;XQuartz&lt;/a&gt;. To check if you are able to run Cairo, you can run &lt;code&gt;capabilities()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;capabilities()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        jpeg         png        tiff       tcltk         X11        aqua 
+##        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+##    http/ftp     sockets      libxml        fifo      cledit       iconv 
+##        TRUE        TRUE        TRUE        TRUE       FALSE        TRUE 
+##         NLS     profmem       cairo         ICU long.double     libcurl 
+##        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If &lt;code&gt;cairo&lt;/code&gt; shows up as &lt;code&gt;TRUE&lt;/code&gt;, you are good to go.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;yaml-header&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;YAML header&lt;/h2&gt;
+&lt;p&gt;To use Cairo to change the font of your RMarkdown pdf, you can modify the YAML heading:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;---
+title: &amp;quot;New fancy font!&amp;quot;
+  header-includes:
+   - \usepackage[default]{sourcesanspro}
+   - \usepackage[T1]{fontenc}
+mainfont: SourceSansPro
+output:
+  pdf_document
+---&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;\usepackage&lt;/code&gt; components of the header load Latex packages for your font (I am using Source Sans Pro in this example).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;chunk-options&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Chunk options&lt;/h2&gt;
+&lt;p&gt;The final step to use the font in your knitted pdf is to set the graphical device to Cairo in your code chunk option. At the beginning of your RMarkdown, the first chunk should include code that looks something like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::opts_chunk$set(echo = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Add &lt;code&gt;dev=&#34;cairo_pdf&#34;&lt;/code&gt; as one of the arguments:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::opts_chunk$set(echo = TRUE, dev=&amp;quot;cairo_pdf&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can read more about other chunk options &lt;a href=&#34;https://yihui.org/knitr/options/#chunk_options&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Overview</title>

@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-01-02T10:22:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-01-02T10:22:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/changing-fonts-in-rmarkdown-pdfs/</loc>
+    <lastmod>2020-01-02T10:22:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2020-01-02T10:22:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2020-01-02T10:22:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-01-02T10:22:14-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
     <lastmod>2019-10-22T00:00:00+00:00</lastmod>
   </url>
@@ -18,37 +48,12 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2019-10-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorial/</loc>
     <lastmod>2019-10-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2019-10-11T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/2019-10-11-google_fonts/</loc>
-    <lastmod>2019-10-11T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2019-10-11T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2019-10-11T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2019-10-11T21:13:14-05:00</lastmod>
   </url>
   
@@ -63,12 +68,12 @@
   </url>
   
   <url>
-    <loc>/categories/github/</loc>
+    <loc>/tags/github/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/github/</loc>
+    <loc>/categories/github/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url>
   
@@ -238,12 +243,12 @@
   </url>
   
   <url>
-    <loc>/categories/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2019-02-20T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/python/</loc>
+    <loc>/categories/python/</loc>
     <lastmod>2019-02-20T21:13:14-05:00</lastmod>
   </url>
   
@@ -263,12 +268,12 @@
   </url>
   
   <url>
-    <loc>/categories/evolution/</loc>
+    <loc>/tags/evolution/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/evolution/</loc>
+    <loc>/categories/evolution/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
@@ -278,12 +283,12 @@
   </url>
   
   <url>
-    <loc>/tags/phylogenetics/</loc>
+    <loc>/categories/phylogenetics/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/phylogenetics/</loc>
+    <loc>/tags/phylogenetics/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
