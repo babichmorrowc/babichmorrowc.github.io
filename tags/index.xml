@@ -29,6 +29,22 @@
     </item>
     
     <item>
+      <title>education</title>
+      <link>/tags/education/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 -0500</pubDate>
+      <guid>/tags/education/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>life history</title>
+      <link>/tags/life-history/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 -0500</pubDate>
+      <guid>/tags/life-history/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>website</title>
       <link>/tags/website/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
@@ -81,22 +97,6 @@
       <link>/tags/machine-learning/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 -0400</pubDate>
       <guid>/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>education</title>
-      <link>/tags/education/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate>
-      <guid>/tags/education/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life history</title>
-      <link>/tags/life-history/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate>
-      <guid>/tags/life-history/</guid>
       <description></description>
     </item>
     

@@ -38,6 +38,31 @@
   </url>
   
   <url>
+    <loc>/authors/</loc>
+    <lastmod>2020-01-08T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/cecina-babich-morrow/</loc>
+    <lastmod>2020-01-08T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/education/</loc>
+    <lastmod>2020-01-08T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/life-history/</loc>
+    <lastmod>2020-01-08T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/bio_on_tap_2020/</loc>
+    <lastmod>2020-01-08T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/adding-featured-images-to-posts/</loc>
     <lastmod>2020-01-02T17:00:36-05:00</lastmod>
   </url>
@@ -88,12 +113,12 @@
   </url>
   
   <url>
-    <loc>/categories/github/</loc>
+    <loc>/tags/github/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/github/</loc>
+    <loc>/categories/github/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url>
   
@@ -113,22 +138,12 @@
   </url>
   
   <url>
-    <loc>/authors/</loc>
-    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/biogeography/</loc>
     <lastmod>2019-08-09T00:00:00-04:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/bradypus/</loc>
-    <lastmod>2019-08-09T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/cecina-babich-morrow/</loc>
     <lastmod>2019-08-09T00:00:00-04:00</lastmod>
   </url>
   
@@ -203,16 +218,6 @@
   </url>
   
   <url>
-    <loc>/tags/education/</loc>
-    <lastmod>2019-04-03T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/life-history/</loc>
-    <lastmod>2019-04-03T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/2019-03-18-alpha-hull/</loc>
     <lastmod>2019-03-18T21:13:14-05:00</lastmod>
   </url>
@@ -283,12 +288,12 @@
   </url>
   
   <url>
-    <loc>/categories/evolution/</loc>
+    <loc>/tags/evolution/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/evolution/</loc>
+    <loc>/categories/evolution/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
@@ -298,12 +303,12 @@
   </url>
   
   <url>
-    <loc>/categories/phylogenetics/</loc>
+    <loc>/tags/phylogenetics/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/phylogenetics/</loc>
+    <loc>/categories/phylogenetics/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url>
   
