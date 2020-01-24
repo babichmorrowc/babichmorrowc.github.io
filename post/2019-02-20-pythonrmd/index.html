@@ -28,7 +28,8 @@
   
     
   
-  <meta name="description" content="The reticulate package logo.   Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.">
+  <meta name="description" content="Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.
+When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/2019-02-20-pythonrmd/">
@@ -105,10 +106,9 @@
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="twitter:site" content="@babichmorrowc">
   <meta property="twitter:creator" content="@babichmorrowc">
@@ -116,8 +116,9 @@
   <meta property="og:site_name" content="Cecina Babich Morrow">
   <meta property="og:url" content="/post/2019-02-20-pythonrmd/">
   <meta property="og:title" content="Python in RMarkdown | Cecina Babich Morrow">
-  <meta property="og:description" content="The reticulate package logo.   Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk."><meta property="og:image" content="/img/icon-192.png">
-  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.
+When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:"><meta property="og:image" content="/post/2019-02-20-pythonrmd/featured.png">
+  <meta property="twitter:image" content="/post/2019-02-20-pythonrmd/featured.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2019-02-20T21:13:14-05:00">
@@ -152,6 +153,10 @@
   },
   "headline": "Python in RMarkdown",
   
+  "image": [
+    "/post/2019-02-20-pythonrmd/featured.png"
+  ],
+  
   "datePublished": "2019-02-20T21:13:14-05:00",
   "dateModified": "2019-02-20T21:13:14-05:00",
   
@@ -168,7 +173,7 @@
       "url": "/img/icon-512.png"
     }
   },
-  "description": "The reticulate package logo.   Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk."
+  "description": "Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.\nWhen I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:"
 }
 </script>
 
@@ -433,18 +438,26 @@
 
 
 
-  
+
+
+
+
+
+
+
 
   
   
+    
   
+
+
 <div class="article-container pt-3">
   <h1>Python in RMarkdown</h1>
 
   
 
   
-    
 
 
 <div class="article-metadata">
@@ -487,22 +500,29 @@
 
 </div>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 503px;">
+  <div style="position: relative">
+    <img src="/post/2019-02-20-pythonrmd/featured_huffa35c514ac1338066b28d9b5ad5b4c8_107055_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    <span class="article-header-caption">The <code>reticulate</code> package logo.</span>
+  </div>
 </div>
 
 
@@ -513,16 +533,12 @@
       
 
 
-<figure>
-<img class="special-img-class" style="width:100%" src="/img/reticulate.png" />
-<figcaption>
-The <code>reticulate</code> package logo. </figcatption>
-</figure>
 <div id="using-python-in-rmarkdown" class="section level2">
 <h2>Using Python in RMarkdown</h2>
 <p>In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.</p>
 <p>When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:</p>
-<p><code>Error in py_run_string_impl(code, local, convert) :</code> <code>ImportError: No module named sklearn.cluster</code></p>
+<p><code>Error in py_run_string_impl(code, local, convert) :</code>
+<code>ImportError: No module named sklearn.cluster</code></p>
 <p>From running Python in Atom, I knew I had the <code>sklearn.cluster</code> module installed, so the problem must be in the connection between R and Python.</p>
 </div>
 <div id="reticulate" class="section level2">
@@ -557,13 +573,13 @@ knitr::opts_chunk$set(collapse = TRUE)</code></pre>
 <pre class="python"><code>import sys
 for p in sys.path:
     print(p)
-## /Applications/anaconda3/bin
-## /Applications/anaconda3/lib/python37.zip
-## /Applications/anaconda3/lib/python3.7
-## /Applications/anaconda3/lib/python3.7/lib-dynload
-## /Applications/anaconda3/lib/python3.7/site-packages
-## /Applications/anaconda3/lib/python3.7/site-packages/aeosa
-## /Library/Frameworks/R.framework/Versions/3.5/Resources/library/reticulate/python</code></pre>
+## 
+## /Library/Frameworks/Python.framework/Versions/3.7/bin
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python37.zip
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages
+## /Library/Frameworks/R.framework/Versions/3.6/Resources/library/reticulate/python</code></pre>
 <p>From this information, I could tell I wanted to use the path <code>/anaconda3/lib/python3.6</code>, rather than <code>/usr/bin/python</code>, which is what RMarkdown had originally been using. I modified by set-up chunk to look like this:</p>
 <pre><code>{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &#39;/anaconda3/bin/python3.6&#39;))</code></pre>

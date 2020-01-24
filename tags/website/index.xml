@@ -5,12 +5,49 @@
     <link>/tags/website/</link>
       <atom:link href="/tags/website/index.xml" rel="self" type="application/rss+xml" />
     <description>website</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2020</copyright><lastBuildDate>Wed, 20 Feb 2019 21:13:14 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2020</copyright><lastBuildDate>Thu, 02 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>website</title>
       <link>/tags/website/</link>
     </image>
+    
+    <item>
+      <title>Adding featured images to posts</title>
+      <link>/post/adding-featured-images-to-posts/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/adding-featured-images-to-posts/</guid>
+      <description>
+
+
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;When I updated my website to the latest version of Hugo Academic a few months ago, I realized that I could add featured images to all of my blog posts. I was very excited about this, but none of my tinkering with the YAML of the RMarkdown could produce an image. After some digging, however, I was able to find how to format my files properly so the Academic theme worked to create the images.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;folder-structure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Folder structure&lt;/h2&gt;
+&lt;p&gt;Hugo Academic follows a particular folder structure and naming conventions. When I am adding or editing blog posts, for example, I do that within the &lt;code&gt;/content/post&lt;/code&gt; folder. Inside that folder, there is a &lt;code&gt;_index.md&lt;/code&gt; file with a YAML header, and then an array of posts. You can put the &lt;code&gt;.Rmd&lt;/code&gt; or &lt;code&gt;.md&lt;/code&gt; files directly inside &lt;code&gt;post&lt;/code&gt;, so the file path would look something like &lt;code&gt;/content/post/my_post.Rmd&lt;/code&gt;. If you use &lt;code&gt;blogdown&lt;/code&gt; to create posts from within RStudio, those posts will be created inside the &lt;code&gt;post&lt;/code&gt; folder in that way by default.&lt;/p&gt;
+&lt;p&gt;In order to set up your post to use a featured image, however, you want the post inside a subsequent folder, like this &lt;code&gt;/content/post/my_post/&lt;/code&gt;. Within that folder, call your post &lt;code&gt;index.Rmd&lt;/code&gt; (or &lt;code&gt;index.md&lt;/code&gt; if it is a Markdown file). Then, you can add the image you want to that same folder and name it &lt;code&gt;featured.png&lt;/code&gt; / &lt;code&gt;featured.jpg&lt;/code&gt;, etc.&lt;/p&gt;
+&lt;p&gt;So now you have a set-up like this within &lt;code&gt;/content/post&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;├── post
+│   ├── my_post
+│   │   ├── featured.png
+│   │   ├── index.Rmd
+│   │   └── index.html
+    └── _index.md&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;yaml-header&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;YAML header&lt;/h2&gt;
+&lt;p&gt;The final step is to modify the YAML header of your post (in &lt;code&gt;index.Rmd&lt;/code&gt;) to display the featured image as desired. Add the following to the YAML header:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;image:
+  placement: 1
+  caption: &amp;#39;Your caption here.&amp;#39;
+  focal_point: &amp;#39;&amp;#39;
+  preview_only: false&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In Hugo Academic, the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues/1175&#34;&gt;placement options&lt;/a&gt; are as follows: 1 = Full column width, 2 = Out-set, 3 = Screen-width (with 1 being the default). The focal point options are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight, although I haven’t played with those much.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Python in RMarkdown</title>
@@ -20,16 +57,12 @@
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/reticulate.png&#34; /&gt;
-&lt;figcaption&gt;
-The &lt;code&gt;reticulate&lt;/code&gt; package logo. &lt;/figcatption&gt;
-&lt;/figure&gt;
 &lt;div id=&#34;using-python-in-rmarkdown&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Using Python in RMarkdown&lt;/h2&gt;
 &lt;p&gt;In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.&lt;/p&gt;
 &lt;p&gt;When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt; &lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt;
+&lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;From running Python in Atom, I knew I had the &lt;code&gt;sklearn.cluster&lt;/code&gt; module installed, so the problem must be in the connection between R and Python.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;reticulate&#34; class=&#34;section level2&#34;&gt;
@@ -64,13 +97,13 @@ knitr::opts_chunk$set(collapse = TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import sys
 for p in sys.path:
     print(p)
-## /Applications/anaconda3/bin
-## /Applications/anaconda3/lib/python37.zip
-## /Applications/anaconda3/lib/python3.7
-## /Applications/anaconda3/lib/python3.7/lib-dynload
-## /Applications/anaconda3/lib/python3.7/site-packages
-## /Applications/anaconda3/lib/python3.7/site-packages/aeosa
-## /Library/Frameworks/R.framework/Versions/3.5/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
+## 
+## /Library/Frameworks/Python.framework/Versions/3.7/bin
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python37.zip
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages
+## /Library/Frameworks/R.framework/Versions/3.6/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;From this information, I could tell I wanted to use the path &lt;code&gt;/anaconda3/lib/python3.6&lt;/code&gt;, rather than &lt;code&gt;/usr/bin/python&lt;/code&gt;, which is what RMarkdown had originally been using. I modified by set-up chunk to look like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &amp;#39;/anaconda3/bin/python3.6&amp;#39;))&lt;/code&gt;&lt;/pre&gt;

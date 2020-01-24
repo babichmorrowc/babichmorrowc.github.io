@@ -5,7 +5,7 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2020</copyright><lastBuildDate>Thu, 02 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2020</copyright><lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Tags</title>
@@ -13,10 +13,26 @@
     </image>
     
     <item>
+      <title>bash</title>
+      <link>/tags/bash/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>/tags/website/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/website/</guid>
       <description></description>
     </item>
     
@@ -121,14 +137,6 @@
       <link>/tags/python/</link>
       <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
       <guid>/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>website</title>
-      <link>/tags/website/</link>
-      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>/tags/website/</guid>
       <description></description>
     </item>
     

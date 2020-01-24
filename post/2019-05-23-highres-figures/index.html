@@ -28,7 +28,8 @@
   
     
   
-  <meta name="description" content="Bizarro.   Inspiration for this post I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.">
+  <meta name="description" content="Inspiration for this post I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.
+ Solution In order to save your figure with a certain size and resolution, you just need to include your code for plotting between the two lines below:">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/2019-05-23-highres-figures/">
@@ -105,10 +106,9 @@
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="twitter:site" content="@babichmorrowc">
   <meta property="twitter:creator" content="@babichmorrowc">
@@ -116,8 +116,9 @@
   <meta property="og:site_name" content="Cecina Babich Morrow">
   <meta property="og:url" content="/post/2019-05-23-highres-figures/">
   <meta property="og:title" content="Setting resolution and aspect ratios in R | Cecina Babich Morrow">
-  <meta property="og:description" content="Bizarro.   Inspiration for this post I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios."><meta property="og:image" content="/img/icon-192.png">
-  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Inspiration for this post I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.
+ Solution In order to save your figure with a certain size and resolution, you just need to include your code for plotting between the two lines below:"><meta property="og:image" content="/post/2019-05-23-highres-figures/featured.jpg">
+  <meta property="twitter:image" content="/post/2019-05-23-highres-figures/featured.jpg"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2019-05-23T21:13:14-05:00">
@@ -152,6 +153,10 @@
   },
   "headline": "Setting resolution and aspect ratios in R",
   
+  "image": [
+    "/post/2019-05-23-highres-figures/featured.jpg"
+  ],
+  
   "datePublished": "2019-05-23T21:13:14-05:00",
   "dateModified": "2019-05-23T21:13:14-05:00",
   
@@ -168,7 +173,7 @@
       "url": "/img/icon-512.png"
     }
   },
-  "description": "Bizarro.   Inspiration for this post I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios."
+  "description": "Inspiration for this post I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.\n Solution In order to save your figure with a certain size and resolution, you just need to include your code for plotting between the two lines below:"
 }
 </script>
 
@@ -433,18 +438,24 @@
 
 
 
-  
+
+
+
+
+
+
+
 
   
   
-  
+
+
 <div class="article-container pt-3">
   <h1>Setting resolution and aspect ratios in R</h1>
 
   
 
   
-    
 
 
 <div class="article-metadata">
@@ -487,22 +498,29 @@
 
 </div>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 432px; max-height: 514px;">
+  <div style="position: relative">
+    <img src="/post/2019-05-23-highres-figures/featured.jpg" alt="" class="featured-image">
+    <span class="article-header-caption">Bizarro.</span>
+  </div>
 </div>
 
 
@@ -513,12 +531,6 @@
       
 
 
-<figure>
-<img class="special-img-class" style="width:60%" src="/img/resolution_comic.jpg" />
-<figcaption>
-Bizarro.
-</figcaption>
-</figure>
 <div id="inspiration-for-this-post" class="section level2">
 <h2>Inspiration for this post</h2>
 <p>I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.</p>
@@ -536,7 +548,7 @@ dev.off()</code></pre>
 <h2>Example</h2>
 <p>To see this in practice, we can plot some data from the iris dataset the “regular” way:</p>
 <pre class="r"><code>pairs(iris[,1:4], col = iris$Species)</code></pre>
-<p><img src="/post/2019-05-23-highres-figures_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/post/2019-05-23-highres-figures/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Things look pretty nice in the plotting window, but when you save that figure from RStudio, this is the result:</p>
 <figure>
 <img class="special-img-class" style="width:80%" src="/img/lowres.png" />
@@ -549,7 +561,7 @@ dev.off()</code></pre>
 <figure>
 <img class="special-img-class" style="width:80%" src="/img/highres.png" />
 </figure>
-<p>You can also change the aspect ratio by modifying the <code>height</code> and <code>width</code> arguments. You can leave the units in inches or set it to pixels (<code>&quot;px&quot;</code>), centimeters (<code>&quot;cm&quot;</code>), or millimeters (<code>&quot;mm&quot;</code>).</p>
+<p>You can also change the aspect ratio by modifying the <code>height</code> and <code>width</code> arguments. You can leave the units in inches or set it to pixels (<code>"px"</code>), centimeters (<code>"cm"</code>), or millimeters (<code>"mm"</code>).</p>
 </div>
 
     </div>

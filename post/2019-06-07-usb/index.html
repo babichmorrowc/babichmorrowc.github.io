@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="From Wild Green Memes for Ecological Fiends.   Inspiration for this post A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages.">
+  <meta name="description" content="Inspiration for this post A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/2019-06-07-usb/">
@@ -105,10 +105,9 @@
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="twitter:site" content="@babichmorrowc">
   <meta property="twitter:creator" content="@babichmorrowc">
@@ -116,8 +115,8 @@
   <meta property="og:site_name" content="Cecina Babich Morrow">
   <meta property="og:url" content="/post/2019-06-07-usb/">
   <meta property="og:title" content="Copying R libraries to a USB | Cecina Babich Morrow">
-  <meta property="og:description" content="From Wild Green Memes for Ecological Fiends.   Inspiration for this post A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages."><meta property="og:image" content="/img/icon-192.png">
-  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Inspiration for this post A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages."><meta property="og:image" content="/post/2019-06-07-usb/featured.jpg">
+  <meta property="twitter:image" content="/post/2019-06-07-usb/featured.jpg"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2019-06-07T21:13:14-05:00">
@@ -152,6 +151,10 @@
   },
   "headline": "Copying R libraries to a USB",
   
+  "image": [
+    "/post/2019-06-07-usb/featured.jpg"
+  ],
+  
   "datePublished": "2019-06-07T21:13:14-05:00",
   "dateModified": "2019-06-07T21:13:14-05:00",
   
@@ -168,7 +171,7 @@
       "url": "/img/icon-512.png"
     }
   },
-  "description": "From Wild Green Memes for Ecological Fiends.   Inspiration for this post A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages."
+  "description": "Inspiration for this post A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages."
 }
 </script>
 
@@ -433,18 +436,24 @@
 
 
 
-  
+
+
+
+
+
+
+
 
   
   
-  
+
+
 <div class="article-container pt-3">
   <h1>Copying R libraries to a USB</h1>
 
   
 
   
-    
 
 
 <div class="article-metadata">
@@ -487,22 +496,29 @@
 
 </div>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 700px; max-height: 661px;">
+  <div style="position: relative">
+    <img src="/post/2019-06-07-usb/featured.jpg" alt="" class="featured-image">
+    <span class="article-header-caption">From <a href="https://www.facebook.com/groups/WildGreenMemesForEcologicalFiends/" target="_blank">Wild Green Memes for Ecological Fiends</a>.</span>
+  </div>
 </div>
 
 
@@ -513,12 +529,6 @@
       
 
 
-<figure>
-<img class="special-img-class" style="width:60%" src="/img/usb_meme.jpg" />
-<figcaption>
-From <a href="https://www.facebook.com/groups/WildGreenMemesForEcologicalFiends/">Wild Green Memes for Ecological Fiends</a>.
-</figcaption>
-</figure>
 <div id="inspiration-for-this-post" class="section level2">
 <h2>Inspiration for this post</h2>
 <p>A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages.</p>
@@ -531,7 +541,7 @@ From <a href="https://www.facebook.com/groups/WildGreenMemesForEcologicalFiends/
 <h2>Loading R packages onto a USB</h2>
 <p>The next step was to transfer all of my R packages onto the USB. To do this, I first needed to figure out where the packages were saved on my computer. You can run the following in R to find where your packages are saved:</p>
 <pre class="r"><code>.libPaths()
-## [1] &quot;/Library/Frameworks/R.framework/Versions/3.5/Resources/library&quot;</code></pre>
+## [1] &quot;/Library/Frameworks/R.framework/Versions/3.6/Resources/library&quot;</code></pre>
 <p>Next, I needed to figure out how to navigate to the USB in Terminal. According to this <a href="https://apple.stackexchange.com/questions/60231/using-terminal-how-can-i-find-which-directory-is-my-usb-drive-mounted-in">StackOverflow answer</a>, all drives are mounted in <code>/Volumes</code>, so I ran the following in Terminal:</p>
 <pre class="bash"><code>cd /Volumes
 ls</code></pre>

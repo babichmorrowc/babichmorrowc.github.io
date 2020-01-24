@@ -13,6 +13,152 @@
     </image>
     
     <item>
+      <title>Scheduling R Scripts</title>
+      <link>/post/launchd-jobs/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/launchd-jobs/</guid>
+      <description>
+
+
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;Since starting my job as a data scientist, I found myself setting dozens of reminders on my calendar to run certain scripts every day / week / month. I figured that there had to be a better way to deal with this, and after some research, I started off with creating cron jobs. After a few months of these running (with varying success), I learned about Launchd as well. This post will explain my process for using both of these scheduling tools to run R scripts at scheduled times.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;cron&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Cron&lt;/h2&gt;
+&lt;p&gt;Cron is a utility in Unix-like operating systems that can schedule a command to run automatically at a scheduled time. Cron is driven by a crontab file, so in order to schedule an R script, I needed to create a crontab file. Each line of a crontab file has the following syntax:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of the month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of the week (0 - 6) (Sunday to Saturday;
+# │ │ │ │ │                                   7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * * command to execute&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Any of the time arguments that are left as &lt;code&gt;*&lt;/code&gt; are treated as a wildcard, so if you schedule &lt;code&gt;20 10 3 * * command to execute&lt;/code&gt;, that command will run at 10:20 on the 3rd of every month.&lt;/p&gt;
+&lt;p&gt;Beyond figuring out the timing of your job, you also need to figure out what command to execute. Since my work is primarily in R, I wanted to figure out how to execute an R script via cron. If the script in question can be found at &lt;code&gt;/Desktop/my_script.R&lt;/code&gt;, for example, the command will be:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;/usr/local/bin/Rscript /Desktop/my_script.R&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can test this by running just this command in Terminal (without worrying about cron yet) and seeing if your script runs.&lt;/p&gt;
+&lt;p&gt;So now, you can assemble the syntax for the cron job. If you want &lt;code&gt;myscript.R&lt;/code&gt; to run at 10:20 on the 3rd of every month, the cron syntax will be:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;20 10 3 * * /usr/local/bin/Rscript /Desktop/my_script.R&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can check your syntax using &lt;a href=&#34;https://crontab-generator.org/&#34;&gt;this handy website&lt;/a&gt;, which helps you generate the proper cron syntax given a desired schedule and script.&lt;/p&gt;
+&lt;p&gt;Once you have your script running and the syntax ready for the schedule you want, you are ready to edit the crontab on your computer. To do so, open up Terminal and run:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;crontab -e&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When you type &lt;code&gt;i&lt;/code&gt;, you will enter insert mode, and you can paste your cron sytax into the file. When you are done editing, hit &lt;code&gt;ESC&lt;/code&gt; and then type &lt;code&gt;:wq&lt;/code&gt; to save and quit.&lt;/p&gt;
+&lt;div id=&#34;emailing&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Emailing&lt;/h3&gt;
+&lt;p&gt;When I created my first cron job, I was pretty skeptical about the likelihood of it actually running when scheduled, so I wanted to add the ability to get an email about the script’s progress. To do that, you can add to the &lt;code&gt;MAILTO&lt;/code&gt; option, so your crontab would look like this:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;MAILTO=&amp;quot;myemail@email.com;mybackupemail@gmail.com&amp;quot;
+20 10 3 * * /usr/local/bin/Rscript /Desktop/my_script.R&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will email you on successful runs of the script as well as errors, so if your script is set up to run hourly, you might not want all those emails. &lt;a href=&#34;https://stevenmortimer.com/automating-r-scripts-with-cron/&#34;&gt;This blog post&lt;/a&gt; includes lots of additional helpful information about automating R scripts with cron, including how to receive emails for errors only.&lt;/p&gt;
+&lt;p&gt;As far as my experiences with cron go, I did not always receive the emails, even if the script did in fact run properly. I seemed to only receive the emails while I was at work, not at home (no idea why that happened or if there was any causal reason for it). Beyond this weirdness, the main issue with cron is that your jobs will not run if your computer is asleep at the scheduled time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;launchd&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Launchd&lt;/h2&gt;
+&lt;p&gt;After some of these various frustrations with cron, I learned that launchd is the preferred tool in macOS to execute scripts in a scheduled way. If your computer is asleep when the scheduled job is supposed to occur, There’s a lot I don’t understand about launchd (for a great overview, check &lt;a href=&#34;https://medium.com/swlh/how-to-use-launchd-to-run-services-in-macos-b972ed1e352&#34;&gt;this Medium article&lt;/a&gt;), but I broke the process down into 3 steps:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Create a shell script to execute the R script&lt;/li&gt;
+&lt;li&gt;Create a .plist file to schedule the running of the shell script&lt;/li&gt;
+&lt;li&gt;Load the job&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id=&#34;create-the-shell-script&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Create the shell script&lt;/h3&gt;
+&lt;p&gt;The shell script is basically going to look exactly the same as the command you would have used for the cron job. I saved these scripts in the &lt;code&gt;~/&lt;/code&gt; directory, although you can probably save them anywhere as long as you keep track of the paths. The shell script should look something like this:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;/usr/local/bin/Rscript /Desktop/my_script.R&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then run the following in terminal to make the shell file runnable:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;chmod +x launchd_shell_script.sh&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;create-a-.plist-file&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Create a .plist file&lt;/h3&gt;
+&lt;p&gt;The .plist files that launchd uses are special XML files that allow you to specify the script to run and the schedule to run it on. I followed the following syntax for my .plist files:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE plist PUBLIC &amp;quot;-//Apple//DTD PLIST 1.0//EN&amp;quot; &amp;quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;
+&amp;lt;plist version=&amp;quot;1.0&amp;quot;&amp;gt;
+&amp;lt;dict&amp;gt;
+    &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
+    &amp;lt;!-- Should be the same as the filename without the extension --&amp;gt;
+    &amp;lt;string&amp;gt;com.mylaunchjob&amp;lt;/string&amp;gt;
+    &amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt;
+    &amp;lt;array&amp;gt;
+        &amp;lt;string&amp;gt;~/launchd_shell_script.sh&amp;lt;/string&amp;gt;
+    &amp;lt;/array&amp;gt;
+    &amp;lt;!-- Schedule regular runs --&amp;gt;
+    &amp;lt;key&amp;gt;StartCalendarInterval&amp;lt;/key&amp;gt;
+    &amp;lt;dict&amp;gt;
+        &amp;lt;key&amp;gt;Hour&amp;lt;/key&amp;gt;
+        &amp;lt;integer&amp;gt;10&amp;lt;/integer&amp;gt;
+        &amp;lt;key&amp;gt;Minute&amp;lt;/key&amp;gt;
+        &amp;lt;integer&amp;gt;20&amp;lt;/integer&amp;gt;
+        &amp;lt;key&amp;gt;Day&amp;lt;/key&amp;gt;
+        &amp;lt;integer&amp;gt;23&amp;lt;/integer&amp;gt;
+    &amp;lt;/dict&amp;gt;
+&amp;lt;/dict&amp;gt;
+&amp;lt;/plist&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Some components to note:
++ The first string contains the name of the launch job in question (so this job would be saved as &lt;code&gt;com.mylaunchjob.plist&lt;/code&gt;)
++ Within the array, you need to put the name of the shell script you just created
++ You can put the arguments to schedule the job under &lt;code&gt;StartCalendarInterval&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Save your &lt;code&gt;.plist&lt;/code&gt; file as &lt;code&gt;~/Library/LaunchAgents/com.mylaunchjob.plist&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;load-the-job&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Load the job&lt;/h3&gt;
+&lt;p&gt;The final step is to run the following command in Terminal:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;launchctl load ~/Library/LaunchAgents/com.mylaunchjob.plist&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Your job is now ready to go at the scheduled times.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;additional-launchd-resources&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Additional launchd resources&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://willchernoff.com/2013/04/23/periodically-run-an-r-script-as-a-background-process-using-launchd-under-osx/&#34;&gt;Running RScripts using launchd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;General article about &lt;a href=&#34;https://nathangrigg.com/2012/07/schedule-jobs-using-launchd&#34;&gt;scheduling jobs using launchd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/swlh/how-to-use-launchd-to-run-services-in-macos-b972ed1e352&#34;&gt;Introduction to launchd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://killtheyak.com/schedule-jobs-launchd/&#34;&gt;Friendly guide to .plist format&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Adding featured images to posts</title>
+      <link>/post/adding-featured-images-to-posts/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/adding-featured-images-to-posts/</guid>
+      <description>
+
+
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;When I updated my website to the latest version of Hugo Academic a few months ago, I realized that I could add featured images to all of my blog posts. I was very excited about this, but none of my tinkering with the YAML of the RMarkdown could produce an image. After some digging, however, I was able to find how to format my files properly so the Academic theme worked to create the images.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;folder-structure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Folder structure&lt;/h2&gt;
+&lt;p&gt;Hugo Academic follows a particular folder structure and naming conventions. When I am adding or editing blog posts, for example, I do that within the &lt;code&gt;/content/post&lt;/code&gt; folder. Inside that folder, there is a &lt;code&gt;_index.md&lt;/code&gt; file with a YAML header, and then an array of posts. You can put the &lt;code&gt;.Rmd&lt;/code&gt; or &lt;code&gt;.md&lt;/code&gt; files directly inside &lt;code&gt;post&lt;/code&gt;, so the file path would look something like &lt;code&gt;/content/post/my_post.Rmd&lt;/code&gt;. If you use &lt;code&gt;blogdown&lt;/code&gt; to create posts from within RStudio, those posts will be created inside the &lt;code&gt;post&lt;/code&gt; folder in that way by default.&lt;/p&gt;
+&lt;p&gt;In order to set up your post to use a featured image, however, you want the post inside a subsequent folder, like this &lt;code&gt;/content/post/my_post/&lt;/code&gt;. Within that folder, call your post &lt;code&gt;index.Rmd&lt;/code&gt; (or &lt;code&gt;index.md&lt;/code&gt; if it is a Markdown file). Then, you can add the image you want to that same folder and name it &lt;code&gt;featured.png&lt;/code&gt; / &lt;code&gt;featured.jpg&lt;/code&gt;, etc.&lt;/p&gt;
+&lt;p&gt;So now you have a set-up like this within &lt;code&gt;/content/post&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;├── post
+│   ├── my_post
+│   │   ├── featured.png
+│   │   ├── index.Rmd
+│   │   └── index.html
+    └── _index.md&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;yaml-header&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;YAML header&lt;/h2&gt;
+&lt;p&gt;The final step is to modify the YAML header of your post (in &lt;code&gt;index.Rmd&lt;/code&gt;) to display the featured image as desired. Add the following to the YAML header:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;image:
+  placement: 1
+  caption: &amp;#39;Your caption here.&amp;#39;
+  focal_point: &amp;#39;&amp;#39;
+  preview_only: false&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In Hugo Academic, the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues/1175&#34;&gt;placement options&lt;/a&gt; are as follows: 1 = Full column width, 2 = Out-set, 3 = Screen-width (with 1 being the default). The focal point options are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight, although I haven’t played with those much.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Changing fonts in RMarkdown PDFs</title>
       <link>/post/changing-fonts-in-rmarkdown-pdfs/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
@@ -373,12 +519,6 @@ git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/usb_meme.jpg&#34; /&gt;
-&lt;figcaption&gt;
-From &lt;a href=&#34;https://www.facebook.com/groups/WildGreenMemesForEcologicalFiends/&#34;&gt;Wild Green Memes for Ecological Fiends&lt;/a&gt;.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
 &lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Inspiration for this post&lt;/h2&gt;
 &lt;p&gt;A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages.&lt;/p&gt;
@@ -391,7 +531,7 @@ From &lt;a href=&#34;https://www.facebook.com/groups/WildGreenMemesForEcological
 &lt;h2&gt;Loading R packages onto a USB&lt;/h2&gt;
 &lt;p&gt;The next step was to transfer all of my R packages onto the USB. To do this, I first needed to figure out where the packages were saved on my computer. You can run the following in R to find where your packages are saved:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;.libPaths()
-## [1] &amp;quot;/Library/Frameworks/R.framework/Versions/3.5/Resources/library&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+## [1] &amp;quot;/Library/Frameworks/R.framework/Versions/3.6/Resources/library&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Next, I needed to figure out how to navigate to the USB in Terminal. According to this &lt;a href=&#34;https://apple.stackexchange.com/questions/60231/using-terminal-how-can-i-find-which-directory-is-my-usb-drive-mounted-in&#34;&gt;StackOverflow answer&lt;/a&gt;, all drives are mounted in &lt;code&gt;/Volumes&lt;/code&gt;, so I ran the following in Terminal:&lt;/p&gt;
 &lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;cd /Volumes
 ls&lt;/code&gt;&lt;/pre&gt;
@@ -410,12 +550,6 @@ cp -R /Library/Frameworks/R.framework/Versions/3.5/Resources/library/ /Volumes/U
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/resolution_comic.jpg&#34; /&gt;
-&lt;figcaption&gt;
-Bizarro.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
 &lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Inspiration for this post&lt;/h2&gt;
 &lt;p&gt;I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.&lt;/p&gt;
@@ -433,7 +567,7 @@ dev.off()&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Example&lt;/h2&gt;
 &lt;p&gt;To see this in practice, we can plot some data from the iris dataset the “regular” way:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pairs(iris[,1:4], col = iris$Species)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-05-23-highres-figures_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-05-23-highres-figures/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Things look pretty nice in the plotting window, but when you save that figure from RStudio, this is the result:&lt;/p&gt;
 &lt;figure&gt;
 &lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/lowres.png&#34; /&gt;
@@ -446,7 +580,7 @@ dev.off()&lt;/code&gt;&lt;/pre&gt;
 &lt;figure&gt;
 &lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/highres.png&#34; /&gt;
 &lt;/figure&gt;
-&lt;p&gt;You can also change the aspect ratio by modifying the &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; arguments. You can leave the units in inches or set it to pixels (&lt;code&gt;&amp;quot;px&amp;quot;&lt;/code&gt;), centimeters (&lt;code&gt;&amp;quot;cm&amp;quot;&lt;/code&gt;), or millimeters (&lt;code&gt;&amp;quot;mm&amp;quot;&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;You can also change the aspect ratio by modifying the &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; arguments. You can leave the units in inches or set it to pixels (&lt;code&gt;&#34;px&#34;&lt;/code&gt;), centimeters (&lt;code&gt;&#34;cm&#34;&lt;/code&gt;), or millimeters (&lt;code&gt;&#34;mm&#34;&lt;/code&gt;).&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -459,12 +593,6 @@ dev.off()&lt;/code&gt;&lt;/pre&gt;
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/thresholds.png&#34; /&gt;
-&lt;figcaption&gt;
-From left to right: unmodified species distribution model, minimum training presence threshold, and 10th percentile threshold.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
 &lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Inspiration for this post&lt;/h2&gt;
 &lt;p&gt;Conservation is often the main motivation behind studying where a species lives – having a model of a species’ range can help scientists assess whether it is at risk of extinction, designate protected regions to preserve its habitat, and study potential impacts of human activity. When we create species distribution models using common methods like Maxent, the result is a map of predicted habitat suitability or probability of species presence, such as the one below. In conservation management, however, it is often more useful to present range models in the form of species presence/absence. We can convert continuous predictions of habitat suitability into binary predictions of whether a species lives in a certain region or not using thresholds: i.e. designating all regions above a certain suitability level as within the species range and all areas below that suitability level as outside of it.&lt;/p&gt;
@@ -491,7 +619,6 @@ Left: species distribution model with continuous habitat suitability values. Rig
 &lt;h3&gt;The function&lt;/h3&gt;
 &lt;p&gt;The following is the function I wrote to apply these two thresholds to an SDM. The function’s arguments are the SDM, the occurrence points of the species in the form of longitude - latitude pairs, the threshold type, and whether the user would like the output to be a binary prediction (0s for predicted absence and 1s for predicted presence), or a thresholded continuous SDM (regions with suitability below the threshold set to 0).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(raster)
-## Warning: package &amp;#39;raster&amp;#39; was built under R version 3.5.2
 ## Loading required package: sp
 
 sdm_threshold &amp;lt;- function(sdm, occs, type = &amp;quot;mtp&amp;quot;, binary = FALSE){
@@ -527,24 +654,24 @@ if(binary){
 &lt;h2&gt;Example&lt;/h2&gt;
 &lt;p&gt;Now we can apply the function to an actual SDM I generated for a species of three-toed sloth (&lt;em&gt;Bradypus variegatus&lt;/em&gt;).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load in the SDM and occurrence points
-sloth_sdm &amp;lt;- raster(&amp;quot;/Users/hellenfellows/Desktop/website-hugo/static/SDMs/variegatus_sdm.tif&amp;quot;)
-sloth_occs &amp;lt;- read.csv(&amp;quot;~/Desktop/website-hugo/static/SDMs/variegatus_occ.csv&amp;quot;)
+sloth_sdm &amp;lt;- raster(&amp;quot;../../../static/SDMs/variegatus_sdm.tif&amp;quot;)
+sloth_occs &amp;lt;- read.csv(&amp;quot;../../../static/SDMs/variegatus_occ.csv&amp;quot;)
 
 plot(sloth_sdm)
 points(sloth_occs[,2:3], pch = 19, cex = 0.5)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can apply both MTP and P10 thresholds to the SDM based on the location of the occurrence points:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sloth_mtp &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;mtp&amp;quot;)
 plot(sloth_mtp)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;
 sloth_p10 &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;p10&amp;quot;)
 plot(sloth_p10)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We could also make either of these thresholded SDMs into a binary prediction in the following way:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sloth_mtp_bin &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;mtp&amp;quot;, binary = TRUE)
 plot(sloth_mtp_bin)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;generalization&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Generalization&lt;/h2&gt;
@@ -583,19 +710,19 @@ xy &amp;lt;- data.frame(x = runif(20, min = -150, max = 150), y = runif(20, min 
 
 plot(raster1)
 points(xy)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Now we can apply the function to see the MTP and P10 thresholded rasters:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtp_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;mtp&amp;quot;, binary = TRUE)
 plot(mtp_raster)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;
 p10_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;p10&amp;quot;, binary = TRUE)
 plot(p10_raster)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also use a user-inputted threshold to remove all parts of the raster with values lower than 20:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;user_raster &amp;lt;- raster_threshold(input_raster = raster1, threshold = 20)
 plot(user_raster)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -608,12 +735,6 @@ plot(user_raster)&lt;/code&gt;&lt;/pre&gt;
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/alpha_bg_regions.png&#34; /&gt;
-&lt;figcaption&gt;
-Alpha hulls (α = 20) around occurrence points for two species of sloths.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
 &lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Inspiration for this post&lt;/h2&gt;
 &lt;p&gt;In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur. The key to selecting this region is to pick an area where the species could occur but hasn’t necessarily been observed – for example, you don’t want to include an area separated from the rest of the range by a big mountain range that you don’t believe the organism could cross, but you do want to include a range of potential environments. There are many methods to delineate this region, from drawing a box around the occurrence points of the species to creating a buffered region around each occurrence point (think a collection of lots of circles around each point). One of my research mentors suggested that I try a new method using a shape known as an α-hull.&lt;/p&gt;
@@ -621,9 +742,12 @@ Alpha hulls (α = 20) around occurrence points for two species of sloths.
 &lt;/div&gt;
 &lt;div id=&#34;the-alphahull-package&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;The &lt;code&gt;alphahull&lt;/code&gt; package&lt;/h2&gt;
-&lt;p&gt;The &lt;code&gt;alphahull&lt;/code&gt; R package (Pateiro-Lopez et al. 2016) draws shapes (like the ones above) around sets of points based on a given parameter, α. The package creates two kinds of shapes I was interested in: α-shapes and α-convex hulls. The functions in this post convert these shapes into objects compatible with the &lt;code&gt;sp&lt;/code&gt; package, which can then be used for spatial analyses, including creating background regions for species distribution modeling.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;alphahull&lt;/code&gt; R package (Pateiro-Lopez et al. 2016) draws shapes (like the ones above) around sets of points based on a given parameter, α. The package creates two kinds of shapes I was interested in: α-shapes and α-convex hulls. The functions in this post convert these shapes into objects compatible with the &lt;code&gt;sp&lt;/code&gt; package, which can then be used for spatial analyses, including creating background regions for species distribution modeling.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load packages
 library(alphahull)
+## Registered S3 method overwritten by &amp;#39;R.oo&amp;#39;:
+##   method        from       
+##   throw.default R.methodsS3
 library(sp)&lt;/code&gt;&lt;/pre&gt;
 &lt;div id=&#34;alpha-shapes&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Alpha shapes&lt;/h3&gt;
@@ -640,7 +764,7 @@ plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
 hull_pts &amp;lt;- c(convexhull, convexhull[1])
 # plot the convex hull
 lines(iris_sepals[hull_pts, ], col = &amp;quot;magenta&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This convex hull (drawn in magenta) is an example of an α-shape: all convex hulls are α-shapes, but not all α-shapes are convex hulls. An α-shape doesn’t have to be convex – the lines making up the border of the shape can create concave edges relative to the points in the dataset. For example:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create a three-paneled figure
 par(mfrow = c(1,3))
@@ -659,7 +783,7 @@ plot(alphashape_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)
 # plot alpha = 2
 plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
 plot(alphashape_2, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# reset plotting parameters
 par(mfrow = c(1,1))&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Alpha shapes are created using the &lt;code&gt;ashape&lt;/code&gt; function from the &lt;code&gt;alphahull&lt;/code&gt; package. As you can see, increasing the α value makes the shape closer and closer to the convex hull, while low values of α make the shape more concave.&lt;/p&gt;
@@ -707,7 +831,7 @@ plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
 plot(alphashape_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
 # plot the new polygon
 lines(iris_sepals[alphapoly_1, ], col = &amp;quot;magenta&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;alpha-hulls&#34; class=&#34;section level3&#34;&gt;
@@ -717,7 +841,7 @@ lines(iris_sepals[alphapoly_1, ], col = &amp;quot;magenta&amp;quot;)&lt;/code&gt
 
 plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
 plot(alphahull_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;arcs-to-lines&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Arcs to lines&lt;/h4&gt;
 &lt;p&gt;To deal with this curvature, I wrote the following function to convert the arcs between points in the hull to a series of very short line segments in order to approximate the curve.&lt;/p&gt;
@@ -791,7 +915,7 @@ plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
 plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
 # plot the new polygon
 plot(lines_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The resulting SpatialLines object is an almost spot-on approximation of the original α-hull (shown in gray).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;spatiallines-to-spatialpolygon&#34; class=&#34;section level4&#34;&gt;
@@ -827,7 +951,7 @@ plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
 plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
 # plot the new polygon
 plot(SpPoly_1, border = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;alpha-hulls-to-spatialpolygons&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Alpha hulls to SpatialPolygons&lt;/h4&gt;
@@ -851,7 +975,7 @@ plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
 plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
 # plot the new polygon
 plot(hullpoly_1, border = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -861,7 +985,9 @@ plot(hullpoly_1, border = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&
 &lt;/div&gt;
 &lt;div id=&#34;citations&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Citations&lt;/h2&gt;
-&lt;p&gt;Beatriz Pateiro-Lopez and Alberto Rodriguez-Casal. (2016). alphahull: Generalization of the Convex Hull of a Sample of Points in the Plane. R package version 2.1. &lt;a href=&#34;https://CRAN.R-project.org/package=alphahull&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=alphahull&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Beatriz Pateiro-Lopez and Alberto Rodriguez-Casal. (2016). alphahull:
+Generalization of the Convex Hull of a Sample of Points in the Plane. R
+package version 2.1. &lt;a href=&#34;https://CRAN.R-project.org/package=alphahull&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=alphahull&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -874,12 +1000,6 @@ plot(hullpoly_1, border = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/obj1_8bt_Fe.png&#34; /&gt;
-&lt;figcaption&gt;
-Intensity of iron in a meteorite.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
 &lt;p&gt;Earlier this month I participated in the American Museum of Natural History’s annual hackathon (see my last &lt;a href=&#34;https://babichmorrowc.github.io/post/2019-02-14-hackathon/&#34;&gt;post&lt;/a&gt; for details about the event overall). During the hackathon, I worked with Katy Abbott, another Helen Fellow at the museum with me, to use a machine learning algorithm called DBSCAN to tackle our challenge. This post explains the process we used to complete the first step of the challenge: estimating the percent weights of elements in a meteorite.&lt;/p&gt;
 &lt;div id=&#34;challenge-accepted&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Challenge accepted&lt;/h2&gt;
@@ -889,14 +1009,14 @@ Intensity of iron in a meteorite.
 &lt;h2&gt;Pixels to percents&lt;/h2&gt;
 &lt;p&gt;The scientists scan meteorites with an electron microprobe, a device that provides the intensity of x-rays emitted from certain elements. The electron microprobe results in images with grayscale intensities corresponding to these x-ray intensities on a pixel-by-pixel basis.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/meteorite_pixel_intensity.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;../../../static/img/meteorite_pixel_intensity.png&#34; /&gt;
 &lt;figcaption&gt;
 Images of a meteorite produced by the electron microprobe showing pixel intensities for each of 10 elements - brighter grayscale values indicate greater amounts of that element in a pixel.
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Our first step was to convert these pixel intensities to the percent weight of each element in the mineral at that pixel. To do that, we referred to a set of standard images taken of minerals with a known proportion of each element. For example, the image below shows the pixel intensities of iron in 8 minerals: you can see that the pixels are brightest in Fe, or pure iron, and lower in iron oxide (&lt;span class=&#34;math inline&#34;&gt;\(\text{Fe}_3\text{O}_4\)&lt;/span&gt;) and troilite, or iron sulfide (FeS).&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/iron_standard.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;../../../static/img/iron_standard.png&#34; /&gt;
 &lt;figcaption&gt;
 Standard scan of the intensity of iron in each of 8 known minerals.
 &lt;/figcaption&gt;
@@ -918,8 +1038,9 @@ from pathlib import Path
 from skimage.io import imread, imshow
 import numpy.ma as ma
 from collections import Counter
+
 # read in percent weights by element of the minerals in the standard
-weights = pd.read_csv(&amp;quot;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/weights_to_minerals.csv&amp;quot;)
+weights = pd.read_csv(&amp;quot;../../../static/mineralmapping/weights_to_minerals.csv&amp;quot;)
 print(weights.head())
 ##        mineral  Mg     Ni  Al        Fe      Ca  Cr   P        S      Ti  Si
 ## 0  CaTiO3std15 NaN    NaN NaN       NaN  29.481 NaN NaN      NaN  35.211 NaN
@@ -930,7 +1051,7 @@ print(weights.head())
 &lt;p&gt;(Note: I was able to add the above Python chunk in R by following &lt;a href=&#34;https://babichmorrowc.github.io/post/2019-02-20-pythonrmd/&#34;&gt;these instructions&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;There is a linear relationship between pixel intensity and percent weight, so we used linear regression to find the slope of this relationship. We read in the .csv of pixel intensities for each element in the standards:&lt;/p&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# read in the pixel intensities by element in the standard
-mineral_standards = pd.read_csv(&amp;#39;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/mineral_standards.csv&amp;#39;)
+mineral_standards = pd.read_csv(&amp;#39;../../../static/mineralmapping/mineral_standards.csv&amp;#39;)
 print(mineral_standards.head())
 ##    Mg  Ni  Al  Fe   Ca  Cr  P  S   Ti  Si      mineral
 ## 0   0   0   0   0  171   0  4  0  459   0  CaTiO3std15
@@ -938,7 +1059,7 @@ print(mineral_standards.head())
 ## 2   0   2   0   0  141   6  3  0  455   2  CaTiO3std15
 ## 3   1   2   2   0  122   6  3  0  502   0  CaTiO3std15
 ## 4   0   0   0   0  138   5  5  0  457   1  CaTiO3std15&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an “_&amp;quot; to make looping easier.&lt;/p&gt;
+&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an &#34;_&#34; to make looping easier.&lt;/p&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# create dictionary to standardize file names to chemical formulas
 # needed to separate each element in the formula with an _ to make looping easier
 mineral_dict = dict(zip(np.unique(mineral_standards[&amp;#39;mineral&amp;#39;]),
@@ -974,6 +1095,7 @@ for element in elements:
         intensities = element_df[element_df[&amp;#39;mineral&amp;#39;] == mine][element]
         xis = np.append(xis, np.array(intensities))
         yis = np.append(yis, np.repeat(weight, len(intensities)))
+
     xis, yis = xis.reshape(-1,1), yis.reshape(-1,1)
     # fit linear regression on percent weight vs intensity
     reg = lr.fit(xis,yis)
@@ -983,7 +1105,15 @@ for element in elements:
     reg.coef_
     # get the linear regression coefficient for each element
     coefs[element] = float(reg.coef_)
+
 # print the coefficients for each element
+## array([[0.11859862]])
+## array([[0.32879587]])
+## array([[0.32008078]])
+## array([[0.21488656]])
+## array([[0.46922488]])
+## array([[0.07762688]])
+## array([[0.09790595]])
 print(coefs)
 ##              Mg        Ni   Al        Fe  ...    P         S        Ti        Si
 ## coeff  0.118599  0.328796  NaN  0.320081  ...  NaN  0.469225  0.077627  0.097906
@@ -991,7 +1121,7 @@ print(coefs)
 ## [1 rows x 10 columns]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Thus &lt;code&gt;coefs&lt;/code&gt; contains the coeficient relating pixel intensity of an element to its percent weight in the mineral: for example, the percent weight of Mg in an mineral is equal to 0.118599 times its pixel intensity.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/mineral_regression.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;../../../static/img/mineral_regression.png&#34; /&gt;
 &lt;figcaption&gt;
 X-axes are pixel intensity and y-axes are percent weight of the element. Blue points indicate the pixel intensities of the element for a given percent weight based on a mineral in the standard. Orange points indicate the linear regression calculated above.
 &lt;/figcaption&gt;
@@ -1001,10 +1131,11 @@ X-axes are pixel intensity and y-axes are percent weight of the element. Blue po
 &lt;h3&gt;Calculate percent weights&lt;/h3&gt;
 &lt;p&gt;Finally, we used these coefficients to calculate the predicted percent weights of each element in the two meteorites we were analyzing on a pixel-by-pixel basis. The code for this portion of the analysis is available in the latter end of &lt;a href=&#34;https://github.com/HackTheSolarSystem/MineralMapping/blob/master/backend/mineral_mapping_script.py&#34;&gt;this script&lt;/a&gt;. Note that for any pixel where the percent weight of an element was predicted to be higher than 100%, we set the percent weight to 100%. From these calculations, we ended up with the following files:&lt;/p&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# read file of predicted percent weights for meteorite 1
-df_obj1 = pd.read_csv(&amp;#39;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/predicted_percentweight_obj1.csv&amp;#39;)
+df_obj1 = pd.read_csv(&amp;#39;../../../static/mineralmapping/predicted_percentweight_obj1.csv&amp;#39;)
 df_obj1 = df_obj1.fillna(0)
 df_obj1.drop(&amp;#39;Unnamed: 0&amp;#39;, axis = 1, inplace = True)
 print(df_obj1.head())
+
 # read file of predicted percent weights for meteorite 2
 ##          Ca        Ti   Al   Cr  ...    P         Fe        Ni        Mg
 ## 0  8.595462  0.698642  0.0  0.0  ...  0.0  51.212925  0.986388  5.692734
@@ -1014,7 +1145,7 @@ print(df_obj1.head())
 ## 4  1.719092  0.543388  0.0  0.0  ...  0.0  58.254702  3.616755  0.118599
 ## 
 ## [5 rows x 10 columns]
-df_obj2 = pd.read_csv(&amp;#39;/Users/hellenfellows/Desktop/website-hugo/static/mineralmapping/predicted_percentweight_obj2.csv&amp;#39;)
+df_obj2 = pd.read_csv(&amp;#39;../../../static/mineralmapping/predicted_percentweight_obj2.csv&amp;#39;)
 df_obj2 = df_obj2.fillna(0)
 df_obj2.drop(&amp;#39;Unnamed: 0&amp;#39;, axis = 1, inplace = True)
 print(df_obj2.head())
@@ -1048,16 +1179,12 @@ print(df_obj2.head())
       <description>
 
 
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/reticulate.png&#34; /&gt;
-&lt;figcaption&gt;
-The &lt;code&gt;reticulate&lt;/code&gt; package logo. &lt;/figcatption&gt;
-&lt;/figure&gt;
 &lt;div id=&#34;using-python-in-rmarkdown&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Using Python in RMarkdown&lt;/h2&gt;
 &lt;p&gt;In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.&lt;/p&gt;
 &lt;p&gt;When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt; &lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt;
+&lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;From running Python in Atom, I knew I had the &lt;code&gt;sklearn.cluster&lt;/code&gt; module installed, so the problem must be in the connection between R and Python.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;reticulate&#34; class=&#34;section level2&#34;&gt;
@@ -1092,13 +1219,13 @@ knitr::opts_chunk$set(collapse = TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import sys
 for p in sys.path:
     print(p)
-## /Applications/anaconda3/bin
-## /Applications/anaconda3/lib/python37.zip
-## /Applications/anaconda3/lib/python3.7
-## /Applications/anaconda3/lib/python3.7/lib-dynload
-## /Applications/anaconda3/lib/python3.7/site-packages
-## /Applications/anaconda3/lib/python3.7/site-packages/aeosa
-## /Library/Frameworks/R.framework/Versions/3.5/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
+## 
+## /Library/Frameworks/Python.framework/Versions/3.7/bin
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python37.zip
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload
+## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages
+## /Library/Frameworks/R.framework/Versions/3.6/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;From this information, I could tell I wanted to use the path &lt;code&gt;/anaconda3/lib/python3.6&lt;/code&gt;, rather than &lt;code&gt;/usr/bin/python&lt;/code&gt;, which is what RMarkdown had originally been using. I modified by set-up chunk to look like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &amp;#39;/anaconda3/bin/python3.6&amp;#39;))&lt;/code&gt;&lt;/pre&gt;

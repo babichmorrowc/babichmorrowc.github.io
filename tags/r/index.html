@@ -121,7 +121,7 @@
   <meta property="og:description" content="Data Scientist"><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-01-02T00:00:00&#43;00:00">
+    <meta property="og:updated_time" content="2020-01-23T00:00:00&#43;00:00">
   
 
   
@@ -406,6 +406,24 @@
   
   
   <div>
+    <h2><a href="/post/launchd-jobs/">Scheduling R Scripts</a></h2>
+    <div class="article-style">
+      
+      Inspiration for this post Since starting my job as a data scientist, I found myself setting dozens of reminders on my calendar to run certain scripts every day / week / month. I figured that there had to be a better way to deal with this, and after some research, I started off with creating cron jobs. After a few months of these running (with varying success), I learned about Launchd as well.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/adding-featured-images-to-posts/">Adding featured images to posts</a></h2>
+    <div class="article-style">
+      
+      Inspiration for this post When I updated my website to the latest version of Hugo Academic a few months ago, I realized that I could add featured images to all of my blog posts. I was very excited about this, but none of my tinkering with the YAML of the RMarkdown could produce an image. After some digging, however, I was able to find how to format my files properly so the Academic theme worked to create the images.
+      
+    </div>
+  </div>
+  
+  <div>
     <h2><a href="/post/changing-fonts-in-rmarkdown-pdfs/">Changing fonts in RMarkdown PDFs</a></h2>
     <div class="article-style">
       
@@ -438,7 +456,7 @@
     <h2><a href="/post/2019-06-07-usb/">Copying R libraries to a USB</a></h2>
     <div class="article-style">
       
-      From Wild Green Memes for Ecological Fiends.   Inspiration for this post A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages.
+      Inspiration for this post A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages.
       
     </div>
   </div>
@@ -447,7 +465,8 @@
     <h2><a href="/post/2019-05-23-highres-figures/">Setting resolution and aspect ratios in R</a></h2>
     <div class="article-style">
       
-      Bizarro.   Inspiration for this post I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.
+      Inspiration for this post I recently needed to make some figures to present and noticed that the ones I was importing from saved R plots were showing up fuzzy on the presentation. Shortly afterwards, I had interns trying to generate figures with the same aspect ratio from different computers. I did a little digging and found this method for saving figures with specified resolutions and aspect ratios.
+ Solution In order to save your figure with a certain size and resolution, you just need to include your code for plotting between the two lines below:
       
     </div>
   </div>
@@ -456,7 +475,7 @@
     <h2><a href="/post/2019-04-12-sdm-threshold/">Thresholding species distribution models</a></h2>
     <div class="article-style">
       
-      From left to right: unmodified species distribution model, minimum training presence threshold, and 10th percentile threshold.   Inspiration for this post Conservation is often the main motivation behind studying where a species lives – having a model of a species’ range can help scientists assess whether it is at risk of extinction, designate protected regions to preserve its habitat, and study potential impacts of human activity. When we create species distribution models using common methods like Maxent, the result is a map of predicted habitat suitability or probability of species presence, such as the one below.
+      Inspiration for this post Conservation is often the main motivation behind studying where a species lives – having a model of a species’ range can help scientists assess whether it is at risk of extinction, designate protected regions to preserve its habitat, and study potential impacts of human activity. When we create species distribution models using common methods like Maxent, the result is a map of predicted habitat suitability or probability of species presence, such as the one below.
       
     </div>
   </div>
@@ -465,7 +484,7 @@
     <h2><a href="/post/2019-03-18-alpha-hull/">Converting alpha hulls to spatial objects</a></h2>
     <div class="article-style">
       
-      Alpha hulls (α = 20) around occurrence points for two species of sloths.   Inspiration for this post In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur.
+      Inspiration for this post In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur. The key to selecting this region is to pick an area where the species could occur but hasn’t necessarily been observed – for example, you don’t want to include an area separated from the rest of the range by a big mountain range that you don’t believe the organism could cross, but you do want to include a range of potential environments.
       
     </div>
   </div>
@@ -474,25 +493,8 @@
     <h2><a href="/post/2019-02-20-pythonrmd/">Python in RMarkdown</a></h2>
     <div class="article-style">
       
-      The reticulate package logo.   Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/post/2019-01-09-grafting-trees/">Grafting phylogenies</a></h2>
-    <div class="article-style">
-      
-      Inspiration for this post This post comes from the finishing touches I needed to put on a paper about life history evolution. The paper compares life history traits across the four groups of tetrapods (amphibians, reptiles, mammals, and birds), so when I carried out the nitty gritty phylogenetic analyses, I used four separate phylogenies. When it came time to make a figure to visualize those analyses, however, I ended up with an unwieldy (and unpublishable) 16-panel figure (four phylogenies by four traits).
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/post/2019-01-03-debugging-r/">Debugging in R</a></h2>
-    <div class="article-style">
-      
-      PhD comics Jorge Cham (www.phdcomics.com)   Recently I’ve been part of beta testing a new R package. The package allows users to apply different masks to spcies distribution models to create more ecologically realistic range models. The package itself is very cool, but since it hasn’t been released yet, this post will be short on ecology. Instead, I’m going to focus on the process I’ve been using to debug the package.
+      Using Python in RMarkdown In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.
+When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:
       
     </div>
   </div>
