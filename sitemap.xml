@@ -113,12 +113,12 @@
   </url>
   
   <url>
-    <loc>/tags/github/</loc>
+    <loc>/categories/github/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/github/</loc>
+    <loc>/tags/github/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url>
   
@@ -479,6 +479,11 @@
   
   <url>
     <loc>/authors/babichmorrowc/</loc>
+  </url>
+  
+  <url>
+    <loc>/google7f36843d88791048/</loc>
+    <priority>0</priority>
   </url>
   
   <url>

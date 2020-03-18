@@ -57,7 +57,7 @@
 &lt;/div&gt;
 &lt;div id=&#34;launchd&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Launchd&lt;/h2&gt;
-&lt;p&gt;After some of these various frustrations with cron, I learned that launchd is the preferred tool in macOS to execute scripts in a scheduled way. If your computer is asleep when the scheduled job is supposed to occur, There’s a lot I don’t understand about launchd (for a great overview, check &lt;a href=&#34;https://medium.com/swlh/how-to-use-launchd-to-run-services-in-macos-b972ed1e352&#34;&gt;this Medium article&lt;/a&gt;), but I broke the process down into 3 steps:&lt;/p&gt;
+&lt;p&gt;After some of these various frustrations with cron, I learned that launchd is the preferred tool in macOS to execute scripts in a scheduled way. If your computer is asleep when the scheduled job is supposed to occur, the job will still run when your computer wakes up. (If your machine is off at the scheduled time, however, the job will not run until the next scheduled time.) There’s a lot I don’t understand about launchd (for a great overview, check &lt;a href=&#34;https://medium.com/swlh/how-to-use-launchd-to-run-services-in-macos-b972ed1e352&#34;&gt;this Medium article&lt;/a&gt;), but I broke the process down into 3 steps:&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;Create a shell script to execute the R script&lt;/li&gt;
 &lt;li&gt;Create a .plist file to schedule the running of the shell script&lt;/li&gt;
@@ -66,7 +66,9 @@
 &lt;div id=&#34;create-the-shell-script&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Create the shell script&lt;/h3&gt;
 &lt;p&gt;The shell script is basically going to look exactly the same as the command you would have used for the cron job. I saved these scripts in the &lt;code&gt;~/&lt;/code&gt; directory, although you can probably save them anywhere as long as you keep track of the paths. The shell script should look something like this:&lt;/p&gt;
-&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;/usr/local/bin/Rscript /Desktop/my_script.R&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;#!/bin/sh
+/usr/local/bin/Rscript /Desktop/my_script.R&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first line &lt;code&gt;#!/bin/sh&lt;/code&gt; tells Unix how the file is supposed to be executed.&lt;/p&gt;
 &lt;p&gt;Then run the following in terminal to make the shell file runnable:&lt;/p&gt;
 &lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;chmod +x launchd_shell_script.sh&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -96,10 +98,12 @@
     &amp;lt;/dict&amp;gt;
 &amp;lt;/dict&amp;gt;
 &amp;lt;/plist&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Some components to note:
-+ The first string contains the name of the launch job in question (so this job would be saved as &lt;code&gt;com.mylaunchjob.plist&lt;/code&gt;)
-+ Within the array, you need to put the name of the shell script you just created
-+ You can put the arguments to schedule the job under &lt;code&gt;StartCalendarInterval&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Some components to note:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The first string contains the name of the launch job in question (so this job would be saved as &lt;code&gt;com.mylaunchjob.plist&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Within the array, you need to put the name of the shell script you just created&lt;/li&gt;
+&lt;li&gt;You can put the arguments to schedule the job under &lt;code&gt;StartCalendarInterval&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Save your &lt;code&gt;.plist&lt;/code&gt; file as &lt;code&gt;~/Library/LaunchAgents/com.mylaunchjob.plist&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;load-the-job&#34; class=&#34;section level3&#34;&gt;
