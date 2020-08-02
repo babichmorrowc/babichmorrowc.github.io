@@ -28,8 +28,8 @@
   
     
   
-  <meta name="description" content="Inspiration for this post After learning how to change the fonts within a graph in R, I wanted to be able to change the fonts in the body of an RMarkdown to match. I specifically wanted to be able to knit an RMarkdown to PDF using the Source Sans Pro Google font, but these instructions should work for any Google font.
- Cairo To embed custom fonts in PDFs, you can use the Cairo graphics library.">
+  <meta name="description" content="Note: this post has been edited on 2 August 2020 - there was a typo in the indenting of the YAML. Thank you to Henry Hankins for catching this!
+Inspiration for this post After learning how to change the fonts within a graph in R, I wanted to be able to change the fonts in the body of an RMarkdown to match. I specifically wanted to be able to knit an RMarkdown to PDF using the Source Sans Pro Google font, but these instructions should work for any Google font.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/changing-fonts-in-rmarkdown-pdfs/">
@@ -116,8 +116,8 @@
   <meta property="og:site_name" content="Cecina Babich Morrow">
   <meta property="og:url" content="/post/changing-fonts-in-rmarkdown-pdfs/">
   <meta property="og:title" content="Changing fonts in RMarkdown PDFs | Cecina Babich Morrow">
-  <meta property="og:description" content="Inspiration for this post After learning how to change the fonts within a graph in R, I wanted to be able to change the fonts in the body of an RMarkdown to match. I specifically wanted to be able to knit an RMarkdown to PDF using the Source Sans Pro Google font, but these instructions should work for any Google font.
- Cairo To embed custom fonts in PDFs, you can use the Cairo graphics library."><meta property="og:image" content="/post/changing-fonts-in-rmarkdown-pdfs/featured.jpg">
+  <meta property="og:description" content="Note: this post has been edited on 2 August 2020 - there was a typo in the indenting of the YAML. Thank you to Henry Hankins for catching this!
+Inspiration for this post After learning how to change the fonts within a graph in R, I wanted to be able to change the fonts in the body of an RMarkdown to match. I specifically wanted to be able to knit an RMarkdown to PDF using the Source Sans Pro Google font, but these instructions should work for any Google font."><meta property="og:image" content="/post/changing-fonts-in-rmarkdown-pdfs/featured.jpg">
   <meta property="twitter:image" content="/post/changing-fonts-in-rmarkdown-pdfs/featured.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -173,7 +173,7 @@
       "url": "/img/icon-512.png"
     }
   },
-  "description": "Inspiration for this post After learning how to change the fonts within a graph in R, I wanted to be able to change the fonts in the body of an RMarkdown to match. I specifically wanted to be able to knit an RMarkdown to PDF using the Source Sans Pro Google font, but these instructions should work for any Google font.\n Cairo To embed custom fonts in PDFs, you can use the Cairo graphics library."
+  "description": "Note: this post has been edited on 2 August 2020 - there was a typo in the indenting of the YAML. Thank you to Henry Hankins for catching this!\nInspiration for this post After learning how to change the fonts within a graph in R, I wanted to be able to change the fonts in the body of an RMarkdown to match. I specifically wanted to be able to knit an RMarkdown to PDF using the Source Sans Pro Google font, but these instructions should work for any Google font."
 }
 </script>
 
@@ -533,6 +533,7 @@
       
 
 
+<p><em>Note: this post has been edited on 2 August 2020 - there was a typo in the indenting of the YAML. Thank you to Henry Hankins for catching this!</em></p>
 <div id="inspiration-for-this-post" class="section level2">
 <h2>Inspiration for this post</h2>
 <p>After learning how to <a href="https://babichmorrowc.github.io/post/2019-10-11-google_fonts/">change the fonts within a graph</a> in R, I wanted to be able to change the fonts in the body of an RMarkdown to match. I specifically wanted to be able to knit an RMarkdown to PDF using the <a href="https://fonts.google.com/specimen/Source+Sans+Pro">Source Sans Pro</a> Google font, but these instructions should work for any Google font.</p>
@@ -554,7 +555,7 @@
 <p>To use Cairo to change the font of your RMarkdown pdf, you can modify the YAML heading:</p>
 <pre class="r"><code>---
 title: &quot;New fancy font!&quot;
-  header-includes:
+header-includes:
    - \usepackage[default]{sourcesanspro}
    - \usepackage[T1]{fontenc}
 mainfont: SourceSansPro
