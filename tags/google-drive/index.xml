@@ -27,7 +27,7 @@
 &lt;figure&gt;
 &lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/google_quota_error.png&#34; /&gt;
 &lt;/figure&gt;
-&lt;p&gt;In life overall, I would usual respond to such a quota error by sucking it up and trying to find a way to make fewer requests from an API, but I started getting this error in situations where my code was just writing a 4 row Google Sheet. I assumed that there was no way that this could actually be hitting a rate limit, so I did some more digging.&lt;/p&gt;
+&lt;p&gt;In life overall, I would usually respond to such a quota error by sucking it up and trying to find a way to make fewer requests from an API, but I started getting this error in situations where my code was just writing a 4 row Google Sheet. I assumed that there was no way that this could actually be hitting a rate limit, so I did some more digging.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;The problem&lt;/h2&gt;
