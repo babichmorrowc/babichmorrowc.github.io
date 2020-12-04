@@ -5,7 +5,7 @@
     <link>/categories/r/</link>
       <atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <description>R</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2020</copyright><lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2020</copyright><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>R</title>
@@ -13,10 +13,112 @@
     </image>
     
     <item>
+      <title>Getting your own Google API credentials for R</title>
+      <link>/post/google-api-creds/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>/post/google-api-creds/</guid>
+      <description>
+
+
+&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
+&lt;p&gt;My quest to make Google Drive play nice with R continues! If you’ve read &lt;a href=&#34;https://babichmorrowc.github.io/post/google-creds/&#34;&gt;my last post&lt;/a&gt;, you’ll know the process for using &lt;code&gt;googledrive&lt;/code&gt; and/or &lt;code&gt;googlesheets4&lt;/code&gt; to access data from Google Drive in a non-interactive context, e.g. deploying a data product to RStudio Connect. This process works wonderfully…most of the time. When deploying processes accessing Google Drive that are automated and run regularly, or simply make large requests of Drive, you can start to run into problems with Google Drive’s API quota.&lt;/p&gt;
+&lt;p&gt;I started getting 429 errors like the following for projects using &lt;code&gt;googlesheets4&lt;/code&gt; to read and write data:&lt;/p&gt;
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/google_quota_error.png&#34; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;In life overall, I would usual respond to such a quota error by sucking it up and trying to find a way to make fewer requests from an API, but I started getting this error in situations where my code was just writing a 4 row Google Sheet. I assumed that there was no way that this could actually be hitting a rate limit, so I did some more digging.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;After a seemingly endless slog through the GitHub issues for the &lt;code&gt;googlesheets4&lt;/code&gt; package, I found the following goldmine of a quote from the amazing Jenny Bryan in &lt;a href=&#34;https://github.com/tidyverse/googlesheets4/issues/189&#34;&gt;this GitHub issue&lt;/a&gt;:&lt;/p&gt;
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/jbryan_comment.png&#34; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;So here was my problem: “Everyone who uses googlesheets4, by default, is sharing the same quota.” In the words of Jenny Bryan once more, “This sounds wild, but it’s true.” So my problem was not that writing a 4 line Google Sheet exceeds Google’s quota, but rather that all users of the package fill the same quota, meaning my 4 lines may or may not get bumped over the shared limit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-solution&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;p&gt;If everyone is sharing the same quota, the fix to my problem was to get my own quota. Based on my research, I found that the &lt;code&gt;gargle&lt;/code&gt; instructions on API credentials &lt;a href=&#34;https://gargle.r-lib.org/articles/get-api-credentials.html&#34;&gt;here&lt;/a&gt; were the definitive source of truth for getting one’s own API credentials. I would definitely recommend this as a starting point for anyone trying to acquire your own credentials to get a separate quota. However, I had some difficulty actually figuring out these instructions and implementing them, so for anyone in the same boat, I’ve outlined my process below.&lt;/p&gt;
+&lt;div id=&#34;set-up-a-google-cloud-project&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Set up a Google Cloud project&lt;/h3&gt;
+&lt;p&gt;First, you need to create a new Google Cloud project by visiting &lt;a href=&#34;https://console.cloud.google.com&#34; class=&#34;uri&#34;&gt;https://console.cloud.google.com&lt;/a&gt;. Create a new project by clicking on “Select a project” (or a project name) to the right of “Google Cloud Platform” in the top left corner. From here, you can create “NEW PROJECT”. Enter your desired project name (and Organization if applicable). If you already have a project set up that you want to use, you can select that project instead.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;enable-apis&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Enable APIs&lt;/h3&gt;
+&lt;p&gt;In order to read and write from a Google Sheet in R, I needed the Google Drive API and the Google Sheets API. You may need more than this if your project is getting fancier, but you can start here and add more. To add any API, click on the hamburger menu in the top left, click “APIs &amp;amp; Services” &amp;gt; “Library”, and search for the desired APIs by name. When you find the one(s) you want, click “Enable.” You can modify which APIs are enabled at any time.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;gargle&lt;/code&gt; tutorial notes that some APIs require a linked billing account. If you are only working with Drive and Sheets, you do not need a billing account. If you do require billing, you have some options, like &lt;a href=&#34;https://cloud.google.com/free/&#34;&gt;GCP free tier&lt;/a&gt;. If you are going with a paid plan, though, you will want to lock down access to the API even more carefully to avoid unwanted charges.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;api-keys-oauth-ids-and-service-accounts-oh-my&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;API Keys, OAuth IDs, and service accounts, oh my!&lt;/h3&gt;
+&lt;p&gt;Up to this point the &lt;a href=&#34;https://gargle.r-lib.org/articles/get-api-credentials.html&#34;&gt;&lt;code&gt;gargle&lt;/code&gt; tutorial&lt;/a&gt; worked quite well for me. Here is where my struggles began, however. When you go to the hamburger menu, “APIs &amp;amp; Services” &amp;gt; “Credentials”, you’ll see that there are 3 options for types of credentials for your project:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;API Keys&lt;/li&gt;
+&lt;li&gt;OAuth 2.0 Client IDs&lt;/li&gt;
+&lt;li&gt;Service Accounts&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I found it difficult to grasp the distinction between these three types of credentials, so here is what I’ve discovered (&lt;a href=&#34;https://stackoverflow.com/questions/39181501/whats-the-difference-between-api-key-client-id-and-service-account&#34;&gt;this Stackoverflow&lt;/a&gt; was particularly helpful):&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;API Keys: Use an API key if you are accessing something that is available to the public.&lt;/li&gt;
+&lt;li&gt;OAuth 2.0 Client IDs: Use an OAuth 2.0 Client ID if you need to access something that is privately available to you / your organization, e.g. something in your Google Drive, something in your company’s Google Drive, etc.&lt;/li&gt;
+&lt;li&gt;Service Accounts: Use a service account if you want to delegate your request to an account separate from your own. You will need give this service account any Google permissions that are required in your code.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In my use case, I needed to access information from a private Google Drive in a non-interactive context. In order to do this successfully, I ended up using OAuth (option #2), but I will show code for all 3 options below. For further reference on using each of these options, I recommend &lt;a href=&#34;https://gargle.r-lib.org/articles/non-interactive-auth.html&#34;&gt;this tutorial&lt;/a&gt; about non-interactive auth with &lt;code&gt;gargle&lt;/code&gt;.&lt;/p&gt;
+&lt;div id=&#34;api-keys&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;API keys&lt;/h4&gt;
+&lt;p&gt;This is the easiest way to get your own quota for a project that requires accessing a publicly available resource through R. To create an API key for your Google Cloud Project, go to “APIs &amp;amp; Services” &amp;gt; “Credentials” &amp;gt; “+ CREATE CREDENTIALS” &amp;gt; “API key”. You can copy the key when you create it, but you’ll always be able to go back to your Credentials page and re-copy the key later. I suggest storing the key in a password manager and/or your &lt;code&gt;.Rprofile&lt;/code&gt; so it is easy to find later.&lt;/p&gt;
+&lt;p&gt;Once you have your key, you can use &lt;code&gt;googlesheets4&lt;/code&gt; in the following way:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;google_cloud_api_key &amp;lt;- &amp;quot;YOUR API KEY&amp;quot;
+gs4_auth_configure(api_key = google_cloud_api_key)
+
+gs4_example(&amp;quot;gapminder&amp;quot;) %&amp;gt;% 
+    read_sheet()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You may need to run the first two lines in your console (i.e. in an interactive setting) first to grant permissions, but then your document should be set either for knitting or for deploying.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;oauth-2.0-client-ids&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;OAuth 2.0 client IDs&lt;/h4&gt;
+&lt;p&gt;These types of tokens allow you to make requests on behalf of yourself, the user. To create an OAuth 2.0 client ID, go to “APIs &amp;amp; Services” &amp;gt; “Credentials” &amp;gt; “+ CREATE CREDENTIALS” &amp;gt; “OAuth client ID”. Select “Desktop client”. As with the API key, you can copy the client ID and secret now, or find them later in the “Credentials” page.&lt;/p&gt;
+&lt;p&gt;There are two options for accessing the ID you create: (1) via the client ID and secret, and (2) via downloading a JSON file. In either case, you’ll want to protect this information, either by storing the ID and secret in a password manager or saving the JSON file in a protected folder, like &lt;code&gt;.secrets&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you use the ID and secret, your code will look something like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create an OAuth app with httr
+google_app &amp;lt;- httr::oauth_app(&amp;quot;google-api&amp;quot;,
+                              key = &amp;quot;YOUR GOOGLE CLOUD OAUTH KEY&amp;quot;,
+                              secret = &amp;quot;YOUR GOOGLE CLOUD SECRET&amp;quot;)
+
+gs4_auth_configure(app = google_app)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you download the JSON instead, your code will look like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;gs4_auth_configure(app = &amp;quot;/PATH/TO/THE/DOWNLOADED/OAUTH/JSON.json&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is the solution that ended up working for my purposes for 2 reasons. First, it allowed me to access private resources on Google Drive (unlike an API key), and second, it allowed me to access those resources via my own Google account (unlike a service account).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;service-account-tokens&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Service account tokens&lt;/h4&gt;
+&lt;p&gt;This is the final way to get credentials. I initially tried this method, since the &lt;a href=&#34;https://gargle.r-lib.org/articles/get-api-credentials.html&#34;&gt;&lt;code&gt;gargle&lt;/code&gt; tutorial&lt;/a&gt; says that is “the most proper way to make authorized requests to an API in a non-interactive context.” For this to work, however, I would have then needed the ability to make my service account a member of my team’s Google Drive. Because of security, this wasn’t a possibility for me, but if that is something you can do, option #3 is the way to go! You would just need to give your service account (which will have a name something like &lt;code&gt;my-service-account-name@my-google-project-name.iam.gserviceaccount.com&lt;/code&gt;) access to whatever Drive files or services you’d like to access.&lt;/p&gt;
+&lt;p&gt;To generate a service account token, go to “APIs &amp;amp; Services” &amp;gt; “Credentials” &amp;gt; “+ CREATE CREDENTIALS” &amp;gt; “Service account”. Give your new account a good name and description, provide account permissions if necessary, and potentially grant users access. After you click “Create key”, you’ll have the opportunity to download a JSON. Save this in a secure location, like your &lt;code&gt;.secrets&lt;/code&gt; folder, for example. To use it in your document, add the following:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;gs4_auth_configure(app = &amp;quot;/PATH/TO/THE/DOWNLOADED/SERVICE/ACCOUNT/JSON.json&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note, there is a way to make your new service account token function as your account, although I have not tried this. If you want to carry out processes on behalf of yourself or some specific user, instead of as &lt;code&gt;my-service-account-name@my-google-project-name.iam.gserviceaccount.com&lt;/code&gt;, there is a process known as “impersonation” that is discussed more &lt;a href=&#34;https://gargle.r-lib.org/articles/non-interactive-auth.html#provide-a-service-account-token-directly-1&#34;&gt;here&lt;/a&gt;. If you don’t have the access level to do this (which was my situation), than an OAuth user token is the way to go.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;additional-resources&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Additional resources&lt;/h2&gt;
+&lt;p&gt;I found the additional resources helpful when writing this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tidyverse/googlesheets4/issues/139&#34;&gt;Hitting quota limits GitHub issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tidyverse/googlesheets4/issues/189&#34;&gt;Quota limit GitHub issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gargle.r-lib.org/articles/get-api-credentials.html&#34;&gt;&lt;code&gt;gargle&lt;/code&gt; instructions on API credentials&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gargle.r-lib.org/articles/non-interactive-auth.html&#34;&gt;&lt;code&gt;gargle&lt;/code&gt; instructions on non-interactive authorization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://googlesheets4.tidyverse.org/reference/sheets_auth_configure.html&#34;&gt;&lt;code&gt;googlesheets4&lt;/code&gt; instructions on auth configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/39181501/whats-the-difference-between-api-key-client-id-and-service-account&#34;&gt;Stack Overflow discussion of the 3 types of credentials&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Publishing to RStudio Connect with Google credentials</title>
-      <link>/post/google-creds/</link>
+      <link>/post/google-account-creds/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>/post/google-creds/</guid>
+      <guid>/post/google-account-creds/</guid>
       <description>
 
 
@@ -43,10 +145,9 @@ googlesheets4::gs4_auth(email = &amp;quot;babichmorrowc@gmail.com&amp;quot;, # R
                         use_oob = TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;When you run each of these, a browser window should open asking you to authorize. You’ll then have to copy the authorization code and paste it back into the console of RStudio.&lt;/p&gt;
 &lt;p&gt;After doing so, you should have generated files in a folder called &lt;code&gt;.secrets&lt;/code&gt;. To check, you can either run &lt;code&gt;list.files(&#34;.secrets/&#34;)&lt;/code&gt; in your console, or display hidden files in your file browser as below to verify that the files have been generated:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;%22show_hidden_files.png%22&#34; alt=&#34;&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Screenshot to show hidden files in RStudio&lt;/p&gt;
-&lt;/div&gt;
+&lt;figure&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/show_hidden_files.png&#34; /&gt;
+&lt;/figure&gt;
 &lt;/div&gt;
 &lt;div id=&#34;authorize-your-packages-in-the-code&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Authorize your packages in the code&lt;/h2&gt;
