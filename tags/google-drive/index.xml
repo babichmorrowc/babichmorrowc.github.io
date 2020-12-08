@@ -87,14 +87,14 @@ google_app &amp;lt;- httr::oauth_app(&amp;quot;google-api&amp;quot;,
 
 gs4_auth_configure(app = google_app)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you download the JSON instead, your code will look like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;gs4_auth_configure(app = &amp;quot;/PATH/TO/THE/DOWNLOADED/OAUTH/JSON.json&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;gs4_auth_configure(path = &amp;quot;/PATH/TO/THE/DOWNLOADED/OAUTH/JSON.json&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is the solution that ended up working for my purposes for 2 reasons. First, it allowed me to access private resources on Google Drive (unlike an API key), and second, it allowed me to access those resources via my own Google account (unlike a service account).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;service-account-tokens&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Service account tokens&lt;/h4&gt;
 &lt;p&gt;This is the final way to get credentials. I initially tried this method, since the &lt;a href=&#34;https://gargle.r-lib.org/articles/get-api-credentials.html&#34;&gt;&lt;code&gt;gargle&lt;/code&gt; tutorial&lt;/a&gt; says that is “the most proper way to make authorized requests to an API in a non-interactive context.” For this to work, however, I would have then needed the ability to make my service account a member of my team’s Google Drive. Because of security, this wasn’t a possibility for me, but if that is something you can do, option #3 is the way to go! You would just need to give your service account (which will have a name something like &lt;code&gt;my-service-account-name@my-google-project-name.iam.gserviceaccount.com&lt;/code&gt;) access to whatever Drive files or services you’d like to access.&lt;/p&gt;
 &lt;p&gt;To generate a service account token, go to “APIs &amp;amp; Services” &amp;gt; “Credentials” &amp;gt; “+ CREATE CREDENTIALS” &amp;gt; “Service account”. Give your new account a good name and description, provide account permissions if necessary, and potentially grant users access. After you click “Create key”, you’ll have the opportunity to download a JSON. Save this in a secure location, like your &lt;code&gt;.secrets&lt;/code&gt; folder, for example. To use it in your document, add the following:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;gs4_auth_configure(app = &amp;quot;/PATH/TO/THE/DOWNLOADED/SERVICE/ACCOUNT/JSON.json&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;gs4_auth_configure(path = &amp;quot;/PATH/TO/THE/DOWNLOADED/SERVICE/ACCOUNT/JSON.json&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Note, there is a way to make your new service account token function as your account, although I have not tried this. If you want to carry out processes on behalf of yourself or some specific user, instead of as &lt;code&gt;my-service-account-name@my-google-project-name.iam.gserviceaccount.com&lt;/code&gt;, there is a process known as “impersonation” that is discussed more &lt;a href=&#34;https://gargle.r-lib.org/articles/non-interactive-auth.html#provide-a-service-account-token-directly-1&#34;&gt;here&lt;/a&gt;. If you don’t have the access level to do this (which was my situation), than an OAuth user token is the way to go.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
