@@ -5,7 +5,7 @@
     <link>/categories/r/</link>
       <atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <description>R</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2020</copyright><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>R</title>
@@ -853,9 +853,8 @@ plot(user_raster)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The &lt;code&gt;alphahull&lt;/code&gt; R package (Pateiro-Lopez et al. 2016) draws shapes (like the ones above) around sets of points based on a given parameter, α. The package creates two kinds of shapes I was interested in: α-shapes and α-convex hulls. The functions in this post convert these shapes into objects compatible with the &lt;code&gt;sp&lt;/code&gt; package, which can then be used for spatial analyses, including creating background regions for species distribution modeling.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load packages
 library(alphahull)
-## Registered S3 method overwritten by &amp;#39;R.oo&amp;#39;:
-##   method        from       
-##   throw.default R.methodsS3
+## Warning: replacing previous import &amp;#39;vctrs::data_frame&amp;#39; by &amp;#39;tibble::data_frame&amp;#39;
+## when loading &amp;#39;dplyr&amp;#39;
 library(sp)&lt;/code&gt;&lt;/pre&gt;
 &lt;div id=&#34;alpha-shapes&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Alpha shapes&lt;/h3&gt;
@@ -971,7 +970,7 @@ arc2line &amp;lt;- function(center, r, vector, theta, npoints = 100) {
 &lt;/div&gt;
 &lt;div id=&#34;hulls-to-lines&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Hulls to lines&lt;/h4&gt;
-&lt;p&gt;Using the previous function, I wrote another function to take an α-hull and convert it into a set of SpatialLines objects. The function uses the &lt;code&gt;arc2line&lt;/code&gt; function from above to convert each arc in the α-hull into a series of lines, before adding each of these sets of lines together.&lt;/p&gt;
+&lt;p&gt;Using the previous function, I wrote another function to take an α-hull and convert it into a set of SpatialLines objects. The function uses the &lt;code&gt;arc2line&lt;/code&gt; function from above to convert each arc in the α-hull into a series of lines, before adding each of these sets of lines together. (&lt;em&gt;This function was updated on 6 January 2021 based on my response to kostas_k84 – thank you to everyone who brought this up to me!&lt;/em&gt;)&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ahull2lines &amp;lt;- function(hull){
   arclist &amp;lt;- hull$arcs
   lines &amp;lt;- list()
@@ -992,7 +991,7 @@ arc2line &amp;lt;- function(center, r, vector, theta, npoints = 100) {
     if(i == 1){
       # Add the first line to the list of lines
       lines[[i]] &amp;lt;- line_i
-    } else if(all.equal(line_i@coords[1,], last_line_coords[nrow(last_line_coords),])){
+    } else if(isTRUE(all.equal(line_i@coords[1,], last_line_coords[nrow(last_line_coords),]))){
       # If the first coordinate in the ith line is equal to the last coordinate in the previous line
       # then those lines should be connected
       # Row bind the coordinates for the ith line to the coordinates of the previous line in the list
