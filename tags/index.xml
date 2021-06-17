@@ -5,7 +5,7 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Tags</title>
@@ -13,18 +13,34 @@
     </image>
     
     <item>
-      <title>Google Drive</title>
-      <link>/tags/google-drive/</link>
-      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/google-drive/</guid>
+      <title>hypervolume</title>
+      <link>/tags/hypervolume/</link>
+      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>/tags/hypervolume/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>life history</title>
+      <link>/tags/life-history/</link>
+      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>/tags/life-history/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
       <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Drive</title>
+      <link>/tags/google-drive/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/google-drive/</guid>
       <description></description>
     </item>
     
@@ -41,14 +57,6 @@
       <link>/tags/education/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 -0500</pubDate>
       <guid>/tags/education/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life history</title>
-      <link>/tags/life-history/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 -0500</pubDate>
-      <guid>/tags/life-history/</guid>
       <description></description>
     </item>
     
@@ -161,14 +169,6 @@
       <link>/tags/phylogenetics/</link>
       <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
       <guid>/tags/phylogenetics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hypervolume</title>
-      <link>/tags/hypervolume/</link>
-      <pubDate>Wed, 16 Jan 2019 00:00:00 -0500</pubDate>
-      <guid>/tags/hypervolume/</guid>
       <description></description>
     </item>
     
