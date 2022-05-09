@@ -5,84 +5,12 @@
     <link>/categories/</link>
       <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2022</copyright><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Categories</title>
       <link>/categories/</link>
     </image>
-    
-    <item>
-      <title>R</title>
-      <link>/categories/r/</link>
-      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GitHub</title>
-      <link>/categories/github/</link>
-      <pubDate>Tue, 17 Sep 2019 21:13:14 -0500</pubDate>
-      <guid>/categories/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Career</title>
-      <link>/categories/career/</link>
-      <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/categories/career/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>species distribution modeling</title>
-      <link>/categories/species-distribution-modeling/</link>
-      <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
-      <guid>/categories/species-distribution-modeling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hackathon</title>
-      <link>/categories/hackathon/</link>
-      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>/categories/hackathon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Meteorites</title>
-      <link>/categories/meteorites/</link>
-      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>/categories/meteorites/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>/categories/python/</link>
-      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>evolution</title>
-      <link>/categories/evolution/</link>
-      <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
-      <guid>/categories/evolution/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>phylogenetics</title>
-      <link>/categories/phylogenetics/</link>
-      <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
-      <guid>/categories/phylogenetics/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

@@ -5,7 +5,7 @@
     <link>/categories/meteorites/</link>
       <atom:link href="/categories/meteorites/index.xml" rel="self" type="application/rss+xml" />
     <description>Meteorites</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Wed, 20 Feb 2019 21:13:14 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2022</copyright><lastBuildDate>Wed, 20 Feb 2019 21:13:14 -0500</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Meteorites</title>
@@ -58,7 +58,6 @@ from pathlib import Path
 from skimage.io import imread, imshow
 import numpy.ma as ma
 from collections import Counter
-
 # read in percent weights by element of the minerals in the standard
 weights = pd.read_csv(&amp;quot;../../../static/mineralmapping/weights_to_minerals.csv&amp;quot;)
 print(weights.head())
@@ -79,7 +78,7 @@ print(mineral_standards.head())
 ## 2   0   2   0   0  141   6  3  0  455   2  CaTiO3std15
 ## 3   1   2   2   0  122   6  3  0  502   0  CaTiO3std15
 ## 4   0   0   0   0  138   5  5  0  457   1  CaTiO3std15&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an &#34;_&#34; to make looping easier.&lt;/p&gt;
+&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an “_&amp;quot; to make looping easier.&lt;/p&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# create dictionary to standardize file names to chemical formulas
 # needed to separate each element in the formula with an _ to make looping easier
 mineral_dict = dict(zip(np.unique(mineral_standards[&amp;#39;mineral&amp;#39;]),
@@ -115,7 +114,6 @@ for element in elements:
         intensities = element_df[element_df[&amp;#39;mineral&amp;#39;] == mine][element]
         xis = np.append(xis, np.array(intensities))
         yis = np.append(yis, np.repeat(weight, len(intensities)))
-
     xis, yis = xis.reshape(-1,1), yis.reshape(-1,1)
     # fit linear regression on percent weight vs intensity
     reg = lr.fit(xis,yis)
@@ -125,15 +123,7 @@ for element in elements:
     reg.coef_
     # get the linear regression coefficient for each element
     coefs[element] = float(reg.coef_)
-
 # print the coefficients for each element
-## array([[0.11859862]])
-## array([[0.32879587]])
-## array([[0.32008078]])
-## array([[0.21488656]])
-## array([[0.46922488]])
-## array([[0.07762688]])
-## array([[0.09790595]])
 print(coefs)
 ##              Mg        Ni   Al        Fe  ...    P         S        Ti        Si
 ## coeff  0.118599  0.328796  NaN  0.320081  ...  NaN  0.469225  0.077627  0.097906
@@ -155,7 +145,6 @@ df_obj1 = pd.read_csv(&amp;#39;../../../static/mineralmapping/predicted_percentw
 df_obj1 = df_obj1.fillna(0)
 df_obj1.drop(&amp;#39;Unnamed: 0&amp;#39;, axis = 1, inplace = True)
 print(df_obj1.head())
-
 # read file of predicted percent weights for meteorite 2
 ##          Ca        Ti   Al   Cr  ...    P         Fe        Ni        Mg
 ## 0  8.595462  0.698642  0.0  0.0  ...  0.0  51.212925  0.986388  5.692734

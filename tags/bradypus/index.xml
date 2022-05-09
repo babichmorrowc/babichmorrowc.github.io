@@ -5,7 +5,7 @@
     <link>/tags/bradypus/</link>
       <atom:link href="/tags/bradypus/index.xml" rel="self" type="application/rss+xml" />
     <description>Bradypus</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Fri, 09 Aug 2019 00:00:00 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2022</copyright><lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Bradypus</title>
@@ -15,7 +15,7 @@
     <item>
       <title>Talk: Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
       <link>/talk/ibs_2019/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       <guid>/talk/ibs_2019/</guid>
       <description></description>
     </item>
@@ -23,7 +23,7 @@
     <item>
       <title>Poster: Improving species range estimates for an arboreal species group with a parapatric distribution</title>
       <link>/talk/mammalogy_2019/</link>
-      <pubDate>Sat, 29 Jun 2019 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
       <guid>/talk/mammalogy_2019/</guid>
       <description></description>
     </item>
@@ -31,25 +31,25 @@
     <item>
       <title>Talk: Using SVMs to delineate parapatric ranges: An example with three-toed sloths (Bradypus)</title>
       <link>/talk/helenfellow_june2019/</link>
-      <pubDate>Thu, 13 Jun 2019 11:30:00 -0400</pubDate>
+      <pubDate>Thu, 13 Jun 2019 11:30:00 +0000</pubDate>
       <guid>/talk/helenfellow_june2019/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vT29X9rGoq1GeCwrXMPJEhmwy7I_nf8fFzpIMdWyLQfROI-zVqicELakhgOgRWvDgicV3s_c6ii4njc/embed?start=false&amp;loop=false&amp;delayms=3000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
 </description>
     </item>
     
     <item>
       <title>Talk: Using SVMs to model ranges of congeneric sloth species</title>
       <link>/talk/nysdm_march2019/</link>
-      <pubDate>Fri, 15 Mar 2019 14:30:00 -0400</pubDate>
+      <pubDate>Fri, 15 Mar 2019 14:30:00 +0000</pubDate>
       <guid>/talk/nysdm_march2019/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vS_w666eIt4-3dUI-z6iVlD08EphadvhGys2IarVUPk7QIdG3dn7opO1LLLeuM7vcb6j8k7_5nVOAef/embed?start=false&amp;loop=false&amp;delayms=5000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
 </description>
     </item>
     
     <item>
       <title>Distribution modeling of Bradypus</title>
       <link>/project/bradypus/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       <guid>/project/bradypus/</guid>
       <description></description>
     </item>

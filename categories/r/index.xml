@@ -5,7 +5,7 @@
     <link>/categories/r/</link>
       <atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <description>R</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2022</copyright><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>R</title>
@@ -423,8 +423,9 @@ output:
 &lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Example&lt;/h2&gt;
 &lt;p&gt;To continue with my Lego theme, I’ll demonstrate using this font on data from the &lt;code&gt;legocolors&lt;/code&gt; package. We can make the following graph of approximate lego brick availability based on the year a brick was released (colored by the brick color!):&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(legocolors)
-library(ggplot2)
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(legocolors)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;legocolors&amp;#39; was built under R version 3.5.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
 
 ggplot(legocolors, aes(x = year_released, y = bl_bp, colour = hex)) +
   geom_point() +
@@ -437,7 +438,7 @@ ggplot(legocolors, aes(x = year_released, y = bl_bp, colour = hex)) +
 &lt;/div&gt;
 &lt;div id=&#34;troubleshooting&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Troubleshooting&lt;/h2&gt;
-&lt;p&gt;This process is a little bit finicky, so there are certain errors that crop up frequently. For me, just restarting RStudio and/or my computer (or updating the computer, if necessary) has solved these. The most common errors are &lt;code&gt;No font could be found for family &#34;Source Sans Pro&#34;&lt;/code&gt; and &lt;code&gt;&#34;Error in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : polygon edge not found&#34;&lt;/code&gt;, both of which relate to R not being able to find the font. If the font is indeed installed on your computer (you can check this in Font Book, for a Mac), then restarting things should help R find the font.&lt;/p&gt;
+&lt;p&gt;This process is a little bit finicky, so there are certain errors that crop up frequently. For me, just restarting RStudio and/or my computer (or updating the computer, if necessary) has solved these. The most common errors are &lt;code&gt;No font could be found for family &amp;quot;Source Sans Pro&amp;quot;&lt;/code&gt; and &lt;code&gt;&amp;quot;Error in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : polygon edge not found&amp;quot;&lt;/code&gt;, both of which relate to R not being able to find the font. If the font is indeed installed on your computer (you can check this in Font Book, for a Mac), then restarting things should help R find the font.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -468,8 +469,7 @@ library(jsonlite)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with your username and password
 username &amp;lt;- &amp;quot;YOUR_USERNAME&amp;quot;
 password &amp;lt;- &amp;quot;YOUR_PASSWORD&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You also need to find the token of the report you’re interested in. When you go to your report in Mode, the token is everything after “reports/”. So, for example, if you’re interested in Legos (which you should be), you can get the most recent run of the &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34;&gt;Lego set summary&lt;/a&gt; report.
-The URL is &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34; class=&#34;uri&#34;&gt;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&lt;/a&gt;, so the report token is “eb4fdefe37d8”.&lt;/p&gt;
+&lt;p&gt;You also need to find the token of the report you’re interested in. When you go to your report in Mode, the token is everything after “reports/”. So, for example, if you’re interested in Legos (which you should be), you can get the most recent run of the &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34;&gt;Lego set summary&lt;/a&gt; report. The URL is &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34; class=&#34;uri&#34;&gt;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&lt;/a&gt;, so the report token is “eb4fdefe37d8”.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with the report token of interest
 report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Finally, you need the name of your organization on Mode. For this example, we’ll be looking at a community available Mode report, so the organization is “modeanalytics”. You can get this from the URL as well, it will be the part directly before “/reports”:&lt;/p&gt;
@@ -496,7 +496,7 @@ organization &amp;lt;- &amp;quot;modeanalytics&amp;quot;&lt;/code&gt;&lt;/pre&gt
 &lt;p&gt;So, for our example report, the most recent run token was:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;get_report_latest_run(report_token, organization, username, password)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## No encoding supplied: defaulting to UTF-8.&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2c17666a589b&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;f2b9f754ad5c&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;extract-the-data-from-the-most-recent-run&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Extract the data from the most recent run&lt;/h3&gt;
@@ -529,7 +529,7 @@ report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 ## No encoding supplied: defaulting to UTF-8.&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parsed with column specification:
 ## cols(
-##   year = col_double(),
+##   year = col_integer(),
 ##   white = col_double(),
 ##   red = col_double(),
 ##   blue = col_double(),
@@ -639,7 +639,7 @@ report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Loading R packages onto a USB&lt;/h2&gt;
 &lt;p&gt;The next step was to transfer all of my R packages onto the USB. To do this, I first needed to figure out where the packages were saved on my computer. You can run the following in R to find where your packages are saved:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;.libPaths()
-## [1] &amp;quot;/Library/Frameworks/R.framework/Versions/3.6/Resources/library&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+## [1] &amp;quot;/Library/Frameworks/R.framework/Versions/3.5/Resources/library&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Next, I needed to figure out how to navigate to the USB in Terminal. According to this &lt;a href=&#34;https://apple.stackexchange.com/questions/60231/using-terminal-how-can-i-find-which-directory-is-my-usb-drive-mounted-in&#34;&gt;StackOverflow answer&lt;/a&gt;, all drives are mounted in &lt;code&gt;/Volumes&lt;/code&gt;, so I ran the following in Terminal:&lt;/p&gt;
 &lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;cd /Volumes
 ls&lt;/code&gt;&lt;/pre&gt;
@@ -688,7 +688,7 @@ dev.off()&lt;/code&gt;&lt;/pre&gt;
 &lt;figure&gt;
 &lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/highres.png&#34; /&gt;
 &lt;/figure&gt;
-&lt;p&gt;You can also change the aspect ratio by modifying the &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; arguments. You can leave the units in inches or set it to pixels (&lt;code&gt;&#34;px&#34;&lt;/code&gt;), centimeters (&lt;code&gt;&#34;cm&#34;&lt;/code&gt;), or millimeters (&lt;code&gt;&#34;mm&#34;&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;You can also change the aspect ratio by modifying the &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; arguments. You can leave the units in inches or set it to pixels (&lt;code&gt;&amp;quot;px&amp;quot;&lt;/code&gt;), centimeters (&lt;code&gt;&amp;quot;cm&amp;quot;&lt;/code&gt;), or millimeters (&lt;code&gt;&amp;quot;mm&amp;quot;&lt;/code&gt;).&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -727,7 +727,9 @@ Left: species distribution model with continuous habitat suitability values. Rig
 &lt;h3&gt;The function&lt;/h3&gt;
 &lt;p&gt;The following is the function I wrote to apply these two thresholds to an SDM. The function’s arguments are the SDM, the occurrence points of the species in the form of longitude - latitude pairs, the threshold type, and whether the user would like the output to be a binary prediction (0s for predicted absence and 1s for predicted presence), or a thresholded continuous SDM (regions with suitability below the threshold set to 0).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(raster)
+## Warning: package &amp;#39;raster&amp;#39; was built under R version 3.5.2
 ## Loading required package: sp
+## Warning: package &amp;#39;sp&amp;#39; was built under R version 3.5.2
 
 sdm_threshold &amp;lt;- function(sdm, occs, type = &amp;quot;mtp&amp;quot;, binary = FALSE){
   occPredVals &amp;lt;- raster::extract(sdm, occs)
@@ -808,6 +810,14 @@ plot(sloth_mtp_bin)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I expanded the function to allow the user to input points within the raster to calculate MTP and P10 thresholds if desired, but also to enable a user-specified threshold.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create arbitrary raster
 raster1 &amp;lt;- raster(nrow=10, ncol=10)
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
 raster1[1:25]&amp;lt;- 1:25
 raster1[26:50] &amp;lt;- rev(1:25)
 raster1[51:75] &amp;lt;- 1:25
@@ -817,19 +827,210 @@ raster1[76:100] &amp;lt;- rev(1:25)
 xy &amp;lt;- data.frame(x = runif(20, min = -150, max = 150), y = runif(20, min = -70, max = 70))
 
 plot(raster1)
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
 points(xy)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Now we can apply the function to see the MTP and P10 thresholded rasters:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtp_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;mtp&amp;quot;, binary = TRUE)
-plot(mtp_raster)&lt;/code&gt;&lt;/pre&gt;
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+plot(mtp_raster)
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;
 p10_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;p10&amp;quot;, binary = TRUE)
-plot(p10_raster)&lt;/code&gt;&lt;/pre&gt;
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+plot(p10_raster)
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also use a user-inputted threshold to remove all parts of the raster with values lower than 20:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;user_raster &amp;lt;- raster_threshold(input_raster = raster1, threshold = 20)
-plot(user_raster)&lt;/code&gt;&lt;/pre&gt;
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+plot(user_raster)
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -1111,8 +1312,7 @@ package version 2.1. &lt;a href=&#34;https://CRAN.R-project.org/package=alphahul
 &lt;h2&gt;Using Python in RMarkdown&lt;/h2&gt;
 &lt;p&gt;In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.&lt;/p&gt;
 &lt;p&gt;When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt;
-&lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt; &lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;From running Python in Atom, I knew I had the &lt;code&gt;sklearn.cluster&lt;/code&gt; module installed, so the problem must be in the connection between R and Python.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;reticulate&#34; class=&#34;section level2&#34;&gt;
@@ -1147,13 +1347,13 @@ knitr::opts_chunk$set(collapse = TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import sys
 for p in sys.path:
     print(p)
-## 
-## /Library/Frameworks/Python.framework/Versions/3.7/bin
-## /Library/Frameworks/Python.framework/Versions/3.7/lib/python37.zip
-## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7
-## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload
-## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages
-## /Library/Frameworks/R.framework/Versions/3.6/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
+## /Applications/anaconda3/bin
+## /Applications/anaconda3/lib/python37.zip
+## /Applications/anaconda3/lib/python3.7
+## /Applications/anaconda3/lib/python3.7/lib-dynload
+## /Applications/anaconda3/lib/python3.7/site-packages
+## /Applications/anaconda3/lib/python3.7/site-packages/aeosa
+## /Library/Frameworks/R.framework/Versions/3.5/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;From this information, I could tell I wanted to use the path &lt;code&gt;/anaconda3/lib/python3.6&lt;/code&gt;, rather than &lt;code&gt;/usr/bin/python&lt;/code&gt;, which is what RMarkdown had originally been using. I modified by set-up chunk to look like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &amp;#39;/anaconda3/bin/python3.6&amp;#39;))&lt;/code&gt;&lt;/pre&gt;

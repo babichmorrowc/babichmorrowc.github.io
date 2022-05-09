@@ -5,7 +5,7 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Thu, 27 Sep 2018 00:00:00 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2022</copyright><lastBuildDate>Thu, 27 Sep 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Projects</title>
@@ -15,7 +15,7 @@
     <item>
       <title>Distribution modeling of Bradypus</title>
       <link>/project/bradypus/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       <guid>/project/bradypus/</guid>
       <description></description>
     </item>
@@ -23,7 +23,7 @@
     <item>
       <title>Hypervolume package testing</title>
       <link>/project/hypervolumes/</link>
-      <pubDate>Wed, 27 Jul 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 27 Jul 2016 00:00:00 +0000</pubDate>
       <guid>/project/hypervolumes/</guid>
       <description></description>
     </item>
@@ -31,7 +31,7 @@
     <item>
       <title>Tetrapod life history traits</title>
       <link>/project/life_history/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       <guid>/project/life_history/</guid>
       <description></description>
     </item>

@@ -5,7 +5,7 @@
     <link>/publication_types/2/</link>
       <atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Wed, 28 Apr 2021 00:00:00 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2022</copyright><lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>2</title>
@@ -13,9 +13,17 @@
     </image>
     
     <item>
+      <title>Operationalizing expert knowledge in species’ range estimates using diverse data types</title>
+      <link>/publication/rangeestimates/</link>
+      <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/rangeestimates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Macroevolution of dimensionless life history metrics in tetrapods</title>
       <link>/publication/lifehistory/</link>
-      <pubDate>Wed, 28 Apr 2021 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
       <guid>/publication/lifehistory/</guid>
       <description></description>
     </item>
@@ -23,7 +31,7 @@
     <item>
       <title>New approaches for delineating n‐dimensional hypervolumes</title>
       <link>/publication/hypervolumes/</link>
-      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       <guid>/publication/hypervolumes/</guid>
       <description></description>
     </item>

@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Cecina Babich Morrow</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2022</copyright><lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Cecina Babich Morrow</title>
@@ -13,20 +13,27 @@
     </image>
     
     <item>
+      <title>Operationalizing expert knowledge in species’ range estimates using diverse data types</title>
+      <link>/publication/rangeestimates/</link>
+      <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/rangeestimates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Exciting publication news!</title>
       <link>/post/lifehistory-paper-highlight/</link>
       <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
       <guid>/post/lifehistory-paper-highlight/</guid>
-      <description>&lt;p&gt;I wanted to make a quick (and somewhat belated) post announcing that my paper about the life history strategies of tetrapods was published in Proceedings of the Royal Society B earlier this year. You can read the paper &lt;a href=&#34;https://royalsocietypublishing.org/doi/10.1098/rspb.2021.0200&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;As you might be able to tell from the date of the preprint in 2019 compared to the date of publication in 2021, this project has been quite the labor of love (and hate and everything in between). In fact, I started working on this research all the way back in 2017, while I was working in the &lt;a href=&#34;https://kerkhofflab.org/&#34; target=&#34;_blank&#34;&gt;Kerkhoff Lab&lt;/a&gt; at Kenyon College. Throughout 1 more year of college, 2 job positions since, and 3+ manuscript positions, I&amp;rsquo;ve had this work in the back of my mind as my baby. Now at long last, my first first-author publication is out in the world! While the process was long and arduous, I&amp;rsquo;m incredibly proud of how everything turned out. If you have any questions, comments, or feedback, just drop me a line &amp;ndash; I would love to hear from you.&lt;/p&gt;
+      <description>&lt;p&gt;I wanted to make a quick (and somewhat belated) post announcing that my paper about the life history strategies of tetrapods was published in Proceedings of the Royal Society B earlier this year. You can read the paper &lt;a href=&#34;https://royalsocietypublishing.org/doi/10.1098/rspb.2021.0200&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As you might be able to tell from the date of the preprint in 2019 compared to the date of publication in 2021, this project has been quite the labor of love (and hate and everything in between). In fact, I started working on this research all the way back in 2017, while I was working in the &lt;a href=&#34;https://kerkhofflab.org/&#34;&gt;Kerkhoff Lab&lt;/a&gt; at Kenyon College. Throughout 1 more year of college, 2 job positions since, and 3+ manuscript positions, I&amp;rsquo;ve had this work in the back of my mind as my baby. Now at long last, my first first-author publication is out in the world! While the process was long and arduous, I&amp;rsquo;m incredibly proud of how everything turned out. If you have any questions, comments, or feedback, just drop me a line &amp;ndash; I would love to hear from you.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Macroevolution of dimensionless life history metrics in tetrapods</title>
       <link>/publication/lifehistory/</link>
-      <pubDate>Wed, 28 Apr 2021 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
       <guid>/publication/lifehistory/</guid>
       <description></description>
     </item>
@@ -313,9 +320,9 @@ googlesheets4::gs4_auth(email = &amp;quot;babichmorrowc@gmail.com&amp;quot;, # R
     <item>
       <title>Sad strategies: making really bad ideas work for you</title>
       <link>/talk/bio_on_tap_2020/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 -0500</pubDate>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/talk/bio_on_tap_2020/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vSveyLXkk95ygnjAU88LiGlN0bdX0uq2IKJr6IiEEK0gzJW3QGeccFSi9B4640orw/embed?&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
 </description>
     </item>
     
@@ -459,8 +466,9 @@ output:
 &lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Example&lt;/h2&gt;
 &lt;p&gt;To continue with my Lego theme, I’ll demonstrate using this font on data from the &lt;code&gt;legocolors&lt;/code&gt; package. We can make the following graph of approximate lego brick availability based on the year a brick was released (colored by the brick color!):&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(legocolors)
-library(ggplot2)
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(legocolors)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;legocolors&amp;#39; was built under R version 3.5.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
 
 ggplot(legocolors, aes(x = year_released, y = bl_bp, colour = hex)) +
   geom_point() +
@@ -473,7 +481,7 @@ ggplot(legocolors, aes(x = year_released, y = bl_bp, colour = hex)) +
 &lt;/div&gt;
 &lt;div id=&#34;troubleshooting&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Troubleshooting&lt;/h2&gt;
-&lt;p&gt;This process is a little bit finicky, so there are certain errors that crop up frequently. For me, just restarting RStudio and/or my computer (or updating the computer, if necessary) has solved these. The most common errors are &lt;code&gt;No font could be found for family &#34;Source Sans Pro&#34;&lt;/code&gt; and &lt;code&gt;&#34;Error in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : polygon edge not found&#34;&lt;/code&gt;, both of which relate to R not being able to find the font. If the font is indeed installed on your computer (you can check this in Font Book, for a Mac), then restarting things should help R find the font.&lt;/p&gt;
+&lt;p&gt;This process is a little bit finicky, so there are certain errors that crop up frequently. For me, just restarting RStudio and/or my computer (or updating the computer, if necessary) has solved these. The most common errors are &lt;code&gt;No font could be found for family &amp;quot;Source Sans Pro&amp;quot;&lt;/code&gt; and &lt;code&gt;&amp;quot;Error in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : polygon edge not found&amp;quot;&lt;/code&gt;, both of which relate to R not being able to find the font. If the font is indeed installed on your computer (you can check this in Font Book, for a Mac), then restarting things should help R find the font.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -504,8 +512,7 @@ library(jsonlite)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with your username and password
 username &amp;lt;- &amp;quot;YOUR_USERNAME&amp;quot;
 password &amp;lt;- &amp;quot;YOUR_PASSWORD&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You also need to find the token of the report you’re interested in. When you go to your report in Mode, the token is everything after “reports/”. So, for example, if you’re interested in Legos (which you should be), you can get the most recent run of the &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34;&gt;Lego set summary&lt;/a&gt; report.
-The URL is &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34; class=&#34;uri&#34;&gt;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&lt;/a&gt;, so the report token is “eb4fdefe37d8”.&lt;/p&gt;
+&lt;p&gt;You also need to find the token of the report you’re interested in. When you go to your report in Mode, the token is everything after “reports/”. So, for example, if you’re interested in Legos (which you should be), you can get the most recent run of the &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34;&gt;Lego set summary&lt;/a&gt; report. The URL is &lt;a href=&#34;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&#34; class=&#34;uri&#34;&gt;https://app.mode.com/modeanalytics/reports/eb4fdefe37d8&lt;/a&gt;, so the report token is “eb4fdefe37d8”.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Replace with the report token of interest
 report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Finally, you need the name of your organization on Mode. For this example, we’ll be looking at a community available Mode report, so the organization is “modeanalytics”. You can get this from the URL as well, it will be the part directly before “/reports”:&lt;/p&gt;
@@ -532,7 +539,7 @@ organization &amp;lt;- &amp;quot;modeanalytics&amp;quot;&lt;/code&gt;&lt;/pre&gt
 &lt;p&gt;So, for our example report, the most recent run token was:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;get_report_latest_run(report_token, organization, username, password)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## No encoding supplied: defaulting to UTF-8.&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2c17666a589b&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;f2b9f754ad5c&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;extract-the-data-from-the-most-recent-run&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Extract the data from the most recent run&lt;/h3&gt;
@@ -565,7 +572,7 @@ report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 ## No encoding supplied: defaulting to UTF-8.&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parsed with column specification:
 ## cols(
-##   year = col_double(),
+##   year = col_integer(),
 ##   white = col_double(),
 ##   red = col_double(),
 ##   blue = col_double(),
@@ -714,14 +721,14 @@ git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
       <link>/post/goldwater-highlight/</link>
       <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
       <guid>/post/goldwater-highlight/</guid>
-      <description>&lt;p&gt;This is just a quick post to provide a &lt;a href=&#34;https://twitter.com/GoldwaterSC/status/1163980565978259456&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; to the Goldwater Scholar Social Media Highlight that Nina Singh wrote about me. You can find the pdf to the article &lt;a href=&#34;/goldwater_highlight.pdf&#34;&gt;here&lt;/a&gt;. Huge thanks to the Goldwater social media team for including me in this!&lt;/p&gt;
+      <description>&lt;p&gt;This is just a quick post to provide a &lt;a href=&#34;https://twitter.com/GoldwaterSC/status/1163980565978259456&#34;&gt;link&lt;/a&gt; to the Goldwater Scholar Social Media Highlight that Nina Singh wrote about me. You can find the pdf to the article &lt;a href=&#34;/goldwater_highlight.pdf&#34;&gt;here&lt;/a&gt;. Huge thanks to the Goldwater social media team for including me in this!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Talk: Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
       <link>/talk/ibs_2019/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       <guid>/talk/ibs_2019/</guid>
       <description></description>
     </item>
@@ -729,7 +736,7 @@ git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Poster: Improving species range estimates for an arboreal species group with a parapatric distribution</title>
       <link>/talk/mammalogy_2019/</link>
-      <pubDate>Sat, 29 Jun 2019 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
       <guid>/talk/mammalogy_2019/</guid>
       <description></description>
     </item>
@@ -737,9 +744,9 @@ git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Talk: Using SVMs to delineate parapatric ranges: An example with three-toed sloths (Bradypus)</title>
       <link>/talk/helenfellow_june2019/</link>
-      <pubDate>Thu, 13 Jun 2019 11:30:00 -0400</pubDate>
+      <pubDate>Thu, 13 Jun 2019 11:30:00 +0000</pubDate>
       <guid>/talk/helenfellow_june2019/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vT29X9rGoq1GeCwrXMPJEhmwy7I_nf8fFzpIMdWyLQfROI-zVqicELakhgOgRWvDgicV3s_c6ii4njc/embed?start=false&amp;loop=false&amp;delayms=3000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
 </description>
     </item>
     
@@ -763,7 +770,7 @@ git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Loading R packages onto a USB&lt;/h2&gt;
 &lt;p&gt;The next step was to transfer all of my R packages onto the USB. To do this, I first needed to figure out where the packages were saved on my computer. You can run the following in R to find where your packages are saved:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;.libPaths()
-## [1] &amp;quot;/Library/Frameworks/R.framework/Versions/3.6/Resources/library&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+## [1] &amp;quot;/Library/Frameworks/R.framework/Versions/3.5/Resources/library&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Next, I needed to figure out how to navigate to the USB in Terminal. According to this &lt;a href=&#34;https://apple.stackexchange.com/questions/60231/using-terminal-how-can-i-find-which-directory-is-my-usb-drive-mounted-in&#34;&gt;StackOverflow answer&lt;/a&gt;, all drives are mounted in &lt;code&gt;/Volumes&lt;/code&gt;, so I ran the following in Terminal:&lt;/p&gt;
 &lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;cd /Volumes
 ls&lt;/code&gt;&lt;/pre&gt;
@@ -812,7 +819,7 @@ dev.off()&lt;/code&gt;&lt;/pre&gt;
 &lt;figure&gt;
 &lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/highres.png&#34; /&gt;
 &lt;/figure&gt;
-&lt;p&gt;You can also change the aspect ratio by modifying the &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; arguments. You can leave the units in inches or set it to pixels (&lt;code&gt;&#34;px&#34;&lt;/code&gt;), centimeters (&lt;code&gt;&#34;cm&#34;&lt;/code&gt;), or millimeters (&lt;code&gt;&#34;mm&#34;&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;You can also change the aspect ratio by modifying the &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; arguments. You can leave the units in inches or set it to pixels (&lt;code&gt;&amp;quot;px&amp;quot;&lt;/code&gt;), centimeters (&lt;code&gt;&amp;quot;cm&amp;quot;&lt;/code&gt;), or millimeters (&lt;code&gt;&amp;quot;mm&amp;quot;&lt;/code&gt;).&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -851,7 +858,9 @@ Left: species distribution model with continuous habitat suitability values. Rig
 &lt;h3&gt;The function&lt;/h3&gt;
 &lt;p&gt;The following is the function I wrote to apply these two thresholds to an SDM. The function’s arguments are the SDM, the occurrence points of the species in the form of longitude - latitude pairs, the threshold type, and whether the user would like the output to be a binary prediction (0s for predicted absence and 1s for predicted presence), or a thresholded continuous SDM (regions with suitability below the threshold set to 0).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(raster)
+## Warning: package &amp;#39;raster&amp;#39; was built under R version 3.5.2
 ## Loading required package: sp
+## Warning: package &amp;#39;sp&amp;#39; was built under R version 3.5.2
 
 sdm_threshold &amp;lt;- function(sdm, occs, type = &amp;quot;mtp&amp;quot;, binary = FALSE){
   occPredVals &amp;lt;- raster::extract(sdm, occs)
@@ -932,6 +941,14 @@ plot(sloth_mtp_bin)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I expanded the function to allow the user to input points within the raster to calculate MTP and P10 thresholds if desired, but also to enable a user-specified threshold.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create arbitrary raster
 raster1 &amp;lt;- raster(nrow=10, ncol=10)
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
 raster1[1:25]&amp;lt;- 1:25
 raster1[26:50] &amp;lt;- rev(1:25)
 raster1[51:75] &amp;lt;- 1:25
@@ -941,19 +958,210 @@ raster1[76:100] &amp;lt;- rev(1:25)
 xy &amp;lt;- data.frame(x = runif(20, min = -150, max = 150), y = runif(20, min = -70, max = 70))
 
 plot(raster1)
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
 points(xy)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Now we can apply the function to see the MTP and P10 thresholded rasters:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtp_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;mtp&amp;quot;, binary = TRUE)
-plot(mtp_raster)&lt;/code&gt;&lt;/pre&gt;
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+plot(mtp_raster)
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;
 p10_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;p10&amp;quot;, binary = TRUE)
-plot(p10_raster)&lt;/code&gt;&lt;/pre&gt;
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+plot(p10_raster)
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also use a user-inputted threshold to remove all parts of the raster with values lower than 20:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;user_raster &amp;lt;- raster_threshold(input_raster = raster1, threshold = 20)
-plot(user_raster)&lt;/code&gt;&lt;/pre&gt;
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+plot(user_raster)
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3
+
+## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
+## normalization available before PROJ 6.3&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -962,9 +1170,9 @@ plot(user_raster)&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Big vs. Small: Using ratios to compare life history strategies</title>
       <link>/talk/brownscholars_ratiotalk_2019/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
       <guid>/talk/brownscholars_ratiotalk_2019/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vQ1T_FLUSVOYZ3YCehaGJM7gFCFMOCQMllQ9A4itkVMk5IyUJugfnE8Qt95WqqFMsV5dNintG0qQjU0/embed?&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
 </description>
     </item>
     
@@ -1235,18 +1443,18 @@ package version 2.1. &lt;a href=&#34;https://CRAN.R-project.org/package=alphahul
     <item>
       <title>Talk: Using SVMs to model ranges of congeneric sloth species</title>
       <link>/talk/nysdm_march2019/</link>
-      <pubDate>Fri, 15 Mar 2019 14:30:00 -0400</pubDate>
+      <pubDate>Fri, 15 Mar 2019 14:30:00 +0000</pubDate>
       <guid>/talk/nysdm_march2019/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vS_w666eIt4-3dUI-z6iVlD08EphadvhGys2IarVUPk7QIdG3dn7opO1LLLeuM7vcb6j8k7_5nVOAef/embed?start=false&amp;loop=false&amp;delayms=5000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
 </description>
     </item>
     
     <item>
       <title>Talk: STEM careers in museums</title>
       <link>/talk/la_lgbt_careertalk_2019/</link>
-      <pubDate>Fri, 22 Feb 2019 17:00:00 -0500</pubDate>
+      <pubDate>Fri, 22 Feb 2019 17:00:00 +0000</pubDate>
       <guid>/talk/la_lgbt_careertalk_2019/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vT-sB5lS2bKsitOCUenYo1xA3pMzCxfo37TAnB408noR6SJPJpePBfei6p6FMylQFdmJ-FI4z-himQc/embed?start=false&amp;loop=false&amp;delayms=5000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
 </description>
     </item>
     
@@ -1296,7 +1504,6 @@ from pathlib import Path
 from skimage.io import imread, imshow
 import numpy.ma as ma
 from collections import Counter
-
 # read in percent weights by element of the minerals in the standard
 weights = pd.read_csv(&amp;quot;../../../static/mineralmapping/weights_to_minerals.csv&amp;quot;)
 print(weights.head())
@@ -1317,7 +1524,7 @@ print(mineral_standards.head())
 ## 2   0   2   0   0  141   6  3  0  455   2  CaTiO3std15
 ## 3   1   2   2   0  122   6  3  0  502   0  CaTiO3std15
 ## 4   0   0   0   0  138   5  5  0  457   1  CaTiO3std15&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an &#34;_&#34; to make looping easier.&lt;/p&gt;
+&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an “_&amp;quot; to make looping easier.&lt;/p&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# create dictionary to standardize file names to chemical formulas
 # needed to separate each element in the formula with an _ to make looping easier
 mineral_dict = dict(zip(np.unique(mineral_standards[&amp;#39;mineral&amp;#39;]),
@@ -1353,7 +1560,6 @@ for element in elements:
         intensities = element_df[element_df[&amp;#39;mineral&amp;#39;] == mine][element]
         xis = np.append(xis, np.array(intensities))
         yis = np.append(yis, np.repeat(weight, len(intensities)))
-
     xis, yis = xis.reshape(-1,1), yis.reshape(-1,1)
     # fit linear regression on percent weight vs intensity
     reg = lr.fit(xis,yis)
@@ -1363,15 +1569,7 @@ for element in elements:
     reg.coef_
     # get the linear regression coefficient for each element
     coefs[element] = float(reg.coef_)
-
 # print the coefficients for each element
-## array([[0.11859862]])
-## array([[0.32879587]])
-## array([[0.32008078]])
-## array([[0.21488656]])
-## array([[0.46922488]])
-## array([[0.07762688]])
-## array([[0.09790595]])
 print(coefs)
 ##              Mg        Ni   Al        Fe  ...    P         S        Ti        Si
 ## coeff  0.118599  0.328796  NaN  0.320081  ...  NaN  0.469225  0.077627  0.097906
@@ -1393,7 +1591,6 @@ df_obj1 = pd.read_csv(&amp;#39;../../../static/mineralmapping/predicted_percentw
 df_obj1 = df_obj1.fillna(0)
 df_obj1.drop(&amp;#39;Unnamed: 0&amp;#39;, axis = 1, inplace = True)
 print(df_obj1.head())
-
 # read file of predicted percent weights for meteorite 2
 ##          Ca        Ti   Al   Cr  ...    P         Fe        Ni        Mg
 ## 0  8.595462  0.698642  0.0  0.0  ...  0.0  51.212925  0.986388  5.692734
@@ -1441,8 +1638,7 @@ print(df_obj2.head())
 &lt;h2&gt;Using Python in RMarkdown&lt;/h2&gt;
 &lt;p&gt;In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.&lt;/p&gt;
 &lt;p&gt;When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt;
-&lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt; &lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;From running Python in Atom, I knew I had the &lt;code&gt;sklearn.cluster&lt;/code&gt; module installed, so the problem must be in the connection between R and Python.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;reticulate&#34; class=&#34;section level2&#34;&gt;
@@ -1477,13 +1673,13 @@ knitr::opts_chunk$set(collapse = TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import sys
 for p in sys.path:
     print(p)
-## 
-## /Library/Frameworks/Python.framework/Versions/3.7/bin
-## /Library/Frameworks/Python.framework/Versions/3.7/lib/python37.zip
-## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7
-## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload
-## /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages
-## /Library/Frameworks/R.framework/Versions/3.6/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
+## /Applications/anaconda3/bin
+## /Applications/anaconda3/lib/python37.zip
+## /Applications/anaconda3/lib/python3.7
+## /Applications/anaconda3/lib/python3.7/lib-dynload
+## /Applications/anaconda3/lib/python3.7/site-packages
+## /Applications/anaconda3/lib/python3.7/site-packages/aeosa
+## /Library/Frameworks/R.framework/Versions/3.5/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;From this information, I could tell I wanted to use the path &lt;code&gt;/anaconda3/lib/python3.6&lt;/code&gt;, rather than &lt;code&gt;/usr/bin/python&lt;/code&gt;, which is what RMarkdown had originally been using. I modified by set-up chunk to look like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &amp;#39;/anaconda3/bin/python3.6&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
@@ -1730,7 +1926,7 @@ plot(res, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&l
     <item>
       <title>Preprint: Macroevolution of dimensionless life history metrics in tetrapods</title>
       <link>/publication/lifehistory_preprint/</link>
-      <pubDate>Wed, 16 Jan 2019 00:00:00 -0500</pubDate>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
       <guid>/publication/lifehistory_preprint/</guid>
       <description></description>
     </item>
@@ -1939,7 +2135,7 @@ git push&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Distribution modeling of Bradypus</title>
       <link>/project/bradypus/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       <guid>/project/bradypus/</guid>
       <description></description>
     </item>
@@ -1947,7 +2143,7 @@ git push&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Privacy Policy</title>
       <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 -0400</pubDate>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
       <guid>/privacy/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
@@ -1956,16 +2152,16 @@ git push&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Talk: Macroevolution of dimensionless life history metrics in tetrapods</title>
       <link>/talk/honors_presentation_2018/</link>
-      <pubDate>Tue, 01 May 2018 13:00:00 -0400</pubDate>
+      <pubDate>Tue, 01 May 2018 13:00:00 +0000</pubDate>
       <guid>/talk/honors_presentation_2018/</guid>
-      <description>&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vTsSj-oftLksGEKTkzCoBSIpzooO61ZMGAUzoGBv7u20OzMQK8ctX3gCpWTMm4UowrrWumFrdQsY0Cd/embed?start=false&amp;loop=false&amp;delayms=5000&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
 </description>
     </item>
     
     <item>
       <title>Poster: Macroevolution of dimensionless life histories in amniotes</title>
       <link>/talk/tree_2017/</link>
-      <pubDate>Fri, 01 Sep 2017 00:00:00 -0400</pubDate>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
       <guid>/talk/tree_2017/</guid>
       <description></description>
     </item>
@@ -1973,7 +2169,7 @@ git push&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>New approaches for delineating n‐dimensional hypervolumes</title>
       <link>/publication/hypervolumes/</link>
-      <pubDate>Wed, 09 Aug 2017 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       <guid>/publication/hypervolumes/</guid>
       <description></description>
     </item>
@@ -1981,16 +2177,16 @@ git push&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Poster: Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
       <link>/talk/ibs_2017/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       <guid>/talk/ibs_2017/</guid>
-      <description>&lt;p&gt;This poster was made using version 1.4.6 of the &lt;code&gt;hypervolume&lt;/code&gt; R package. These results should not be considered representative of the current algorithms in the package - to see current algorithm performance, refer to &lt;a href=&#34;https://babichmorrowc.github.io/publication/hypervolumes/&#34; target=&#34;_blank&#34;&gt;Blonder &lt;em&gt;et al.&lt;/em&gt; 2017&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;This poster was made using version 1.4.6 of the &lt;code&gt;hypervolume&lt;/code&gt; R package. These results should not be considered representative of the current algorithms in the package - to see current algorithm performance, refer to &lt;a href=&#34;https://babichmorrowc.github.io/publication/hypervolumes/&#34;&gt;Blonder &lt;em&gt;et al.&lt;/em&gt; 2017&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Hypervolume package testing</title>
       <link>/project/hypervolumes/</link>
-      <pubDate>Wed, 27 Jul 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 27 Jul 2016 00:00:00 +0000</pubDate>
       <guid>/project/hypervolumes/</guid>
       <description></description>
     </item>
@@ -2000,14 +2196,14 @@ git push&lt;/code&gt;&lt;/pre&gt;
       <link>/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       <guid>/about/</guid>
-      <description>&lt;p&gt;This is a &amp;ldquo;hello world&amp;rdquo; example website for the &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;blogdown&lt;/strong&gt;&lt;/a&gt; package. The theme was forked from &lt;a href=&#34;https://github.com/jrutheiser/hugo-lithium-theme&#34; target=&#34;_blank&#34;&gt;@jrutheiser/hugo-lithium-theme&lt;/a&gt; and modified by &lt;a href=&#34;https://github.com/yihui/hugo-lithium&#34; target=&#34;_blank&#34;&gt;Yihui Xie&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;This is a &amp;ldquo;hello world&amp;rdquo; example website for the &lt;a href=&#34;https://github.com/rstudio/blogdown&#34;&gt;&lt;strong&gt;blogdown&lt;/strong&gt;&lt;/a&gt; package. The theme was forked from &lt;a href=&#34;https://github.com/jrutheiser/hugo-lithium-theme&#34;&gt;@jrutheiser/hugo-lithium-theme&lt;/a&gt; and modified by &lt;a href=&#34;https://github.com/yihui/hugo-lithium&#34;&gt;Yihui Xie&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Tetrapod life history traits</title>
       <link>/project/life_history/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       <guid>/project/life_history/</guid>
       <description></description>
     </item>
@@ -2025,27 +2221,18 @@ git push&lt;/code&gt;&lt;/pre&gt;
       <link>/slides/example-slides/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/slides/example-slides/</guid>
-      <description>
-
-&lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
+      <description>&lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34;&gt;Academic&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
 &lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
 &lt;li&gt;Supports speaker notes&lt;/li&gt;
 &lt;li&gt;Mobile friendly slides&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
@@ -2055,91 +2242,53 @@ git push&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
-
 &lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;Code block:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
-if porridge == &amp;quot;blueberry&amp;quot;:
-    print(&amp;quot;Eating...&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;porridge &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blueberry&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; porridge &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blueberry&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Eating...&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
-
 &lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
-
 &lt;p&gt;Block math:&lt;/p&gt;
-
 &lt;p&gt;$$
-f\left( x \right) = \;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
 $$&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
-
 &lt;p&gt;Make content appear incrementally&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
 {{% fragment %}} **Two** {{% /fragment %}}
 {{% fragment %}} Three {{% /fragment %}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
-   One
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-   &lt;strong&gt;Two&lt;/strong&gt;
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-   Three
-&lt;/span&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;hr&gt;
 &lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
-
 &lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
-- Only the speaker can read these notes
-- Press `S` key to view
-{{% /speaker_note %}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{% speaker_note %}}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Only the speaker can read these notes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Press &lt;span style=&#34;color:#e6db74&#34;&gt;`S`&lt;/span&gt; key to view
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{% /speaker_note %}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
 &lt;aside class=&#34;notes&#34;&gt;
   &lt;ul&gt;
 &lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
 &lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;/aside&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
 &lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
@@ -2147,18 +2296,14 @@ $$&lt;/p&gt;
 &lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
 &lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;ul&gt;
 &lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
 &lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
 &lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
 &lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 
 &lt;section data-noprocess data-shortcode-slide
   
@@ -2166,38 +2311,24 @@ $$&lt;/p&gt;
       data-background-image=&#34;/img/boards.jpg&#34;
   &gt;
 
-
 &lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
-
 &lt;p&gt;Customize the slide style and background&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/boards.jpg&amp;quot; &amp;gt;}}
-{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
-{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{&amp;lt; &lt;span style=&#34;color:#f92672&#34;&gt;slide&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;background-image&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/img/boards.jpg&amp;#34;&lt;/span&gt; &amp;gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{&amp;lt; &lt;span style=&#34;color:#f92672&#34;&gt;slide&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;background-color&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#0000FF&amp;#34;&lt;/span&gt; &amp;gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{&amp;lt; &lt;span style=&#34;color:#f92672&#34;&gt;slide&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;my-style&amp;#34;&lt;/span&gt; &amp;gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
-
 &lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
-
 &lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
-.reveal section h2,
-.reveal section h3 {
-  color: navy;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;reveal&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;section&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;reveal&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;section&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;h2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;reveal&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;section&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;h3&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;color&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;navy&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

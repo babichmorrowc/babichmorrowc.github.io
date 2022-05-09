@@ -5,7 +5,7 @@
     <link>/tags/bien/</link>
       <atom:link href="/tags/bien/index.xml" rel="self" type="application/rss+xml" />
     <description>BIEN</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2021</copyright><lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2022</copyright><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>BIEN</title>
@@ -15,9 +15,9 @@
     <item>
       <title>Poster: Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
       <link>/talk/ibs_2017/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       <guid>/talk/ibs_2017/</guid>
-      <description>&lt;p&gt;This poster was made using version 1.4.6 of the &lt;code&gt;hypervolume&lt;/code&gt; R package. These results should not be considered representative of the current algorithms in the package - to see current algorithm performance, refer to &lt;a href=&#34;https://babichmorrowc.github.io/publication/hypervolumes/&#34; target=&#34;_blank&#34;&gt;Blonder &lt;em&gt;et al.&lt;/em&gt; 2017&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;This poster was made using version 1.4.6 of the &lt;code&gt;hypervolume&lt;/code&gt; R package. These results should not be considered representative of the current algorithms in the package - to see current algorithm performance, refer to &lt;a href=&#34;https://babichmorrowc.github.io/publication/hypervolumes/&#34;&gt;Blonder &lt;em&gt;et al.&lt;/em&gt; 2017&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
