@@ -78,7 +78,7 @@ print(mineral_standards.head())
 ## 2   0   2   0   0  141   6  3  0  455   2  CaTiO3std15
 ## 3   1   2   2   0  122   6  3  0  502   0  CaTiO3std15
 ## 4   0   0   0   0  138   5  5  0  457   1  CaTiO3std15&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an “_&amp;quot; to make looping easier.&lt;/p&gt;
+&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an “_” to make looping easier.&lt;/p&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# create dictionary to standardize file names to chemical formulas
 # needed to separate each element in the formula with an _ to make looping easier
 mineral_dict = dict(zip(np.unique(mineral_standards[&amp;#39;mineral&amp;#39;]),
@@ -192,7 +192,8 @@ print(df_obj2.head())
 &lt;h2&gt;Using Python in RMarkdown&lt;/h2&gt;
 &lt;p&gt;In order to write blog posts using Python code, I wanted to figure out a way to include Python code chunks in RMarkdowns. When you insert a code chunk in RMarkdown, you have the option of specifying the language of that chunk: the default is R, but you can also insert a Bash, SQL, Python, etc. code chunk.&lt;/p&gt;
 &lt;p&gt;When I attempted to insert a Python code chunk and import libraries, however, I kept getting the error:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt; &lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Error in py_run_string_impl(code, local, convert) :&lt;/code&gt;
+&lt;code&gt;ImportError: No module named sklearn.cluster&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;From running Python in Atom, I knew I had the &lt;code&gt;sklearn.cluster&lt;/code&gt; module installed, so the problem must be in the connection between R and Python.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;reticulate&#34; class=&#34;section level2&#34;&gt;

@@ -78,7 +78,7 @@ print(mineral_standards.head())
 ## 2   0   2   0   0  141   6  3  0  455   2  CaTiO3std15
 ## 3   1   2   2   0  122   6  3  0  502   0  CaTiO3std15
 ## 4   0   0   0   0  138   5  5  0  457   1  CaTiO3std15&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an “_&amp;quot; to make looping easier.&lt;/p&gt;
+&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an “_” to make looping easier.&lt;/p&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# create dictionary to standardize file names to chemical formulas
 # needed to separate each element in the formula with an _ to make looping easier
 mineral_dict = dict(zip(np.unique(mineral_standards[&amp;#39;mineral&amp;#39;]),

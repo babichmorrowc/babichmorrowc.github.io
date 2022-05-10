@@ -373,9 +373,9 @@ plot(user_raster)
 &lt;p&gt;The &lt;code&gt;alphahull&lt;/code&gt; R package (Pateiro-Lopez et al. 2016) draws shapes (like the ones above) around sets of points based on a given parameter, α. The package creates two kinds of shapes I was interested in: α-shapes and α-convex hulls. The functions in this post convert these shapes into objects compatible with the &lt;code&gt;sp&lt;/code&gt; package, which can then be used for spatial analyses, including creating background regions for species distribution modeling.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load packages
 library(alphahull)
-## Warning: replacing previous import &amp;#39;vctrs::data_frame&amp;#39; by &amp;#39;tibble::data_frame&amp;#39;
-## when loading &amp;#39;dplyr&amp;#39;
-library(sp)&lt;/code&gt;&lt;/pre&gt;
+## Warning: package &amp;#39;alphahull&amp;#39; was built under R version 3.5.2
+library(sp)
+## Warning: package &amp;#39;sp&amp;#39; was built under R version 3.5.2&lt;/code&gt;&lt;/pre&gt;
 &lt;div id=&#34;alpha-shapes&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Alpha shapes&lt;/h3&gt;
 &lt;p&gt;Alpha shapes consist of a collection of lines drawn around a group of points. Probably the most familiar example of an α-shape is a convex hull, the smallest convex shape that can be drawn around a group of objects. For example, the following code draws a convex hull around some data from the iris dataset:&lt;/p&gt;
@@ -418,6 +418,7 @@ par(mfrow = c(1,1))&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;Alpha shapes to polygons&lt;/h4&gt;
 &lt;p&gt;In order to use α-shapes with spatial data in R, I wanted to convert these shapes to polygons. To accomplish this, I modified some of the code from an &lt;a href=&#34;https://rpubs.com/geospacedman/alphasimple&#34;&gt;RPubs by Barry Rowlingson&lt;/a&gt; to create the following function:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(igraph)
+## Warning: package &amp;#39;igraph&amp;#39; was built under R version 3.5.2
 ## 
 ## Attaching package: &amp;#39;igraph&amp;#39;
 ## The following objects are masked from &amp;#39;package:stats&amp;#39;:
