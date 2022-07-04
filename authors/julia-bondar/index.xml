@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Julia Bondar | Cecina Babich Morrow</title>
+    <link>/authors/julia-bondar/</link>
+      <atom:link href="/authors/julia-bondar/index.xml" rel="self" type="application/rss+xml" />
+    <description>Julia Bondar</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2022</copyright><lastBuildDate>Thu, 09 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Julia Bondar</title>
+      <link>/authors/julia-bondar/</link>
+    </image>
+    
+    <item>
+      <title>Clinical and Financial Outcomes Associated With a Workplace Mental Health Program Before and During the COVID-19 Pandemic</title>
+      <link>/publication/clin_fin_mh_outcomes/</link>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/clin_fin_mh_outcomes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

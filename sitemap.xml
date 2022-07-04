@@ -2,25 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/publication_types/2/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/alex-moore/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
+    <loc>/tags/mental-health/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/project/mental_health_outcomes/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/project/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/2/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/adam-m.-chekroud/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/cecina-babich-morrow/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/clin_fin_mh_outcomes/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/john-h.-krystal/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/julia-bondar/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/matt-hawrilenko/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/millard-brown/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/philip-r.-corlett/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/ralitza-gueoruieva/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/alex-moore/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/beth-gerstner/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/biogeography/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/cecina-babich-morrow/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/cory-merow/</loc>
@@ -50,16 +89,10 @@
     <loc>/authors/peter-galante/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication_types/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/authors/robert-anderson/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/species-distribution-modeling/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/valentina-grisales-betancur/</loc>
@@ -276,9 +309,6 @@
     <lastmod>2018-12-07T21:13:14-05:00</lastmod>
   </url><url>
     <loc>/project/bradypus/</loc>
-    <lastmod>2018-09-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/project/</loc>
     <lastmod>2018-09-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/privacy/</loc>
