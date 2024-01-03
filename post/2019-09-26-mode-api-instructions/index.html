@@ -608,17 +608,12 @@ report_token &lt;- &quot;eb4fdefe37d8&quot;</code></pre>
 <pre class="r"><code>lego_data &lt;- export_report_to_csv(report_token, organization, username, password)</code></pre>
 <pre><code>## No encoding supplied: defaulting to UTF-8.
 ## No encoding supplied: defaulting to UTF-8.</code></pre>
-<pre><code>## Parsed with column specification:
-## cols(
-##   year = col_integer(),
-##   white = col_double(),
-##   red = col_double(),
-##   blue = col_double(),
-##   black = col_double(),
-##   light_gray = col_double(),
-##   total = col_double(),
-##   main = col_character()
-## )</code></pre>
+<pre><code>## Rows: 65 Columns: 8── Column specification ───────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (1): main
+## dbl (7): year, white, red, blue, black, light_gray, total
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <pre class="r"><code>knitr::kable(head(lego_data))</code></pre>
 <table>
 <thead>
@@ -830,7 +825,7 @@ report_token &lt;- &quot;eb4fdefe37d8&quot;</code></pre>
 
     <div class="media-body">
       <h5 class="card-title"><a href="/">Cecina Babich Morrow</a></h5>
-      <h6 class="card-subtitle">Data Scientist</h6>
+      <h6 class="card-subtitle">Compass PhD Program</h6>
       <p class="card-text">My research interests range from harnessing data to improve mental healthcare to understanding global patterns of macroecology.</p>
       <ul class="network-icon" aria-hidden="true">
   
@@ -1093,7 +1088,7 @@ report_token &lt;- &quot;eb4fdefe37d8&quot;</code></pre>
   
 
   <p class="powered-by">
-    2022 &middot; 
+    2024 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

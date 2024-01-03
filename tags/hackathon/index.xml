@@ -5,7 +5,7 @@
     <link>/tags/hackathon/</link>
       <atom:link href="/tags/hackathon/index.xml" rel="self" type="application/rss+xml" />
     <description>hackathon</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2022</copyright><lastBuildDate>Wed, 20 Feb 2019 21:13:14 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Wed, 20 Feb 2019 21:13:14 -0500</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>hackathon</title>
@@ -56,6 +56,8 @@ import matplotlib.colors
 from sklearn.decomposition import PCA
 from pathlib import Path
 from skimage.io import imread, imshow
+## /Applications/anaconda3/lib/python3.7/site-packages/dask/config.py:168: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+##   data = yaml.load(f.read()) or {}
 import numpy.ma as ma
 from collections import Counter
 # read in percent weights by element of the minerals in the standard
