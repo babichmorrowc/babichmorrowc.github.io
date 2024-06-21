@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Career | Cecina Babich Morrow</title>
-    <link>/categories/career/</link>
-      <atom:link href="/categories/career/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://babichmorrowc.github.io/categories/career/</link>
+      <atom:link href="https://babichmorrowc.github.io/categories/career/index.xml" rel="self" type="application/rss+xml" />
     <description>Career</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Wed, 21 Aug 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
       <title>Career</title>
-      <link>/categories/career/</link>
+      <link>https://babichmorrowc.github.io/categories/career/</link>
     </image>
     
     <item>
       <title>Goldwater Highlight</title>
-      <link>/post/goldwater-highlight/</link>
+      <link>https://babichmorrowc.github.io/post/goldwater-highlight/</link>
       <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/post/goldwater-highlight/</guid>
-      <description>&lt;p&gt;This is just a quick post to provide a &lt;a href=&#34;https://twitter.com/GoldwaterSC/status/1163980565978259456&#34;&gt;link&lt;/a&gt; to the Goldwater Scholar Social Media Highlight that Nina Singh wrote about me. You can find the pdf to the article &lt;a href=&#34;/goldwater_highlight.pdf&#34;&gt;here&lt;/a&gt;. Huge thanks to the Goldwater social media team for including me in this!&lt;/p&gt;
+      <guid>https://babichmorrowc.github.io/post/goldwater-highlight/</guid>
+      <description>&lt;p&gt;This is just a quick post to provide a &lt;a href=&#34;https://twitter.com/GoldwaterSC/status/1163980565978259456&#34;&gt;link&lt;/a&gt; to the Goldwater Scholar Social Media Highlight that Nina Singh wrote about me. You can find the pdf to the article &lt;a href=&#34;https://babichmorrowc.github.io/goldwater_highlight.pdf&#34;&gt;here&lt;/a&gt;. Huge thanks to the Goldwater social media team for including me in this!&lt;/p&gt;
 </description>
     </item>
     

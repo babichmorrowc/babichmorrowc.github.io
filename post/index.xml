@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts | Cecina Babich Morrow</title>
-    <link>/post/</link>
-      <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://babichmorrowc.github.io/post/</link>
+      <atom:link href="https://babichmorrowc.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Tue, 22 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
       <title>Posts</title>
-      <link>/post/</link>
+      <link>https://babichmorrowc.github.io/post/</link>
     </image>
     
     <item>
       <title>Exciting publication news!</title>
-      <link>/post/lifehistory-paper-highlight/</link>
+      <link>https://babichmorrowc.github.io/post/lifehistory-paper-highlight/</link>
       <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/post/lifehistory-paper-highlight/</guid>
+      <guid>https://babichmorrowc.github.io/post/lifehistory-paper-highlight/</guid>
       <description>&lt;p&gt;I wanted to make a quick (and somewhat belated) post announcing that my paper about the life history strategies of tetrapods was published in Proceedings of the Royal Society B earlier this year. You can read the paper &lt;a href=&#34;https://royalsocietypublishing.org/doi/10.1098/rspb.2021.0200&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As you might be able to tell from the date of the preprint in 2019 compared to the date of publication in 2021, this project has been quite the labor of love (and hate and everything in between). In fact, I started working on this research all the way back in 2017, while I was working in the &lt;a href=&#34;https://kerkhofflab.org/&#34;&gt;Kerkhoff Lab&lt;/a&gt; at Kenyon College. Throughout 1 more year of college, 2 job positions since, and 3+ manuscript positions, I&amp;rsquo;ve had this work in the back of my mind as my baby. Now at long last, my first first-author publication is out in the world! While the process was long and arduous, I&amp;rsquo;m incredibly proud of how everything turned out. If you have any questions, comments, or feedback, just drop me a line &amp;ndash; I would love to hear from you.&lt;/p&gt;
 </description>
@@ -24,9 +24,9 @@
     
     <item>
       <title>Getting your own Google API credentials for R</title>
-      <link>/post/google-api-creds/</link>
+      <link>https://babichmorrowc.github.io/post/google-api-creds/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>/post/google-api-creds/</guid>
+      <guid>https://babichmorrowc.github.io/post/google-api-creds/</guid>
       <description>
 
 
@@ -35,7 +35,7 @@
 &lt;p&gt;My quest to make Google Drive play nice with R continues! If you’ve read &lt;a href=&#34;https://babichmorrowc.github.io/post/google-creds/&#34;&gt;my last post&lt;/a&gt;, you’ll know the process for using &lt;code&gt;googledrive&lt;/code&gt; and/or &lt;code&gt;googlesheets4&lt;/code&gt; to access data from Google Drive in a non-interactive context, e.g. deploying a data product to RStudio Connect. This process works wonderfully…most of the time. When deploying processes accessing Google Drive that are automated and run regularly, or simply make large requests of Drive, you can start to run into problems with Google Drive’s API quota.&lt;/p&gt;
 &lt;p&gt;I started getting 429 errors like the following for projects using &lt;code&gt;googlesheets4&lt;/code&gt; to read and write data:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/google_quota_error.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;https://babichmorrowc.github.io/img/google_quota_error.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;p&gt;In life overall, I would usually respond to such a quota error by sucking it up and trying to find a way to make fewer requests from an API, but I started getting this error in situations where my code was just writing a 4 row Google Sheet. I assumed that there was no way that this could actually be hitting a rate limit, so I did some more digging.&lt;/p&gt;
 &lt;/div&gt;
@@ -43,7 +43,7 @@
 &lt;h2&gt;The problem&lt;/h2&gt;
 &lt;p&gt;After a seemingly endless slog through the GitHub issues for the &lt;code&gt;googlesheets4&lt;/code&gt; package, I found the following goldmine of a quote from the amazing Jenny Bryan in &lt;a href=&#34;https://github.com/tidyverse/googlesheets4/issues/189&#34;&gt;this GitHub issue&lt;/a&gt;:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/jbryan_comment.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;https://babichmorrowc.github.io/img/jbryan_comment.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;p&gt;So here was my problem: “Everyone who uses googlesheets4, by default, is sharing the same quota.” In the words of Jenny Bryan once more, “This sounds wild, but it’s true.” So my problem was not that writing a 4 line Google Sheet exceeds Google’s quota, but rather that all users of the package fill the same quota, meaning my 4 lines may or may not get bumped over the shared limit.&lt;/p&gt;
 &lt;/div&gt;
@@ -126,9 +126,9 @@ gs4_auth_configure(app = google_app)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Publishing to RStudio Connect with Google credentials</title>
-      <link>/post/google-account-creds/</link>
+      <link>https://babichmorrowc.github.io/post/google-account-creds/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>/post/google-account-creds/</guid>
+      <guid>https://babichmorrowc.github.io/post/google-account-creds/</guid>
       <description>
 
 
@@ -156,7 +156,7 @@ googlesheets4::gs4_auth(email = &amp;quot;babichmorrowc@gmail.com&amp;quot;, # R
 &lt;p&gt;When you run each of these, a browser window should open asking you to authorize. You’ll then have to copy the authorization code and paste it back into the console of RStudio.&lt;/p&gt;
 &lt;p&gt;After doing so, you should have generated files in a folder called &lt;code&gt;.secrets&lt;/code&gt;. To check, you can either run &lt;code&gt;list.files(&#34;.secrets/&#34;)&lt;/code&gt; in your console, or display hidden files in your file browser as below to verify that the files have been generated:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/show_hidden_files.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;https://babichmorrowc.github.io/img/show_hidden_files.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;/div&gt;
 &lt;div id=&#34;authorize-your-packages-in-the-code&#34; class=&#34;section level2&#34;&gt;
@@ -190,9 +190,9 @@ googlesheets4::gs4_auth(email = &amp;quot;babichmorrowc@gmail.com&amp;quot;, # R
     
     <item>
       <title>Scheduling R Scripts</title>
-      <link>/post/launchd-jobs/</link>
+      <link>https://babichmorrowc.github.io/post/launchd-jobs/</link>
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/post/launchd-jobs/</guid>
+      <guid>https://babichmorrowc.github.io/post/launchd-jobs/</guid>
       <description>
 
 
@@ -303,9 +303,9 @@ googlesheets4::gs4_auth(email = &amp;quot;babichmorrowc@gmail.com&amp;quot;, # R
     
     <item>
       <title>Adding featured images to posts</title>
-      <link>/post/adding-featured-images-to-posts/</link>
+      <link>https://babichmorrowc.github.io/post/adding-featured-images-to-posts/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/post/adding-featured-images-to-posts/</guid>
+      <guid>https://babichmorrowc.github.io/post/adding-featured-images-to-posts/</guid>
       <description>
 
 
@@ -340,9 +340,9 @@ googlesheets4::gs4_auth(email = &amp;quot;babichmorrowc@gmail.com&amp;quot;, # R
     
     <item>
       <title>Changing fonts in RMarkdown PDFs</title>
-      <link>/post/changing-fonts-in-rmarkdown-pdfs/</link>
+      <link>https://babichmorrowc.github.io/post/changing-fonts-in-rmarkdown-pdfs/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/post/changing-fonts-in-rmarkdown-pdfs/</guid>
+      <guid>https://babichmorrowc.github.io/post/changing-fonts-in-rmarkdown-pdfs/</guid>
       <description>
 
 
@@ -390,9 +390,9 @@ output:
     
     <item>
       <title>Putting Google Fonts in R graphs</title>
-      <link>/post/2019-10-11-google-fonts/</link>
+      <link>https://babichmorrowc.github.io/post/2019-10-11-google-fonts/</link>
       <pubDate>Fri, 11 Oct 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-10-11-google-fonts/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-10-11-google-fonts/</guid>
       <description>
 
 
@@ -444,7 +444,7 @@ ggplot(legocolors, aes(x = year_released, y = bl_bp, colour = hex)) +
   theme(legend.position = &amp;quot;none&amp;quot;, text = element_text(family = &amp;quot;Source Sans Pro&amp;quot;), plot.title = element_text(face = &amp;quot;bold&amp;quot;)) +
   labs(x = &amp;quot;Year released&amp;quot;, y = &amp;quot;Brick availability&amp;quot;, title = &amp;quot;Lego availability&amp;quot;, subtitle = &amp;quot;All of the text is now in Source Sans Pro!&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 3 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-10-11-google-fonts/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-10-11-google-fonts/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;troubleshooting&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Troubleshooting&lt;/h2&gt;
@@ -455,9 +455,9 @@ ggplot(legocolors, aes(x = year_released, y = bl_bp, colour = hex)) +
     
     <item>
       <title>Accessing Mode data in R</title>
-      <link>/post/2019-09-26-mode-api-instructions/</link>
+      <link>https://babichmorrowc.github.io/post/2019-09-26-mode-api-instructions/</link>
       <pubDate>Thu, 26 Sep 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-09-26-mode-api-instructions/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-09-26-mode-api-instructions/</guid>
       <description>
 
 
@@ -627,9 +627,9 @@ report_token &amp;lt;- &amp;quot;eb4fdefe37d8&amp;quot;&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Git Workflow #1: Existing project, GitHub last</title>
-      <link>/post/2019-09-26-git-workflow1/</link>
+      <link>https://babichmorrowc.github.io/post/2019-09-26-git-workflow1/</link>
       <pubDate>Tue, 17 Sep 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-09-26-git-workflow1/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-09-26-git-workflow1/</guid>
       <description>
 
 
@@ -681,18 +681,18 @@ git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Goldwater Highlight</title>
-      <link>/post/goldwater-highlight/</link>
+      <link>https://babichmorrowc.github.io/post/goldwater-highlight/</link>
       <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/post/goldwater-highlight/</guid>
-      <description>&lt;p&gt;This is just a quick post to provide a &lt;a href=&#34;https://twitter.com/GoldwaterSC/status/1163980565978259456&#34;&gt;link&lt;/a&gt; to the Goldwater Scholar Social Media Highlight that Nina Singh wrote about me. You can find the pdf to the article &lt;a href=&#34;/goldwater_highlight.pdf&#34;&gt;here&lt;/a&gt;. Huge thanks to the Goldwater social media team for including me in this!&lt;/p&gt;
+      <guid>https://babichmorrowc.github.io/post/goldwater-highlight/</guid>
+      <description>&lt;p&gt;This is just a quick post to provide a &lt;a href=&#34;https://twitter.com/GoldwaterSC/status/1163980565978259456&#34;&gt;link&lt;/a&gt; to the Goldwater Scholar Social Media Highlight that Nina Singh wrote about me. You can find the pdf to the article &lt;a href=&#34;https://babichmorrowc.github.io/goldwater_highlight.pdf&#34;&gt;here&lt;/a&gt;. Huge thanks to the Goldwater social media team for including me in this!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Copying R libraries to a USB</title>
-      <link>/post/2019-06-07-usb/</link>
+      <link>https://babichmorrowc.github.io/post/2019-06-07-usb/</link>
       <pubDate>Fri, 07 Jun 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-06-07-usb/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-06-07-usb/</guid>
       <description>
 
 
@@ -721,9 +721,9 @@ cp -R /Library/Frameworks/R.framework/Versions/3.5/Resources/library/ /Volumes/U
     
     <item>
       <title>Setting resolution and aspect ratios in R</title>
-      <link>/post/2019-05-23-highres-figures/</link>
+      <link>https://babichmorrowc.github.io/post/2019-05-23-highres-figures/</link>
       <pubDate>Thu, 23 May 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-05-23-highres-figures/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-05-23-highres-figures/</guid>
       <description>
 
 
@@ -744,10 +744,10 @@ dev.off()&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Example&lt;/h2&gt;
 &lt;p&gt;To see this in practice, we can plot some data from the iris dataset the “regular” way:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pairs(iris[,1:4], col = iris$Species)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-05-23-highres-figures/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-05-23-highres-figures/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Things look pretty nice in the plotting window, but when you save that figure from RStudio, this is the result:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/lowres.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;https://babichmorrowc.github.io/img/lowres.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;p&gt;To get rid of that graininess, we can instead save the figure in the following way:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;png(&amp;quot;highres.png&amp;quot;, units = &amp;quot;in&amp;quot;, width = 5, height = 4, res = 300)
@@ -755,7 +755,7 @@ pairs(iris[,1:4], col = iris$Species)
 dev.off()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The resulting figure is much clearer and ready to be inserted in presentations or publications!&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/highres.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;https://babichmorrowc.github.io/img/highres.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;p&gt;You can also change the aspect ratio by modifying the &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; arguments. You can leave the units in inches or set it to pixels (&lt;code&gt;&#34;px&#34;&lt;/code&gt;), centimeters (&lt;code&gt;&#34;cm&#34;&lt;/code&gt;), or millimeters (&lt;code&gt;&#34;mm&#34;&lt;/code&gt;).&lt;/p&gt;
 &lt;/div&gt;
@@ -764,9 +764,9 @@ dev.off()&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Thresholding species distribution models</title>
-      <link>/post/2019-04-12-sdm-threshold/</link>
+      <link>https://babichmorrowc.github.io/post/2019-04-12-sdm-threshold/</link>
       <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-04-12-sdm-threshold/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-04-12-sdm-threshold/</guid>
       <description>
 
 
@@ -774,7 +774,7 @@ dev.off()&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Inspiration for this post&lt;/h2&gt;
 &lt;p&gt;Conservation is often the main motivation behind studying where a species lives – having a model of a species’ range can help scientists assess whether it is at risk of extinction, designate protected regions to preserve its habitat, and study potential impacts of human activity. When we create species distribution models using common methods like Maxent, the result is a map of predicted habitat suitability or probability of species presence, such as the one below. In conservation management, however, it is often more useful to present range models in the form of species presence/absence. We can convert continuous predictions of habitat suitability into binary predictions of whether a species lives in a certain region or not using thresholds: i.e. designating all regions above a certain suitability level as within the species range and all areas below that suitability level as outside of it.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;/img/threshold_ex.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:60%&#34; src=&#34;https://babichmorrowc.github.io/img/threshold_ex.png&#34; /&gt;
 &lt;figcaption&gt;
 Left: species distribution model with continuous habitat suitability values. Right: binary presence/absence model used by applying a threshold. (Figure from &lt;a href=&#34;https://rspatial.org/sdm/6_sdm_methods.html#mahalanobis-distance&#34;&gt;Spatial Data Science with R&lt;/a&gt;)
 &lt;/figcaption&gt;
@@ -838,19 +838,19 @@ sloth_occs &amp;lt;- read.csv(&amp;quot;../../../static/SDMs/variegatus_occ.csv&
 
 plot(sloth_sdm)
 points(sloth_occs[,2:3], pch = 19, cex = 0.5)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can apply both MTP and P10 thresholds to the SDM based on the location of the occurrence points:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sloth_mtp &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;mtp&amp;quot;)
 plot(sloth_mtp)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;
 sloth_p10 &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;p10&amp;quot;)
 plot(sloth_p10)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We could also make either of these thresholded SDMs into a binary prediction in the following way:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sloth_mtp_bin &amp;lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &amp;quot;mtp&amp;quot;, binary = TRUE)
 plot(sloth_mtp_bin)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;generalization&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Generalization&lt;/h2&gt;
@@ -923,7 +923,7 @@ plot(raster1)
 ## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
 ## normalization available before PROJ 6.3
 points(xy)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Now we can apply the function to see the MTP and P10 thresholded rasters:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtp_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;mtp&amp;quot;, binary = TRUE)
 ## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
@@ -987,9 +987,8 @@ plot(mtp_raster)
 ## normalization available before PROJ 6.3
 
 ## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
-## normalization available before PROJ 6.3&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;
+## normalization available before PROJ 6.3
+
 p10_raster &amp;lt;- raster_threshold(input_raster = raster1, points = xy, type = &amp;quot;p10&amp;quot;, binary = TRUE)
 ## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
 ## normalization available before PROJ 6.3
@@ -1053,7 +1052,7 @@ plot(p10_raster)
 
 ## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
 ## normalization available before PROJ 6.3&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also use a user-inputted threshold to remove all parts of the raster with values lower than 20:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;user_raster &amp;lt;- raster_threshold(input_raster = raster1, threshold = 20)
 ## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
@@ -1100,451 +1099,16 @@ plot(user_raster)
 
 ## Warning in doTryCatch(return(expr), name, parentenv, handler): no CRS
 ## normalization available before PROJ 6.3&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Converting alpha hulls to spatial objects</title>
-      <link>/post/2019-03-18-alpha-hull/</link>
-      <pubDate>Mon, 18 Mar 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-03-18-alpha-hull/</guid>
-      <description>
-
-
-&lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Inspiration for this post&lt;/h2&gt;
-&lt;p&gt;In species distribution modeling, one of the key steps requires the researcher to select a “background region” for the species, i.e. a region over which a machine learning model will compare the environment of the “background points” with the environment at points where the species is known to occur. The key to selecting this region is to pick an area where the species could occur but hasn’t necessarily been observed – for example, you don’t want to include an area separated from the rest of the range by a big mountain range that you don’t believe the organism could cross, but you do want to include a range of potential environments. There are many methods to delineate this region, from drawing a box around the occurrence points of the species to creating a buffered region around each occurrence point (think a collection of lots of circles around each point). One of my research mentors suggested that I try a new method using a shape known as an α-hull.&lt;/p&gt;
-&lt;p&gt;I’ll describe α-hulls in more detail below, but you can get the gist from the map above, where I show occurrence points for two species of sloths surrounded by an α-hull for each species. When I tried to create this region in R, however, I ran into a roadblock: the α-hull objects were a specific kind of R object that didn’t play nicely with spatial data in R, particularly objects from the &lt;code&gt;sp&lt;/code&gt; package. In particular, I needed a way to convert α objects into SpatialPolygons. This post describes a series of functions I wrote to carry out this process.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-alphahull-package&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The &lt;code&gt;alphahull&lt;/code&gt; package&lt;/h2&gt;
-&lt;p&gt;The &lt;code&gt;alphahull&lt;/code&gt; R package (Pateiro-Lopez et al. 2016) draws shapes (like the ones above) around sets of points based on a given parameter, α. The package creates two kinds of shapes I was interested in: α-shapes and α-convex hulls. The functions in this post convert these shapes into objects compatible with the &lt;code&gt;sp&lt;/code&gt; package, which can then be used for spatial analyses, including creating background regions for species distribution modeling.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load packages
-library(alphahull)
-## Warning: package &amp;#39;alphahull&amp;#39; was built under R version 3.5.2
-library(sp)
-## Warning: package &amp;#39;sp&amp;#39; was built under R version 3.5.2&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;alpha-shapes&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Alpha shapes&lt;/h3&gt;
-&lt;p&gt;Alpha shapes consist of a collection of lines drawn around a group of points. Probably the most familiar example of an α-shape is a convex hull, the smallest convex shape that can be drawn around a group of objects. For example, the following code draws a convex hull around some data from the iris dataset:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(iris)
-iris_sepals &amp;lt;- iris[,1:2]
-# remove duplicate datapoints
-iris_sepals &amp;lt;- iris_sepals[!duplicated(paste(iris_sepals$Sepal.Length, iris_sepals$Sepal.Width)), ]
-
-# find points that lie on the convex hull
-convexhull &amp;lt;- chull(iris_sepals)
-# plot the data points
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-hull_pts &amp;lt;- c(convexhull, convexhull[1])
-# plot the convex hull
-lines(iris_sepals[hull_pts, ], col = &amp;quot;magenta&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;This convex hull (drawn in magenta) is an example of an α-shape: all convex hulls are α-shapes, but not all α-shapes are convex hulls. An α-shape doesn’t have to be convex – the lines making up the border of the shape can create concave edges relative to the points in the dataset. For example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create a three-paneled figure
-par(mfrow = c(1,3))
-
-# create three different alpha shapes
-alphashape_0.5 &amp;lt;- ashape(iris_sepals, alpha = 0.5)
-alphashape_1 &amp;lt;- ashape(iris_sepals, alpha = 1)
-alphashape_2 &amp;lt;- ashape(iris_sepals, alpha = 2)
-
-# plot alpha = 0.5
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-plot(alphashape_0.5, col = &amp;quot;magenta&amp;quot;, add = TRUE)
-# plot alpha = 1
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-plot(alphashape_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)
-# plot alpha = 2
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-plot(alphashape_2, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# reset plotting parameters
-par(mfrow = c(1,1))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Alpha shapes are created using the &lt;code&gt;ashape&lt;/code&gt; function from the &lt;code&gt;alphahull&lt;/code&gt; package. As you can see, increasing the α value makes the shape closer and closer to the convex hull, while low values of α make the shape more concave.&lt;/p&gt;
-&lt;div id=&#34;alpha-shapes-to-polygons&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Alpha shapes to polygons&lt;/h4&gt;
-&lt;p&gt;In order to use α-shapes with spatial data in R, I wanted to convert these shapes to polygons. To accomplish this, I modified some of the code from an &lt;a href=&#34;https://rpubs.com/geospacedman/alphasimple&#34;&gt;RPubs by Barry Rowlingson&lt;/a&gt; to create the following function:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(igraph)
-## Warning: package &amp;#39;igraph&amp;#39; was built under R version 3.5.2
-## 
-## Attaching package: &amp;#39;igraph&amp;#39;
-## The following objects are masked from &amp;#39;package:stats&amp;#39;:
-## 
-##     decompose, spectrum
-## The following object is masked from &amp;#39;package:base&amp;#39;:
-## 
-##     union
-
-ashape2poly &amp;lt;- function(ashape){
-  # Convert node numbers into characters
-  ashape$edges[,1] &amp;lt;- as.character(ashape$edges[,1])
-  ashape_graph &amp;lt;- graph_from_edgelist(ashape$edges[,1:2], directed = FALSE)
-  if (!is.connected(ashape_graph)) {
-    stop(&amp;quot;Graph not connected&amp;quot;)
-  }
-  if (any(degree(ashape_graph) != 2)) {
-    stop(&amp;quot;Graph not circular&amp;quot;)
-  }
-  if (clusters(ashape_graph)$no &amp;gt; 1) {
-    stop(&amp;quot;Graph composed of more than one circle&amp;quot;)
-  }
-  # Delete one edge to create a chain
-  cut_graph &amp;lt;- ashape_graph - E(ashape_graph)[1]
-  # Find chain end points
-  ends = names(which(degree(cut_graph) == 1))
-  path = get.shortest.paths(cut_graph, ends[1], ends[2])$vpath[[1]]
-  # this is an index into the points
-  pathX = as.numeric(V(ashape_graph)[path]$name)
-  # join the ends
-  pathX = c(pathX, pathX[1])
-  return(pathX)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For the reasoning behind the function, check out the RPubs I referred to for guidance. For a sanity check, we can compare the resulting shape to the original α-shape we were trying to replicate:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;alphapoly_1 &amp;lt;- ashape2poly(alphashape_1)
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-# show the original alpha shape
-plot(alphashape_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
-# plot the new polygon
-lines(iris_sepals[alphapoly_1, ], col = &amp;quot;magenta&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;alpha-hulls&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Alpha hulls&lt;/h3&gt;
-&lt;p&gt;Alpha hulls add another layer of complexity to this process because they can include curved lines (arcs) as edges of a shape. For example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;alphahull_1 &amp;lt;- ahull(iris_sepals, alpha = 1)
-
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-plot(alphahull_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;div id=&#34;arcs-to-lines&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Arcs to lines&lt;/h4&gt;
-&lt;p&gt;To deal with this curvature, I wrote the following function to convert the arcs between points in the hull to a series of very short line segments in order to approximate the curve.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# function to convert an arc into line segments
-# given the center of the arc, the radius, the vector, and the angle (radians)
-arc2line &amp;lt;- function(center, r, vector, theta, npoints = 100) {
-  # Get the angles at the extremes of the arcs
-  angles &amp;lt;- anglesArc(vector, theta)
-  # Generate sequence of angles along the arc to determine the points
-  seqang &amp;lt;- seq(angles[1], angles[2], length = npoints)
-  # Generate x coordinates for points along the arc
-  x &amp;lt;- center[1] + r * cos(seqang)
-  # Generate y coordinates for points along the arc
-  y &amp;lt;- center[2] + r * sin(seqang)
-  coords.xy &amp;lt;- cbind(x,y)
-  line &amp;lt;- Line(coords = coords.xy)
-  return(line)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;hulls-to-lines&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Hulls to lines&lt;/h4&gt;
-&lt;p&gt;Using the previous function, I wrote another function to take an α-hull and convert it into a set of SpatialLines objects. The function uses the &lt;code&gt;arc2line&lt;/code&gt; function from above to convert each arc in the α-hull into a series of lines, before adding each of these sets of lines together. (&lt;em&gt;This function was updated on 6 January 2021 based on my response to kostas_k84 – thank you to everyone who brought this up to me!&lt;/em&gt;)&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ahull2lines &amp;lt;- function(hull){
-  arclist &amp;lt;- hull$arcs
-  lines &amp;lt;- list()
-  for (i in 1:nrow(arclist)) {
-    # Extract the attributes of arc i
-    center_i &amp;lt;- arclist[i, 1:2]
-    radius_i &amp;lt;- arclist[i, 3]
-    vector_i &amp;lt;- arclist[i, 4:5]
-    theta_i &amp;lt;- arclist[i, 6]
-    # Convert arc i into a Line object
-    line_i &amp;lt;- arc2line(center = center_i, r = radius_i, vector = vector_i, theta = theta_i)
-    list_length &amp;lt;- length(lines)
-    if(list_length &amp;gt; 0){
-      # If a line has already been added to the list of lines
-      # Define last_line_coords as the coordinates of the last line added to the list before the ith line
-      last_line_coords &amp;lt;- lines[[list_length]]@coords
-    }
-    if(i == 1){
-      # Add the first line to the list of lines
-      lines[[i]] &amp;lt;- line_i
-    } else if(isTRUE(all.equal(line_i@coords[1,], last_line_coords[nrow(last_line_coords),]))){
-      # If the first coordinate in the ith line is equal to the last coordinate in the previous line
-      # then those lines should be connected
-      # Row bind the coordinates for the ith line to the coordinates of the previous line in the list
-      lines[[list_length]]@coords &amp;lt;- rbind(last_line_coords, line_i@coords[2:nrow(line_i@coords),])
-    } else {
-      # If the first coordinate in the ith line does not match the last coordinate in the previous line
-      # then the ith line represents a new line
-      # Add the ith line to the list as a new element
-      lines[[length(lines) + 1]] &amp;lt;- line_i
-    }
-  }
-  # Convert the list of lines to a Line object
-  lines &amp;lt;- Lines(lines, ID = &amp;#39;l&amp;#39;)
-  # Convert the Line object to a SpatialLines object
-  sp_lines &amp;lt;- SpatialLines(list(lines))
-  return(sp_lines)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The results look like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lines_1 &amp;lt;- ahull2lines(alphahull_1)
-# the result is a SpatialLines object
-class(lines_1)
-## [1] &amp;quot;SpatialLines&amp;quot;
-## attr(,&amp;quot;package&amp;quot;)
-## [1] &amp;quot;sp&amp;quot;
-
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-# show the original alpha shape
-plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
-# plot the new polygon
-plot(lines_1, col = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The resulting SpatialLines object is an almost spot-on approximation of the original α-hull (shown in gray).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;spatiallines-to-spatialpolygon&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;SpatialLines to SpatialPolygon&lt;/h4&gt;
-&lt;p&gt;Now, I needed a way to convert the SpatialLines object into a SpatialPolygon that would cover the same shape as the original α-hull. To accomplish this, I wrote a function that takes a SpatialLines object, checks which lines are part of polygons (i.e. form closed shapes), and converts those polygons to a SpatialPolygon.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;spLines2poly &amp;lt;- function(sp_lines){
-  # Extract the lines slot
-  lines_slot &amp;lt;- sp_lines@lines[[1]]
-  # Create a list of booleans indicating whether a given Line represents a polygon
-  poly_bool &amp;lt;- sapply(lines_slot@Lines, function(x){
-    coords &amp;lt;- lines_slot@Lines[[1]]@coords
-    # Check if the first coordinate in the line is the same as the last
-    all.equal(coords[1,], coords[nrow(coords),])
-  })
-  # Pull out the lines that form polygons
-  poly_lines &amp;lt;- sp_lines[poly_bool]
-  poly_lines_slot &amp;lt;- poly_lines@lines
-  # Create SpatialPolygons
-  sp_polys &amp;lt;- SpatialPolygons(list(Polygons(lapply(poly_lines_slot, function(x) {
-    Polygon(slot(slot(x, &amp;quot;Lines&amp;quot;)[[1]], &amp;quot;coords&amp;quot;))
-  }), ID = &amp;quot;1&amp;quot;)))
-  return(sp_polys)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We can apply this function to the &lt;code&gt;lines_1&lt;/code&gt; object we made from the original &lt;code&gt;alphahull_1&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;SpPoly_1 &amp;lt;- spLines2poly(lines_1)
-class(SpPoly_1)
-## [1] &amp;quot;SpatialPolygons&amp;quot;
-## attr(,&amp;quot;package&amp;quot;)
-## [1] &amp;quot;sp&amp;quot;
-
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-# show the original alpha shape
-plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
-# plot the new polygon
-plot(SpPoly_1, border = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;alpha-hulls-to-spatialpolygons&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Alpha hulls to SpatialPolygons&lt;/h4&gt;
-&lt;p&gt;Finally, we can string all of those functions together to create a single function that will convert an α-hull directly into a SpatialPolygon:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ahull2poly &amp;lt;- function(hull){
-  # Convert the alpha hull to SpatialLines
-  hull2SpatialLines &amp;lt;- ahull2lines(hull)
-  # Convert SpatialLines to SpatialPolygon
-  SpatialLines2SpatialPolygon &amp;lt;- spLines2poly(hull2SpatialLines)
-  return(SpatialLines2SpatialPolygon)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As a final sanity check, we can see that the resulting shape is the same as the original shape produced by the &lt;code&gt;alphahull&lt;/code&gt; package:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;hullpoly_1 &amp;lt;- ahull2poly(alphahull_1)
-class(hullpoly_1)
-## [1] &amp;quot;SpatialPolygons&amp;quot;
-## attr(,&amp;quot;package&amp;quot;)
-## [1] &amp;quot;sp&amp;quot;
-
-plot(iris_sepals, pch = 19, col = &amp;quot;darkseagreen&amp;quot;)
-# show the original alpha shape
-plot(alphahull_1, lwd = 5, col = &amp;quot;gray&amp;quot;, add = TRUE)
-# plot the new polygon
-plot(hullpoly_1, border = &amp;quot;magenta&amp;quot;, add = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-alpha-hull/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;github&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;GitHub&lt;/h2&gt;
-&lt;p&gt;The code for these functions is on my GitHub at &lt;a href=&#34;https://github.com/babichmorrowc/hull2spatial&#34; class=&#34;uri&#34;&gt;https://github.com/babichmorrowc/hull2spatial&lt;/a&gt;. If you have any thoughts or suggestions, please comment on this post or submit a pull request on GitHub. I hope to be formulating these functions into a package in the near future, so stay tuned!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;citations&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Citations&lt;/h2&gt;
-&lt;p&gt;Beatriz Pateiro-Lopez and Alberto Rodriguez-Casal. (2016). alphahull:
-Generalization of the Convex Hull of a Sample of Points in the Plane. R
-package version 2.1. &lt;a href=&#34;https://CRAN.R-project.org/package=alphahull&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=alphahull&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hacking Meteorites Part 1: Calculating percent weights</title>
-      <link>/post/2019-02-20-meteoritecluster1/</link>
-      <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-02-20-meteoritecluster1/</guid>
-      <description>
-
-
-&lt;p&gt;Earlier this month I participated in the American Museum of Natural History’s annual hackathon (see my last &lt;a href=&#34;https://babichmorrowc.github.io/post/2019-02-14-hackathon/&#34;&gt;post&lt;/a&gt; for details about the event overall). During the hackathon, I worked with Katy Abbott, another Helen Fellow at the museum with me, to use a machine learning algorithm called DBSCAN to tackle our challenge. This post explains the process we used to complete the first step of the challenge: estimating the percent weights of elements in a meteorite.&lt;/p&gt;
-&lt;div id=&#34;challenge-accepted&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Challenge accepted&lt;/h2&gt;
-&lt;p&gt;Our team, consisting of Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy Abbott, Meret Götschel, and myself, chose to work on the &lt;a href=&#34;https://github.com/amnh/HackTheSolarSystem/wiki/Meteorite-Mineral-Mapping&#34;&gt;Meteorite Mineral Mapping challenge&lt;/a&gt;. For this challenge, our museum stakeholders, Marina Gemma and Sam Alpert, wanted a way to identify the mineral composition of meteorites.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;pixels-to-percents&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Pixels to percents&lt;/h2&gt;
-&lt;p&gt;The scientists scan meteorites with an electron microprobe, a device that provides the intensity of x-rays emitted from certain elements. The electron microprobe results in images with grayscale intensities corresponding to these x-ray intensities on a pixel-by-pixel basis.&lt;/p&gt;
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;../../../static/img/meteorite_pixel_intensity.png&#34; /&gt;
-&lt;figcaption&gt;
-Images of a meteorite produced by the electron microprobe showing pixel intensities for each of 10 elements - brighter grayscale values indicate greater amounts of that element in a pixel.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;Our first step was to convert these pixel intensities to the percent weight of each element in the mineral at that pixel. To do that, we referred to a set of standard images taken of minerals with a known proportion of each element. For example, the image below shows the pixel intensities of iron in 8 minerals: you can see that the pixels are brightest in Fe, or pure iron, and lower in iron oxide (&lt;span class=&#34;math inline&#34;&gt;\(\text{Fe}_3\text{O}_4\)&lt;/span&gt;) and troilite, or iron sulfide (FeS).&lt;/p&gt;
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;../../../static/img/iron_standard.png&#34; /&gt;
-&lt;figcaption&gt;
-Standard scan of the intensity of iron in each of 8 known minerals.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;We can relate the intensity of the iron pixels in the Fe mineral, for example, to the percent weight in that mineral (100%, since iron is the only element in Fe).&lt;/p&gt;
-&lt;div id=&#34;import-data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Import data&lt;/h3&gt;
-&lt;p&gt;We started by creating a .csv file with the percent weight of each element in the minderals from the standards:&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# import libraries
-from sklearn.cluster import DBSCAN as dbscan
-from sklearn.linear_model import LinearRegression
-import pandas as pd
-import numpy as np
-from sklearn import metrics
-import matplotlib.pyplot as plt
-import matplotlib.colors
-from sklearn.decomposition import PCA
-from pathlib import Path
-from skimage.io import imread, imshow
-## /Applications/anaconda3/lib/python3.7/site-packages/dask/config.py:168: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
-##   data = yaml.load(f.read()) or {}
-import numpy.ma as ma
-from collections import Counter
-# read in percent weights by element of the minerals in the standard
-weights = pd.read_csv(&amp;quot;../../../static/mineralmapping/weights_to_minerals.csv&amp;quot;)
-print(weights.head())
-##        mineral  Mg     Ni  Al        Fe      Ca  Cr   P        S      Ti  Si
-## 0  CaTiO3std15 NaN    NaN NaN       NaN  29.481 NaN NaN      NaN  35.211 NaN
-## 1  Fe-num2std9 NaN    NaN NaN  100.0000     NaN NaN NaN      NaN     NaN NaN
-## 2      FeSstd2 NaN    NaN NaN   63.5252     NaN NaN NaN  36.4748     NaN NaN
-## 3   Fe3O4std15 NaN    NaN NaN   72.3591     NaN NaN NaN      NaN     NaN NaN
-## 4       Nistd9 NaN  100.0 NaN       NaN     NaN NaN NaN      NaN     NaN NaN&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;(Note: I was able to add the above Python chunk in R by following &lt;a href=&#34;https://babichmorrowc.github.io/post/2019-02-20-pythonrmd/&#34;&gt;these instructions&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;There is a linear relationship between pixel intensity and percent weight, so we used linear regression to find the slope of this relationship. We read in the .csv of pixel intensities for each element in the standards:&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# read in the pixel intensities by element in the standard
-mineral_standards = pd.read_csv(&amp;#39;../../../static/mineralmapping/mineral_standards.csv&amp;#39;)
-print(mineral_standards.head())
-##    Mg  Ni  Al  Fe   Ca  Cr  P  S   Ti  Si      mineral
-## 0   0   0   0   0  171   0  4  0  459   0  CaTiO3std15
-## 1   0   0   0   0  148   3  2  0  462   1  CaTiO3std15
-## 2   0   2   0   0  141   6  3  0  455   2  CaTiO3std15
-## 3   1   2   2   0  122   6  3  0  502   0  CaTiO3std15
-## 4   0   0   0   0  138   5  5  0  457   1  CaTiO3std15&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We modified the chemical formulas of each mineral using a dictionary by separating each element in the mineral with an “_” to make looping easier.&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# create dictionary to standardize file names to chemical formulas
-# needed to separate each element in the formula with an _ to make looping easier
-mineral_dict = dict(zip(np.unique(mineral_standards[&amp;#39;mineral&amp;#39;]),
-    [&amp;quot;Ca_Ti_O_3&amp;quot;, &amp;quot;Fe_&amp;quot;, &amp;quot;Fe_3O_4&amp;quot;, &amp;quot;Fe_S_&amp;quot;, &amp;quot;Ni_S_&amp;quot;, &amp;quot;Ni_&amp;quot;, &amp;quot;Ca_Fe_Mg_Mn_Ni_Si_&amp;quot;, &amp;quot;Ti_O_2&amp;quot;]))
-# use dictionary to change mineral columns to underscore format
-weights[&amp;#39;mineral&amp;#39;] = weights[&amp;#39;mineral&amp;#39;].map(mineral_dict)
-mineral_standards[&amp;#39;mineral&amp;#39;] = mineral_standards[&amp;#39;mineral&amp;#39;].map(mineral_dict)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next we created a list of the elements accounted for in the standards and made an empty dataframe called &lt;code&gt;coefs&lt;/code&gt; to fill with the coefficients of the relationship between pixel intensity and percent weight for each element:&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# list of elements
-# need to ignore the &amp;quot;mineral&amp;quot; column of the data
-elements = [val for val in mineral_standards.columns if val != &amp;#39;mineral&amp;#39;]
-coefs = pd.DataFrame(index = [&amp;#39;coeff&amp;#39;], columns = elements)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;linear-regressions&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Linear regressions&lt;/h3&gt;
-&lt;p&gt;Now we looped through the elements to create linear regressions of percent weight vs. pixel intensity based on the intensities in the standards. For these regressions, we forced the intercept to be zero because zero pixel intensity should imply zero percent weight.&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# make a linear regression forcing the intercept to be zero
-# since zero intensity should correspond to zero percent weight
-lr = LinearRegression(fit_intercept = False)
-# loop through elements to create linear regression of percent weight vs pixel intensity
-# in the minerals in the standard
-for element in elements:
-    element_df = mineral_standards[mineral_standards[&amp;#39;mineral&amp;#39;].str.contains(element + &amp;quot;_&amp;quot;)]
-    # if the element has no percent weights, skip it
-    if element_df.empty:
-        continue
-    minerals = element_df[&amp;#39;mineral&amp;#39;].unique()
-    xis = np.empty(0)
-    yis = np.empty(0)
-    for mine in minerals:
-        # get percent weights of the element in that mineral
-        weight = weights[weights[&amp;#39;mineral&amp;#39;] == mine][element]
-        intensities = element_df[element_df[&amp;#39;mineral&amp;#39;] == mine][element]
-        xis = np.append(xis, np.array(intensities))
-        yis = np.append(yis, np.repeat(weight, len(intensities)))
-    xis, yis = xis.reshape(-1,1), yis.reshape(-1,1)
-    # fit linear regression on percent weight vs intensity
-    reg = lr.fit(xis,yis)
-    xi_pred =  np.arange(0,900).reshape(-1,1)
-    # create predictions for range of intensity values
-    pred = reg.predict(xi_pred)
-    reg.coef_
-    # get the linear regression coefficient for each element
-    coefs[element] = float(reg.coef_)
-# print the coefficients for each element
-print(coefs)
-##              Mg        Ni   Al        Fe  ...    P         S        Ti        Si
-## coeff  0.118599  0.328796  NaN  0.320081  ...  NaN  0.469225  0.077627  0.097906
-## 
-## [1 rows x 10 columns]&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Thus &lt;code&gt;coefs&lt;/code&gt; contains the coeficient relating pixel intensity of an element to its percent weight in the mineral: for example, the percent weight of Mg in an mineral is equal to 0.118599 times its pixel intensity.&lt;/p&gt;
-&lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;../../../static/img/mineral_regression.png&#34; /&gt;
-&lt;figcaption&gt;
-X-axes are pixel intensity and y-axes are percent weight of the element. Blue points indicate the pixel intensities of the element for a given percent weight based on a mineral in the standard. Orange points indicate the linear regression calculated above.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-&lt;div id=&#34;calculate-percent-weights&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Calculate percent weights&lt;/h3&gt;
-&lt;p&gt;Finally, we used these coefficients to calculate the predicted percent weights of each element in the two meteorites we were analyzing on a pixel-by-pixel basis. The code for this portion of the analysis is available in the latter end of &lt;a href=&#34;https://github.com/HackTheSolarSystem/MineralMapping/blob/master/backend/mineral_mapping_script.py&#34;&gt;this script&lt;/a&gt;. Note that for any pixel where the percent weight of an element was predicted to be higher than 100%, we set the percent weight to 100%. From these calculations, we ended up with the following files:&lt;/p&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# read file of predicted percent weights for meteorite 1
-df_obj1 = pd.read_csv(&amp;#39;../../../static/mineralmapping/predicted_percentweight_obj1.csv&amp;#39;)
-df_obj1 = df_obj1.fillna(0)
-df_obj1.drop(&amp;#39;Unnamed: 0&amp;#39;, axis = 1, inplace = True)
-print(df_obj1.head())
-# read file of predicted percent weights for meteorite 2
-##          Ca        Ti   Al   Cr  ...    P         Fe        Ni        Mg
-## 0  8.595462  0.698642  0.0  0.0  ...  0.0  51.212925  0.986388  5.692734
-## 1  4.512618  0.543388  0.0  0.0  ...  0.0  53.453490  1.972775  2.846367
-## 2  2.578639  0.465761  0.0  0.0  ...  0.0  63.696075  3.287959  1.067388
-## 3  2.148866  0.310508  0.0  0.0  ...  0.0  57.934621  3.945550  0.237197
-## 4  1.719092  0.543388  0.0  0.0  ...  0.0  58.254702  3.616755  0.118599
-## 
-## [5 rows x 10 columns]
-df_obj2 = pd.read_csv(&amp;#39;../../../static/mineralmapping/predicted_percentweight_obj2.csv&amp;#39;)
-df_obj2 = df_obj2.fillna(0)
-df_obj2.drop(&amp;#39;Unnamed: 0&amp;#39;, axis = 1, inplace = True)
-print(df_obj2.head())
-##           Si    P   Cr   Al  ...        Ca        Mg        Ni         Fe
-## 0  22.322556  0.0  0.0  0.0  ...  0.429773  1.304585  4.931938  14.403635
-## 1  11.650808  0.0  0.0  0.0  ...  0.000000  0.355796  2.630367  43.530986
-## 2   4.601580  0.0  0.0  0.0  ...  0.429773  0.000000  1.643979  54.093652
-## 3   2.349743  0.0  0.0  0.0  ...  0.000000  0.000000  0.986388  57.294460
-## 4   0.783248  0.0  0.0  0.0  ...  0.000000  0.000000  1.315183  48.972359
-## 
-## [5 rows x 10 columns]&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Each row in these .csv files corresponds to a pixel in the original image. Each value gives the predicted percent weight of a given element in that pixel.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;up-next&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Up next&lt;/h2&gt;
-&lt;p&gt;Now that we had converted pixel intensities to predicted percent weights, we were ready to use our clustering algorithm to identify potential minerals in the meteorite. Stay tuned for a future post showing how we used DBSCAN to accomplish this!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;further-reading&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Further Reading&lt;/h2&gt;
-&lt;p&gt;Jeremy Neiman, one of my team members, wrote an excellent &lt;a href=&#34;https://towardsdatascience.com/machine-learning-meteorites-fcd8f6859ed7&#34;&gt;post&lt;/a&gt; describing the challenge in further detail, so check that out for more information.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Python in RMarkdown</title>
-      <link>/post/2019-02-20-pythonrmd/</link>
+      <link>https://babichmorrowc.github.io/post/2019-02-20-pythonrmd/</link>
       <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-02-20-pythonrmd/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-02-20-pythonrmd/</guid>
       <description>
 
 
@@ -1588,12 +1152,12 @@ knitr::opts_chunk$set(collapse = TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import sys
 for p in sys.path:
     print(p)
-## /Applications/anaconda3/bin
-## /Applications/anaconda3/lib/python37.zip
-## /Applications/anaconda3/lib/python3.7
-## /Applications/anaconda3/lib/python3.7/lib-dynload
-## /Applications/anaconda3/lib/python3.7/site-packages
-## /Applications/anaconda3/lib/python3.7/site-packages/aeosa
+## /opt/anaconda3/bin
+## /opt/anaconda3/lib/python311.zip
+## /opt/anaconda3/lib/python3.11
+## /opt/anaconda3/lib/python3.11/lib-dynload
+## /opt/anaconda3/lib/python3.11/site-packages
+## /opt/anaconda3/lib/python3.11/site-packages/aeosa
 ## /Library/Frameworks/R.framework/Versions/3.5/Resources/library/reticulate/python&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;From this information, I could tell I wanted to use the path &lt;code&gt;/anaconda3/lib/python3.6&lt;/code&gt;, rather than &lt;code&gt;/usr/bin/python&lt;/code&gt;, which is what RMarkdown had originally been using. I modified by set-up chunk to look like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{r setup, include=FALSE}
@@ -1614,14 +1178,14 @@ knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &amp;#39;/ana
     
     <item>
       <title>#HackTheSolarSystem</title>
-      <link>/post/2019-02-14-hackathon/</link>
+      <link>https://babichmorrowc.github.io/post/2019-02-14-hackathon/</link>
       <pubDate>Thu, 14 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-02-14-hackathon/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-02-14-hackathon/</guid>
       <description>
 
 
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:40%&#34; src=&#34;/img/hackthesolarsystem.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:40%&#34; src=&#34;https://babichmorrowc.github.io/img/hackthesolarsystem.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;p&gt;Last weekend I had the opportunity to participate in my first ever hackathon: the #HackTheSolarSystem hackathon hosted by the American Museum of Natural History.&lt;/p&gt;
 &lt;div id=&#34;what-is-a-hackathon-anyways&#34; class=&#34;section level2&#34;&gt;
@@ -1639,7 +1203,7 @@ knitr::opts_chunk$set(collapse = TRUE, engine.path = list(python = &amp;#39;/ana
 &lt;p&gt;I chose to work on the meteorite mineral mapping challenge: our “stakeholders”, museum scientists Marina Gemma and Sam Alpert, wanted a way to identify mineral composition in images of meteorites. Each meteorite slice had been imaged, resulting in data consisting of pixel intensity for a handful of elements. We also had access to a series of standards with known mineral content so we could compare the pixel intensities in these known minerals with the pixel intensities in the unknown minerals.&lt;/p&gt;
 &lt;p&gt;Our team (pictured below) used four different approaches to address this problem: linear classification via SVM, random forest classification, nearest neighbor classification, and cluster inference. You can check out more details on these solutions in the Readme of our GitHub repository: &lt;a href=&#34;https://github.com/HackTheSolarSystem/MineralMapping&#34; class=&#34;uri&#34;&gt;https://github.com/HackTheSolarSystem/MineralMapping&lt;/a&gt;. (And I will post a more detailed explanation of the clustering solution in a later post, which is the part of the code I focused on!)&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/hackathon_team.jpg&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;https://babichmorrowc.github.io/img/hackathon_team.jpg&#34; /&gt;
 &lt;figcaption&gt;
 From left to right: Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy Abbott, Cecina Babich Morrow, Meret Götschel
 &lt;/figcaption&gt;
@@ -1651,14 +1215,14 @@ From left to right: Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy
     
     <item>
       <title>Grafting phylogenies</title>
-      <link>/post/2019-01-09-grafting-trees/</link>
+      <link>https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/</link>
       <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-01-09-grafting-trees/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/</guid>
       <description>
 
 
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/bodymass_tetrapod_tree.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;https://babichmorrowc.github.io/img/bodymass_tetrapod_tree.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Inspiration for this post&lt;/h1&gt;
@@ -1667,7 +1231,7 @@ From left to right: Peter Kang, Jackson Lee, Jeremy Neiman, John Underwood, Katy
 &lt;h2&gt;Uyeda et al. 2017&lt;/h2&gt;
 &lt;p&gt;Uyeda et al. did something similar in their 2017 paper &lt;a href=&#34;https://www.journals.uchicago.edu/doi/10.1086/692326&#34;&gt;The evolution of energetic scaling across the vertebrate tree of life&lt;/a&gt;. They stitched together fish, amphibian, squamate, bird, and mammal phylogenies together to visualize metabolic rate across all vertebrates:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/uyeda_figure.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/uyeda_figure.png&#34; /&gt;
 &lt;figcaption&gt;
 Figure 1 from Uyeda et al. 2017
 &lt;/figcaption&gt;
@@ -1690,22 +1254,22 @@ library(geiger)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(amphibiantree$tip.label)
 ## [1] 2871
 plot(amphibiantree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;For squamates, I used the Zheng and Wiens time-calibrated phylogeny (Zheng and Wiens 2016).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(squamatetree$tip.label)
 ## [1] 378
 plot(squamatetree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;For birds, I used the Jetz phylogeny (Jetz et al. 2012).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(birdtree$tip.label)
 ## [1] 9993
 plot(birdtree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;For mammals, I used the supertree from Fritz et al. 2009.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(mammaltree$tip.label)
 ## [1] 5020
 plot(mammaltree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;reading-in-trees&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Reading in trees&lt;/h2&gt;
@@ -1735,13 +1299,13 @@ Nnode &amp;lt;- 4
 ordertree &amp;lt;- list(edge=edge, Nnode=Nnode, tip.label=tip.labels, edge.length=edge.length)
 class(ordertree) &amp;lt;- &amp;#39;phylo&amp;#39;
 plot(ordertree)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;To visualize the results, we can add tip labels, node labels, and edge labels to the tree with the branch lengths:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(ordertree)
 tiplabels()
 nodelabels()
 edgelabels(ordertree$edge.length, bg=&amp;quot;black&amp;quot;, col=&amp;quot;white&amp;quot;, font=2)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;getting-rid-of-fish&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Getting rid of fish&lt;/h3&gt;
 &lt;p&gt;Since I didn’t have fish, I needed to make a few modifications. First, &lt;code&gt;tip.labels&lt;/code&gt; didn’t need “fish” in it anymore:&lt;/p&gt;
@@ -1763,14 +1327,14 @@ tip.labels &amp;lt;- c(&amp;quot;amphib&amp;quot;, &amp;quot;squam&amp;quot;, &a
 class(ordertree) &amp;lt;- &amp;#39;phylo&amp;#39;
 plot(ordertree)
 edgelabels(ordertree$edge.length, bg=&amp;quot;black&amp;quot;, col=&amp;quot;white&amp;quot;, font=2)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;…I was ready to go with an order-level tree onto which I could graft my individual phylogenies!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;node-dates&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Node dates&lt;/h3&gt;
 &lt;p&gt;…Not so fast. I ended up with an additional problem I needed to solve before grafting the trees together. I ran into the error &lt;code&gt;&#39;split_age&#39; is inconsistent with edge lengths in &#39;phy&#39;&lt;/code&gt;, which means that the earliest node in one of my individual phylogenies was older than the node age I gave in &lt;code&gt;edge.length&lt;/code&gt;. By &lt;a href=&#34;https://babichmorrowc.github.io/post/debug-r/&#34;&gt;using &lt;code&gt;debug&lt;/code&gt;&lt;/a&gt;, I was able to tell that the error occurred when I added the squamate tree. The oldest node in my squamate tree was 277.8 million years ago, but I had set the divergence time between birds and squamates at 274.9 mya, so R was having problems. The species causing the problem was the tuatara, which is the only surviving member of its order.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/tuatara.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/tuatara.png&#34; /&gt;
 &lt;figcaption&gt;
 The pesky (yet very cute) tuatara (&lt;a href=&#34;https://www.australiangeographic.com.au/blogs/creatura-blog/2017/12/the-tuatara/&#34; class=&#34;uri&#34;&gt;https://www.australiangeographic.com.au/blogs/creatura-blog/2017/12/the-tuatara/&lt;/a&gt;)
 &lt;/figcaption&gt;
@@ -1778,7 +1342,7 @@ The pesky (yet very cute) tuatara (&lt;a href=&#34;https://www.australiangeograp
 &lt;p&gt;I had a couple of choices: either delete the tuatara from the squamate phylogeny or increase the age of the last common ancestor of birds and squamates when I created the vector &lt;code&gt;edge.length&lt;/code&gt;. I chose to do the latter because why get rid of such a cool animal!&lt;/p&gt;
 &lt;p&gt;I went to &lt;a href=&#34;http://timetree.org/&#34; class=&#34;uri&#34;&gt;http://timetree.org/&lt;/a&gt; to see if I could find a reasonable range of estimates for this node. According to the website, which allows you to search for the divergence time between any two taxa, the estimated divergence of birds and squamates occurred 280 mya.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/timetree_birdsquamate.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/timetree_birdsquamate.png&#34; /&gt;
 &lt;figcaption&gt;
 TimeTree results for divergence time of birds and squamates.
 &lt;/figcaption&gt;
@@ -1797,7 +1361,7 @@ ordertree &amp;lt;- list(edge=edge, Nnode=Nnode, tip.label=tip.labels, edge.leng
 class(ordertree) &amp;lt;- &amp;#39;phylo&amp;#39;
 plot(ordertree)
 edgelabels(ordertree$edge.length, bg=&amp;quot;black&amp;quot;, col=&amp;quot;white&amp;quot;, font=2)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tree_list &amp;lt;- list(amphib=amphibiantree, birds=birdtree, squam=squamatetree, mamm=mammaltree)
 class(tree_list) &amp;lt;- &amp;quot;multiPhylo&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -1812,7 +1376,7 @@ classtree &amp;lt;- nodelabel.phylo(ordertree, otax, ncores=1)
 
 res &amp;lt;- glomogram.phylo(classtree, tree_list)
 plot(res, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Voila - a tree with 18262 species of tetrapods!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1838,14 +1402,14 @@ plot(res, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&l
     
     <item>
       <title>Debugging in R</title>
-      <link>/post/2019-01-03-debugging-r/</link>
+      <link>https://babichmorrowc.github.io/post/2019-01-03-debugging-r/</link>
       <pubDate>Thu, 03 Jan 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-01-03-debugging-r/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-01-03-debugging-r/</guid>
       <description>
 
 
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/PhD_Debugging.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/PhD_Debugging.png&#34; /&gt;
 &lt;figcaption&gt;
 PhD comics Jorge Cham (www.phdcomics.com)
 &lt;/figcaption&gt;
@@ -1855,7 +1419,7 @@ PhD comics Jorge Cham (www.phdcomics.com)
 &lt;h1&gt;&lt;code&gt;traceback&lt;/code&gt;&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;traceback()&lt;/code&gt; function is definitely one of those that I wished I learned sooner. Basically, &lt;code&gt;traceback()&lt;/code&gt; shows you the series of functions called, including the one resulting in the last error. For example, when I ran &lt;code&gt;traceback()&lt;/code&gt; after the function I was testing threw an error, I got the following readout:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/traceback_example.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;https://babichmorrowc.github.io/img/traceback_example.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;p&gt;When I tried to use the function &lt;code&gt;rangeSVM()&lt;/code&gt;, I got an error, as we can see in the first line of code I ran. By running &lt;code&gt;traceback()&lt;/code&gt;, I can see the order of functions that &lt;code&gt;rangeSVM()&lt;/code&gt; uses: first, it called the &lt;code&gt;svm()&lt;/code&gt; function from the R package &lt;code&gt;e1071&lt;/code&gt;, which in turn called &lt;code&gt;svm.formula()&lt;/code&gt;, which finally called &lt;code&gt;svm.default()&lt;/code&gt;. This last function, &lt;code&gt;svm.default()&lt;/code&gt; is what produced the error (as we can see from the error message, as well).&lt;/p&gt;
 &lt;p&gt;Running &lt;code&gt;traceback()&lt;/code&gt; can be especially helpful in situations like this, where the error message comes from a function called internally by the function you actually ran. Here, the error does not come from the &lt;code&gt;rangeSVM()&lt;/code&gt; function, so reading the documentation for &lt;code&gt;rangeSVM()&lt;/code&gt; could not save me. Now I know that the error actually comes from a function in the &lt;code&gt;e1071&lt;/code&gt; package, so I could check out the source code to figure out what kind of issue causes that error message.&lt;/p&gt;
@@ -1908,13 +1472,13 @@ svmHYB &amp;lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::sta
     
     <item>
       <title>Adding Google Docs to website</title>
-      <link>/post/2018-12-12-add-google-doc/</link>
+      <link>https://babichmorrowc.github.io/post/2018-12-12-add-google-doc/</link>
       <pubDate>Wed, 12 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>/post/2018-12-12-add-google-doc/</guid>
+      <guid>https://babichmorrowc.github.io/post/2018-12-12-add-google-doc/</guid>
       <description>
 
 
-&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/google_docs_fig.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/google_docs_fig.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Given that the Academic website theme comes with a place to upload talks, I thought I might as well upload the slides for my Senior Honors presentation. Unfortunately, this was a slightly more difficult task than I anticipated. The default format for slides in Hugo appears to be Markdown slides, which is fine, except when your talk was made in Google Slides.&lt;/p&gt;
 &lt;div id=&#34;google-slides-to-markdown&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Google Slides to Markdown?&lt;/h2&gt;
@@ -1951,13 +1515,13 @@ svmHYB &amp;lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::sta
     
     <item>
       <title>Ordering website components</title>
-      <link>/post/2018-12-11-order-items/</link>
+      <link>https://babichmorrowc.github.io/post/2018-12-11-order-items/</link>
       <pubDate>Tue, 11 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>/post/2018-12-11-order-items/</guid>
+      <guid>https://babichmorrowc.github.io/post/2018-12-11-order-items/</guid>
       <description>
 
 
-&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:50%&#34; src=&#34;/img/out_of_order.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:50%&#34; src=&#34;https://babichmorrowc.github.io/img/out_of_order.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;As I continue setting up this site, one of the major things irking me was the order of content on the website. For example, I wasn’t loving that the first thing you saw when visiting the site was the giant picture of my face. I wanted to be able to put content at the top of the site and move information like my bio and work experience towards the bottom. Hugo allows you to weight certain types of content to change the order, so that’s what I tackled.&lt;/p&gt;
 &lt;div id=&#34;menu-links&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Menu links&lt;/h2&gt;
@@ -1983,13 +1547,13 @@ svmHYB &amp;lt;- rangeSVM(variegatus[,2:3], tridactylus[,2:3], sdm = raster::sta
     
     <item>
       <title>Creating this website</title>
-      <link>/post/2018-12-7-create-website/</link>
+      <link>https://babichmorrowc.github.io/post/2018-12-7-create-website/</link>
       <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>/post/2018-12-7-create-website/</guid>
+      <guid>https://babichmorrowc.github.io/post/2018-12-7-create-website/</guid>
       <description>
 
 
-&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/website_fig.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/website_fig.png&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;getting-started&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Getting started&lt;/h2&gt;
 &lt;p&gt;I’ve been contemplating the idea of creating a website for sometime, but my initial (mostly half-hearted) attempts ran into some serious technological glitches. I started out trying to create a GitHub site using Jekyll, since I knew I wanted my website to be hosted via GitHub to keep all of my code in the same place. After about an hour of unsuccessful commits that resulted in a lovely white page with my name on it, I scrapped the whole venture until I heard about the &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;&lt;code&gt;blogdown&lt;/code&gt;&lt;/a&gt; R package. Since R is my programming language of choice, the idea of being able to write posts in RMarkdown and preview my site from the comfort of RStudio was tremendously appealing. I saw a research site created through Hugo’s Academic theme using &lt;code&gt;blogdown&lt;/code&gt; that referenced some helpful tutorials and decided to give the process another shot.&lt;/p&gt;

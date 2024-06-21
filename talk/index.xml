@@ -2,30 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Talks and Posters | Cecina Babich Morrow</title>
-    <link>/talk/</link>
-      <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://babichmorrowc.github.io/talk/</link>
+      <atom:link href="https://babichmorrowc.github.io/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks and Posters</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Tue, 22 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
       <title>Talks and Posters</title>
-      <link>/talk/</link>
+      <link>https://babichmorrowc.github.io/talk/</link>
     </image>
     
     <item>
+      <title>Bayesian Decision Analysis for climate decision-making: Sensitivity to decision attributes</title>
+      <link>https://babichmorrowc.github.io/talk/miniproject_2024/</link>
+      <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://babichmorrowc.github.io/talk/miniproject_2024/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>The Use of Utility: Utility functions in a Bayesian Decision Analysis framework</title>
-      <link>/talk/bootcamp_2023/</link>
+      <link>https://babichmorrowc.github.io/talk/bootcamp_2023/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>/talk/bootcamp_2023/</guid>
+      <guid>https://babichmorrowc.github.io/talk/bootcamp_2023/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 </description>
     </item>
     
     <item>
       <title>Sad strategies: making really bad ideas work for you</title>
-      <link>/talk/bio_on_tap_2020/</link>
+      <link>https://babichmorrowc.github.io/talk/bio_on_tap_2020/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/talk/bio_on_tap_2020/</guid>
+      <guid>https://babichmorrowc.github.io/talk/bio_on_tap_2020/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;
@@ -40,25 +48,25 @@
     
     <item>
       <title>Talk: Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/ibs_2019/</link>
+      <link>https://babichmorrowc.github.io/talk/ibs_2019/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/ibs_2019/</guid>
+      <guid>https://babichmorrowc.github.io/talk/ibs_2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Poster: Improving species range estimates for an arboreal species group with a parapatric distribution</title>
-      <link>/talk/mammalogy_2019/</link>
+      <link>https://babichmorrowc.github.io/talk/mammalogy_2019/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/mammalogy_2019/</guid>
+      <guid>https://babichmorrowc.github.io/talk/mammalogy_2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Talk: Using SVMs to delineate parapatric ranges: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/helenfellow_june2019/</link>
+      <link>https://babichmorrowc.github.io/talk/helenfellow_june2019/</link>
       <pubDate>Thu, 13 Jun 2019 11:30:00 +0000</pubDate>
-      <guid>/talk/helenfellow_june2019/</guid>
+      <guid>https://babichmorrowc.github.io/talk/helenfellow_june2019/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;
@@ -73,9 +81,9 @@
     
     <item>
       <title>Big vs. Small: Using ratios to compare life history strategies</title>
-      <link>/talk/brownscholars_ratiotalk_2019/</link>
+      <link>https://babichmorrowc.github.io/talk/brownscholars_ratiotalk_2019/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/brownscholars_ratiotalk_2019/</guid>
+      <guid>https://babichmorrowc.github.io/talk/brownscholars_ratiotalk_2019/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;
@@ -90,9 +98,9 @@
     
     <item>
       <title>Talk: Using SVMs to model ranges of congeneric sloth species</title>
-      <link>/talk/nysdm_march2019/</link>
+      <link>https://babichmorrowc.github.io/talk/nysdm_march2019/</link>
       <pubDate>Fri, 15 Mar 2019 14:30:00 +0000</pubDate>
-      <guid>/talk/nysdm_march2019/</guid>
+      <guid>https://babichmorrowc.github.io/talk/nysdm_march2019/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;
@@ -107,9 +115,9 @@
     
     <item>
       <title>Talk: STEM careers in museums</title>
-      <link>/talk/la_lgbt_careertalk_2019/</link>
+      <link>https://babichmorrowc.github.io/talk/la_lgbt_careertalk_2019/</link>
       <pubDate>Fri, 22 Feb 2019 17:00:00 +0000</pubDate>
-      <guid>/talk/la_lgbt_careertalk_2019/</guid>
+      <guid>https://babichmorrowc.github.io/talk/la_lgbt_careertalk_2019/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;
@@ -124,9 +132,9 @@
     
     <item>
       <title>Talk: Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>/talk/honors_presentation_2018/</link>
+      <link>https://babichmorrowc.github.io/talk/honors_presentation_2018/</link>
       <pubDate>Tue, 01 May 2018 13:00:00 +0000</pubDate>
-      <guid>/talk/honors_presentation_2018/</guid>
+      <guid>https://babichmorrowc.github.io/talk/honors_presentation_2018/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;
@@ -141,17 +149,17 @@
     
     <item>
       <title>Poster: Macroevolution of dimensionless life histories in amniotes</title>
-      <link>/talk/tree_2017/</link>
+      <link>https://babichmorrowc.github.io/talk/tree_2017/</link>
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>/talk/tree_2017/</guid>
+      <guid>https://babichmorrowc.github.io/talk/tree_2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Poster: Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
-      <link>/talk/ibs_2017/</link>
+      <link>https://babichmorrowc.github.io/talk/ibs_2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>/talk/ibs_2017/</guid>
+      <guid>https://babichmorrowc.github.io/talk/ibs_2017/</guid>
       <description>&lt;p&gt;This poster was made using version 1.4.6 of the &lt;code&gt;hypervolume&lt;/code&gt; R package. These results should not be considered representative of the current algorithms in the package - to see current algorithm performance, refer to &lt;a href=&#34;https://babichmorrowc.github.io/publication/hypervolumes/&#34;&gt;Blonder &lt;em&gt;et al.&lt;/em&gt; 2017&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>

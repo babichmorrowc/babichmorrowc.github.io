@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hypervolume | Cecina Babich Morrow</title>
-    <link>/tags/hypervolume/</link>
-      <atom:link href="/tags/hypervolume/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://babichmorrowc.github.io/tags/hypervolume/</link>
+      <atom:link href="https://babichmorrowc.github.io/tags/hypervolume/index.xml" rel="self" type="application/rss+xml" />
     <description>hypervolume</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
       <title>hypervolume</title>
-      <link>/tags/hypervolume/</link>
+      <link>https://babichmorrowc.github.io/tags/hypervolume/</link>
     </image>
     
     <item>
       <title>Exciting publication news!</title>
-      <link>/post/lifehistory-paper-highlight/</link>
+      <link>https://babichmorrowc.github.io/post/lifehistory-paper-highlight/</link>
       <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/post/lifehistory-paper-highlight/</guid>
+      <guid>https://babichmorrowc.github.io/post/lifehistory-paper-highlight/</guid>
       <description>&lt;p&gt;I wanted to make a quick (and somewhat belated) post announcing that my paper about the life history strategies of tetrapods was published in Proceedings of the Royal Society B earlier this year. You can read the paper &lt;a href=&#34;https://royalsocietypublishing.org/doi/10.1098/rspb.2021.0200&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As you might be able to tell from the date of the preprint in 2019 compared to the date of publication in 2021, this project has been quite the labor of love (and hate and everything in between). In fact, I started working on this research all the way back in 2017, while I was working in the &lt;a href=&#34;https://kerkhofflab.org/&#34;&gt;Kerkhoff Lab&lt;/a&gt; at Kenyon College. Throughout 1 more year of college, 2 job positions since, and 3+ manuscript positions, I&amp;rsquo;ve had this work in the back of my mind as my baby. Now at long last, my first first-author publication is out in the world! While the process was long and arduous, I&amp;rsquo;m incredibly proud of how everything turned out. If you have any questions, comments, or feedback, just drop me a line &amp;ndash; I would love to hear from you.&lt;/p&gt;
 </description>
@@ -24,25 +24,25 @@
     
     <item>
       <title>Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>/publication/lifehistory/</link>
+      <link>https://babichmorrowc.github.io/publication/lifehistory/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/lifehistory/</guid>
+      <guid>https://babichmorrowc.github.io/publication/lifehistory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Preprint: Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>/publication/lifehistory_preprint/</link>
+      <link>https://babichmorrowc.github.io/publication/lifehistory_preprint/</link>
       <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/lifehistory_preprint/</guid>
+      <guid>https://babichmorrowc.github.io/publication/lifehistory_preprint/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Talk: Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>/talk/honors_presentation_2018/</link>
+      <link>https://babichmorrowc.github.io/talk/honors_presentation_2018/</link>
       <pubDate>Tue, 01 May 2018 13:00:00 +0000</pubDate>
-      <guid>/talk/honors_presentation_2018/</guid>
+      <guid>https://babichmorrowc.github.io/talk/honors_presentation_2018/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;
@@ -57,42 +57,42 @@
     
     <item>
       <title>Poster: Macroevolution of dimensionless life histories in amniotes</title>
-      <link>/talk/tree_2017/</link>
+      <link>https://babichmorrowc.github.io/talk/tree_2017/</link>
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>/talk/tree_2017/</guid>
+      <guid>https://babichmorrowc.github.io/talk/tree_2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>New approaches for delineating n‐dimensional hypervolumes</title>
-      <link>/publication/hypervolumes/</link>
+      <link>https://babichmorrowc.github.io/publication/hypervolumes/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/hypervolumes/</guid>
+      <guid>https://babichmorrowc.github.io/publication/hypervolumes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Poster: Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
-      <link>/talk/ibs_2017/</link>
+      <link>https://babichmorrowc.github.io/talk/ibs_2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>/talk/ibs_2017/</guid>
+      <guid>https://babichmorrowc.github.io/talk/ibs_2017/</guid>
       <description>&lt;p&gt;This poster was made using version 1.4.6 of the &lt;code&gt;hypervolume&lt;/code&gt; R package. These results should not be considered representative of the current algorithms in the package - to see current algorithm performance, refer to &lt;a href=&#34;https://babichmorrowc.github.io/publication/hypervolumes/&#34;&gt;Blonder &lt;em&gt;et al.&lt;/em&gt; 2017&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Hypervolume package testing</title>
-      <link>/project/hypervolumes/</link>
+      <link>https://babichmorrowc.github.io/project/hypervolumes/</link>
       <pubDate>Wed, 27 Jul 2016 00:00:00 +0000</pubDate>
-      <guid>/project/hypervolumes/</guid>
+      <guid>https://babichmorrowc.github.io/project/hypervolumes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tetrapod life history traits</title>
-      <link>/project/life_history/</link>
+      <link>https://babichmorrowc.github.io/project/life_history/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/life_history/</guid>
+      <guid>https://babichmorrowc.github.io/project/life_history/</guid>
       <description></description>
     </item>
     

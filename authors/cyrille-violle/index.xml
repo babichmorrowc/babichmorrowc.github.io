@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cyrille Violle | Cecina Babich Morrow</title>
-    <link>/authors/cyrille-violle/</link>
-      <atom:link href="/authors/cyrille-violle/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://babichmorrowc.github.io/authors/cyrille-violle/</link>
+      <atom:link href="https://babichmorrowc.github.io/authors/cyrille-violle/index.xml" rel="self" type="application/rss+xml" />
     <description>Cyrille Violle</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Wed, 09 Aug 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
       <title>Cyrille Violle</title>
-      <link>/authors/cyrille-violle/</link>
+      <link>https://babichmorrowc.github.io/authors/cyrille-violle/</link>
     </image>
     
     <item>
       <title>New approaches for delineating n‐dimensional hypervolumes</title>
-      <link>/publication/hypervolumes/</link>
+      <link>https://babichmorrowc.github.io/publication/hypervolumes/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/hypervolumes/</guid>
+      <guid>https://babichmorrowc.github.io/publication/hypervolumes/</guid>
       <description></description>
     </item>
     

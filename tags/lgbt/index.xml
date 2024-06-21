@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LGBT | Cecina Babich Morrow</title>
-    <link>/tags/lgbt/</link>
-      <atom:link href="/tags/lgbt/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://babichmorrowc.github.io/tags/lgbt/</link>
+      <atom:link href="https://babichmorrowc.github.io/tags/lgbt/index.xml" rel="self" type="application/rss+xml" />
     <description>LGBT</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Fri, 22 Feb 2019 17:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
       <title>LGBT</title>
-      <link>/tags/lgbt/</link>
+      <link>https://babichmorrowc.github.io/tags/lgbt/</link>
     </image>
     
     <item>
       <title>Talk: STEM careers in museums</title>
-      <link>/talk/la_lgbt_careertalk_2019/</link>
+      <link>https://babichmorrowc.github.io/talk/la_lgbt_careertalk_2019/</link>
       <pubDate>Fri, 22 Feb 2019 17:00:00 +0000</pubDate>
-      <guid>/talk/la_lgbt_careertalk_2019/</guid>
+      <guid>https://babichmorrowc.github.io/talk/la_lgbt_careertalk_2019/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GitHub | Cecina Babich Morrow</title>
-    <link>/tags/github/</link>
-      <atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://babichmorrowc.github.io/tags/github/</link>
+      <atom:link href="https://babichmorrowc.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <description>GitHub</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Tue, 17 Sep 2019 21:13:14 -0500</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
       <title>GitHub</title>
-      <link>/tags/github/</link>
+      <link>https://babichmorrowc.github.io/tags/github/</link>
     </image>
     
     <item>
       <title>Git Workflow #1: Existing project, GitHub last</title>
-      <link>/post/2019-09-26-git-workflow1/</link>
+      <link>https://babichmorrowc.github.io/post/2019-09-26-git-workflow1/</link>
       <pubDate>Tue, 17 Sep 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-09-26-git-workflow1/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-09-26-git-workflow1/</guid>
       <description>
 
 
@@ -68,13 +68,13 @@ git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Adding Google Docs to website</title>
-      <link>/post/2018-12-12-add-google-doc/</link>
+      <link>https://babichmorrowc.github.io/post/2018-12-12-add-google-doc/</link>
       <pubDate>Wed, 12 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>/post/2018-12-12-add-google-doc/</guid>
+      <guid>https://babichmorrowc.github.io/post/2018-12-12-add-google-doc/</guid>
       <description>
 
 
-&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/google_docs_fig.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/google_docs_fig.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Given that the Academic website theme comes with a place to upload talks, I thought I might as well upload the slides for my Senior Honors presentation. Unfortunately, this was a slightly more difficult task than I anticipated. The default format for slides in Hugo appears to be Markdown slides, which is fine, except when your talk was made in Google Slides.&lt;/p&gt;
 &lt;div id=&#34;google-slides-to-markdown&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Google Slides to Markdown?&lt;/h2&gt;
@@ -111,13 +111,13 @@ git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Ordering website components</title>
-      <link>/post/2018-12-11-order-items/</link>
+      <link>https://babichmorrowc.github.io/post/2018-12-11-order-items/</link>
       <pubDate>Tue, 11 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>/post/2018-12-11-order-items/</guid>
+      <guid>https://babichmorrowc.github.io/post/2018-12-11-order-items/</guid>
       <description>
 
 
-&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:50%&#34; src=&#34;/img/out_of_order.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:50%&#34; src=&#34;https://babichmorrowc.github.io/img/out_of_order.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;As I continue setting up this site, one of the major things irking me was the order of content on the website. For example, I wasn’t loving that the first thing you saw when visiting the site was the giant picture of my face. I wanted to be able to put content at the top of the site and move information like my bio and work experience towards the bottom. Hugo allows you to weight certain types of content to change the order, so that’s what I tackled.&lt;/p&gt;
 &lt;div id=&#34;menu-links&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Menu links&lt;/h2&gt;
@@ -143,13 +143,13 @@ git commit -m &amp;quot;test commit&amp;quot;&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Creating this website</title>
-      <link>/post/2018-12-7-create-website/</link>
+      <link>https://babichmorrowc.github.io/post/2018-12-7-create-website/</link>
       <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>/post/2018-12-7-create-website/</guid>
+      <guid>https://babichmorrowc.github.io/post/2018-12-7-create-website/</guid>
       <description>
 
 
-&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/website_fig.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/website_fig.png&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;getting-started&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Getting started&lt;/h2&gt;
 &lt;p&gt;I’ve been contemplating the idea of creating a website for sometime, but my initial (mostly half-hearted) attempts ran into some serious technological glitches. I started out trying to create a GitHub site using Jekyll, since I knew I wanted my website to be hosted via GitHub to keep all of my code in the same place. After about an hour of unsuccessful commits that resulted in a lovely white page with my name on it, I scrapped the whole venture until I heard about the &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;&lt;code&gt;blogdown&lt;/code&gt;&lt;/a&gt; R package. Since R is my programming language of choice, the idea of being able to write posts in RMarkdown and preview my site from the comfort of RStudio was tremendously appealing. I saw a research site created through Hugo’s Academic theme using &lt;code&gt;blogdown&lt;/code&gt; that referenced some helpful tutorials and decided to give the process another shot.&lt;/p&gt;

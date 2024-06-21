@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>evolution | Cecina Babich Morrow</title>
-    <link>/tags/evolution/</link>
-      <atom:link href="/tags/evolution/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://babichmorrowc.github.io/tags/evolution/</link>
+      <atom:link href="https://babichmorrowc.github.io/tags/evolution/index.xml" rel="self" type="application/rss+xml" />
     <description>evolution</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Fri, 18 Jan 2019 21:13:14 -0500</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
       <title>evolution</title>
-      <link>/tags/evolution/</link>
+      <link>https://babichmorrowc.github.io/tags/evolution/</link>
     </image>
     
     <item>
       <title>Grafting phylogenies</title>
-      <link>/post/2019-01-09-grafting-trees/</link>
+      <link>https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/</link>
       <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
-      <guid>/post/2019-01-09-grafting-trees/</guid>
+      <guid>https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/</guid>
       <description>
 
 
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;/img/bodymass_tetrapod_tree.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:100%&#34; src=&#34;https://babichmorrowc.github.io/img/bodymass_tetrapod_tree.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;div id=&#34;inspiration-for-this-post&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Inspiration for this post&lt;/h1&gt;
@@ -30,7 +30,7 @@
 &lt;h2&gt;Uyeda et al. 2017&lt;/h2&gt;
 &lt;p&gt;Uyeda et al. did something similar in their 2017 paper &lt;a href=&#34;https://www.journals.uchicago.edu/doi/10.1086/692326&#34;&gt;The evolution of energetic scaling across the vertebrate tree of life&lt;/a&gt;. They stitched together fish, amphibian, squamate, bird, and mammal phylogenies together to visualize metabolic rate across all vertebrates:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/uyeda_figure.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/uyeda_figure.png&#34; /&gt;
 &lt;figcaption&gt;
 Figure 1 from Uyeda et al. 2017
 &lt;/figcaption&gt;
@@ -53,22 +53,22 @@ library(geiger)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(amphibiantree$tip.label)
 ## [1] 2871
 plot(amphibiantree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;For squamates, I used the Zheng and Wiens time-calibrated phylogeny (Zheng and Wiens 2016).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(squamatetree$tip.label)
 ## [1] 378
 plot(squamatetree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;For birds, I used the Jetz phylogeny (Jetz et al. 2012).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(birdtree$tip.label)
 ## [1] 9993
 plot(birdtree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;For mammals, I used the supertree from Fritz et al. 2009.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;length(mammaltree$tip.label)
 ## [1] 5020
 plot(mammaltree, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;reading-in-trees&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Reading in trees&lt;/h2&gt;
@@ -98,13 +98,13 @@ Nnode &amp;lt;- 4
 ordertree &amp;lt;- list(edge=edge, Nnode=Nnode, tip.label=tip.labels, edge.length=edge.length)
 class(ordertree) &amp;lt;- &amp;#39;phylo&amp;#39;
 plot(ordertree)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;To visualize the results, we can add tip labels, node labels, and edge labels to the tree with the branch lengths:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(ordertree)
 tiplabels()
 nodelabels()
 edgelabels(ordertree$edge.length, bg=&amp;quot;black&amp;quot;, col=&amp;quot;white&amp;quot;, font=2)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;getting-rid-of-fish&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Getting rid of fish&lt;/h3&gt;
 &lt;p&gt;Since I didn’t have fish, I needed to make a few modifications. First, &lt;code&gt;tip.labels&lt;/code&gt; didn’t need “fish” in it anymore:&lt;/p&gt;
@@ -126,14 +126,14 @@ tip.labels &amp;lt;- c(&amp;quot;amphib&amp;quot;, &amp;quot;squam&amp;quot;, &a
 class(ordertree) &amp;lt;- &amp;#39;phylo&amp;#39;
 plot(ordertree)
 edgelabels(ordertree$edge.length, bg=&amp;quot;black&amp;quot;, col=&amp;quot;white&amp;quot;, font=2)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;…I was ready to go with an order-level tree onto which I could graft my individual phylogenies!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;node-dates&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Node dates&lt;/h3&gt;
 &lt;p&gt;…Not so fast. I ended up with an additional problem I needed to solve before grafting the trees together. I ran into the error &lt;code&gt;&#39;split_age&#39; is inconsistent with edge lengths in &#39;phy&#39;&lt;/code&gt;, which means that the earliest node in one of my individual phylogenies was older than the node age I gave in &lt;code&gt;edge.length&lt;/code&gt;. By &lt;a href=&#34;https://babichmorrowc.github.io/post/debug-r/&#34;&gt;using &lt;code&gt;debug&lt;/code&gt;&lt;/a&gt;, I was able to tell that the error occurred when I added the squamate tree. The oldest node in my squamate tree was 277.8 million years ago, but I had set the divergence time between birds and squamates at 274.9 mya, so R was having problems. The species causing the problem was the tuatara, which is the only surviving member of its order.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/tuatara.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/tuatara.png&#34; /&gt;
 &lt;figcaption&gt;
 The pesky (yet very cute) tuatara (&lt;a href=&#34;https://www.australiangeographic.com.au/blogs/creatura-blog/2017/12/the-tuatara/&#34; class=&#34;uri&#34;&gt;https://www.australiangeographic.com.au/blogs/creatura-blog/2017/12/the-tuatara/&lt;/a&gt;)
 &lt;/figcaption&gt;
@@ -141,7 +141,7 @@ The pesky (yet very cute) tuatara (&lt;a href=&#34;https://www.australiangeograp
 &lt;p&gt;I had a couple of choices: either delete the tuatara from the squamate phylogeny or increase the age of the last common ancestor of birds and squamates when I created the vector &lt;code&gt;edge.length&lt;/code&gt;. I chose to do the latter because why get rid of such a cool animal!&lt;/p&gt;
 &lt;p&gt;I went to &lt;a href=&#34;http://timetree.org/&#34; class=&#34;uri&#34;&gt;http://timetree.org/&lt;/a&gt; to see if I could find a reasonable range of estimates for this node. According to the website, which allows you to search for the divergence time between any two taxa, the estimated divergence of birds and squamates occurred 280 mya.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;/img/timetree_birdsquamate.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:75%&#34; src=&#34;https://babichmorrowc.github.io/img/timetree_birdsquamate.png&#34; /&gt;
 &lt;figcaption&gt;
 TimeTree results for divergence time of birds and squamates.
 &lt;/figcaption&gt;
@@ -160,7 +160,7 @@ ordertree &amp;lt;- list(edge=edge, Nnode=Nnode, tip.label=tip.labels, edge.leng
 class(ordertree) &amp;lt;- &amp;#39;phylo&amp;#39;
 plot(ordertree)
 edgelabels(ordertree$edge.length, bg=&amp;quot;black&amp;quot;, col=&amp;quot;white&amp;quot;, font=2)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tree_list &amp;lt;- list(amphib=amphibiantree, birds=birdtree, squam=squamatetree, mamm=mammaltree)
 class(tree_list) &amp;lt;- &amp;quot;multiPhylo&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -175,7 +175,7 @@ classtree &amp;lt;- nodelabel.phylo(ordertree, otax, ncores=1)
 
 res &amp;lt;- glomogram.phylo(classtree, tree_list)
 plot(res, type = &amp;quot;fan&amp;quot;, show.tip.label = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://babichmorrowc.github.io/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Voila - a tree with 18262 species of tetrapods!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;

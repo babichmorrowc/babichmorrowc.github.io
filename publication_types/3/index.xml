@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3 | Cecina Babich Morrow</title>
-    <link>/publication_types/3/</link>
-      <atom:link href="/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://babichmorrowc.github.io/publication_types/3/</link>
+      <atom:link href="https://babichmorrowc.github.io/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
     <description>3</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Wed, 16 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
       <title>3</title>
-      <link>/publication_types/3/</link>
+      <link>https://babichmorrowc.github.io/publication_types/3/</link>
     </image>
     
     <item>
       <title>Preprint: Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>/publication/lifehistory_preprint/</link>
+      <link>https://babichmorrowc.github.io/publication/lifehistory_preprint/</link>
       <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/lifehistory_preprint/</guid>
+      <guid>https://babichmorrowc.github.io/publication/lifehistory_preprint/</guid>
       <description></description>
     </item>
     
