@@ -35,7 +35,15 @@
       <link>/talk/bio_on_tap_2020/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/talk/bio_on_tap_2020/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;div id=&#34;Container&#34;
+ style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
+ &lt;iframe id=&#34;googleSlideIframe&#34;
+  width=&#34;100%&#34; height=&#34;100%&#34;
+  src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vSveyLXkk95ygnjAU88LiGlN0bdX0uq2IKJr6IiEEK0gzJW3QGeccFSi9B4640orw/embed?&#34;
+  frameborder=&#34;0&#34; allowfullscreen=&#34;&#34;
+  style=&#34;position:absolute; top:0; left: 0&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
 </description>
     </item>
     
@@ -44,7 +52,15 @@
       <link>/talk/brownscholars_ratiotalk_2019/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
       <guid>/talk/brownscholars_ratiotalk_2019/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;div id=&#34;Container&#34;
+ style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
+ &lt;iframe id=&#34;googleSlideIframe&#34;
+  width=&#34;100%&#34; height=&#34;100%&#34;
+  src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vQ1T_FLUSVOYZ3YCehaGJM7gFCFMOCQMllQ9A4itkVMk5IyUJugfnE8Qt95WqqFMsV5dNintG0qQjU0/embed?&#34;
+  frameborder=&#34;0&#34; allowfullscreen=&#34;&#34;
+  style=&#34;position:absolute; top:0; left: 0&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
 </description>
     </item>
     
@@ -61,7 +77,15 @@
       <link>/talk/honors_presentation_2018/</link>
       <pubDate>Tue, 01 May 2018 13:00:00 +0000</pubDate>
       <guid>/talk/honors_presentation_2018/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;div id=&#34;Container&#34;
+ style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
+ &lt;iframe id=&#34;googleSlideIframe&#34;
+  width=&#34;100%&#34; height=&#34;100%&#34;
+  src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vTsSj-oftLksGEKTkzCoBSIpzooO61ZMGAUzoGBv7u20OzMQK8ctX3gCpWTMm4UowrrWumFrdQsY0Cd/embed?start=false&amp;amp;loop=false&amp;amp;delayms=5000&#34;
+  frameborder=&#34;0&#34; allowfullscreen=&#34;&#34;
+  style=&#34;position:absolute; top:0; left: 0&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
 </description>
     </item>
     

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BDA | Cecina Babich Morrow</title>
+    <link>/tags/bda/</link>
+      <atom:link href="/tags/bda/index.xml" rel="self" type="application/rss+xml" />
+    <description>BDA</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Sun, 21 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>BDA</title>
+      <link>/tags/bda/</link>
+    </image>
+    
+    <item>
+      <title>Bayesian Decision Analysis</title>
+      <link>/project/bayesian_decision_analysis/</link>
+      <pubDate>Sun, 21 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>/project/bayesian_decision_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Use of Utility: Utility functions in a Bayesian Decision Analysis framework</title>
+      <link>/talk/bootcamp_2023/</link>
+      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/talk/bootcamp_2023/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
