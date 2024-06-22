@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google Drive | Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/tags/google-drive/</link>
-      <atom:link href="https://babichmorrowc.github.io/tags/google-drive/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/google-drive/</link>
+      <atom:link href="/tags/google-drive/index.xml" rel="self" type="application/rss+xml" />
     <description>Google Drive</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Google Drive</title>
-      <link>https://babichmorrowc.github.io/tags/google-drive/</link>
+      <link>/tags/google-drive/</link>
     </image>
     
     <item>
       <title>Getting your own Google API credentials for R</title>
-      <link>https://babichmorrowc.github.io/post/google-api-creds/</link>
+      <link>/post/google-api-creds/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/post/google-api-creds/</guid>
+      <guid>/post/google-api-creds/</guid>
       <description>
 
 
@@ -25,7 +25,7 @@
 &lt;p&gt;My quest to make Google Drive play nice with R continues! If you’ve read &lt;a href=&#34;https://babichmorrowc.github.io/post/google-creds/&#34;&gt;my last post&lt;/a&gt;, you’ll know the process for using &lt;code&gt;googledrive&lt;/code&gt; and/or &lt;code&gt;googlesheets4&lt;/code&gt; to access data from Google Drive in a non-interactive context, e.g. deploying a data product to RStudio Connect. This process works wonderfully…most of the time. When deploying processes accessing Google Drive that are automated and run regularly, or simply make large requests of Drive, you can start to run into problems with Google Drive’s API quota.&lt;/p&gt;
 &lt;p&gt;I started getting 429 errors like the following for projects using &lt;code&gt;googlesheets4&lt;/code&gt; to read and write data:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;https://babichmorrowc.github.io/img/google_quota_error.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/google_quota_error.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;p&gt;In life overall, I would usually respond to such a quota error by sucking it up and trying to find a way to make fewer requests from an API, but I started getting this error in situations where my code was just writing a 4 row Google Sheet. I assumed that there was no way that this could actually be hitting a rate limit, so I did some more digging.&lt;/p&gt;
 &lt;/div&gt;
@@ -33,7 +33,7 @@
 &lt;h2&gt;The problem&lt;/h2&gt;
 &lt;p&gt;After a seemingly endless slog through the GitHub issues for the &lt;code&gt;googlesheets4&lt;/code&gt; package, I found the following goldmine of a quote from the amazing Jenny Bryan in &lt;a href=&#34;https://github.com/tidyverse/googlesheets4/issues/189&#34;&gt;this GitHub issue&lt;/a&gt;:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;https://babichmorrowc.github.io/img/jbryan_comment.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/jbryan_comment.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;p&gt;So here was my problem: “Everyone who uses googlesheets4, by default, is sharing the same quota.” In the words of Jenny Bryan once more, “This sounds wild, but it’s true.” So my problem was not that writing a 4 line Google Sheet exceeds Google’s quota, but rather that all users of the package fill the same quota, meaning my 4 lines may or may not get bumped over the shared limit.&lt;/p&gt;
 &lt;/div&gt;
@@ -116,9 +116,9 @@ gs4_auth_configure(app = google_app)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Publishing to RStudio Connect with Google credentials</title>
-      <link>https://babichmorrowc.github.io/post/google-account-creds/</link>
+      <link>/post/google-account-creds/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/post/google-account-creds/</guid>
+      <guid>/post/google-account-creds/</guid>
       <description>
 
 
@@ -146,7 +146,7 @@ googlesheets4::gs4_auth(email = &amp;quot;babichmorrowc@gmail.com&amp;quot;, # R
 &lt;p&gt;When you run each of these, a browser window should open asking you to authorize. You’ll then have to copy the authorization code and paste it back into the console of RStudio.&lt;/p&gt;
 &lt;p&gt;After doing so, you should have generated files in a folder called &lt;code&gt;.secrets&lt;/code&gt;. To check, you can either run &lt;code&gt;list.files(&#34;.secrets/&#34;)&lt;/code&gt; in your console, or display hidden files in your file browser as below to verify that the files have been generated:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;https://babichmorrowc.github.io/img/show_hidden_files.png&#34; /&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;/img/show_hidden_files.png&#34; /&gt;
 &lt;/figure&gt;
 &lt;/div&gt;
 &lt;div id=&#34;authorize-your-packages-in-the-code&#34; class=&#34;section level2&#34;&gt;

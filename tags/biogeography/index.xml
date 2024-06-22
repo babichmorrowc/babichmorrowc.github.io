@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>biogeography | Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/tags/biogeography/</link>
-      <atom:link href="https://babichmorrowc.github.io/tags/biogeography/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/biogeography/</link>
+      <atom:link href="/tags/biogeography/index.xml" rel="self" type="application/rss+xml" />
     <description>biogeography</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>biogeography</title>
-      <link>https://babichmorrowc.github.io/tags/biogeography/</link>
+      <link>/tags/biogeography/</link>
     </image>
     
     <item>
       <title>Operationalizing expert knowledge in species’ range estimates using diverse data types</title>
-      <link>https://babichmorrowc.github.io/publication/rangeestimates/</link>
+      <link>/publication/rangeestimates/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/publication/rangeestimates/</guid>
+      <guid>/publication/rangeestimates/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Talk: Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
-      <link>https://babichmorrowc.github.io/talk/ibs_2019/</link>
+      <link>/talk/ibs_2019/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/ibs_2019/</guid>
+      <guid>/talk/ibs_2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Poster: Improving species range estimates for an arboreal species group with a parapatric distribution</title>
-      <link>https://babichmorrowc.github.io/talk/mammalogy_2019/</link>
+      <link>/talk/mammalogy_2019/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/mammalogy_2019/</guid>
+      <guid>/talk/mammalogy_2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Distribution modeling of Bradypus</title>
-      <link>https://babichmorrowc.github.io/project/bradypus/</link>
+      <link>/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/project/bradypus/</guid>
+      <guid>/project/bradypus/</guid>
       <description></description>
     </item>
     

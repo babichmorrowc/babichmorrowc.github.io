@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/authors/babichmorrowc/</link>
-      <atom:link href="https://babichmorrowc.github.io/authors/babichmorrowc/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/babichmorrowc/</link>
+      <atom:link href="/authors/babichmorrowc/index.xml" rel="self" type="application/rss+xml" />
     <description>Cecina Babich Morrow</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright>
     <image>
-      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Cecina Babich Morrow</title>
-      <link>https://babichmorrowc.github.io/authors/babichmorrowc/</link>
+      <link>/authors/babichmorrowc/</link>
     </image>
     
   </channel>

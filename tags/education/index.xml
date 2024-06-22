@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>education | Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/tags/education/</link>
-      <atom:link href="https://babichmorrowc.github.io/tags/education/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/education/</link>
+      <atom:link href="/tags/education/index.xml" rel="self" type="application/rss+xml" />
     <description>education</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>education</title>
-      <link>https://babichmorrowc.github.io/tags/education/</link>
+      <link>/tags/education/</link>
     </image>
     
     <item>
       <title>Sad strategies: making really bad ideas work for you</title>
-      <link>https://babichmorrowc.github.io/talk/bio_on_tap_2020/</link>
+      <link>/talk/bio_on_tap_2020/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/bio_on_tap_2020/</guid>
+      <guid>/talk/bio_on_tap_2020/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;
@@ -31,9 +31,9 @@
     
     <item>
       <title>Big vs. Small: Using ratios to compare life history strategies</title>
-      <link>https://babichmorrowc.github.io/talk/brownscholars_ratiotalk_2019/</link>
+      <link>/talk/brownscholars_ratiotalk_2019/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/brownscholars_ratiotalk_2019/</guid>
+      <guid>/talk/brownscholars_ratiotalk_2019/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;
@@ -48,9 +48,9 @@
     
     <item>
       <title>Talk: STEM careers in museums</title>
-      <link>https://babichmorrowc.github.io/talk/la_lgbt_careertalk_2019/</link>
+      <link>/talk/la_lgbt_careertalk_2019/</link>
       <pubDate>Fri, 22 Feb 2019 17:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/la_lgbt_careertalk_2019/</guid>
+      <guid>/talk/la_lgbt_careertalk_2019/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;

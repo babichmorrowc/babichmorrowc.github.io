@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>S.K. Morgan Ernest | Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/authors/s.k.-morgan-ernest/</link>
-      <atom:link href="https://babichmorrowc.github.io/authors/s.k.-morgan-ernest/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/s.k.-morgan-ernest/</link>
+      <atom:link href="/authors/s.k.-morgan-ernest/index.xml" rel="self" type="application/rss+xml" />
     <description>S.K. Morgan Ernest</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>S.K. Morgan Ernest</title>
-      <link>https://babichmorrowc.github.io/authors/s.k.-morgan-ernest/</link>
+      <link>/authors/s.k.-morgan-ernest/</link>
     </image>
     
     <item>
       <title>Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>https://babichmorrowc.github.io/publication/lifehistory/</link>
+      <link>/publication/lifehistory/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/publication/lifehistory/</guid>
+      <guid>/publication/lifehistory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Preprint: Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>https://babichmorrowc.github.io/publication/lifehistory_preprint/</link>
+      <link>/publication/lifehistory_preprint/</link>
       <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/publication/lifehistory_preprint/</guid>
+      <guid>/publication/lifehistory_preprint/</guid>
       <description></description>
     </item>
     

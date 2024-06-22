@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Drew Kerkhoff | Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/authors/drew-kerkhoff/</link>
-      <atom:link href="https://babichmorrowc.github.io/authors/drew-kerkhoff/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/drew-kerkhoff/</link>
+      <atom:link href="/authors/drew-kerkhoff/index.xml" rel="self" type="application/rss+xml" />
     <description>Drew Kerkhoff</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Tue, 01 May 2018 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Drew Kerkhoff</title>
-      <link>https://babichmorrowc.github.io/authors/drew-kerkhoff/</link>
+      <link>/authors/drew-kerkhoff/</link>
     </image>
     
     <item>
       <title>Talk: Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>https://babichmorrowc.github.io/talk/honors_presentation_2018/</link>
+      <link>/talk/honors_presentation_2018/</link>
       <pubDate>Tue, 01 May 2018 13:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/honors_presentation_2018/</guid>
+      <guid>/talk/honors_presentation_2018/</guid>
       <description>&lt;div id=&#34;Container&#34;
  style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
  &lt;iframe id=&#34;googleSlideIframe&#34;
@@ -31,9 +31,9 @@
     
     <item>
       <title>Poster: Macroevolution of dimensionless life histories in amniotes</title>
-      <link>https://babichmorrowc.github.io/talk/tree_2017/</link>
+      <link>/talk/tree_2017/</link>
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/tree_2017/</guid>
+      <guid>/talk/tree_2017/</guid>
       <description></description>
     </item>
     

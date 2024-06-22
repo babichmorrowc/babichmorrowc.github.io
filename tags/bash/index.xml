@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bash | Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/tags/bash/</link>
-      <atom:link href="https://babichmorrowc.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/bash/</link>
+      <atom:link href="/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <description>bash</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>bash</title>
-      <link>https://babichmorrowc.github.io/tags/bash/</link>
+      <link>/tags/bash/</link>
     </image>
     
     <item>
       <title>Scheduling R Scripts</title>
-      <link>https://babichmorrowc.github.io/post/launchd-jobs/</link>
+      <link>/post/launchd-jobs/</link>
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/post/launchd-jobs/</guid>
+      <guid>/post/launchd-jobs/</guid>
       <description>
 
 

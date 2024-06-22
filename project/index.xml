@@ -2,45 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/project/</link>
-      <atom:link href="https://babichmorrowc.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>/project/</link>
+      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Sun, 21 Jul 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Projects</title>
-      <link>https://babichmorrowc.github.io/project/</link>
+      <link>/project/</link>
     </image>
     
     <item>
+      <title>Bayesian Decision Analysis</title>
+      <link>/project/bayesian_decision_analysis/</link>
+      <pubDate>Sun, 21 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>/project/bayesian_decision_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mental health outcomes</title>
-      <link>https://babichmorrowc.github.io/project/mental_health_outcomes/</link>
+      <link>/project/mental_health_outcomes/</link>
       <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/project/mental_health_outcomes/</guid>
+      <guid>/project/mental_health_outcomes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Distribution modeling of Bradypus</title>
-      <link>https://babichmorrowc.github.io/project/bradypus/</link>
+      <link>/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/project/bradypus/</guid>
+      <guid>/project/bradypus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hypervolume package testing</title>
-      <link>https://babichmorrowc.github.io/project/hypervolumes/</link>
+      <link>/project/hypervolumes/</link>
       <pubDate>Wed, 27 Jul 2016 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/project/hypervolumes/</guid>
+      <guid>/project/hypervolumes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tetrapod life history traits</title>
-      <link>https://babichmorrowc.github.io/project/life_history/</link>
+      <link>/project/life_history/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/project/life_history/</guid>
+      <guid>/project/life_history/</guid>
       <description></description>
     </item>
     
