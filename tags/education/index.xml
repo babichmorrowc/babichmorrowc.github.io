@@ -1,67 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>education | Cecina Babich Morrow</title>
-    <link>/tags/education/</link>
-      <atom:link href="/tags/education/index.xml" rel="self" type="application/rss+xml" />
-    <description>education</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>/img/icon-192.png</url>
-      <title>education</title>
-      <link>/tags/education/</link>
-    </image>
-    
+    <title>Education on Cecina Babich Morrow</title>
+    <link>//localhost:4724/tags/education/</link>
+    <description>Recent content in Education on Cecina Babich Morrow</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4724/tags/education/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Sad strategies: making really bad ideas work for you</title>
-      <link>/talk/bio_on_tap_2020/</link>
+      <title>[Outreach] Sad strategies: making really bad ideas work for you</title>
+      <link>//localhost:4724/talk/bio_on_tap_2020/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/talk/bio_on_tap_2020/</guid>
-      <description>&lt;div id=&#34;Container&#34;
- style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
- &lt;iframe id=&#34;googleSlideIframe&#34;
-  width=&#34;100%&#34; height=&#34;100%&#34;
-  src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vSveyLXkk95ygnjAU88LiGlN0bdX0uq2IKJr6IiEEK0gzJW3QGeccFSi9B4640orw/embed?&#34;
-  frameborder=&#34;0&#34; allowfullscreen=&#34;&#34;
-  style=&#34;position:absolute; top:0; left: 0&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-</description>
+      <guid>//localhost:4724/talk/bio_on_tap_2020/</guid>
+      <description>Outreach talk as part of &#xA;&lt;a href=&#34;https://www.facebook.com/biologyontap/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Biology on Tap&lt;/a&gt;, a monthly event for biology popular science talks.</description>
     </item>
-    
     <item>
-      <title>Big vs. Small: Using ratios to compare life history strategies</title>
-      <link>/talk/brownscholars_ratiotalk_2019/</link>
+      <title>[Outreach] Big vs. Small: Using ratios to compare life history strategies</title>
+      <link>//localhost:4724/talk/brownscholars_ratiotalk_2019/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/brownscholars_ratiotalk_2019/</guid>
-      <description>&lt;div id=&#34;Container&#34;
- style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
- &lt;iframe id=&#34;googleSlideIframe&#34;
-  width=&#34;100%&#34; height=&#34;100%&#34;
-  src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vQ1T_FLUSVOYZ3YCehaGJM7gFCFMOCQMllQ9A4itkVMk5IyUJugfnE8Qt95WqqFMsV5dNintG0qQjU0/embed?&#34;
-  frameborder=&#34;0&#34; allowfullscreen=&#34;&#34;
-  style=&#34;position:absolute; top:0; left: 0&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-</description>
+      <guid>//localhost:4724/talk/brownscholars_ratiotalk_2019/</guid>
+      <description>Outreach talk for high school students in the first year of the Brown Scholars program to start off their unit on paleoneurobiology.</description>
     </item>
-    
     <item>
-      <title>Talk: STEM careers in museums</title>
-      <link>/talk/la_lgbt_careertalk_2019/</link>
-      <pubDate>Fri, 22 Feb 2019 17:00:00 +0000</pubDate>
-      <guid>/talk/la_lgbt_careertalk_2019/</guid>
-      <description>&lt;div id=&#34;Container&#34;
- style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
- &lt;iframe id=&#34;googleSlideIframe&#34;
-  width=&#34;100%&#34; height=&#34;100%&#34;
-  src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vT-sB5lS2bKsitOCUenYo1xA3pMzCxfo37TAnB408noR6SJPJpePBfei6p6FMylQFdmJ-FI4z-himQc/embed?start=false&amp;amp;loop=false&amp;amp;delayms=5000&#34;
-  frameborder=&#34;0&#34; allowfullscreen=&#34;&#34;
-  style=&#34;position:absolute; top:0; left: 0&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-</description>
+      <title>[Outreach] STEM careers in museums</title>
+      <link>//localhost:4724/talk/la_lgbt_careertalk_2019/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>//localhost:4724/talk/la_lgbt_careertalk_2019/</guid>
+      <description>Outreach talk to Los Angeles LGBT Youth Center talking about my work at AMNH.</description>
     </item>
-    
   </channel>
 </rss>

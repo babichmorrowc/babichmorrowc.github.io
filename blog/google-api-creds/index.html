@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4724&amp;path=livereload" data-no-instant defer></script>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.128.0">
+<title>Getting your own Google API credentials for R | Cecina Babich Morrow</title>
+
+
+<meta property="twitter:site" content="@babichmorrowc">
+<meta property="twitter:creator" content="@babichmorrowc">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="How to handle Google API quota issues with the `googlesheets4` package.">
+
+
+<meta property="og:site_name" content="Cecina Babich Morrow">
+<meta property="og:title" content="Getting your own Google API credentials for R | Cecina Babich Morrow">
+<meta property="og:description" content="How to handle Google API quota issues with the `googlesheets4` package." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="//localhost:4724/blog/google-api-creds/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="//localhost:4724/blog/google-api-creds/featured.png" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="//localhost:4724/blog/google-api-creds/featured.png" >
+    
+    
+  
+  <meta itemprop="name" content="Getting your own Google API credentials for R">
+  <meta itemprop="description" content="How to handle Google API quota issues with the googlesheets4 package.">
+  <meta itemprop="datePublished" content="2020-12-04T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2020-12-04T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1530">
+  <meta itemprop="image" content="//localhost:4724/blog/google-api-creds/featured.png">
+  <meta itemprop="keywords" content="R,Google">
+  
+  
+
+
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon_io/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.efe606a4a38248e49cb083e10d55824649e30549b2438e91c5513e6ccbbb543d.css" integrity="sha256-7&#43;YGpKOCSOScsIPhDVWCRknjBUmyQ46RxVE&#43;bMu7VD0=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.8775cb64fbeada525af486d0e6a80a9042ba0c7a7958fc22c03e42d5abc3fe1f.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="//localhost:4724/" title="Home">
+      <img src="/img/favicon_io/favicon.ico" class="dib db-l h2 w-auto" alt="Cecina Babich Morrow">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About Cecina">About</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/blog/" title="Blog">Blog</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/project/" title="Project Portfolio">Projects</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/talk/" title="Talks">Talks</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/publication/" title="Publications">Publications</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/contact/" title="Contact">Contact</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+<main class="page-main pa4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Getting your own Google API credentials for R</h1>
+        <h4 class="f4 mt0 mb4 lh-title measure">How to handle Google API quota issues with the `googlesheets4` package.</h4>
+        <p class="f6 measure lh-copy mv1"> in <a href="//localhost:4724/categories/r">R</a>  <a href="//localhost:4724/categories/google">Google</a> </p>
+        <p class="f7 db mv0 ttu">December 4, 2020</p>
+
+      
+
+      </header>
+      <section class="post-body pt5 pb4">
+        
+
+
+<div id="inspiration-for-this-post" class="section level2">
+<h2>Inspiration for this post</h2>
+<p>My quest to make Google Drive play nice with R continues! If you’ve read <a href="https://babichmorrowc.github.io/post/google-creds/">my last post</a>, you’ll know the process for using <code>googledrive</code> and/or <code>googlesheets4</code> to access data from Google Drive in a non-interactive context, e.g. deploying a data product to RStudio Connect. This process works wonderfully…most of the time. When deploying processes accessing Google Drive that are automated and run regularly, or simply make large requests of Drive, you can start to run into problems with Google Drive’s API quota.</p>
+<p>I started getting 429 errors like the following for projects using <code>googlesheets4</code> to read and write data:</p>
+<figure>
+<img class="special-img-class" style="width:80%" src="/img/google_quota_error.png" />
+</figure>
+<p>In life overall, I would usually respond to such a quota error by sucking it up and trying to find a way to make fewer requests from an API, but I started getting this error in situations where my code was just writing a 4 row Google Sheet. I assumed that there was no way that this could actually be hitting a rate limit, so I did some more digging.</p>
+</div>
+<div id="the-problem" class="section level2">
+<h2>The problem</h2>
+<p>After a seemingly endless slog through the GitHub issues for the <code>googlesheets4</code> package, I found the following goldmine of a quote from the amazing Jenny Bryan in <a href="https://github.com/tidyverse/googlesheets4/issues/189">this GitHub issue</a>:</p>
+<figure>
+<img class="special-img-class" style="width:80%" src="/img/jbryan_comment.png" />
+</figure>
+<p>So here was my problem: “Everyone who uses googlesheets4, by default, is sharing the same quota.” In the words of Jenny Bryan once more, “This sounds wild, but it’s true.” So my problem was not that writing a 4 line Google Sheet exceeds Google’s quota, but rather that all users of the package fill the same quota, meaning my 4 lines may or may not get bumped over the shared limit.</p>
+</div>
+<div id="the-solution" class="section level2">
+<h2>The solution</h2>
+<p>If everyone is sharing the same quota, the fix to my problem was to get my own quota. Based on my research, I found that the <code>gargle</code> instructions on API credentials <a href="https://gargle.r-lib.org/articles/get-api-credentials.html">here</a> were the definitive source of truth for getting one’s own API credentials. I would definitely recommend this as a starting point for anyone trying to acquire your own credentials to get a separate quota. However, I had some difficulty actually figuring out these instructions and implementing them, so for anyone in the same boat, I’ve outlined my process below.</p>
+<div id="set-up-a-google-cloud-project" class="section level3">
+<h3>Set up a Google Cloud project</h3>
+<p>First, you need to create a new Google Cloud project by visiting <a href="https://console.cloud.google.com" class="uri">https://console.cloud.google.com</a>. Create a new project by clicking on “Select a project” (or a project name) to the right of “Google Cloud Platform” in the top left corner. From here, you can create “NEW PROJECT”. Enter your desired project name (and Organization if applicable). If you already have a project set up that you want to use, you can select that project instead.</p>
+</div>
+<div id="enable-apis" class="section level3">
+<h3>Enable APIs</h3>
+<p>In order to read and write from a Google Sheet in R, I needed the Google Drive API and the Google Sheets API. You may need more than this if your project is getting fancier, but you can start here and add more. To add any API, click on the hamburger menu in the top left, click “APIs &amp; Services” &gt; “Library”, and search for the desired APIs by name. When you find the one(s) you want, click “Enable.” You can modify which APIs are enabled at any time.</p>
+<p>The <code>gargle</code> tutorial notes that some APIs require a linked billing account. If you are only working with Drive and Sheets, you do not need a billing account. If you do require billing, you have some options, like <a href="https://cloud.google.com/free/">GCP free tier</a>. If you are going with a paid plan, though, you will want to lock down access to the API even more carefully to avoid unwanted charges.</p>
+</div>
+<div id="api-keys-oauth-ids-and-service-accounts-oh-my" class="section level3">
+<h3>API Keys, OAuth IDs, and service accounts, oh my!</h3>
+<p>Up to this point the <a href="https://gargle.r-lib.org/articles/get-api-credentials.html"><code>gargle</code> tutorial</a> worked quite well for me. Here is where my struggles began, however. When you go to the hamburger menu, “APIs &amp; Services” &gt; “Credentials”, you’ll see that there are 3 options for types of credentials for your project:</p>
+<ol style="list-style-type: decimal">
+<li>API Keys</li>
+<li>OAuth 2.0 Client IDs</li>
+<li>Service Accounts</li>
+</ol>
+<p>I found it difficult to grasp the distinction between these three types of credentials, so here is what I’ve discovered (<a href="https://stackoverflow.com/questions/39181501/whats-the-difference-between-api-key-client-id-and-service-account">this Stackoverflow</a> was particularly helpful):</p>
+<ol style="list-style-type: decimal">
+<li>API Keys: Use an API key if you are accessing something that is available to the public.</li>
+<li>OAuth 2.0 Client IDs: Use an OAuth 2.0 Client ID if you need to access something that is privately available to you / your organization, e.g. something in your Google Drive, something in your company’s Google Drive, etc.</li>
+<li>Service Accounts: Use a service account if you want to delegate your request to an account separate from your own. You will need give this service account any Google permissions that are required in your code.</li>
+</ol>
+<p>In my use case, I needed to access information from a private Google Drive in a non-interactive context. In order to do this successfully, I ended up using OAuth (option #2), but I will show code for all 3 options below. For further reference on using each of these options, I recommend <a href="https://gargle.r-lib.org/articles/non-interactive-auth.html">this tutorial</a> about non-interactive auth with <code>gargle</code>.</p>
+<div id="api-keys" class="section level4">
+<h4>API keys</h4>
+<p>This is the easiest way to get your own quota for a project that requires accessing a publicly available resource through R. To create an API key for your Google Cloud Project, go to “APIs &amp; Services” &gt; “Credentials” &gt; “+ CREATE CREDENTIALS” &gt; “API key”. You can copy the key when you create it, but you’ll always be able to go back to your Credentials page and re-copy the key later. I suggest storing the key in a password manager and/or your <code>.Rprofile</code> so it is easy to find later.</p>
+<p>Once you have your key, you can use <code>googlesheets4</code> in the following way:</p>
+<pre class="r"><code>google_cloud_api_key &lt;- &quot;YOUR API KEY&quot;
+gs4_auth_configure(api_key = google_cloud_api_key)
+
+gs4_example(&quot;gapminder&quot;) %&gt;% 
+    read_sheet()</code></pre>
+<p>You may need to run the first two lines in your console (i.e. in an interactive setting) first to grant permissions, but then your document should be set either for knitting or for deploying.</p>
+</div>
+<div id="oauth-2.0-client-ids" class="section level4">
+<h4>OAuth 2.0 client IDs</h4>
+<p>These types of tokens allow you to make requests on behalf of yourself, the user. To create an OAuth 2.0 client ID, go to “APIs &amp; Services” &gt; “Credentials” &gt; “+ CREATE CREDENTIALS” &gt; “OAuth client ID”. Select “Desktop client”. As with the API key, you can copy the client ID and secret now, or find them later in the “Credentials” page.</p>
+<p>There are two options for accessing the ID you create: (1) via the client ID and secret, and (2) via downloading a JSON file. In either case, you’ll want to protect this information, either by storing the ID and secret in a password manager or saving the JSON file in a protected folder, like <code>.secrets</code>.</p>
+<p>If you use the ID and secret, your code will look something like this:</p>
+<pre class="r"><code># Create an OAuth app with httr
+google_app &lt;- httr::oauth_app(&quot;google-api&quot;,
+                              key = &quot;YOUR GOOGLE CLOUD OAUTH KEY&quot;,
+                              secret = &quot;YOUR GOOGLE CLOUD SECRET&quot;)
+
+gs4_auth_configure(app = google_app)</code></pre>
+<p>If you download the JSON instead, your code will look like this:</p>
+<pre class="r"><code>gs4_auth_configure(path = &quot;/PATH/TO/THE/DOWNLOADED/OAUTH/JSON.json&quot;)</code></pre>
+<p>This is the solution that ended up working for my purposes for 2 reasons. First, it allowed me to access private resources on Google Drive (unlike an API key), and second, it allowed me to access those resources via my own Google account (unlike a service account).</p>
+</div>
+<div id="service-account-tokens" class="section level4">
+<h4>Service account tokens</h4>
+<p>This is the final way to get credentials. I initially tried this method, since the <a href="https://gargle.r-lib.org/articles/get-api-credentials.html"><code>gargle</code> tutorial</a> says that is “the most proper way to make authorized requests to an API in a non-interactive context.” For this to work, however, I would have then needed the ability to make my service account a member of my team’s Google Drive. Because of security, this wasn’t a possibility for me, but if that is something you can do, option #3 is the way to go! You would just need to give your service account (which will have a name something like <code>my-service-account-name@my-google-project-name.iam.gserviceaccount.com</code>) access to whatever Drive files or services you’d like to access.</p>
+<p>To generate a service account token, go to “APIs &amp; Services” &gt; “Credentials” &gt; “+ CREATE CREDENTIALS” &gt; “Service account”. Give your new account a good name and description, provide account permissions if necessary, and potentially grant users access. After you click “Create key”, you’ll have the opportunity to download a JSON. Save this in a secure location, like your <code>.secrets</code> folder, for example. To use it in your document, add the following:</p>
+<pre class="r"><code>gs4_auth_configure(path = &quot;/PATH/TO/THE/DOWNLOADED/SERVICE/ACCOUNT/JSON.json&quot;)</code></pre>
+<p>Note, there is a way to make your new service account token function as your account, although I have not tried this. If you want to carry out processes on behalf of yourself or some specific user, instead of as <code>my-service-account-name@my-google-project-name.iam.gserviceaccount.com</code>, there is a process known as “impersonation” that is discussed more <a href="https://gargle.r-lib.org/articles/non-interactive-auth.html#provide-a-service-account-token-directly-1">here</a>. If you don’t have the access level to do this (which was my situation), than an OAuth user token is the way to go.</p>
+</div>
+</div>
+</div>
+<div id="additional-resources" class="section level2">
+<h2>Additional resources</h2>
+<p>I found the additional resources helpful when writing this post:</p>
+<ul>
+<li><a href="https://github.com/tidyverse/googlesheets4/issues/139">Hitting quota limits GitHub issue</a></li>
+<li><a href="https://github.com/tidyverse/googlesheets4/issues/189">Quota limit GitHub issue</a></li>
+<li><a href="https://gargle.r-lib.org/articles/get-api-credentials.html"><code>gargle</code> instructions on API credentials</a></li>
+<li><a href="https://gargle.r-lib.org/articles/non-interactive-auth.html"><code>gargle</code> instructions on non-interactive authorization</a></li>
+<li><a href="https://googlesheets4.tidyverse.org/reference/sheets_auth_configure.html"><code>googlesheets4</code> instructions on auth configuration</a></li>
+<li><a href="https://stackoverflow.com/questions/39181501/whats-the-difference-between-api-key-client-id-and-service-account">Stack Overflow discussion of the 3 types of credentials</a></li>
+</ul>
+</div>
+
+        
+        <details closed class="f6 fw7 input-reset">
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Posted on:</dt>
+    <dd class="fw5 ml0">December 4, 2020</dd>
+  </dl>
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Length:</dt>
+    <dd class="fw5 ml0">8 minute read, 1530 words</dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Categories:</dt>
+    <dd class="fw5 ml0"> <a href="//localhost:4724/categories/r">R</a>  <a href="//localhost:4724/categories/google">Google</a> </dd>
+  </dl>
+  
+  
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Tags:</dt>
+    <dd class="fw5 ml0"> <a href="//localhost:4724/tags/r">R</a>  <a href="//localhost:4724/tags/google">Google</a> </dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">See Also:</dt>
+    
+    <dd class="fw5 ml0"><a href="/blog/2024-07-02-leastsquares-regression/">Least squares regression: Part 1</a></dd>
+    
+    <dd class="fw5 ml0"><a href="/project/mental_health_outcomes/">Mental health outcomes</a></dd>
+    
+    <dd class="fw5 ml0"><a href="/publication/clin_fin_mh_outcomes/">Clinical and Financial Outcomes Associated With a Workplace Mental Health Program Before and During the COVID-19 Pandemic</a></dd>
+    
+  </dl>
+</details>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="//localhost:4724/blog/lifehistory-paper-highlight/">&larr; Exciting publication news!</a>
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="//localhost:4724/blog/google-account-creds/">Publishing to RStudio Connect with Google credentials &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+      <div class="post-comments pa0 pa4-l mt4">
+  
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "babichmorrowc-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  
+</div>
+
+    
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2024 Cecina Babich Morrow, Anywhere
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="/contact/" title="envelope" >
+      <i class="fas fa-envelope fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/babichmorrowc" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://scholar.google.com/citations?user=20mEEooAAAAJ&amp;hl=en" title="google-scholar" target="_blank" rel="me noopener">
+      <i class="fab fa-google-scholar fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://orcid.org/my-orcid?orcid=0000-0003-2188-1495" title="orcid" target="_blank" rel="me noopener">
+      <i class="fab fa-orcid fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://x.com/babichmorrowc" title="x-twitter" target="_blank" rel="me noopener">
+      <i class="fab fa-x-twitter fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+      <a class="dib pv1 ph2 link" href="/contributors/" title="Contributors">Contributors</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

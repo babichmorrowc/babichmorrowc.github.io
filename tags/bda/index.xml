@@ -1,41 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>BDA | Cecina Babich Morrow</title>
-    <link>/tags/bda/</link>
-      <atom:link href="/tags/bda/index.xml" rel="self" type="application/rss+xml" />
-    <description>BDA</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Sun, 21 Jul 2024 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>/img/icon-192.png</url>
-      <title>BDA</title>
-      <link>/tags/bda/</link>
-    </image>
-    
+    <title>BDA on Cecina Babich Morrow</title>
+    <link>//localhost:4724/tags/bda/</link>
+    <description>Recent content in BDA on Cecina Babich Morrow</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4724/tags/bda/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bayesian Decision Analysis</title>
-      <link>/project/bayesian_decision_analysis/</link>
+      <link>//localhost:4724/project/bayesian_decision_analysis/</link>
       <pubDate>Sun, 21 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>/project/bayesian_decision_analysis/</guid>
+      <guid>//localhost:4724/project/bayesian_decision_analysis/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Bayesian Decision Analysis for climate decision-making: Sensitivity to decision attributes</title>
-      <link>/talk/miniproject_2024/</link>
+      <title>[Talk] Bayesian Decision Analysis for climate decision-making: Sensitivity to decision attributes</title>
+      <link>//localhost:4724/talk/miniproject_2024/</link>
       <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
-      <guid>/talk/miniproject_2024/</guid>
-      <description></description>
+      <guid>//localhost:4724/talk/miniproject_2024/</guid>
+      <description>Investigating the sensitivity of BDA to changes in cost-related decision attributes for an idealized example.</description>
     </item>
-    
     <item>
-      <title>The Use of Utility: Utility functions in a Bayesian Decision Analysis framework</title>
-      <link>/talk/bootcamp_2023/</link>
+      <title>[Talk] The Use of Utility: Utility functions in a Bayesian Decision Analysis framework</title>
+      <link>//localhost:4724/talk/bootcamp_2023/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>/talk/bootcamp_2023/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-</description>
+      <guid>//localhost:4724/talk/bootcamp_2023/</guid>
+      <description>My presentation for the Bootcamp unit of the Compass PhD program.</description>
     </item>
-    
   </channel>
 </rss>

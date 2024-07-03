@@ -1,33 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LGBT | Cecina Babich Morrow</title>
-    <link>/tags/lgbt/</link>
-      <atom:link href="/tags/lgbt/index.xml" rel="self" type="application/rss+xml" />
-    <description>LGBT</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Fri, 22 Feb 2019 17:00:00 +0000</lastBuildDate>
-    <image>
-      <url>/img/icon-192.png</url>
-      <title>LGBT</title>
-      <link>/tags/lgbt/</link>
-    </image>
-    
+    <title>LGBT on Cecina Babich Morrow</title>
+    <link>//localhost:4724/tags/lgbt/</link>
+    <description>Recent content in LGBT on Cecina Babich Morrow</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4724/tags/lgbt/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Talk: STEM careers in museums</title>
-      <link>/talk/la_lgbt_careertalk_2019/</link>
-      <pubDate>Fri, 22 Feb 2019 17:00:00 +0000</pubDate>
-      <guid>/talk/la_lgbt_careertalk_2019/</guid>
-      <description>&lt;div id=&#34;Container&#34;
- style=&#34;padding-bottom:56.25%; position:relative; display:block; width: 100%&#34;&gt;
- &lt;iframe id=&#34;googleSlideIframe&#34;
-  width=&#34;100%&#34; height=&#34;100%&#34;
-  src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vT-sB5lS2bKsitOCUenYo1xA3pMzCxfo37TAnB408noR6SJPJpePBfei6p6FMylQFdmJ-FI4z-himQc/embed?start=false&amp;amp;loop=false&amp;amp;delayms=5000&#34;
-  frameborder=&#34;0&#34; allowfullscreen=&#34;&#34;
-  style=&#34;position:absolute; top:0; left: 0&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-</description>
+      <title>[Outreach] STEM careers in museums</title>
+      <link>//localhost:4724/talk/la_lgbt_careertalk_2019/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>//localhost:4724/talk/la_lgbt_careertalk_2019/</guid>
+      <description>Outreach talk to Los Angeles LGBT Youth Center talking about my work at AMNH.</description>
     </item>
-    
   </channel>
 </rss>

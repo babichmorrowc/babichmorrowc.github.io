@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4724&amp;path=livereload" data-no-instant defer></script>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.128.0">
+<title>Git Workflow #1: Existing project, GitHub last | Cecina Babich Morrow</title>
+
+
+<meta property="twitter:site" content="@babichmorrowc">
+<meta property="twitter:creator" content="@babichmorrowc">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="Using command line to connect an existing project to Github.">
+
+
+<meta property="og:site_name" content="Cecina Babich Morrow">
+<meta property="og:title" content="Git Workflow #1: Existing project, GitHub last | Cecina Babich Morrow">
+<meta property="og:description" content="Using command line to connect an existing project to Github." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="//localhost:4724/blog/2019-09-26-git-workflow1/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="//localhost:4724/blog/2019-09-26-git-workflow1/featured.png" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="//localhost:4724/blog/2019-09-26-git-workflow1/featured.png" >
+    
+    
+  
+  <meta itemprop="name" content="Git Workflow #1: Existing project, GitHub last">
+  <meta itemprop="description" content="Using command line to connect an existing project to Github.">
+  <meta itemprop="datePublished" content="2019-09-17T21:13:14-05:00">
+  <meta itemprop="dateModified" content="2019-09-17T21:13:14-05:00">
+  <meta itemprop="wordCount" content="693">
+  <meta itemprop="image" content="//localhost:4724/blog/2019-09-26-git-workflow1/featured.png">
+  <meta itemprop="keywords" content="GitHub">
+  
+  
+
+
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon_io/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.efe606a4a38248e49cb083e10d55824649e30549b2438e91c5513e6ccbbb543d.css" integrity="sha256-7&#43;YGpKOCSOScsIPhDVWCRknjBUmyQ46RxVE&#43;bMu7VD0=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.8775cb64fbeada525af486d0e6a80a9042ba0c7a7958fc22c03e42d5abc3fe1f.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="//localhost:4724/" title="Home">
+      <img src="/img/favicon_io/favicon.ico" class="dib db-l h2 w-auto" alt="Cecina Babich Morrow">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About Cecina">About</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/blog/" title="Blog">Blog</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/project/" title="Project Portfolio">Projects</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/talk/" title="Talks">Talks</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/publication/" title="Publications">Publications</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/contact/" title="Contact">Contact</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+<main class="page-main pa4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Git Workflow #1: Existing project, GitHub last</h1>
+        <h4 class="f4 mt0 mb4 lh-title measure">Using command line to connect an existing project to Github.</h4>
+        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="//localhost:4724/categories/github">GitHub</a> </p>
+        <p class="f7 db mv0 ttu">September 17, 2019</p>
+
+      
+
+      </header>
+      <section class="post-body pt5 pb4">
+        
+
+
+<div id="inspiration-for-this-post" class="section level2">
+<h2>Inspiration for this post</h2>
+<p>Over the coming months, I plan on sharing a series of Git workflow tutorials. Getting a Git project set up can be a pretty simple process, but depending on the order in which you do things, set-up can get complicated. This first tutorial addresses one of those fairly complicated situations.</p>
+<p>The schema for these tutorials is loosely based on the incredible Git + R bible by Jenny Bryan, <a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a>. The only difference is that I will be showing the workflow for setting up the project using the command line, rather than RStudio.</p>
+</div>
+<div id="existing-project-github-last" class="section level2">
+<h2>Existing project, GitHub last</h2>
+<p>This first tutorial addresses the following situation: you have a folder for your project on your computer already. You would like this folder to be associated with a GitHub repository, but you haven’t created this repository yet, or you’ve created the GitHub repository and haven’t connected it with your local folder [^1].</p>
+<p>[^1] Throughout this tutorial, “local” refers to the copy of the repository on your computer. “Remote” refers to the copy on GitHub.</p>
+<div id="make-a-git-repo" class="section level3">
+<h3>Make a Git repo</h3>
+<p>The first step in this process is to make your local project into a Git repository. Start by using the command-line to navigate to the folder for your project (using <code>cd</code>). Once you are in the proper folder, run:</p>
+<pre class="bash"><code>git init</code></pre>
+<p>This command either creates a new Git repository, or, in our case, converts an existing project into a Git repository. If you want to read more about <code>git init</code>, particularly the difference between <code>git init</code> and <code>git clone</code>, Atlassian has a useful <a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init">article</a>.</p>
+<p>Now, since you’ve made edits / added files into your project, you want to add and commit those changes using the following commands:</p>
+<pre class="bash"><code>git add -A
+git commit -m &quot;test commit&quot;</code></pre>
+<p>You can make the commit message whatever you want. Note, <code>git add -A</code> adds all files in your repository. If you only want to add certain files, you can add them by name. For example, if you only want to add the file <code>test.txt</code>:</p>
+<pre class="bash"><code>git add test.txt
+git commit -m &quot;test commit&quot;</code></pre>
+</div>
+<div id="make-a-github-repo" class="section level3">
+<h3>Make a GitHub repo</h3>
+<p>Next, we need to create a GitHub repository for our project. Depending on your workflow, you may have already created this repository. If not, log in to <a href="https://github.com">GitHub</a>. Click the green “New repository” button. Ideally, you want the name of your new repository to match the name of the folder on your computer (but if not, it’s not a big deal). You don’t really want to initialize the repository with a README, but if you do, you can work around this later.</p>
+<p>Once the repository has been set up, you can copy the HTTPS URL to your clipboard using the green “Clone or Download” button.</p>
+</div>
+<div id="connect-the-github-repo-to-your-project" class="section level3">
+<h3>Connect the GitHub repo to your project</h3>
+<p>Now that you have a GitHub repository and you have a Git repository on your computer, you want to connect the two. To do this, run the following in the shell, using the URL that you just copied from GitHub:</p>
+<pre class="bash"><code>git remote add origin &lt;YOUR URL HERE&gt;</code></pre>
+<p>Note, you don’t need the <code>&lt;</code> and <code>&gt;</code> on either side of the URL, just paste the URL as is.</p>
+<p>You now need to tell your computer what the upstream branch should be, i.e. what branch on GitHub to pull updates from.</p>
+<pre class="bash"><code>git branch --set-upstream-to=origin/master master</code></pre>
+</div>
+<div id="reconcile-the-remote-and-local-repositories" class="section level3">
+<h3>Reconcile the remote and local repositories</h3>
+<p>Now, assuming that you have edits both on your computer and on the GitHub repository, you need to be able to reconcile these changes so that the two are the same. This is assuming that you have files added in the folder on your computer and also something like a README or .gitignore on GitHub. To fix this problem, you first need to pull the changes from the GitHub repository onto your computer:</p>
+<pre class="bash"><code>git pull --allow-unrelated-histories</code></pre>
+<p>The <code>--allow-unrelated-histories</code> portion of the command allows you to merge these two repositories (the local and the remote) even though they don’t have a common ancestor (you created them independently and made changes to both independently).</p>
+<p>Now, you can push the changes from your local repository up to GitHub:</p>
+<pre class="bash"><code>git push</code></pre>
+</div>
+</div>
+
+        
+        <details closed class="f6 fw7 input-reset">
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Posted on:</dt>
+    <dd class="fw5 ml0">September 17, 2019</dd>
+  </dl>
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Length:</dt>
+    <dd class="fw5 ml0">4 minute read, 693 words</dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Categories:</dt>
+    <dd class="fw5 ml0"> <a href="//localhost:4724/categories/github">GitHub</a> </dd>
+  </dl>
+  
+  
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Tags:</dt>
+    <dd class="fw5 ml0"> <a href="//localhost:4724/tags/github">GitHub</a> </dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">See Also:</dt>
+    
+    <dd class="fw5 ml0"><a href="/blog/2018-12-7-create-website/">Creating this website</a></dd>
+    
+  </dl>
+</details>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="//localhost:4724/blog/2019-09-26-mode-api-instructions/">&larr; Accessing Mode data in R</a>
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="//localhost:4724/blog/goldwater-highlight/">Goldwater Highlight &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+      <div class="post-comments pa0 pa4-l mt4">
+  
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "babichmorrowc-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  
+</div>
+
+    
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2024 Cecina Babich Morrow, Anywhere
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="/contact/" title="envelope" >
+      <i class="fas fa-envelope fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/babichmorrowc" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://scholar.google.com/citations?user=20mEEooAAAAJ&amp;hl=en" title="google-scholar" target="_blank" rel="me noopener">
+      <i class="fab fa-google-scholar fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://orcid.org/my-orcid?orcid=0000-0003-2188-1495" title="orcid" target="_blank" rel="me noopener">
+      <i class="fab fa-orcid fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://x.com/babichmorrowc" title="x-twitter" target="_blank" rel="me noopener">
+      <i class="fab fa-x-twitter fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+      <a class="dib pv1 ph2 link" href="/contributors/" title="Contributors">Contributors</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

@@ -31,7 +31,7 @@
   <meta name="description" content="Inspiration for this post This post comes from the finishing touches I needed to put on a paper about life history evolution. The paper compares life history traits across the four groups of tetrapods (amphibians, reptiles, mammals, and birds), so when I carried out the nitty gritty phylogenetic analyses, I used four separate phylogenies. When it came time to make a figure to visualize those analyses, however, I ended up with an unwieldy (and unpublishable) 16-panel figure (four phylogenies by four traits).">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/2019-01-09-grafting-trees/">
+  <link rel="alternate" hreflang="en-us" href="https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/">
 
   
 
@@ -98,7 +98,7 @@
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/post/2019-01-09-grafting-trees/">
+  <link rel="canonical" href="https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/">
 
   
   
@@ -114,10 +114,10 @@
   <meta property="twitter:creator" content="@babichmorrowc">
   
   <meta property="og:site_name" content="Cecina Babich Morrow">
-  <meta property="og:url" content="/post/2019-01-09-grafting-trees/">
+  <meta property="og:url" content="https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/">
   <meta property="og:title" content="Grafting phylogenies | Cecina Babich Morrow">
-  <meta property="og:description" content="Inspiration for this post This post comes from the finishing touches I needed to put on a paper about life history evolution. The paper compares life history traits across the four groups of tetrapods (amphibians, reptiles, mammals, and birds), so when I carried out the nitty gritty phylogenetic analyses, I used four separate phylogenies. When it came time to make a figure to visualize those analyses, however, I ended up with an unwieldy (and unpublishable) 16-panel figure (four phylogenies by four traits)."><meta property="og:image" content="/img/icon-192.png">
-  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Inspiration for this post This post comes from the finishing touches I needed to put on a paper about life history evolution. The paper compares life history traits across the four groups of tetrapods (amphibians, reptiles, mammals, and birds), so when I carried out the nitty gritty phylogenetic analyses, I used four separate phylogenies. When it came time to make a figure to visualize those analyses, however, I ended up with an unwieldy (and unpublishable) 16-panel figure (four phylogenies by four traits)."><meta property="og:image" content="https://babichmorrowc.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://babichmorrowc.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2019-01-18T21:13:14-05:00">
@@ -148,7 +148,7 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/post/2019-01-09-grafting-trees/"
+    "@id": "https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/"
   },
   "headline": "Grafting phylogenies",
   
@@ -165,7 +165,7 @@
     "name": "Cecina Babich Morrow",
     "logo": {
       "@type": "ImageObject",
-      "url": "/img/icon-512.png"
+      "url": "https://babichmorrowc.github.io/img/icon-512.png"
     }
   },
   "description": "Inspiration for this post This post comes from the finishing touches I needed to put on a paper about life history evolution. The paper compares life history traits across the four groups of tetrapods (amphibians, reptiles, mammals, and birds), so when I carried out the nitty gritty phylogenetic analyses, I used four separate phylogenies. When it came time to make a figure to visualize those analyses, however, I ended up with an unwieldy (and unpublishable) 16-panel figure (four phylogenies by four traits)."
@@ -537,30 +537,29 @@ Figure 1 from Uyeda et al. 2017
 <p>Start with loading the necessary packages.</p>
 <pre class="r"><code>library(phytools)
 ## Loading required package: ape
-## Warning: package &#39;ape&#39; was built under R version 3.5.2
-## Loading required package: maps
-library(geiger)</code></pre>
+## Loading required package: maps</code></pre>
+<pre class="r"><code>library(geiger)</code></pre>
 <div id="the-original-phylogenies" class="section level2">
 <h2>The original phylogenies</h2>
 <p>I was working with four separate phylogenies: amphibians, squamates, birds, and mammals. For amphibians, I used a congruified time-tree from the <code>PhyloOrchard</code> package (O’Meara et al. 2013) that was constructed using the Alfaro et al. timetree of gnathostomes (Alfaro et al. 2009) as the reference and the Pyron and Wiens amphibian phylogeny as the target (Pyron and Wiens 2011).</p>
 <pre class="r"><code>length(amphibiantree$tip.label)
-## [1] 2871
-plot(amphibiantree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
+## [1] 2871</code></pre>
+<pre class="r"><code>plot(amphibiantree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
 <p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>For squamates, I used the Zheng and Wiens time-calibrated phylogeny (Zheng and Wiens 2016).</p>
 <pre class="r"><code>length(squamatetree$tip.label)
-## [1] 378
-plot(squamatetree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
+## [1] 378</code></pre>
+<pre class="r"><code>plot(squamatetree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
 <p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>For birds, I used the Jetz phylogeny (Jetz et al. 2012).</p>
 <pre class="r"><code>length(birdtree$tip.label)
-## [1] 9993
-plot(birdtree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
+## [1] 9993</code></pre>
+<pre class="r"><code>plot(birdtree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
 <p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>For mammals, I used the supertree from Fritz et al. 2009.</p>
 <pre class="r"><code>length(mammaltree$tip.label)
-## [1] 5020
-plot(mammaltree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
+## [1] 5020</code></pre>
+<pre class="r"><code>plot(mammaltree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
 <p><img src="/post/2019-01-09-grafting-trees_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="reading-in-trees" class="section level2">
@@ -721,7 +720,7 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/2019-01-09-grafting-trees/&amp;text=Grafting%20phylogenies" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/&amp;text=Grafting%20phylogenies" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -734,7 +733,7 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/2019-01-09-grafting-trees/&amp;t=Grafting%20phylogenies" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/&amp;t=Grafting%20phylogenies" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -747,7 +746,7 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
       
       
       <li>
-        <a href="mailto:?subject=Grafting%20phylogenies&amp;body=/post/2019-01-09-grafting-trees/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Grafting%20phylogenies&amp;body=https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -760,7 +759,7 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/2019-01-09-grafting-trees/&amp;title=Grafting%20phylogenies" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/&amp;title=Grafting%20phylogenies" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -773,7 +772,7 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Grafting%20phylogenies%20/post/2019-01-09-grafting-trees/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Grafting%20phylogenies%20https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -786,7 +785,7 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/2019-01-09-grafting-trees/&amp;title=Grafting%20phylogenies" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://babichmorrowc.github.io/post/2019-01-09-grafting-trees/&amp;title=Grafting%20phylogenies" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -811,95 +810,6 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
 
 
 
-
-  
-  
-  
-    
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <img class="portrait mr-3" src="/authors/babichmorrowc/avatar_hud90c7884312957a4db339bead8cc021a_2587875_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
-    
-
-    <div class="media-body">
-      <h5 class="card-title"><a href="/">Cecina Babich Morrow</a></h5>
-      <h6 class="card-subtitle">Compass PhD Program</h6>
-      <p class="card-text">My research interests range from harnessing data to improve mental healthcare to understanding global patterns of macroecology.</p>
-      <ul class="network-icon" aria-hidden="true">
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="/#contact" >
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://twitter.com/babichmorrowc" target="_blank" rel="noopener">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://scholar.google.com/citations?user=20mEEooAAAAJ&amp;hl=en" target="_blank" rel="noopener">
-        <i class="ai ai-google-scholar"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://github.com/babichmorrowc" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-  
-</ul>
-
-    </div>
-  </div>
 
 
 
@@ -1064,7 +974,7 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
     
     
     
-    <script src="/js/academic.min.67fb6a13a4da496b71c96703c766da22.js"></script>
+    <script src="/js/academic.min.01f68d44d80310e669a1731b68a35481.js"></script>
 
     
 
@@ -1077,13 +987,6 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
   
   <div class="container">
     <footer class="site-footer">
-  
-  <p class="powered-by">
-    
-      <a href="/privacy/">Privacy Policy</a>
-    
-    
-  </p>
   
 
   <p class="powered-by">

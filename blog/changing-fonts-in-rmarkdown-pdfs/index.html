@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.128.0">
+<title>Changing fonts in RMarkdown PDFs | Cecina Babich Morrow</title>
+
+
+<meta property="twitter:site" content="@babichmorrowc">
+<meta property="twitter:creator" content="@babichmorrowc">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="A modern, beautiful, and easily configurable blog theme for Hugo.">
+
+
+<meta property="og:site_name" content="Cecina Babich Morrow">
+<meta property="og:title" content="Changing fonts in RMarkdown PDFs | Cecina Babich Morrow">
+<meta property="og:description" content="A modern, beautiful, and easily configurable blog theme for Hugo." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="//localhost:4321/blog/changing-fonts-in-rmarkdown-pdfs/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="//localhost:4321/blog/changing-fonts-in-rmarkdown-pdfs/featured.jpg" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="//localhost:4321/blog/changing-fonts-in-rmarkdown-pdfs/featured.jpg" >
+    
+    
+  
+  <meta itemprop="name" content="Changing fonts in RMarkdown PDFs">
+  <meta itemprop="description" content="Note: this post has been edited on 2 August 2020 - there was a typo in the indenting of the YAML. Thank you to Henry Hankins for catching this!
+Inspiration for this post After learning how to change the fonts within a graph in R, I wanted to be able to change the fonts in the body of an RMarkdown to match. I specifically wanted to be able to knit an RMarkdown to PDF using the Source Sans Pro Google font, but these instructions should work for any Google font.">
+  <meta itemprop="datePublished" content="2020-01-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2020-01-02T10:22:14-05:00">
+  <meta itemprop="wordCount" content="315">
+  <meta itemprop="image" content="//localhost:4321/blog/changing-fonts-in-rmarkdown-pdfs/featured.jpg">
+  <meta itemprop="keywords" content="R">
+  
+  
+
+
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon.io/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.io/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.a8b032ca5f24551ab005285e3d04061302e89e91ededd85a2bd7e19884d1f11e.css" integrity="sha256-qLAyyl8kVRqwBShePQQGEwLonpHt7dhaK9fhmITR8R4=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.8775cb64fbeada525af486d0e6a80a9042ba0c7a7958fc22c03e42d5abc3fe1f.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="//localhost:4321/" title="Home">
+      <img src="/img/favicon.io/favicon.ico" class="dib db-l h2 w-auto" alt="Cecina Babich Morrow">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About Cecina">About</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/blog/" title="Blog">Blog</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/project/" title="Project Portfolio">Projects</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/talk/" title="Talks">Talks</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/publication/" title="Publications">Publications</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/contact/" title="Contact">Contact</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+<main class="page-main pa4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Changing fonts in RMarkdown PDFs</h1>
+        
+        <p class="f6 measure lh-copy mv1"> in <a href="//localhost:4321/categories/r">R</a> </p>
+        <p class="f7 db mv0 ttu">January 2, 2020</p>
+
+      
+
+      </header>
+      <section class="post-body pt5 pb4">
+        
+
+
+<p><em>Note: this post has been edited on 2 August 2020 - there was a typo in the indenting of the YAML. Thank you to Henry Hankins for catching this!</em></p>
+<div id="inspiration-for-this-post" class="section level2">
+<h2>Inspiration for this post</h2>
+<p>After learning how to <a href="https://babichmorrowc.github.io/post/2019-10-11-google_fonts/">change the fonts within a graph</a> in R, I wanted to be able to change the fonts in the body of an RMarkdown to match. I specifically wanted to be able to knit an RMarkdown to PDF using the <a href="https://fonts.google.com/specimen/Source+Sans+Pro">Source Sans Pro</a> Google font, but these instructions should work for any Google font.</p>
+</div>
+<div id="cairo" class="section level2">
+<h2>Cairo</h2>
+<p>To embed custom fonts in PDFs, you can use the <a href="https://www.cairographics.org/">Cairo graphics library</a>. This library is installed with R, but if you are using a Mac, you do need to install <a href="https://www.xquartz.org/">XQuartz</a>. To check if you are able to run Cairo, you can run <code>capabilities()</code>:</p>
+<pre class="r"><code>capabilities()</code></pre>
+<pre><code>##        jpeg         png        tiff       tcltk         X11        aqua 
+##        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+##    http/ftp     sockets      libxml        fifo      cledit       iconv 
+##        TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+##         NLS       Rprof     profmem       cairo         ICU long.double 
+##        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+##     libcurl 
+##        TRUE</code></pre>
+<p>If <code>cairo</code> shows up as <code>TRUE</code>, you are good to go.</p>
+</div>
+<div id="yaml-header" class="section level2">
+<h2>YAML header</h2>
+<p>To use Cairo to change the font of your RMarkdown pdf, you can modify the YAML heading:</p>
+<pre class="r"><code>---
+title: &quot;New fancy font!&quot;
+header-includes:
+   - \usepackage[default]{sourcesanspro}
+   - \usepackage[T1]{fontenc}
+mainfont: SourceSansPro
+output:
+  pdf_document
+---</code></pre>
+<p>The <code>\usepackage</code> components of the header load Latex packages for your font (I am using Source Sans Pro in this example).</p>
+</div>
+<div id="chunk-options" class="section level2">
+<h2>Chunk options</h2>
+<p>The final step to use the font in your knitted pdf is to set the graphical device to Cairo in your code chunk option. At the beginning of your RMarkdown, the first chunk should include code that looks something like this:</p>
+<pre class="r"><code>knitr::opts_chunk$set(echo = TRUE)</code></pre>
+<p>Add <code>dev="cairo_pdf"</code> as one of the arguments:</p>
+<pre class="r"><code>knitr::opts_chunk$set(echo = TRUE, dev=&quot;cairo_pdf&quot;)</code></pre>
+<p>You can read more about other chunk options <a href="https://yihui.org/knitr/options/#chunk_options">here</a>.</p>
+</div>
+
+        
+        <details closed class="f6 fw7 input-reset">
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Posted on:</dt>
+    <dd class="fw5 ml0">January 2, 2020</dd>
+  </dl>
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Length:</dt>
+    <dd class="fw5 ml0">2 minute read, 315 words</dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Categories:</dt>
+    <dd class="fw5 ml0"> <a href="//localhost:4321/categories/r">R</a> </dd>
+  </dl>
+  
+  
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Tags:</dt>
+    <dd class="fw5 ml0"> <a href="//localhost:4321/tags/r">R</a> </dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">See Also:</dt>
+    
+    <dd class="fw5 ml0"><a href="/post/lifehistory-paper-highlight/">Exciting publication news!</a></dd>
+    
+    <dd class="fw5 ml0"><a href="/post/google-api-creds/">Getting your own Google API credentials for R</a></dd>
+    
+    <dd class="fw5 ml0"><a href="/post/google-account-creds/">Publishing to RStudio Connect with Google credentials</a></dd>
+    
+  </dl>
+</details>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="//localhost:4321/blog/2019-10-11-google-fonts/">Putting Google Fonts in R graphs &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+      <div class="post-comments pa0 pa4-l mt4">
+  
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "babichmorrowc-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  
+</div>
+
+    
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2024 Cecina Babich Morrow, Anywhere
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="/contact/" title="envelope" >
+      <i class="fas fa-envelope fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/babichmorrowc" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://scholar.google.com/citations?user=20mEEooAAAAJ&amp;hl=en" title="google-scholar" target="_blank" rel="me noopener">
+      <i class="fab fa-google-scholar fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://orcid.org/my-orcid?orcid=0000-0003-2188-1495" title="orcid" target="_blank" rel="me noopener">
+      <i class="fab fa-orcid fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://x.com/babichmorrowc" title="x-twitter" target="_blank" rel="me noopener">
+      <i class="fab fa-x-twitter fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+      <a class="dib pv1 ph2 link" href="/contributors/" title="Contributors">Contributors</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

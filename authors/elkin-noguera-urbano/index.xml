@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>elkin Noguera-Urbano | Cecina Babich Morrow</title>
-    <link>/authors/elkin-noguera-urbano/</link>
-      <atom:link href="/authors/elkin-noguera-urbano/index.xml" rel="self" type="application/rss+xml" />
-    <description>elkin Noguera-Urbano</description>
+    <title>Elkin Noguera-Urbano | Cecina Babich Morrow</title>
+    <link>https://babichmorrowc.github.io/authors/elkin-noguera-urbano/</link>
+      <atom:link href="https://babichmorrowc.github.io/authors/elkin-noguera-urbano/index.xml" rel="self" type="application/rss+xml" />
+    <description>Elkin Noguera-Urbano</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
-      <title>elkin Noguera-Urbano</title>
-      <link>/authors/elkin-noguera-urbano/</link>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
+      <title>Elkin Noguera-Urbano</title>
+      <link>https://babichmorrowc.github.io/authors/elkin-noguera-urbano/</link>
     </image>
     
     <item>
       <title>Operationalizing expert knowledge in species’ range estimates using diverse data types</title>
-      <link>/publication/rangeestimates/</link>
+      <link>https://babichmorrowc.github.io/publication/rangeestimates/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/rangeestimates/</guid>
+      <guid>https://babichmorrowc.github.io/publication/rangeestimates/</guid>
       <description></description>
     </item>
     

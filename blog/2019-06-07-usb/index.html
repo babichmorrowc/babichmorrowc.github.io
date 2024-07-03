@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4724&amp;path=livereload" data-no-instant defer></script>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.128.0">
+<title>Copying R libraries to a USB | Cecina Babich Morrow</title>
+
+
+<meta property="twitter:site" content="@babichmorrowc">
+<meta property="twitter:creator" content="@babichmorrowc">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="Copying R and its packages to USB.">
+
+
+<meta property="og:site_name" content="Cecina Babich Morrow">
+<meta property="og:title" content="Copying R libraries to a USB | Cecina Babich Morrow">
+<meta property="og:description" content="Copying R and its packages to USB." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="//localhost:4724/blog/2019-06-07-usb/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="//localhost:4724/blog/2019-06-07-usb/featured.jpg" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="//localhost:4724/blog/2019-06-07-usb/featured.jpg" >
+    
+    
+  
+  <meta itemprop="name" content="Copying R libraries to a USB">
+  <meta itemprop="description" content="Copying R and its packages to USB.">
+  <meta itemprop="datePublished" content="2019-06-07T21:13:14-05:00">
+  <meta itemprop="dateModified" content="2019-06-07T21:13:14-05:00">
+  <meta itemprop="wordCount" content="290">
+  <meta itemprop="image" content="//localhost:4724/blog/2019-06-07-usb/featured.jpg">
+  <meta itemprop="keywords" content="R">
+  
+  
+
+
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon_io/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.efe606a4a38248e49cb083e10d55824649e30549b2438e91c5513e6ccbbb543d.css" integrity="sha256-7&#43;YGpKOCSOScsIPhDVWCRknjBUmyQ46RxVE&#43;bMu7VD0=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.8775cb64fbeada525af486d0e6a80a9042ba0c7a7958fc22c03e42d5abc3fe1f.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="//localhost:4724/" title="Home">
+      <img src="/img/favicon_io/favicon.ico" class="dib db-l h2 w-auto" alt="Cecina Babich Morrow">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About Cecina">About</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/blog/" title="Blog">Blog</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/project/" title="Project Portfolio">Projects</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/talk/" title="Talks">Talks</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/publication/" title="Publications">Publications</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/contact/" title="Contact">Contact</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+<main class="page-main pa4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Copying R libraries to a USB</h1>
+        <h4 class="f4 mt0 mb4 lh-title measure">Copying R and its packages to USB.</h4>
+        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="//localhost:4724/categories/r">R</a> </p>
+        <p class="f7 db mv0 ttu">June 7, 2019</p>
+
+      
+
+      </header>
+      <section class="post-body pt5 pb4">
+        
+
+
+<div id="inspiration-for-this-post" class="section level2">
+<h2>Inspiration for this post</h2>
+<p>A few people in my lab are headed to a workshop in Colombia next week, and due to the possibility of intermittent wi-fi, they need to load all of the workshop materials onto USB drives. They need R with certain packages on the USBs in versions compatible with both Macs and PCs, so I offered to help out by loading my Mac version of R and my packages.</p>
+</div>
+<div id="loading-r-onto-a-usb" class="section level2">
+<h2>Loading R onto a USB</h2>
+<p>The first step was to copy my installation of R onto the USB. To do this, I just copied R from my Applications folder onto the folder. We are not entirely sure if this will work yet to transfer R to someone else’s computer (if someone knows the answer, let me know!), but we are going to test it out shortly.</p>
+</div>
+<div id="loading-r-packages-onto-a-usb" class="section level2">
+<h2>Loading R packages onto a USB</h2>
+<p>The next step was to transfer all of my R packages onto the USB. To do this, I first needed to figure out where the packages were saved on my computer. You can run the following in R to find where your packages are saved:</p>
+<pre class="r"><code>.libPaths()
+## [1] &quot;/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library&quot;</code></pre>
+<p>Next, I needed to figure out how to navigate to the USB in Terminal. According to this <a href="https://apple.stackexchange.com/questions/60231/using-terminal-how-can-i-find-which-directory-is-my-usb-drive-mounted-in">StackOverflow answer</a>, all drives are mounted in <code>/Volumes</code>, so I ran the following in Terminal:</p>
+<pre class="bash"><code>cd /Volumes
+ls</code></pre>
+<p>From there, I was able to see <code>USB DISK</code> as one of the folders in <code>/Volumes</code>. In order to copy all of the packages from my computer onto the USB, I used <code>cp</code> to move everything from the folder found in <code>.libPaths()</code> onto the USB:</p>
+<pre class="bash"><code># replace the first file path with what you get from .libPaths()
+cp -R /Library/Frameworks/R.framework/Versions/3.5/Resources/library/ /Volumes/USB\ DISK/R_packages/</code></pre>
+</div>
+
+        
+        <details closed class="f6 fw7 input-reset">
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Posted on:</dt>
+    <dd class="fw5 ml0">June 7, 2019</dd>
+  </dl>
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Length:</dt>
+    <dd class="fw5 ml0">2 minute read, 290 words</dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Categories:</dt>
+    <dd class="fw5 ml0"> <a href="//localhost:4724/categories/r">R</a> </dd>
+  </dl>
+  
+  
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Tags:</dt>
+    <dd class="fw5 ml0"> <a href="//localhost:4724/tags/r">R</a> </dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">See Also:</dt>
+    
+    <dd class="fw5 ml0"><a href="/blog/2024-07-02-leastsquares-regression/">Least squares regression: Part 1</a></dd>
+    
+    <dd class="fw5 ml0"><a href="/project/mental_health_outcomes/">Mental health outcomes</a></dd>
+    
+    <dd class="fw5 ml0"><a href="/publication/clin_fin_mh_outcomes/">Clinical and Financial Outcomes Associated With a Workplace Mental Health Program Before and During the COVID-19 Pandemic</a></dd>
+    
+  </dl>
+</details>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="//localhost:4724/blog/goldwater-highlight/">&larr; Goldwater Highlight</a>
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="//localhost:4724/blog/2019-05-23-highres-figures/">Setting resolution and aspect ratios in R &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+      <div class="post-comments pa0 pa4-l mt4">
+  
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "babichmorrowc-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  
+</div>
+
+    
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2024 Cecina Babich Morrow, Anywhere
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="/contact/" title="envelope" >
+      <i class="fas fa-envelope fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/babichmorrowc" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://scholar.google.com/citations?user=20mEEooAAAAJ&amp;hl=en" title="google-scholar" target="_blank" rel="me noopener">
+      <i class="fab fa-google-scholar fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://orcid.org/my-orcid?orcid=0000-0003-2188-1495" title="orcid" target="_blank" rel="me noopener">
+      <i class="fab fa-orcid fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://x.com/babichmorrowc" title="x-twitter" target="_blank" rel="me noopener">
+      <i class="fab fa-x-twitter fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+      <a class="dib pv1 ph2 link" href="/contributors/" title="Contributors">Contributors</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

@@ -2,394 +2,339 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/project/bayesian_decision_analysis/</loc>
+    <loc>//localhost:4724/project/bayesian_decision_analysis/</loc>
     <lastmod>2024-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/bda/</loc>
+    <loc>//localhost:4724/tags/bda/</loc>
     <lastmod>2024-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>//localhost:4724/categories/bda/</loc>
     <lastmod>2024-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/</loc>
+    <loc>//localhost:4724/categories/</loc>
     <lastmod>2024-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//localhost:4724/</loc>
     <lastmod>2024-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/</loc>
+    <loc>//localhost:4724/project/</loc>
+    <lastmod>2024-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/tags/python/</loc>
+    <lastmod>2024-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/categories/python/</loc>
+    <lastmod>2024-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/tags/statistics/</loc>
+    <lastmod>2024-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/categories/statistics/</loc>
+    <lastmod>2024-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/tags/</loc>
+    <lastmod>2024-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/contact/</loc>
+    <lastmod>2024-07-02T13:38:41-06:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/form/</loc>
+    <lastmod>2024-07-02T13:38:41-06:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/blog/2024-07-02-leastsquares-regression/</loc>
+    <lastmod>2024-07-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/blog/</loc>
+    <lastmod>2024-07-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/tags/r/</loc>
+    <lastmod>2024-07-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/categories/r/</loc>
+    <lastmod>2024-07-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/talk/miniproject_2024/</loc>
     <lastmod>2024-05-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/miniproject_2024/</loc>
+    <loc>//localhost:4724/talk/</loc>
     <lastmod>2024-05-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/cecina-babich-morrow/</loc>
-    <lastmod>2024-05-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/talk/bootcamp_2023/</loc>
+    <loc>//localhost:4724/talk/bootcamp_2023/</loc>
     <lastmod>2023-12-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/mental-health/</loc>
+    <loc>//localhost:4724/tags/mental-health/</loc>
     <lastmod>2022-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/mental_health_outcomes/</loc>
+    <loc>//localhost:4724/categories/mental-health/</loc>
     <lastmod>2022-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication_types/2/</loc>
+    <loc>//localhost:4724/project/mental_health_outcomes/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/publication/clin_fin_mh_outcomes/</loc>
     <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/adam-m.-chekroud/</loc>
+    <loc>//localhost:4724/publication/</loc>
     <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/clin_fin_mh_outcomes/</loc>
-    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/john-h.-krystal/</loc>
-    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/julia-bondar/</loc>
-    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/matt-hawrilenko/</loc>
-    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/millard-brown/</loc>
-    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/philip-r.-corlett/</loc>
-    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/</loc>
-    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/ralitza-gueoruieva/</loc>
-    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/alex-moore/</loc>
+    <loc>//localhost:4724/tags/biogeography/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/beth-gerstner/</loc>
+    <loc>//localhost:4724/categories/biogeography/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/biogeography/</loc>
+    <loc>//localhost:4724/publication/rangeestimates/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/cory-merow/</loc>
+    <loc>//localhost:4724/tags/species-distribution-modeling/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/elkin-noguera-urbano/</loc>
+    <loc>//localhost:4724/categories/species-distribution-modeling/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/gonzalo-pinilla-buitrago/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/jamie-kass/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/jorge-velasquez-tibata/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/mary-blair/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/matthew-aiello-lammens/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication/rangeestimates/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/peter-galante/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/robert-anderson/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/species-distribution-modeling/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/valentina-grisales-betancur/</loc>
-    <lastmod>2022-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/lifehistory-paper-highlight/</loc>
+    <loc>//localhost:4724/blog/lifehistory-paper-highlight/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/hypervolume/</loc>
+    <loc>//localhost:4724/tags/hypervolume/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/life-history/</loc>
+    <loc>//localhost:4724/categories/hypervolume/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/r/</loc>
+    <loc>//localhost:4724/tags/life-history/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/andrew-j.-kerkhoff/</loc>
+    <loc>//localhost:4724/categories/life-history/</loc>
+    <lastmod>2021-06-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/publication/lifehistory/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/lifehistory/</loc>
-    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+    <loc>//localhost:4724/blog/google-api-creds/</loc>
+    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/s.k.-morgan-ernest/</loc>
-    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+    <loc>//localhost:4724/tags/google/</loc>
+    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2020-12-04T13:41:48-05:00</lastmod>
+    <loc>//localhost:4724/categories/google/</loc>
+    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/google-api-creds/</loc>
-    <lastmod>2020-12-04T13:41:48-05:00</lastmod>
+    <loc>//localhost:4724/blog/google-account-creds/</loc>
+    <lastmod>2020-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/google-drive/</loc>
-    <lastmod>2020-12-04T13:41:48-05:00</lastmod>
+    <loc>//localhost:4724/tags/bash/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/r/</loc>
-    <lastmod>2020-12-04T13:41:48-05:00</lastmod>
+    <loc>//localhost:4724/categories/bash/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/google-account-creds/</loc>
-    <lastmod>2020-11-30T13:41:48-05:00</lastmod>
+    <loc>//localhost:4724/blog/scheduling-r/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/bash/</loc>
-    <lastmod>2020-01-23T16:43:56-05:00</lastmod>
-  </url><url>
-    <loc>/post/launchd-jobs/</loc>
-    <lastmod>2020-01-23T16:43:56-05:00</lastmod>
-  </url><url>
-    <loc>/tags/education/</loc>
+    <loc>//localhost:4724/talk/bio_on_tap_2020/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/bio_on_tap_2020/</loc>
+    <loc>//localhost:4724/tags/education/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/adding-featured-images-to-posts/</loc>
-    <lastmod>2020-01-02T17:00:36-05:00</lastmod>
+    <loc>//localhost:4724/categories/education/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/changing-fonts-in-rmarkdown-pdfs/</loc>
-    <lastmod>2020-01-02T10:22:14-05:00</lastmod>
+    <loc>//localhost:4724/tags/outreach/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/website/</loc>
-    <lastmod>2020-01-02T17:00:36-05:00</lastmod>
+    <loc>//localhost:4724/categories/outreach/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/</loc>
+    <loc>//localhost:4724/blog/2020-01-03-adding-featured-images-to-posts/</loc>
+    <lastmod>2020-01-02T21:13:14-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/tags/website/</loc>
+    <lastmod>2020-01-02T21:13:14-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/categories/website/</loc>
+    <lastmod>2020-01-02T21:13:14-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/blog/2020-01-02-changing-fonts-in-rmarkdown-pdfs/</loc>
+    <lastmod>2020-01-02T11:13:14-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/publication/_index-old/</loc>
     <lastmod>2019-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/</loc>
-    <lastmod>2019-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/talk/</loc>
-    <lastmod>2019-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tutorial/</loc>
+    <loc>//localhost:4724/tutorial/</loc>
     <lastmod>2019-10-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/2019-10-11-google-fonts/</loc>
+    <loc>//localhost:4724/blog/2019-10-11-google-fonts/</loc>
     <lastmod>2019-10-11T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/post/2019-09-26-mode-api-instructions/</loc>
+    <loc>//localhost:4724/blog/2019-09-26-mode-api-instructions/</loc>
     <lastmod>2019-09-26T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/post/2019-09-26-git-workflow1/</loc>
+    <loc>//localhost:4724/blog/2019-09-26-git-workflow1/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/tags/github/</loc>
+    <loc>//localhost:4724/tags/github/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/categories/github/</loc>
+    <loc>//localhost:4724/categories/github/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/tags/career/</loc>
+    <loc>//localhost:4724/tags/career/</loc>
     <lastmod>2019-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/career/</loc>
+    <loc>//localhost:4724/categories/career/</loc>
     <lastmod>2019-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/goldwater-highlight/</loc>
+    <loc>//localhost:4724/blog/goldwater-highlight/</loc>
     <lastmod>2019-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/bradypus/</loc>
+    <loc>//localhost:4724/talk/ibs_2019/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/jamie-m.-kass/</loc>
+    <loc>//localhost:4724/tags/bradypus/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/mary-e.-blair/</loc>
+    <loc>//localhost:4724/categories/bradypus/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/peter-j.-galante/</loc>
-    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/robert-p.-anderson/</loc>
-    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/talk/ibs_2019/</loc>
-    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/machine-learning/</loc>
+    <loc>//localhost:4724/talk/mammalogy_2019/</loc>
     <lastmod>2019-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/mammalogy_2019/</loc>
+    <loc>//localhost:4724/tags/machine-learning/</loc>
     <lastmod>2019-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/helenfellow_june2019/</loc>
+    <loc>//localhost:4724/categories/machine-learning/</loc>
+    <lastmod>2019-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/talk/helenfellow_june2019/</loc>
     <lastmod>2019-06-13T11:30:00+00:00</lastmod>
   </url><url>
-    <loc>/post/2019-06-07-usb/</loc>
+    <loc>//localhost:4724/blog/2019-06-07-usb/</loc>
     <lastmod>2019-06-07T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/post/2019-05-23-highres-figures/</loc>
+    <loc>//localhost:4724/blog/2019-05-23-highres-figures/</loc>
     <lastmod>2019-05-23T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/categories/species-distribution-modeling/</loc>
+    <loc>//localhost:4724/blog/2019-04-12-sdm-threshold/</loc>
     <lastmod>2019-04-12T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/post/2019-04-12-sdm-threshold/</loc>
-    <lastmod>2019-04-12T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>/talk/brownscholars_ratiotalk_2019/</loc>
+    <loc>//localhost:4724/talk/brownscholars_ratiotalk_2019/</loc>
     <lastmod>2019-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/2019-03-18-alpha-hull/</loc>
+    <loc>//localhost:4724/blog/2019-03-18-alpha-hull/</loc>
     <lastmod>2019-03-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/talk/nysdm_march2019/</loc>
+    <loc>//localhost:4724/talk/nysdm_march2019/</loc>
     <lastmod>2019-03-15T14:30:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/lgbt/</loc>
-    <lastmod>2019-02-22T17:00:00+00:00</lastmod>
+    <loc>//localhost:4724/talk/la_lgbt_careertalk_2019/</loc>
+    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/la_lgbt_careertalk_2019/</loc>
-    <lastmod>2019-02-22T17:00:00+00:00</lastmod>
+    <loc>//localhost:4724/tags/lgbt/</loc>
+    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/earth-science/</loc>
+    <loc>//localhost:4724/categories/lgbt/</loc>
+    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/tags/earth-science/</loc>
+    <lastmod>2019-02-20T22:13:14-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/tags/hackathon/</loc>
+    <lastmod>2019-02-20T22:13:14-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/categories/hackathon/</loc>
+    <lastmod>2019-02-20T22:13:14-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/blog/2019-02-20-meteoritecluster1/</loc>
+    <lastmod>2019-02-20T22:13:14-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/tags/meteorites/</loc>
+    <lastmod>2019-02-20T22:13:14-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:4724/blog/2019-02-20-pythonrmd/</loc>
     <lastmod>2019-02-20T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/tags/hackathon/</loc>
-    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>/categories/hackathon/</loc>
-    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>/post/2019-02-20-meteoritecluster1/</loc>
-    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>/tags/meteorites/</loc>
-    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>/categories/meteorites/</loc>
-    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>/tags/python/</loc>
-    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>/categories/python/</loc>
-    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>/post/2019-02-20-pythonrmd/</loc>
-    <lastmod>2019-02-20T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>/post/2019-02-14-hackathon/</loc>
+    <loc>//localhost:4724/blog/2019-02-14-hackathon/</loc>
     <lastmod>2019-02-14T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/tags/evolution/</loc>
+    <loc>//localhost:4724/tags/evolution/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/categories/evolution/</loc>
+    <loc>//localhost:4724/categories/evolution/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/post/2019-01-09-grafting-trees/</loc>
+    <loc>//localhost:4724/blog/2019-01-09-grafting-trees/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/tags/phylogenetics/</loc>
+    <loc>//localhost:4724/tags/phylogenetics/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/categories/phylogenetics/</loc>
+    <loc>//localhost:4724/categories/phylogenetics/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/publication_types/3/</loc>
-    <lastmod>2019-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication/lifehistory_preprint/</loc>
-    <lastmod>2019-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/2019-01-03-debugging-r/</loc>
+    <loc>//localhost:4724/blog/2019-01-03-debugging-r/</loc>
     <lastmod>2019-01-03T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/post/2018-12-12-add-google-doc/</loc>
+    <loc>//localhost:4724/blog/2018-12-12-add-google-doc/</loc>
     <lastmod>2018-12-12T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/post/2018-12-11-order-items/</loc>
+    <loc>//localhost:4724/blog/2018-12-11-order-items/</loc>
     <lastmod>2018-12-11T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/post/2018-12-7-create-website/</loc>
+    <loc>//localhost:4724/blog/2018-12-7-create-website/</loc>
     <lastmod>2018-12-07T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/project/bradypus/</loc>
+    <loc>//localhost:4724/project/bradypus/</loc>
     <lastmod>2018-09-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/privacy/</loc>
+    <loc>//localhost:4724/privacy/</loc>
     <lastmod>2018-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/drew-kerkhoff/</loc>
-    <lastmod>2018-05-01T13:00:00+00:00</lastmod>
+    <loc>//localhost:4724/talk/honors_presentation_2018/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/morgan-ernest/</loc>
-    <lastmod>2018-05-01T13:00:00+00:00</lastmod>
+    <loc>//localhost:4724/categories/hypervolumes/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/honors_presentation_2018/</loc>
-    <lastmod>2018-05-01T13:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/talk/tree_2017/</loc>
+    <loc>//localhost:4724/talk/tree_2017/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/benjamin-blonder/</loc>
+    <loc>//localhost:4724/publication/hypervolumes/</loc>
     <lastmod>2017-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/brian-j.-enquist/</loc>
-    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/brian-maitner/</loc>
-    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/christine-lamanna/</loc>
-    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/cyrille-violle/</loc>
-    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/david-j.-harris/</loc>
-    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication/hypervolumes/</loc>
-    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/andrew-kerkhoff/</loc>
+    <loc>//localhost:4724/talk/ibs_2017/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/bien/</loc>
+    <loc>//localhost:4724/tags/bien/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/brian-enquist/</loc>
+    <loc>//localhost:4724/categories/bien/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/plant-biodiversity/</loc>
+    <loc>//localhost:4724/categories/biodiversity/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/ibs_2017/</loc>
+    <loc>//localhost:4724/tags/plant-biodiversity/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/hypervolumes/</loc>
+    <loc>//localhost:4724/project/hypervolumes/</loc>
     <lastmod>2016-07-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
-    <lastmod>2016-05-05T21:48:51-07:00</lastmod>
-  </url><url>
-    <loc>/project/life_history/</loc>
+    <loc>//localhost:4724/project/life_history/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/babichmorrowc/</loc>
+    <loc>//localhost:4724/authors/babichmorrowc/</loc>
   </url><url>
-    <loc>/google7f36843d88791048/</loc>
-    <priority>0</priority>
+    <loc>//localhost:4724/google7f36843d88791048/</loc>
   </url><url>
-    <loc>/slides/</loc>
+    <loc>//localhost:4724/about/</loc>
   </url><url>
-    <loc>/slides/example-slides/</loc>
+    <loc>//localhost:4724/authors/</loc>
+  </url><url>
+    <loc>//localhost:4724/series/</loc>
+  </url><url>
+    <loc>//localhost:4724/slides/</loc>
+  </url><url>
+    <loc>//localhost:4724/slides/example-slides/</loc>
   </url>
 </urlset>

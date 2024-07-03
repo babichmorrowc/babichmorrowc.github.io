@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Matthew Aiello-Lammens | Cecina Babich Morrow</title>
-    <link>/authors/matthew-aiello-lammens/</link>
-      <atom:link href="/authors/matthew-aiello-lammens/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://babichmorrowc.github.io/authors/matthew-aiello-lammens/</link>
+      <atom:link href="https://babichmorrowc.github.io/authors/matthew-aiello-lammens/index.xml" rel="self" type="application/rss+xml" />
     <description>Matthew Aiello-Lammens</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://babichmorrowc.github.io/img/icon-192.png</url>
       <title>Matthew Aiello-Lammens</title>
-      <link>/authors/matthew-aiello-lammens/</link>
+      <link>https://babichmorrowc.github.io/authors/matthew-aiello-lammens/</link>
     </image>
     
     <item>
       <title>Operationalizing expert knowledge in species’ range estimates using diverse data types</title>
-      <link>/publication/rangeestimates/</link>
+      <link>https://babichmorrowc.github.io/publication/rangeestimates/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/rangeestimates/</guid>
+      <guid>https://babichmorrowc.github.io/publication/rangeestimates/</guid>
       <description></description>
     </item>
     

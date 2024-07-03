@@ -1,48 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>biogeography | Cecina Babich Morrow</title>
-    <link>/tags/biogeography/</link>
-      <atom:link href="/tags/biogeography/index.xml" rel="self" type="application/rss+xml" />
-    <description>biogeography</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2024</copyright><lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>/img/icon-192.png</url>
-      <title>biogeography</title>
-      <link>/tags/biogeography/</link>
-    </image>
-    
+    <title>Biogeography on Cecina Babich Morrow</title>
+    <link>//localhost:4724/tags/biogeography/</link>
+    <description>Recent content in Biogeography on Cecina Babich Morrow</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4724/tags/biogeography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Operationalizing expert knowledge in species’ range estimates using diverse data types</title>
-      <link>/publication/rangeestimates/</link>
+      <link>//localhost:4724/publication/rangeestimates/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/rangeestimates/</guid>
-      <description></description>
+      <guid>//localhost:4724/publication/rangeestimates/</guid>
+      <description>Workflow for making and refining species range estimates, introducing a new R package, &lt;code&gt;maskRangeR&lt;/code&gt;.</description>
     </item>
-    
     <item>
-      <title>Talk: Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/ibs_2019/</link>
+      <title>[Talk] Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
+      <link>//localhost:4724/talk/ibs_2019/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/ibs_2019/</guid>
-      <description></description>
+      <guid>//localhost:4724/talk/ibs_2019/</guid>
+      <description>Applying support vector machines to refine range estimates for three species of &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
-    
     <item>
-      <title>Poster: Improving species range estimates for an arboreal species group with a parapatric distribution</title>
-      <link>/talk/mammalogy_2019/</link>
+      <title>[Poster] Improving species range estimates for an arboreal species group with a parapatric distribution</title>
+      <link>//localhost:4724/talk/mammalogy_2019/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/mammalogy_2019/</guid>
-      <description></description>
+      <guid>//localhost:4724/talk/mammalogy_2019/</guid>
+      <description>Using support vector machines to mask out biotically unsuitable areas improves species range estimates for &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
-    
     <item>
-      <title>Distribution modeling of Bradypus</title>
-      <link>/project/bradypus/</link>
+      <title>Distribution modeling of *Bradypus*</title>
+      <link>//localhost:4724/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>/project/bradypus/</guid>
-      <description></description>
+      <guid>//localhost:4724/project/bradypus/</guid>
+      <description>Species distribution modelling of &lt;em&gt;Bradypus variegatus&lt;/em&gt;, &lt;em&gt;B. tridactylus&lt;/em&gt;, and &lt;em&gt;B. torquatus&lt;/em&gt;.</description>
     </item>
-    
   </channel>
 </rss>
