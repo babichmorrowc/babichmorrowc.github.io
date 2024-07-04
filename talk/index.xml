@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Talks and Posters on Cecina Babich Morrow</title>
-    <link>//localhost:4724/talk/</link>
+    <link>/talk/</link>
     <description>Recent content in Talks and Posters on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 24 May 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4724/talk/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Talk] Bayesian Decision Analysis for climate decision-making: Sensitivity to decision attributes</title>
-      <link>//localhost:4724/talk/miniproject_2024/</link>
+      <link>/talk/miniproject_2024/</link>
       <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/miniproject_2024/</guid>
+      <guid>/talk/miniproject_2024/</guid>
       <description>Investigating the sensitivity of BDA to changes in cost-related decision attributes for an idealized example.</description>
     </item>
     <item>
       <title>[Talk] The Use of Utility: Utility functions in a Bayesian Decision Analysis framework</title>
-      <link>//localhost:4724/talk/bootcamp_2023/</link>
+      <link>/talk/bootcamp_2023/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/bootcamp_2023/</guid>
+      <guid>/talk/bootcamp_2023/</guid>
       <description>My presentation for the Bootcamp unit of the Compass PhD program.</description>
     </item>
     <item>
       <title>[Outreach] Sad strategies: making really bad ideas work for you</title>
-      <link>//localhost:4724/talk/bio_on_tap_2020/</link>
+      <link>/talk/bio_on_tap_2020/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/bio_on_tap_2020/</guid>
+      <guid>/talk/bio_on_tap_2020/</guid>
       <description>Outreach talk as part of &#xA;&lt;a href=&#34;https://www.facebook.com/biologyontap/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Biology on Tap&lt;/a&gt;, a monthly event for biology popular science talks.</description>
     </item>
     <item>
       <title>[Talk] Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
-      <link>//localhost:4724/talk/ibs_2019/</link>
+      <link>/talk/ibs_2019/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/ibs_2019/</guid>
+      <guid>/talk/ibs_2019/</guid>
       <description>Applying support vector machines to refine range estimates for three species of &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>[Poster] Improving species range estimates for an arboreal species group with a parapatric distribution</title>
-      <link>//localhost:4724/talk/mammalogy_2019/</link>
+      <link>/talk/mammalogy_2019/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/mammalogy_2019/</guid>
+      <guid>/talk/mammalogy_2019/</guid>
       <description>Using support vector machines to mask out biotically unsuitable areas improves species range estimates for &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>Talk: Using SVMs to delineate parapatric ranges: An example with three-toed sloths (Bradypus)</title>
-      <link>//localhost:4724/talk/helenfellow_june2019/</link>
+      <link>/talk/helenfellow_june2019/</link>
       <pubDate>Thu, 13 Jun 2019 11:30:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/helenfellow_june2019/</guid>
+      <guid>/talk/helenfellow_june2019/</guid>
       <description>Applying support vector machines to incorporate biotic information into range estimates for three species of &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>[Outreach] Big vs. Small: Using ratios to compare life history strategies</title>
-      <link>//localhost:4724/talk/brownscholars_ratiotalk_2019/</link>
+      <link>/talk/brownscholars_ratiotalk_2019/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/brownscholars_ratiotalk_2019/</guid>
+      <guid>/talk/brownscholars_ratiotalk_2019/</guid>
       <description>Outreach talk for high school students in the first year of the Brown Scholars program to start off their unit on paleoneurobiology.</description>
     </item>
     <item>
       <title>[Talk] Using SVMs to model ranges of congeneric sloth species</title>
-      <link>//localhost:4724/talk/nysdm_march2019/</link>
+      <link>/talk/nysdm_march2019/</link>
       <pubDate>Fri, 15 Mar 2019 14:30:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/nysdm_march2019/</guid>
+      <guid>/talk/nysdm_march2019/</guid>
       <description>Incorporating biotic information to guide range estimates of three species of &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>[Outreach] STEM careers in museums</title>
-      <link>//localhost:4724/talk/la_lgbt_careertalk_2019/</link>
+      <link>/talk/la_lgbt_careertalk_2019/</link>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/la_lgbt_careertalk_2019/</guid>
+      <guid>/talk/la_lgbt_careertalk_2019/</guid>
       <description>Outreach talk to Los Angeles LGBT Youth Center talking about my work at AMNH.</description>
     </item>
     <item>
       <title>[Talk] Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>//localhost:4724/talk/honors_presentation_2018/</link>
+      <link>/talk/honors_presentation_2018/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/honors_presentation_2018/</guid>
+      <guid>/talk/honors_presentation_2018/</guid>
       <description>Biology Senior Honors presentation on dimensionless life history metrics across the major classes of tetrapods.</description>
     </item>
     <item>
       <title>[Poster] Macroevolution of dimensionless life histories in amniotes</title>
-      <link>//localhost:4724/talk/tree_2017/</link>
+      <link>/talk/tree_2017/</link>
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/tree_2017/</guid>
+      <guid>/talk/tree_2017/</guid>
       <description>Investigating the evolution of dimensionless life history traits across amniotes.</description>
     </item>
     <item>
       <title>[Poster] Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
-      <link>//localhost:4724/talk/ibs_2017/</link>
+      <link>/talk/ibs_2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/ibs_2017/</guid>
+      <guid>/talk/ibs_2017/</guid>
       <description>Poster comparing different hypervolume methods for ecological applications.</description>
     </item>
   </channel>

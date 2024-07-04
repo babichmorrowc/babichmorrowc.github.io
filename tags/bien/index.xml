@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BIEN on Cecina Babich Morrow</title>
-    <link>//localhost:4724/tags/bien/</link>
+    <link>/tags/bien/</link>
     <description>Recent content in BIEN on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4724/tags/bien/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/bien/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Poster] Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
-      <link>//localhost:4724/talk/ibs_2017/</link>
+      <link>/talk/ibs_2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/talk/ibs_2017/</guid>
+      <guid>/talk/ibs_2017/</guid>
       <description>Poster comparing different hypervolume methods for ecological applications.</description>
     </item>
   </channel>

@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google on Cecina Babich Morrow</title>
-    <link>//localhost:4724/categories/google/</link>
+    <link>/categories/google/</link>
     <description>Recent content in Google on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4724/categories/google/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/google/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting your own Google API credentials for R</title>
-      <link>//localhost:4724/blog/google-api-creds/</link>
+      <link>/blog/google-api-creds/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/blog/google-api-creds/</guid>
+      <guid>/blog/google-api-creds/</guid>
       <description>How to handle Google API quota issues with the &lt;code&gt;googlesheets4&lt;/code&gt; package.</description>
     </item>
     <item>
       <title>Publishing to RStudio Connect with Google credentials</title>
-      <link>//localhost:4724/blog/google-account-creds/</link>
+      <link>/blog/google-account-creds/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:4724/blog/google-account-creds/</guid>
+      <guid>/blog/google-account-creds/</guid>
       <description>How to integrate R and Google Drive non-interactively.</description>
     </item>
     <item>
       <title>Putting Google Fonts in R graphs</title>
-      <link>//localhost:4724/blog/2019-10-11-google-fonts/</link>
+      <link>/blog/2019-10-11-google-fonts/</link>
       <pubDate>Fri, 11 Oct 2019 21:13:14 -0500</pubDate>
-      <guid>//localhost:4724/blog/2019-10-11-google-fonts/</guid>
+      <guid>/blog/2019-10-11-google-fonts/</guid>
       <description>How to use a Google Font in R.</description>
     </item>
     <item>
       <title>Adding Google Slides to website</title>
-      <link>//localhost:4724/blog/2018-12-12-add-google-doc/</link>
+      <link>/blog/2018-12-12-add-google-doc/</link>
       <pubDate>Wed, 12 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>//localhost:4724/blog/2018-12-12-add-google-doc/</guid>
+      <guid>/blog/2018-12-12-add-google-doc/</guid>
       <description>Embedding Google Slides on a Hugo site.</description>
     </item>
   </channel>
