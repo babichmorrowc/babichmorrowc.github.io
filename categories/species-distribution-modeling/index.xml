@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Species Distribution Modeling on Cecina Babich Morrow</title>
-    <link>/categories/species-distribution-modeling/</link>
+    <link>//localhost:4007/categories/species-distribution-modeling/</link>
     <description>Recent content in Species Distribution Modeling on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/species-distribution-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4007/categories/species-distribution-modeling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Operationalizing expert knowledge in species’ range estimates using diverse data types</title>
-      <link>/publication/rangeestimates/</link>
+      <link>//localhost:4007/publication/rangeestimates/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/rangeestimates/</guid>
+      <guid>//localhost:4007/publication/rangeestimates/</guid>
       <description>Workflow for making and refining species range estimates, introducing a new R package, &lt;code&gt;maskRangeR&lt;/code&gt;.</description>
     </item>
     <item>
       <title>[Talk] Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/ibs_2019/</link>
+      <link>//localhost:4007/talk/ibs_2019/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/ibs_2019/</guid>
+      <guid>//localhost:4007/talk/ibs_2019/</guid>
       <description>Applying support vector machines to refine range estimates for three species of &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>[Poster] Improving species range estimates for an arboreal species group with a parapatric distribution</title>
-      <link>/talk/mammalogy_2019/</link>
+      <link>//localhost:4007/talk/mammalogy_2019/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/mammalogy_2019/</guid>
+      <guid>//localhost:4007/talk/mammalogy_2019/</guid>
       <description>Using support vector machines to mask out biotically unsuitable areas improves species range estimates for &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>Talk: Using SVMs to delineate parapatric ranges: An example with three-toed sloths (Bradypus)</title>
-      <link>/talk/helenfellow_june2019/</link>
+      <link>//localhost:4007/talk/helenfellow_june2019/</link>
       <pubDate>Thu, 13 Jun 2019 11:30:00 +0000</pubDate>
-      <guid>/talk/helenfellow_june2019/</guid>
+      <guid>//localhost:4007/talk/helenfellow_june2019/</guid>
       <description>Applying support vector machines to incorporate biotic information into range estimates for three species of &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>Thresholding species distribution models</title>
-      <link>/blog/2019-04-12-sdm-threshold/</link>
+      <link>//localhost:4007/blog/2019-04-12-sdm-threshold/</link>
       <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
-      <guid>/blog/2019-04-12-sdm-threshold/</guid>
+      <guid>//localhost:4007/blog/2019-04-12-sdm-threshold/</guid>
       <description>Thresholding continuous SDMs to binary presence-absence maps.</description>
     </item>
     <item>
       <title>Converting alpha hulls to spatial objects</title>
-      <link>/blog/2019-03-18-alpha-hull/</link>
+      <link>//localhost:4007/blog/2019-03-18-alpha-hull/</link>
       <pubDate>Mon, 18 Mar 2019 21:13:14 -0500</pubDate>
-      <guid>/blog/2019-03-18-alpha-hull/</guid>
+      <guid>//localhost:4007/blog/2019-03-18-alpha-hull/</guid>
       <description>Creating an R package to convert α-hulls to &lt;code&gt;sp&lt;/code&gt; objects.</description>
     </item>
     <item>
       <title>[Talk] Using SVMs to model ranges of congeneric sloth species</title>
-      <link>/talk/nysdm_march2019/</link>
+      <link>//localhost:4007/talk/nysdm_march2019/</link>
       <pubDate>Fri, 15 Mar 2019 14:30:00 +0000</pubDate>
-      <guid>/talk/nysdm_march2019/</guid>
+      <guid>//localhost:4007/talk/nysdm_march2019/</guid>
       <description>Incorporating biotic information to guide range estimates of three species of &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>Distribution modeling of *Bradypus*</title>
-      <link>/project/bradypus/</link>
+      <link>//localhost:4007/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>/project/bradypus/</guid>
+      <guid>//localhost:4007/project/bradypus/</guid>
       <description>Species distribution modelling of &lt;em&gt;Bradypus variegatus&lt;/em&gt;, &lt;em&gt;B. tridactylus&lt;/em&gt;, and &lt;em&gt;B. torquatus&lt;/em&gt;.</description>
     </item>
   </channel>

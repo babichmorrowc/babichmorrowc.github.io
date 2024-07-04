@@ -2,185 +2,185 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Cecina Babich Morrow</title>
-    <link>/categories/</link>
+    <link>//localhost:4007/categories/</link>
     <description>Recent content in Categories on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 02 Jul 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4007/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>R</title>
-      <link>/categories/r/</link>
+      <link>//localhost:4007/categories/r/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/r/</guid>
+      <guid>//localhost:4007/categories/r/</guid>
       <description></description>
     </item>
     <item>
       <title>Statistics</title>
-      <link>/categories/statistics/</link>
+      <link>//localhost:4007/categories/statistics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/statistics/</guid>
+      <guid>//localhost:4007/categories/statistics/</guid>
       <description></description>
     </item>
     <item>
       <title>BDA</title>
-      <link>/categories/bda/</link>
+      <link>//localhost:4007/categories/bda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/bda/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Mental Health</title>
-      <link>/categories/mental-health/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/mental-health/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Biogeography</title>
-      <link>/categories/biogeography/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/biogeography/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Species Distribution Modeling</title>
-      <link>/categories/species-distribution-modeling/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/species-distribution-modeling/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hypervolume</title>
-      <link>/categories/hypervolume/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/hypervolume/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Life History</title>
-      <link>/categories/life-history/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/life-history/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Google</title>
-      <link>/categories/google/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/google/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bash</title>
-      <link>/categories/bash/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/bash/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Education</title>
-      <link>/categories/education/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/education/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Outreach</title>
-      <link>/categories/outreach/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/outreach/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Website</title>
-      <link>/categories/website/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/website/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GitHub</title>
-      <link>/categories/github/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/github/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Career</title>
-      <link>/categories/career/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/career/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bradypus</title>
-      <link>/categories/bradypus/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/bradypus/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Machine Learning</title>
-      <link>/categories/machine-learning/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LGBT</title>
-      <link>/categories/lgbt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/lgbt/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hackathon</title>
-      <link>/categories/hackathon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/hackathon/</guid>
+      <guid>//localhost:4007/categories/bda/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>/categories/python/</link>
+      <link>//localhost:4007/categories/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/python/</guid>
+      <guid>//localhost:4007/categories/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mental Health</title>
+      <link>//localhost:4007/categories/mental-health/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/mental-health/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Biogeography</title>
+      <link>//localhost:4007/categories/biogeography/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/biogeography/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Species Distribution Modeling</title>
+      <link>//localhost:4007/categories/species-distribution-modeling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/species-distribution-modeling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hypervolume</title>
+      <link>//localhost:4007/categories/hypervolume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/hypervolume/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Life History</title>
+      <link>//localhost:4007/categories/life-history/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/life-history/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Google</title>
+      <link>//localhost:4007/categories/google/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/google/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bash</title>
+      <link>//localhost:4007/categories/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/bash/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Education</title>
+      <link>//localhost:4007/categories/education/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/education/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Outreach</title>
+      <link>//localhost:4007/categories/outreach/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/outreach/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Website</title>
+      <link>//localhost:4007/categories/website/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/website/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GitHub</title>
+      <link>//localhost:4007/categories/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/github/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Career</title>
+      <link>//localhost:4007/categories/career/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/career/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bradypus</title>
+      <link>//localhost:4007/categories/bradypus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/bradypus/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning</title>
+      <link>//localhost:4007/categories/machine-learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LGBT</title>
+      <link>//localhost:4007/categories/lgbt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/lgbt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hackathon</title>
+      <link>//localhost:4007/categories/hackathon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/categories/hackathon/</guid>
       <description></description>
     </item>
     <item>
       <title>Evolution</title>
-      <link>/categories/evolution/</link>
+      <link>//localhost:4007/categories/evolution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/evolution/</guid>
+      <guid>//localhost:4007/categories/evolution/</guid>
       <description></description>
     </item>
     <item>
       <title>Phylogenetics</title>
-      <link>/categories/phylogenetics/</link>
+      <link>//localhost:4007/categories/phylogenetics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/phylogenetics/</guid>
+      <guid>//localhost:4007/categories/phylogenetics/</guid>
       <description></description>
     </item>
     <item>
       <title>Hypervolumes</title>
-      <link>/categories/hypervolumes/</link>
+      <link>//localhost:4007/categories/hypervolumes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/hypervolumes/</guid>
+      <guid>//localhost:4007/categories/hypervolumes/</guid>
       <description></description>
     </item>
     <item>
       <title>BIEN</title>
-      <link>/categories/bien/</link>
+      <link>//localhost:4007/categories/bien/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/bien/</guid>
+      <guid>//localhost:4007/categories/bien/</guid>
       <description></description>
     </item>
     <item>
       <title>Biodiversity</title>
-      <link>/categories/biodiversity/</link>
+      <link>//localhost:4007/categories/biodiversity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/categories/biodiversity/</guid>
+      <guid>//localhost:4007/categories/biodiversity/</guid>
       <description></description>
     </item>
   </channel>

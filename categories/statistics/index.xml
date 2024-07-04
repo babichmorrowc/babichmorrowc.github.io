@@ -2,31 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Statistics on Cecina Babich Morrow</title>
-    <link>/categories/statistics/</link>
+    <link>//localhost:4007/categories/statistics/</link>
     <description>Recent content in Statistics on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 02 Jul 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4007/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Least squares regression: Part 1</title>
-      <link>/blog/2024-07-02-leastsquares-regression/</link>
+      <link>//localhost:4007/blog/2024-07-02-leastsquares-regression/</link>
       <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>/blog/2024-07-02-leastsquares-regression/</guid>
+      <guid>//localhost:4007/blog/2024-07-02-leastsquares-regression/</guid>
       <description>Introduction to least squares regression.</description>
     </item>
     <item>
+      <title>Bayesian Decision Analysis</title>
+      <link>//localhost:4007/project/bayesian_decision_analysis/</link>
+      <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:4007/project/bayesian_decision_analysis/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>[Talk] The Use of Utility: Utility functions in a Bayesian Decision Analysis framework</title>
-      <link>/talk/bootcamp_2023/</link>
+      <link>//localhost:4007/talk/bootcamp_2023/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>/talk/bootcamp_2023/</guid>
+      <guid>//localhost:4007/talk/bootcamp_2023/</guid>
       <description>My presentation for the Bootcamp unit of the Compass PhD program.</description>
     </item>
     <item>
       <title>Mental health outcomes</title>
-      <link>/project/mental_health_outcomes/</link>
+      <link>//localhost:4007/project/mental_health_outcomes/</link>
       <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>/project/mental_health_outcomes/</guid>
+      <guid>//localhost:4007/project/mental_health_outcomes/</guid>
       <description></description>
     </item>
   </channel>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Outreach on Cecina Babich Morrow</title>
-    <link>/tags/outreach/</link>
+    <link>//localhost:4007/tags/outreach/</link>
     <description>Recent content in Outreach on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/outreach/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4007/tags/outreach/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Outreach] Sad strategies: making really bad ideas work for you</title>
-      <link>/talk/bio_on_tap_2020/</link>
+      <link>//localhost:4007/talk/bio_on_tap_2020/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/talk/bio_on_tap_2020/</guid>
+      <guid>//localhost:4007/talk/bio_on_tap_2020/</guid>
       <description>Outreach talk as part of &#xA;&lt;a href=&#34;https://www.facebook.com/biologyontap/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Biology on Tap&lt;/a&gt;, a monthly event for biology popular science talks.</description>
     </item>
     <item>
       <title>[Outreach] Big vs. Small: Using ratios to compare life history strategies</title>
-      <link>/talk/brownscholars_ratiotalk_2019/</link>
+      <link>//localhost:4007/talk/brownscholars_ratiotalk_2019/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/brownscholars_ratiotalk_2019/</guid>
+      <guid>//localhost:4007/talk/brownscholars_ratiotalk_2019/</guid>
       <description>Outreach talk for high school students in the first year of the Brown Scholars program to start off their unit on paleoneurobiology.</description>
     </item>
     <item>
       <title>[Outreach] STEM careers in museums</title>
-      <link>/talk/la_lgbt_careertalk_2019/</link>
+      <link>//localhost:4007/talk/la_lgbt_careertalk_2019/</link>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/la_lgbt_careertalk_2019/</guid>
+      <guid>//localhost:4007/talk/la_lgbt_careertalk_2019/</guid>
       <description>Outreach talk to Los Angeles LGBT Youth Center talking about my work at AMNH.</description>
     </item>
   </channel>
