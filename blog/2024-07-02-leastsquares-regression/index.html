@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4007&amp;path=livereload" data-no-instant defer></script>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
   
                            
      
@@ -31,16 +31,16 @@
 <meta property="og:title" content="Least squares regression: Part 1 | Cecina Babich Morrow">
 <meta property="og:description" content="Introduction to least squares regression." />
 <meta property="og:type" content="page" />
-<meta property="og:url" content="//localhost:4007/blog/2024-07-02-leastsquares-regression/" />
+<meta property="og:url" content="//localhost:4321/blog/2024-07-02-leastsquares-regression/" />
 <meta property="og:locale" content="en">
 
 
 
 
     
-        <meta property="og:image" content="//localhost:4007/blog/2024-07-02-leastsquares-regression/featured.jpeg" >
+        <meta property="og:image" content="//localhost:4321/blog/2024-07-02-leastsquares-regression/featured.jpeg" >
         <meta property="twitter:card" content="summary_large_image">
-        <meta name="twitter:image" content="//localhost:4007/blog/2024-07-02-leastsquares-regression/featured.jpeg" >
+        <meta name="twitter:image" content="//localhost:4321/blog/2024-07-02-leastsquares-regression/featured.jpeg" >
     
     
   
@@ -48,8 +48,8 @@
   <meta itemprop="description" content="Introduction to least squares regression.">
   <meta itemprop="datePublished" content="2024-07-02T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-07-02T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1287">
-  <meta itemprop="image" content="//localhost:4007/blog/2024-07-02-leastsquares-regression/featured.jpeg">
+  <meta itemprop="wordCount" content="1311">
+  <meta itemprop="image" content="//localhost:4321/blog/2024-07-02-leastsquares-regression/featured.jpeg">
   <meta itemprop="keywords" content="Statistics,R">
   
   
@@ -72,7 +72,7 @@
       <div class="grid-container">
 <header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
   <nav class="site-nav db dt-l w-100" role="navigation">
-    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="//localhost:4007/" title="Home">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="//localhost:4321/" title="Home">
       <img src="/img/favicon_io/favicon.ico" class="dib db-l h2 w-auto" alt="Cecina Babich Morrow">
     </a>
     <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
@@ -118,7 +118,7 @@
       <header class="post-header">
         <h1 class="f1 lh-solid measure-narrow mb3 fw4">Least squares regression: Part 1</h1>
         <h4 class="f4 mt0 mb4 lh-title measure">Introduction to least squares regression.</h4>
-        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="//localhost:4007/categories/statistics">statistics</a>  <a href="//localhost:4007/categories/r">R</a> </p>
+        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="//localhost:4321/categories/statistics">statistics</a>  <a href="//localhost:4321/categories/r">R</a> </p>
         <p class="f7 db mv0 ttu">July 2, 2024</p>
 
       
@@ -130,7 +130,7 @@
 
 <div id="inspiration-for-this-post" class="section level2">
 <h2>Inspiration for this post</h2>
-<p>As evidenced by the depressing three year lag-time since my last blog post on this website, it is well past time to get back into gear and get posting once more. I am coming to the end of the first year of my PhD in Computational Statistics and Data Science, and i thought I would share some of what I learned in my courses here.</p>
+<p>As evidenced by the depressing three year lag-time since my last blog post on this website, it is well past time to get back into gear and get posting once more. I am coming to the end of the first year of my PhD in Computational Statistics and Data Science, and I thought I would share some of what I learned in my courses here. Huge thanks to Dr. Song Liu for pretty much all of the material presented here (mistakes are my own).</p>
 <p>I’m starting out with that beloved classic, least squares regression.</p>
 </div>
 <div id="making-good-choices" class="section level2">
@@ -168,7 +168,8 @@ How can we make Jamie Lee Curtis proud, statistically speaking?
 <p>We differentiate with respect to <span class="math inline">\(\textbf{w}\)</span> and set the result equal to zero:</p>
 <p><span class="math display">\[\begin{align*}
     0 &amp;= \frac{\partial}{\partial \textbf{w}}(\textbf{y}\textbf{y}^\top - 2\textbf{w}^\top\textbf{X}\textbf{y}^\top+\textbf{w}^\top\textbf{X}\textbf{X}^\top\textbf{w}) \\
-    &amp;= -2\textbf{X}\textbf{y}^\top+2\textbf{X}\textbf{X}^\top\textbf{w}_{LS}
+    0 &amp;= -2\textbf{X}\textbf{y}^\top+2\textbf{X}\textbf{X}^\top\textbf{w}_{LS} \\
+    2\textbf{X}\textbf{y}^\top &amp;= 2\textbf{X}\textbf{X}^\top\textbf{w}_{LS}
 \end{align*}\]</span></p>
 <p>So <span class="math inline">\(\textbf{w}_{LS}=(\textbf{X}\textbf{X}^\top)^{-1}\textbf{X}\textbf{y}^\top\)</span>.</p>
 <p>■</p>
@@ -294,29 +295,29 @@ all.equal(unname(lm_preds),
   </dl>
   <dl class="f6 lh-copy">
     <dt class="fw7">Length:</dt>
-    <dd class="fw5 ml0">7 minute read, 1287 words</dd>
+    <dd class="fw5 ml0">7 minute read, 1311 words</dd>
   </dl>
   
   <dl class="f6 lh-copy">
     <dt class="fw7">Categories:</dt>
-    <dd class="fw5 ml0"> <a href="//localhost:4007/categories/statistics">statistics</a>  <a href="//localhost:4007/categories/r">R</a> </dd>
+    <dd class="fw5 ml0"> <a href="//localhost:4321/categories/statistics">statistics</a>  <a href="//localhost:4321/categories/r">R</a> </dd>
   </dl>
   
   
   
   <dl class="f6 lh-copy">
     <dt class="fw7">Tags:</dt>
-    <dd class="fw5 ml0"> <a href="//localhost:4007/tags/statistics">statistics</a>  <a href="//localhost:4007/tags/r">R</a> </dd>
+    <dd class="fw5 ml0"> <a href="//localhost:4321/tags/statistics">statistics</a>  <a href="//localhost:4321/tags/r">R</a> </dd>
   </dl>
   
   <dl class="f6 lh-copy">
     <dt class="fw7">See Also:</dt>
     
+    <dd class="fw5 ml0"><a href="/blog/2024-07-20-regularized_leastsquares/">Least squares regression: Part 2</a></dd>
+    
     <dd class="fw5 ml0"><a href="/project/bayesian_decision_analysis/">Bayesian Decision Analysis</a></dd>
     
     <dd class="fw5 ml0"><a href="/talk/bootcamp_2023/">[Talk] The Use of Utility: Utility functions in a Bayesian Decision Analysis framework</a></dd>
-    
-    <dd class="fw5 ml0"><a href="/project/mental_health_outcomes/">Mental health outcomes</a></dd>
     
   </dl>
 </details>
@@ -329,7 +330,7 @@ all.equal(unname(lm_preds),
   
   
     <a class="next dtc pl2 tr v-top fw6"
-    href="//localhost:4007/blog/lifehistory-paper-highlight/">Exciting publication news! &rarr;</a>
+    href="//localhost:4321/blog/2024-07-20-regularized_leastsquares/">Least squares regression: Part 2 &rarr;</a>
   
 </div>
 

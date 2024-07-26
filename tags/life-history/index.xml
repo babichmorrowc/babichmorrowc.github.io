@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Life History on Cecina Babich Morrow</title>
-    <link>//localhost:4007/tags/life-history/</link>
+    <link>//localhost:4321/tags/life-history/</link>
     <description>Recent content in Life History on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4007/tags/life-history/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/life-history/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exciting publication news!</title>
-      <link>//localhost:4007/blog/lifehistory-paper-highlight/</link>
+      <link>//localhost:4321/blog/lifehistory-paper-highlight/</link>
       <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4007/blog/lifehistory-paper-highlight/</guid>
+      <guid>//localhost:4321/blog/lifehistory-paper-highlight/</guid>
       <description>An update on my latest publication 🎉</description>
     </item>
     <item>
       <title>Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>//localhost:4007/publication/lifehistory/</link>
+      <link>//localhost:4321/publication/lifehistory/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4007/publication/lifehistory/</guid>
+      <guid>//localhost:4321/publication/lifehistory/</guid>
       <description>Exploring the evolution of three dimensionless life history traits across the four major classes of tetrapods.</description>
     </item>
     <item>
       <title>[Outreach] Sad strategies: making really bad ideas work for you</title>
-      <link>//localhost:4007/talk/bio_on_tap_2020/</link>
+      <link>//localhost:4321/talk/bio_on_tap_2020/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:4007/talk/bio_on_tap_2020/</guid>
+      <guid>//localhost:4321/talk/bio_on_tap_2020/</guid>
       <description>Outreach talk as part of &#xA;&lt;a href=&#34;https://www.facebook.com/biologyontap/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Biology on Tap&lt;/a&gt;, a monthly event for biology popular science talks.</description>
     </item>
     <item>
       <title>[Outreach] Big vs. Small: Using ratios to compare life history strategies</title>
-      <link>//localhost:4007/talk/brownscholars_ratiotalk_2019/</link>
+      <link>//localhost:4321/talk/brownscholars_ratiotalk_2019/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>//localhost:4007/talk/brownscholars_ratiotalk_2019/</guid>
+      <guid>//localhost:4321/talk/brownscholars_ratiotalk_2019/</guid>
       <description>Outreach talk for high school students in the first year of the Brown Scholars program to start off their unit on paleoneurobiology.</description>
     </item>
     <item>
       <title>[Talk] Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>//localhost:4007/talk/honors_presentation_2018/</link>
+      <link>//localhost:4321/talk/honors_presentation_2018/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:4007/talk/honors_presentation_2018/</guid>
+      <guid>//localhost:4321/talk/honors_presentation_2018/</guid>
       <description>Biology Senior Honors presentation on dimensionless life history metrics across the major classes of tetrapods.</description>
     </item>
     <item>
       <title>[Poster] Macroevolution of dimensionless life histories in amniotes</title>
-      <link>//localhost:4007/talk/tree_2017/</link>
+      <link>//localhost:4321/talk/tree_2017/</link>
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:4007/talk/tree_2017/</guid>
+      <guid>//localhost:4321/talk/tree_2017/</guid>
       <description>Investigating the evolution of dimensionless life history traits across amniotes.</description>
     </item>
     <item>
       <title>Tetrapod life history traits</title>
-      <link>//localhost:4007/project/life_history/</link>
+      <link>//localhost:4321/project/life_history/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:4007/project/life_history/</guid>
+      <guid>//localhost:4321/project/life_history/</guid>
       <description></description>
     </item>
   </channel>
