@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Biodiversity on Cecina Babich Morrow</title>
-    <link>//localhost:4321/categories/biodiversity/</link>
+    <link>//localhost:3048/categories/biodiversity/</link>
     <description>Recent content in Biodiversity on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4321/categories/biodiversity/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:3048/categories/biodiversity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Poster] Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
-      <link>//localhost:4321/talk/ibs_2017/</link>
+      <link>//localhost:3048/talk/ibs_2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/talk/ibs_2017/</guid>
+      <guid>//localhost:3048/talk/ibs_2017/</guid>
       <description>Poster comparing different hypervolume methods for ecological applications.</description>
     </item>
   </channel>

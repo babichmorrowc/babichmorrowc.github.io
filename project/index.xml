@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Cecina Babich Morrow</title>
-    <link>//localhost:4321/project/</link>
+    <link>//localhost:3048/project/</link>
     <description>Recent content in Projects on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 21 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4321/project/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:3048/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bayesian Decision Analysis</title>
-      <link>//localhost:4321/project/bayesian_decision_analysis/</link>
+      <link>//localhost:3048/project/bayesian_decision_analysis/</link>
       <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/project/bayesian_decision_analysis/</guid>
+      <guid>//localhost:3048/project/bayesian_decision_analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Mental health outcomes</title>
-      <link>//localhost:4321/project/mental_health_outcomes/</link>
+      <link>//localhost:3048/project/mental_health_outcomes/</link>
       <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/project/mental_health_outcomes/</guid>
+      <guid>//localhost:3048/project/mental_health_outcomes/</guid>
       <description></description>
     </item>
     <item>
       <title>Distribution modeling of *Bradypus*</title>
-      <link>//localhost:4321/project/bradypus/</link>
+      <link>//localhost:3048/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/project/bradypus/</guid>
+      <guid>//localhost:3048/project/bradypus/</guid>
       <description>Species distribution modelling of &lt;em&gt;Bradypus variegatus&lt;/em&gt;, &lt;em&gt;B. tridactylus&lt;/em&gt;, and &lt;em&gt;B. torquatus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>Hypervolume methods</title>
-      <link>//localhost:4321/project/hypervolumes/</link>
+      <link>//localhost:3048/project/hypervolumes/</link>
       <pubDate>Wed, 27 Jul 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/project/hypervolumes/</guid>
+      <guid>//localhost:3048/project/hypervolumes/</guid>
       <description></description>
     </item>
     <item>
       <title>Tetrapod life history traits</title>
-      <link>//localhost:4321/project/life_history/</link>
+      <link>//localhost:3048/project/life_history/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/project/life_history/</guid>
+      <guid>//localhost:3048/project/life_history/</guid>
       <description></description>
     </item>
   </channel>
