@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Cecina Babich Morrow</title>
-    <link>//localhost:3048/publication/</link>
+    <link>//localhost:4321/publication/</link>
     <description>Recent content in Publications on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 09 Jun 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:3048/publication/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/publication/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clinical and Financial Outcomes Associated With a Workplace Mental Health Program Before and During the COVID-19 Pandemic</title>
-      <link>//localhost:3048/publication/clin_fin_mh_outcomes/</link>
+      <link>//localhost:4321/publication/clin_fin_mh_outcomes/</link>
       <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/publication/clin_fin_mh_outcomes/</guid>
+      <guid>//localhost:4321/publication/clin_fin_mh_outcomes/</guid>
       <description>Study showing reduced depression and anxiety symptoms in employees participating in a workplace mental health program.</description>
     </item>
     <item>
       <title>Operationalizing expert knowledge in species’ range estimates using diverse data types</title>
-      <link>//localhost:3048/publication/rangeestimates/</link>
+      <link>//localhost:4321/publication/rangeestimates/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/publication/rangeestimates/</guid>
+      <guid>//localhost:4321/publication/rangeestimates/</guid>
       <description>Workflow for making and refining species range estimates, introducing a new R package, &lt;code&gt;maskRangeR&lt;/code&gt;.</description>
     </item>
     <item>
       <title>Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>//localhost:3048/publication/lifehistory/</link>
+      <link>//localhost:4321/publication/lifehistory/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/publication/lifehistory/</guid>
+      <guid>//localhost:4321/publication/lifehistory/</guid>
       <description>Exploring the evolution of three dimensionless life history traits across the four major classes of tetrapods.</description>
     </item>
     <item>
       <title>Publications</title>
-      <link>//localhost:3048/publication/_index-old/</link>
+      <link>//localhost:4321/publication/_index-old/</link>
       <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/publication/_index-old/</guid>
+      <guid>//localhost:4321/publication/_index-old/</guid>
       <description></description>
     </item>
     <item>
       <title>New approaches for delineating n‐dimensional hypervolumes</title>
-      <link>//localhost:3048/publication/hypervolumes/</link>
+      <link>//localhost:4321/publication/hypervolumes/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/publication/hypervolumes/</guid>
+      <guid>//localhost:4321/publication/hypervolumes/</guid>
       <description>Two new algorithms for creating n-dimenstional hypervolumes.</description>
     </item>
   </channel>

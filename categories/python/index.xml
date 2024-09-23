@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Cecina Babich Morrow</title>
-    <link>//localhost:3048/categories/python/</link>
+    <link>//localhost:4321/categories/python/</link>
     <description>Recent content in Python on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 21 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:3048/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bayesian Decision Analysis</title>
-      <link>//localhost:3048/project/bayesian_decision_analysis/</link>
+      <link>//localhost:4321/project/bayesian_decision_analysis/</link>
       <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/project/bayesian_decision_analysis/</guid>
+      <guid>//localhost:4321/project/bayesian_decision_analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Hacking Meteorites Part 1: Calculating percent weights</title>
-      <link>//localhost:3048/blog/2019-02-20-meteoritecluster1/</link>
+      <link>//localhost:4321/blog/2019-02-20-meteoritecluster1/</link>
       <pubDate>Wed, 20 Feb 2019 22:13:14 -0500</pubDate>
-      <guid>//localhost:3048/blog/2019-02-20-meteoritecluster1/</guid>
+      <guid>//localhost:4321/blog/2019-02-20-meteoritecluster1/</guid>
       <description>Estimating percent weight of elements in a meteorite.</description>
     </item>
     <item>
       <title>Python in RMarkdown</title>
-      <link>//localhost:3048/blog/2019-02-20-pythonrmd/</link>
+      <link>//localhost:4321/blog/2019-02-20-pythonrmd/</link>
       <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>//localhost:3048/blog/2019-02-20-pythonrmd/</guid>
+      <guid>//localhost:4321/blog/2019-02-20-pythonrmd/</guid>
       <description>Using &lt;code&gt;reticulate&lt;/code&gt; to add Python to RMarkdown.</description>
     </item>
   </channel>

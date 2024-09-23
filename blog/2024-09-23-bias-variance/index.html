@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.128.0">
+<title>Bias-variance decomposition | Cecina Babich Morrow</title>
+
+
+<meta property="twitter:site" content="@babichmorrowc">
+<meta property="twitter:creator" content="@babichmorrowc">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="A fundamental trade-off in statistics.">
+
+
+<meta property="og:site_name" content="Cecina Babich Morrow">
+<meta property="og:title" content="Bias-variance decomposition | Cecina Babich Morrow">
+<meta property="og:description" content="A fundamental trade-off in statistics." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="//localhost:4321/blog/2024-09-23-bias-variance/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="//localhost:4321/blog/2024-09-23-bias-variance/featured.jpg" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="//localhost:4321/blog/2024-09-23-bias-variance/featured.jpg" >
+    
+    
+  
+  <meta itemprop="name" content="Bias-variance decomposition">
+  <meta itemprop="description" content="Decomposition of expected loss.">
+  <meta itemprop="datePublished" content="2024-09-23T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-09-23T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1363">
+  <meta itemprop="image" content="//localhost:4321/blog/2024-09-23-bias-variance/featured.jpg">
+  <meta itemprop="keywords" content="Statistics,R">
+  
+  
+
+
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon_io/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.efe606a4a38248e49cb083e10d55824649e30549b2438e91c5513e6ccbbb543d.css" integrity="sha256-7&#43;YGpKOCSOScsIPhDVWCRknjBUmyQ46RxVE&#43;bMu7VD0=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.8775cb64fbeada525af486d0e6a80a9042ba0c7a7958fc22c03e42d5abc3fe1f.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="//localhost:4321/" title="Home">
+      <img src="/img/favicon_io/favicon.ico" class="dib db-l h2 w-auto" alt="Cecina Babich Morrow">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About Cecina">About</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/blog/" title="Blog">Blog</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/project/" title="Project Portfolio">Projects</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/talk/" title="Talks">Talks</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/publication/" title="Publications">Publications</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/contact/" title="Contact">Contact</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+<main class="page-main pa4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Bias-variance decomposition</h1>
+        <h4 class="f4 mt0 mb4 lh-title measure">A fundamental trade-off in statistics.</h4>
+        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="//localhost:4321/categories/statistics">statistics</a>  <a href="//localhost:4321/categories/r">R</a> </p>
+        <p class="f7 db mv0 ttu">September 23, 2024</p>
+
+      
+
+      </header>
+      <section class="post-body pt5 pb4">
+        
+
+
+
+<h2 id="inspiration-for-this-post">Inspiration for this post
+  <a href="#inspiration-for-this-post"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Continuing my dive into the wonderful world of regression, here&rsquo;s an overview of the statistical theory underpinning bias-variance decomposition, one of the fundamental trade-offs in statistics. Once again, most of the material I&rsquo;m showing comes from a class I took with Dr. Song Liu.</p>
+
+
+
+
+<h2 id="bias-variance-decomposition">Bias-Variance Decomposition
+  <a href="#bias-variance-decomposition"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>We&rsquo;ve seen how increasing the flexibility of our model can lead to over-fitting, where the model performs poorly on unseen data (see 
+<a href="https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/" target="_blank" rel="noopener">Least squares regression: Part 2</a>). As we tried out in that post, cross-validation is a commonly used approach to determine the optimal balance between flexibility and generalizability by minimizing the average testing error resulting from training the model on different disjoint subsets of our overall dataset. In a frequentist framework, the phenomenon of overfitting as well as the strategy of cross-validation can be motivated by the concept of bias-variance decomposition.</p>
+<p>In our training/testing framework, we have a testing error value <code>\(E(D_1, \textbf{w}_{LS})\)</code> for a model trained on <code>\(D_0\)</code>. Since we are not actually interested in the testing error for a specific testing set <code>\(D_1\)</code>, we can instead take the expectation over our entire dataset <code>\(D\)</code>:</p>
+<p>$$
+<code>\begin{align*} \mathbb{E}_D[E(D_1, \textbf{w}_{LS})] &amp;= \mathbb{E}_D \left[ \sum_i[y_i - f(\textbf{x}_i; \textbf{w}_{LS}]^2 \right] \\ &amp;= \sum_i \mathbb{E}_D \left[ [y_i - f(\textbf{x}_i; \textbf{w}_{LS}]^2 | \textbf{x}_i \right] \end{align*}</code>
+$$</p>
+<p>The above expression is the sum of expected loss <code>\(\mathbb{E}_D \left[ [y_i - f(\textbf{x}_i; \textbf{w}_{LS}]^2 | \textbf{x}_i \right]\)</code> over all <code>\(i\)</code> in our dataset. We make the assumption that our outcome variable is the result of some deterministic generative function plus additive noise that is independent of our input data: <code>\(y_i = g(\textbf{x}_i) + \epsilon_i\)</code>, <code>\(g(\textbf{x}): \mathbb{R}^d \rightarrow \mathbb{R}\)</code>, <code>\(\mathbb{E}[\epsilon_i] = 0\)</code>. This assumption allows us to write expected loss as the sum of three terms:</p>
+<p><code>$$\mathbb{E}_D[[y_i - f_{LS}(\textbf{x}_i)]^2|\textbf{x}_i] = \text{var}(\epsilon) + [g(\textbf{x}_i) - \mathbb{E}[f_{LS}(\textbf{x}_i)|\textbf{x}_i]]^2 + \text{var}[f_{LS}(\textbf{x}_i)|\textbf{x}_i]$$</code></p>
+<ol>
+<li><strong>Irreducible error</strong> <code>\(\text{var}(\epsilon)\)</code>: the randomness of the data generation process that produces our output data</li>
+<li><strong>Bias</strong> <code>\([g(\textbf{x}_i) - \mathbb{E}[f_{LS}(\textbf{x}_i)|\textbf{x}_i]]\)</code>: how closely our average prediction over all datasets matches the generative function</li>
+<li><strong>Variance</strong> <code>\(\text{var}[f_{LS}(\textbf{x}_i)|\textbf{x}_i]\)</code>: how much our prediction is affected by the randomness of the dataset chosen</li>
+</ol>
+
+
+
+
+<h3 id="decomposition-of-expected-loss">Decomposition of expected loss
+  <a href="#decomposition-of-expected-loss"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>For a proof, see below:</p>
+<p><strong>Theorem 1 (Decomposition of expected loss):</strong> Expected loss can be decomposed into the sum of the irreducible error, bias, and variance, i.e. <code>$$\mathbb{E}_D[[y_i - f_{LS}(\textbf{x}_i)]^2|\textbf{x}_i] = \text{var}(\epsilon) + [g(\textbf{x}_i) - \mathbb{E}[f_{LS}(\textbf{x}_i)|\textbf{x}_i]]^2 + \text{var}[f_{LS}(\textbf{x}_i)|\textbf{x}_i]$$</code></p>
+<p><strong>Proof:</strong> By expanding the square on the left-hand side, we get:</p>
+<p>$$
+<code>\begin{align*} \mathbb{E}_D\left[[y_i - f_{LS}(\textbf{x}_i)]^2|\textbf{x}_i\right] &amp;= \mathbb{E}_D\left[y_i^2 - 2y_if_{LS}(\textbf{x}_i) + [f_{LS}(\textbf{x}_i)]^2|\textbf{x}_i\right] \\ &amp;= \mathbb{E}_D\left[y_i^2|\textbf{x}_i\right] - 2\mathbb{E}_D\left[y_if_{LS}(\textbf{x}_i)|\textbf{x}_i\right] + \mathbb{E}_D\left[[f_{LS}(\textbf{x}_i)]^2|\textbf{x}_i\right] \end{align*}</code>
+$$</p>
+<p>We take the first two terms on the right-hand side separately, starting with <code>\(\mathbb{E}_D[y_i^2|\textbf{x}_i]\)</code>. We apply our data-generating assumption that <code>\(y_i = g(\textbf{x}_i) + \epsilon_i\)</code>, where <code>\(g(\textbf{x})\)</code> is a deterministic function, <code>\(\epsilon_i\)</code> is independent of <code>\(\textbf{x}_i\)</code> for all <code>\(i\)</code>, and <code>\(\mathbb{E}[\epsilon_i] = 0\)</code>. Then</p>
+<p>$$
+<code>\begin{align*} \mathbb{E}_D[y_i^2|\textbf{x}_i] &amp;= \mathbb{E}_D\left[[g(\textbf{x}_i) + \epsilon]^2|\textbf{x}_i\right] \\ &amp;= [g(\textbf{x}_i]^2 + 2 g(\textbf{x}_i) \mathbb{E}(\epsilon) + \mathbb{E}(\epsilon^2) \end{align*}</code>
+$$</p>
+<p>Since <code>\(\mathbb{E}[\epsilon_i] = 0\)</code>, we know that <code>\(\text{var}(\epsilon) = \mathbb{E}(\epsilon^2) + [\mathbb{E}(\epsilon)]^2 = \mathbb{E}(\epsilon^2)\)</code>. So we have <code>\(\mathbb{E}_D[y_i^2|\textbf{x}_i] = [g(\textbf{x}_i)]^2 + \text{var}(\epsilon)\)</code>.</p>
+<p>Now consider <code>\(\mathbb{E}_D\left[y_if_{LS}(\textbf{x}_i)|\textbf{x}_i\right]\)</code>:</p>
+<p>$$
+<code>\begin{align*} \mathbb{E}_D\left[y_if_{LS}(\textbf{x}_i)|\textbf{x}_i\right] &amp;= \mathbb{E}_D\left[[g(\textbf{x}_i) + \epsilon]f_{LS}(\textbf{x}_i)| \textbf{x}_i\right] \\ &amp;= g(\textbf{x}_i) \mathbb{E}_D[f_{LS}(\textbf{x}_i) | \textbf{x}_i] + \mathbb{E}_D[\epsilon]\mathbb{E}_D[f_{LS}(\textbf{x}_i)|\textbf{x}_i] \\ &amp;= g(\textbf{x}_i) \mathbb{E}_D[f_{LS}(\textbf{x}_i) | \textbf{x}_i] \end{align*}</code>
+$$</p>
+<p>Substituting back in, we get:</p>
+<p>$$
+<code>\begin{align*} \mathbb{E}_D\left[[y_i - f_{LS}(\textbf{x}_i)]^2|\textbf{x}_i\right] &amp;= [g(\textbf{x}_i)]^2 + \text{var}(\epsilon) - 2 g(\textbf{x}_i) \mathbb{E}_D[f_{LS}(\textbf{x}_i) | \textbf{x}_i] + \mathbb{E}_D\left[[f_{LS}(\textbf{x}_i)]^2|\textbf{x}_i\right] \\ &amp;= \text{var}(\epsilon) + [g(\textbf{x}_i)]^2 - 2 g(\textbf{x}_i) \mathbb{E}_D[f_{LS}(\textbf{x}_i) | \textbf{x}_i] + \left[\mathbb{E}_D[f_{LS}(\textbf{x}_i)|\textbf{x}_i]\right]^2 \\ &amp;- \left[\mathbb{E}_D[f_{LS}(\textbf{x}_i)|\textbf{x}_i]\right]^2 + \mathbb{E}_D\left[[f_{LS}(\textbf{x}_i)]^2 | \textbf{x}_i\right] \\ &amp;= \text{var}(\epsilon) + [g(\textbf{x}_i) - \mathbb{E}[f_{LS}(\textbf{x}_i)|\textbf{x}_i]]^2 + \text{var}[f_{LS}(\textbf{x}_i)|\textbf{x}_i] \end{align*}</code>
+$$</p>
+
+
+
+
+<h3 id="so-what">So what?
+  <a href="#so-what"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Since irreducible error is out of our control, the two things we can play with in order to minimize expected loss are bias and variance. Bias and variance are both affected by the degree <code>\(b\)</code> of our feature transform. For more complex prediction functions with higher degree <code>\(b\)</code>, bias decreases but variance increases as the function becomes more sensitive to noise. Similarly, lower values of our regularization parameter <code>\(\lambda\)</code> yield more complex functions with lower bias and higher variance. Thus this decomposition provides a mathematical framework with which to understand the phenomenon of overfitting.</p>
+
+
+
+
+<h2 id="measuring-performance">Measuring performance
+  <a href="#measuring-performance"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>We want to be able to quantify how well our prediction function <code>\(f_{LS}\)</code> performs. Averaging the expected loss over all input <code>\(\textbf{x}_i\)</code> in our training set yields in-sample error: <code>\(\frac{1}{n}\sum_{i = 1}^n \mathbb{E}[(y_i - f_{LS}(\textbf{x}_i))^2|\textbf{x}_i]\)</code>. In real-world settings, we cannot compute in-sample error since the generative function <code>\(g(\textbf{x})\)</code> is unknown, as is the distribution of the additive error <code>\(\epsilon\)</code>. As an alternative, we use out-sample error, the expectation over the entire distribution of <code>\(x\)</code>: <code>\(\mathbb{E}_\textbf{x} \mathbb{E}[(y - f_{LS}(\textbf{x}))^2 | \textbf{x}] = \mathbb{E}_{D_0} \mathbb{E}_{p(y,\textbf{x})}[(y - f_{LS}(\textbf{x}))^2]\)</code>. We can approximate out-sample error using <code>\(\frac{1}{K}\sum_{k = 1...K} \frac{1}{n'} \sum_{(y,x)\in D_1^{(k)}} (y - f_{LS}^{(k)} (\textbf{x}))^2\)</code>, where <code>\(f_{LS}^{(k)}\)</code> is the prediction function trained on the <code>\(k\)</code>-th training set <code>\(D_0^{(k)}\)</code>. This expression is the same as the cross-validation error when <code>\(D_1^{(k)}\)</code> is the <code>\(k\)</code>-th disjoint subset of the dataset and <code>\(D_0^{(k)}\)</code> is the remainder of the dataset. Therefore cross-validation is a suitable way to measure the performance of our prediction function by approximating the out-sample error.</p>
+
+
+
+
+<h3 id="covariate-shift-in-cross-validation">Covariate shift in cross-validation
+  <a href="#covariate-shift-in-cross-validation"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>In cross-validation, we assume that our training data <code>\(D_0\)</code> and our test data <code>\(D_1\)</code> come from the same distribution. In the real-world, however, we often encounter situations where we would like to use a model trained on some training data to extrapolate to new data outside of the training region. The term covariate shift refers to such situations where the training and testing data have different probability distributions, but the conditional distributions of the output variable given input variables are the same. Sugiyama et al. (2007) propose a variation on cross-validation called importance weighted cross-validation (IWCV) that allows for model selection even under covariate shift.</p>
+<p>For training samples <code>\(\{ (x_i, y_i) \}_{i = 1}^n\)</code>, a test sample <code>\((t, u)\)</code>, a loss function <code>\(l(x,y,\hat{y})\)</code> giving the discrepancy between the estimate <code>\(\hat{y}\)</code> and the true value <code>\(y\)</code> at the input value <code>\(x\)</code>, and a prediction function <code>\(\hat{f}(x; \hat{\theta}) = \hat{y}\)</code>, we can express the generalization error as <code>\(R^{(n)} := \mathbb{E}_{\{ (x_i, y_i) \}_{i = 1}^n, t, u} [l(t, u, \hat{f}(t; \hat{\theta}))]\)</code>. Typically, we would estimate <code>\(\theta\)</code> using empirical risk minimization (ERM) such that <code>$$\hat{\theta}_{ERM} := \text{argmin}_\theta [\frac{1}{n}\sum_{i = 1}^n l(x_i, y_i, \hat{f}(x_i; \theta))]$$</code> However under covariate shift when the distribution of <code>\(x\)</code> is not the same in our testing data as in our training data, ERM is no longer consistent, i.e. no longer converges in probability to the optimal parameter for our model. Sugiyama et al. (2007) propose a new method called importance weighted ERM (IWERM) that does converge: <code>$$\hat{\theta}_{IWERM} := \text{argmin}_\theta [\frac{1}{n}\sum_{i = 1}^n \frac{p_{test}(x_i)}{p_{train}(x_i)} l(x_i, y_i, \hat{f}(x_i; \theta))]$$</code> Note that the ratio of test and training densities at the training points <code>\(\frac{p_{test}(x_i)}{p_{train}(x_i)}\)</code> is referred to as importance. Since this estimate is not always efficient or stable, the authors note that it is possible to weaken the weight of the importance term by raising it to the power of a parameter <code>\(\lambda\)</code> or to add a regularization parameter <code>\(\gamma\)</code> to the empirical risk. These two options, known as adaptive IWERM and regularized IWERM, respectively, allow us to trade off between the consistency of the parameter estimate and its stability.</p>
+<p>Those methods necessitate the tuning of <code>\(\lambda\)</code> or <code>\(\gamma\)</code> in model selection. Because of the covariate shift, however, we cannot carry out cross-validation as usual. The authors introduce the process of IWCV to address this issue, where the risk of k-fold IWCV is given as <code>$$\hat{R}^{(n)}_{kIWCV} := \frac{1}{k} \sum_{j = 1}^k \frac{1}{|D_j|} \sum_{(x,y)\in D_j} \frac{p_{test}(x_i)}{p_{train}(x_i)} l(x,y,\hat{f}_{D_j}(x))$$</code> where the <code>\(D_j\)</code> are the disjoint subsets of our training data. They find that leave-one-out IWCV provides an almost unbiased estimate of risk under covariate shift for any loss function, model, or method of parameter learning (including non-parametric methods). To carry out IWERM in practice, we need some way to estimate the importance if we do not know the test and training input density functions. The authors do this by using the empirical estimates of the densities from the training and testing data and find good performance, albeit with slightly larger error.</p>
+
+
+
+
+<h2 id="references">References
+  <a href="#references"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>M. Sugiyama, M. Krauledat, and K-R Müller. &ldquo;Covariate Shift Adaptation by Importance Weighted
+Cross Validation&rdquo;, Journal of Machine Learning Research, 2007.</p>
+
+        
+        <details closed class="f6 fw7 input-reset">
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Posted on:</dt>
+    <dd class="fw5 ml0">September 23, 2024</dd>
+  </dl>
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Length:</dt>
+    <dd class="fw5 ml0">7 minute read, 1363 words</dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Categories:</dt>
+    <dd class="fw5 ml0"> <a href="//localhost:4321/categories/statistics">statistics</a>  <a href="//localhost:4321/categories/r">R</a> </dd>
+  </dl>
+  
+  
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Tags:</dt>
+    <dd class="fw5 ml0"> <a href="//localhost:4321/tags/statistics">statistics</a>  <a href="//localhost:4321/tags/r">R</a> </dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">See Also:</dt>
+    
+    <dd class="fw5 ml0"><a href="/blog/2024-08-17-how-brat-is-it/">brat and it&#39;s the same but it&#39;s a blog post so it&#39;s not</a></dd>
+    
+    <dd class="fw5 ml0"><a href="/blog/2024-07-26-regularized_leastsquares/">Least squares regression: Part 2</a></dd>
+    
+    <dd class="fw5 ml0"><a href="/blog/2024-07-02-leastsquares-regression/">Least squares regression: Part 1</a></dd>
+    
+  </dl>
+</details>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="//localhost:4321/blog/2024-08-17-how-brat-is-it/">brat and it&#39;s the same but it&#39;s a blog post so it&#39;s not &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+      <div class="post-comments pa0 pa4-l mt4">
+  
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "babichmorrowc-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  
+</div>
+
+    
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2024 Cecina Babich Morrow, Anywhere
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="/contact/" title="envelope" >
+      <i class="fas fa-envelope fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/babichmorrowc" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://scholar.google.com/citations?user=20mEEooAAAAJ&amp;hl=en" title="google-scholar" target="_blank" rel="me noopener">
+      <i class="fab fa-google-scholar fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://orcid.org/my-orcid?orcid=0000-0003-2188-1495" title="orcid" target="_blank" rel="me noopener">
+      <i class="fab fa-orcid fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://x.com/babichmorrowc" title="x-twitter" target="_blank" rel="me noopener">
+      <i class="fab fa-x-twitter fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+      <a class="dib pv1 ph2 link" href="/contributors/" title="Contributors">Contributors</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

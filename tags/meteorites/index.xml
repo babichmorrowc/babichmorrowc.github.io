@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Meteorites on Cecina Babich Morrow</title>
-    <link>//localhost:3048/tags/meteorites/</link>
+    <link>//localhost:4321/tags/meteorites/</link>
     <description>Recent content in Meteorites on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 20 Feb 2019 22:13:14 -0500</lastBuildDate>
-    <atom:link href="//localhost:3048/tags/meteorites/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/meteorites/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hacking Meteorites Part 1: Calculating percent weights</title>
-      <link>//localhost:3048/blog/2019-02-20-meteoritecluster1/</link>
+      <link>//localhost:4321/blog/2019-02-20-meteoritecluster1/</link>
       <pubDate>Wed, 20 Feb 2019 22:13:14 -0500</pubDate>
-      <guid>//localhost:3048/blog/2019-02-20-meteoritecluster1/</guid>
+      <guid>//localhost:4321/blog/2019-02-20-meteoritecluster1/</guid>
       <description>Estimating percent weight of elements in a meteorite.</description>
     </item>
     <item>
       <title>#HackTheSolarSystem</title>
-      <link>//localhost:3048/blog/2019-02-14-hackathon/</link>
+      <link>//localhost:4321/blog/2019-02-14-hackathon/</link>
       <pubDate>Thu, 14 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>//localhost:3048/blog/2019-02-14-hackathon/</guid>
+      <guid>//localhost:4321/blog/2019-02-14-hackathon/</guid>
       <description>Overview of my first hackathon.</description>
     </item>
   </channel>

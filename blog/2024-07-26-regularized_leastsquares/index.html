@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=3048&amp;path=livereload" data-no-instant defer></script>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
   
                            
      
@@ -31,16 +31,16 @@
 <meta property="og:title" content="Least squares regression: Part 2 | Cecina Babich Morrow">
 <meta property="og:description" content="A little more least squares regression." />
 <meta property="og:type" content="page" />
-<meta property="og:url" content="//localhost:3048/blog/2024-07-26-regularized_leastsquares/" />
+<meta property="og:url" content="//localhost:4321/blog/2024-07-26-regularized_leastsquares/" />
 <meta property="og:locale" content="en">
 
 
 
 
     
-        <meta property="og:image" content="//localhost:3048/blog/2024-07-26-regularized_leastsquares/featured.jpg" >
+        <meta property="og:image" content="//localhost:4321/blog/2024-07-26-regularized_leastsquares/featured.jpg" >
         <meta property="twitter:card" content="summary_large_image">
-        <meta name="twitter:image" content="//localhost:3048/blog/2024-07-26-regularized_leastsquares/featured.jpg" >
+        <meta name="twitter:image" content="//localhost:4321/blog/2024-07-26-regularized_leastsquares/featured.jpg" >
     
     
   
@@ -48,8 +48,8 @@
   <meta itemprop="description" content="Feature transforms, overfitting, and cross-validation.">
   <meta itemprop="datePublished" content="2024-07-26T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-07-26T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2008">
-  <meta itemprop="image" content="//localhost:3048/blog/2024-07-26-regularized_leastsquares/featured.jpg">
+  <meta itemprop="wordCount" content="2007">
+  <meta itemprop="image" content="//localhost:4321/blog/2024-07-26-regularized_leastsquares/featured.jpg">
   <meta itemprop="keywords" content="Statistics,R">
   
   
@@ -72,7 +72,7 @@
       <div class="grid-container">
 <header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
   <nav class="site-nav db dt-l w-100" role="navigation">
-    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="//localhost:3048/" title="Home">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="//localhost:4321/" title="Home">
       <img src="/img/favicon_io/favicon.ico" class="dib db-l h2 w-auto" alt="Cecina Babich Morrow">
     </a>
     <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
@@ -118,7 +118,7 @@
       <header class="post-header">
         <h1 class="f1 lh-solid measure-narrow mb3 fw4">Least squares regression: Part 2</h1>
         <h4 class="f4 mt0 mb4 lh-title measure">A little more least squares regression.</h4>
-        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="//localhost:3048/categories/statistics">statistics</a>  <a href="//localhost:3048/categories/r">R</a> </p>
+        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="//localhost:4321/categories/statistics">statistics</a>  <a href="//localhost:4321/categories/r">R</a> </p>
         <p class="f7 db mv0 ttu">July 26, 2024</p>
 
       
@@ -158,13 +158,12 @@ using a feature transform
 <code>\(\textbf{w}_{LS}=(\phi(\textbf{X})\phi(\textbf{X})^\top)^{-1}\phi(\textbf{X})\textbf{y}^\top\)</code>.
 If <code>\(\phi(\textbf{X})\)</code> is symmetric and invertible, then we can simplify
 further:</p>
-<p>::: {.theorem name=&ldquo;Least squares with a feature transform&rdquo;}
-If <code>\(\phi(\textbf{X})\)</code> is symmetric and invertible, then <code>\(\textbf{w}_{LS}=[\phi(\textbf{X})]^{-1}\textbf{y}^\top\)</code>
-:::</p>
-<p>::: {proof}
-<code>\begin{align*} \textbf{w}\_{LS} &amp;= \[\phi(\textbf{X})\phi(\textbf{X})^\top\]^{-1}\phi(\textbf{X})\textbf{y}^\top \\ &amp;= \[\phi(\textbf{X})^\top\]^{-1}\[\phi(\textbf{X})\]^{-1}\phi(\textbf{X})\textbf{y}^\top \\ &amp;= \[\phi(\textbf{X})^\top\]^{-1}\textbf{y}^\top \\ &amp;= \[\phi(\textbf{X})\]^{-1}\textbf{y}^\top \end{align*}</code></p>
-<p>■
-:::</p>
+<p><strong>Theorem 1 (Least squares with a feature transform):</strong> If <code>\(\phi(\textbf{X})\)</code> is symmetric and invertible, then <code>\(\textbf{w}_{LS}=[\phi(\textbf{X})]^{-1}\textbf{y}^\top\)</code>.</p>
+<p><strong>Proof:</strong></p>
+<p>$$
+<code>\begin{align*} \textbf{w}_{LS} &amp;= [\phi(\textbf{X})\phi(\textbf{X})^\top]^{-1}\phi(\textbf{X})\textbf{y}^\top \\ &amp;= [\phi(\textbf{X})^\top]^{-1}[\phi(\textbf{X})]^{-1}\phi(\textbf{X})\textbf{y}^\top \\ &amp;= [\phi(\textbf{X})^\top]^{-1}\textbf{y}^\top \\ &amp;= [\phi(\textbf{X})]^{-1}\textbf{y}^\top \end{align*}</code>
+$$</p>
+<p>■</p>
 
 
 
@@ -417,29 +416,29 @@ predictions. As the degree <code>\(b\)</code> of our feature transformation func
   </dl>
   <dl class="f6 lh-copy">
     <dt class="fw7">Length:</dt>
-    <dd class="fw5 ml0">10 minute read, 2008 words</dd>
+    <dd class="fw5 ml0">10 minute read, 2007 words</dd>
   </dl>
   
   <dl class="f6 lh-copy">
     <dt class="fw7">Categories:</dt>
-    <dd class="fw5 ml0"> <a href="//localhost:3048/categories/statistics">statistics</a>  <a href="//localhost:3048/categories/r">R</a> </dd>
+    <dd class="fw5 ml0"> <a href="//localhost:4321/categories/statistics">statistics</a>  <a href="//localhost:4321/categories/r">R</a> </dd>
   </dl>
   
   
   
   <dl class="f6 lh-copy">
     <dt class="fw7">Tags:</dt>
-    <dd class="fw5 ml0"> <a href="//localhost:3048/tags/statistics">statistics</a>  <a href="//localhost:3048/tags/r">R</a> </dd>
+    <dd class="fw5 ml0"> <a href="//localhost:4321/tags/statistics">statistics</a>  <a href="//localhost:4321/tags/r">R</a> </dd>
   </dl>
   
   <dl class="f6 lh-copy">
     <dt class="fw7">See Also:</dt>
     
+    <dd class="fw5 ml0"><a href="/blog/2024-09-23-bias-variance/">Bias-variance decomposition</a></dd>
+    
     <dd class="fw5 ml0"><a href="/blog/2024-08-17-how-brat-is-it/">brat and it&#39;s the same but it&#39;s a blog post so it&#39;s not</a></dd>
     
     <dd class="fw5 ml0"><a href="/blog/2024-07-02-leastsquares-regression/">Least squares regression: Part 1</a></dd>
-    
-    <dd class="fw5 ml0"><a href="/project/bayesian_decision_analysis/">Bayesian Decision Analysis</a></dd>
     
   </dl>
 </details>
@@ -450,12 +449,12 @@ predictions. As the degree <code>\(b\)</code> of our feature transformation func
   
   
     <a class="prev dtc pr2 tl v-top fw6"
-    href="//localhost:3048/blog/2024-08-17-how-brat-is-it/">&larr; brat and it&#39;s the same but it&#39;s a blog post so it&#39;s not</a>
+    href="//localhost:4321/blog/2024-08-17-how-brat-is-it/">&larr; brat and it&#39;s the same but it&#39;s a blog post so it&#39;s not</a>
   
   
   
     <a class="next dtc pl2 tr v-top fw6"
-    href="//localhost:3048/blog/2024-07-02-leastsquares-regression/">Least squares regression: Part 1 &rarr;</a>
+    href="//localhost:4321/blog/2024-07-02-leastsquares-regression/">Least squares regression: Part 1 &rarr;</a>
   
 </div>
 

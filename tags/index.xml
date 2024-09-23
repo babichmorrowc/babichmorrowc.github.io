@@ -2,192 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Cecina Babich Morrow</title>
-    <link>//localhost:3048/tags/</link>
+    <link>//localhost:4321/tags/</link>
     <description>Recent content in Tags on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 17 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:3048/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>R</title>
-      <link>//localhost:3048/tags/r/</link>
+      <link>//localhost:4321/tags/r/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/r/</guid>
+      <guid>//localhost:4321/tags/r/</guid>
       <description></description>
     </item>
     <item>
       <title>Statistics</title>
-      <link>//localhost:3048/tags/statistics/</link>
+      <link>//localhost:4321/tags/statistics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/statistics/</guid>
+      <guid>//localhost:4321/tags/statistics/</guid>
       <description></description>
     </item>
     <item>
       <title>BDA</title>
-      <link>//localhost:3048/tags/bda/</link>
+      <link>//localhost:4321/tags/bda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/bda/</guid>
+      <guid>//localhost:4321/tags/bda/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>//localhost:3048/tags/python/</link>
+      <link>//localhost:4321/tags/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/python/</guid>
+      <guid>//localhost:4321/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Mental Health</title>
-      <link>//localhost:3048/tags/mental-health/</link>
+      <link>//localhost:4321/tags/mental-health/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/mental-health/</guid>
+      <guid>//localhost:4321/tags/mental-health/</guid>
       <description></description>
     </item>
     <item>
       <title>Biogeography</title>
-      <link>//localhost:3048/tags/biogeography/</link>
+      <link>//localhost:4321/tags/biogeography/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/biogeography/</guid>
+      <guid>//localhost:4321/tags/biogeography/</guid>
       <description></description>
     </item>
     <item>
       <title>Species Distribution Modeling</title>
-      <link>//localhost:3048/tags/species-distribution-modeling/</link>
+      <link>//localhost:4321/tags/species-distribution-modeling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/species-distribution-modeling/</guid>
+      <guid>//localhost:4321/tags/species-distribution-modeling/</guid>
       <description></description>
     </item>
     <item>
       <title>Hypervolume</title>
-      <link>//localhost:3048/tags/hypervolume/</link>
+      <link>//localhost:4321/tags/hypervolume/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/hypervolume/</guid>
+      <guid>//localhost:4321/tags/hypervolume/</guid>
       <description></description>
     </item>
     <item>
       <title>Life History</title>
-      <link>//localhost:3048/tags/life-history/</link>
+      <link>//localhost:4321/tags/life-history/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/life-history/</guid>
+      <guid>//localhost:4321/tags/life-history/</guid>
       <description></description>
     </item>
     <item>
       <title>Google</title>
-      <link>//localhost:3048/tags/google/</link>
+      <link>//localhost:4321/tags/google/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/google/</guid>
+      <guid>//localhost:4321/tags/google/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>//localhost:3048/tags/bash/</link>
+      <link>//localhost:4321/tags/bash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/bash/</guid>
+      <guid>//localhost:4321/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Education</title>
-      <link>//localhost:3048/tags/education/</link>
+      <link>//localhost:4321/tags/education/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/education/</guid>
+      <guid>//localhost:4321/tags/education/</guid>
       <description></description>
     </item>
     <item>
       <title>Outreach</title>
-      <link>//localhost:3048/tags/outreach/</link>
+      <link>//localhost:4321/tags/outreach/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/outreach/</guid>
+      <guid>//localhost:4321/tags/outreach/</guid>
       <description></description>
     </item>
     <item>
       <title>Website</title>
-      <link>//localhost:3048/tags/website/</link>
+      <link>//localhost:4321/tags/website/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/website/</guid>
+      <guid>//localhost:4321/tags/website/</guid>
       <description></description>
     </item>
     <item>
       <title>GitHub</title>
-      <link>//localhost:3048/tags/github/</link>
+      <link>//localhost:4321/tags/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/github/</guid>
+      <guid>//localhost:4321/tags/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Career</title>
-      <link>//localhost:3048/tags/career/</link>
+      <link>//localhost:4321/tags/career/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/career/</guid>
+      <guid>//localhost:4321/tags/career/</guid>
       <description></description>
     </item>
     <item>
       <title>Bradypus</title>
-      <link>//localhost:3048/tags/bradypus/</link>
+      <link>//localhost:4321/tags/bradypus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/bradypus/</guid>
+      <guid>//localhost:4321/tags/bradypus/</guid>
       <description></description>
     </item>
     <item>
       <title>Machine Learning</title>
-      <link>//localhost:3048/tags/machine-learning/</link>
+      <link>//localhost:4321/tags/machine-learning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/machine-learning/</guid>
+      <guid>//localhost:4321/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>LGBT</title>
-      <link>//localhost:3048/tags/lgbt/</link>
+      <link>//localhost:4321/tags/lgbt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/lgbt/</guid>
+      <guid>//localhost:4321/tags/lgbt/</guid>
       <description></description>
     </item>
     <item>
       <title>Earth Science</title>
-      <link>//localhost:3048/tags/earth-science/</link>
+      <link>//localhost:4321/tags/earth-science/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/earth-science/</guid>
+      <guid>//localhost:4321/tags/earth-science/</guid>
       <description></description>
     </item>
     <item>
       <title>Hackathon</title>
-      <link>//localhost:3048/tags/hackathon/</link>
+      <link>//localhost:4321/tags/hackathon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/hackathon/</guid>
+      <guid>//localhost:4321/tags/hackathon/</guid>
       <description></description>
     </item>
     <item>
       <title>Meteorites</title>
-      <link>//localhost:3048/tags/meteorites/</link>
+      <link>//localhost:4321/tags/meteorites/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/meteorites/</guid>
+      <guid>//localhost:4321/tags/meteorites/</guid>
       <description></description>
     </item>
     <item>
       <title>Evolution</title>
-      <link>//localhost:3048/tags/evolution/</link>
+      <link>//localhost:4321/tags/evolution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/evolution/</guid>
+      <guid>//localhost:4321/tags/evolution/</guid>
       <description></description>
     </item>
     <item>
       <title>Phylogenetics</title>
-      <link>//localhost:3048/tags/phylogenetics/</link>
+      <link>//localhost:4321/tags/phylogenetics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/phylogenetics/</guid>
+      <guid>//localhost:4321/tags/phylogenetics/</guid>
       <description></description>
     </item>
     <item>
       <title>BIEN</title>
-      <link>//localhost:3048/tags/bien/</link>
+      <link>//localhost:4321/tags/bien/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/bien/</guid>
+      <guid>//localhost:4321/tags/bien/</guid>
       <description></description>
     </item>
     <item>
       <title>Plant Biodiversity</title>
-      <link>//localhost:3048/tags/plant-biodiversity/</link>
+      <link>//localhost:4321/tags/plant-biodiversity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/tags/plant-biodiversity/</guid>
+      <guid>//localhost:4321/tags/plant-biodiversity/</guid>
       <description></description>
     </item>
   </channel>

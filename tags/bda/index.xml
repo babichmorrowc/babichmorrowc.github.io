@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BDA on Cecina Babich Morrow</title>
-    <link>//localhost:3048/tags/bda/</link>
+    <link>//localhost:4321/tags/bda/</link>
     <description>Recent content in BDA on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 21 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:3048/tags/bda/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:4321/tags/bda/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bayesian Decision Analysis</title>
-      <link>//localhost:3048/project/bayesian_decision_analysis/</link>
+      <link>//localhost:4321/project/bayesian_decision_analysis/</link>
       <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/project/bayesian_decision_analysis/</guid>
+      <guid>//localhost:4321/project/bayesian_decision_analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>[Talk] Bayesian Decision Analysis for climate decision-making: Sensitivity to decision attributes</title>
-      <link>//localhost:3048/talk/miniproject_2024/</link>
+      <link>//localhost:4321/talk/miniproject_2024/</link>
       <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/talk/miniproject_2024/</guid>
+      <guid>//localhost:4321/talk/miniproject_2024/</guid>
       <description>Investigating the sensitivity of BDA to changes in cost-related decision attributes for an idealized example.</description>
     </item>
     <item>
       <title>[Talk] The Use of Utility: Utility functions in a Bayesian Decision Analysis framework</title>
-      <link>//localhost:3048/talk/bootcamp_2023/</link>
+      <link>//localhost:4321/talk/bootcamp_2023/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:3048/talk/bootcamp_2023/</guid>
+      <guid>//localhost:4321/talk/bootcamp_2023/</guid>
       <description>My presentation for the Bootcamp unit of the Compass PhD program.</description>
     </item>
   </channel>
