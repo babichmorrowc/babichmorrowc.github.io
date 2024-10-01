@@ -2,13 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:4321/talk/2024_compass-conference/</loc>
+    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4321/tags/bda/</loc>
+    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4321/</loc>
+    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4321/tags/</loc>
+    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4321/talk/</loc>
+    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:4321/blog/2024-09-23-bias-variance/</loc>
     <lastmod>2024-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4321/categories/</loc>
-    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:4321/</loc>
     <lastmod>2024-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4321/blog/</loc>
@@ -24,9 +36,6 @@
     <lastmod>2024-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4321/categories/statistics/</loc>
-    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:4321/tags/</loc>
     <lastmod>2024-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4321/blog/2024-08-17-how-brat-is-it/</loc>
@@ -47,9 +56,6 @@
     <loc>//localhost:4321/project/bayesian_decision_analysis/</loc>
     <lastmod>2024-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:4321/tags/bda/</loc>
-    <lastmod>2024-06-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//localhost:4321/categories/bda/</loc>
     <lastmod>2024-06-21T00:00:00+00:00</lastmod>
   </url><url>
@@ -63,9 +69,6 @@
     <lastmod>2024-06-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4321/talk/miniproject_2024/</loc>
-    <lastmod>2024-05-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:4321/talk/</loc>
     <lastmod>2024-05-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4321/talk/bootcamp_2023/</loc>

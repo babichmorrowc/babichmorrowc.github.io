@@ -6,8 +6,15 @@
     <description>Recent content in BDA on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 21 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:4321/tags/bda/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Poster] Sensitivity of Bayesian Decision Analysis: A tool for robust climate adaptation decision-making</title>
+      <link>//localhost:4321/talk/2024_compass-conference/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/talk/2024_compass-conference/</guid>
+      <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation</description>
+    </item>
     <item>
       <title>Bayesian Decision Analysis</title>
       <link>//localhost:4321/project/bayesian_decision_analysis/</link>

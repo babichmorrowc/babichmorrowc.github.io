@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:4321/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BDA</title>
+      <link>//localhost:4321/tags/bda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/tags/bda/</guid>
+      <description></description>
+    </item>
     <item>
       <title>R</title>
       <link>//localhost:4321/tags/r/</link>
@@ -20,13 +27,6 @@
       <link>//localhost:4321/tags/statistics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:4321/tags/statistics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>BDA</title>
-      <link>//localhost:4321/tags/bda/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/tags/bda/</guid>
       <description></description>
     </item>
     <item>
