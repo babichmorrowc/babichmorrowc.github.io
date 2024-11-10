@@ -10,10 +10,17 @@
     <atom:link href="//localhost:4321/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Poster] Sensitivity of Bayesian Decision Analysis: A tool for robust climate adaptation decision-making</title>
-      <link>//localhost:4321/talk/2024_compass-conference/</link>
+      <link>//localhost:4321/talk/2024_compass-conference-poster/</link>
       <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/talk/2024_compass-conference/</guid>
-      <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation</description>
+      <guid>//localhost:4321/talk/2024_compass-conference-poster/</guid>
+      <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
+    </item>
+    <item>
+      <title>[Talk] Bayesian Decision Analysis: a crash course</title>
+      <link>//localhost:4321/talk/2024_compass-conference-talk/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/talk/2024_compass-conference-talk/</guid>
+      <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
     </item>
     <item>
       <title>Bias-variance decomposition</title>
