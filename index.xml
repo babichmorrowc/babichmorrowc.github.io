@@ -44,6 +44,13 @@
       <description>Feature transforms, overfitting, and cross-validation.</description>
     </item>
     <item>
+      <title>[Talk] Sensitivity of Bayesian Decision Analysis to decision attributes: A tool for robust climate adaptation decision making</title>
+      <link>//localhost:4321/talk/2024_met-office-talk/</link>
+      <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/talk/2024_met-office-talk/</guid>
+      <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
+    </item>
+    <item>
       <title>Contact</title>
       <link>//localhost:4321/contact/</link>
       <pubDate>Tue, 02 Jul 2024 13:38:41 -0600</pubDate>
