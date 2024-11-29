@@ -23,6 +23,13 @@
       <description>Lightning talk introducing BDA via a toy example.</description>
     </item>
     <item>
+      <title>[Talk] Sensitivity of Bayesian Decision Analysis to decision attributes: A tool for robust climate adaptation decision making</title>
+      <link>//localhost:4321/talk/2024_met-office-talk/</link>
+      <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/talk/2024_met-office-talk/</guid>
+      <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
+    </item>
+    <item>
       <title>Bayesian Decision Analysis</title>
       <link>//localhost:4321/project/bayesian_decision_analysis/</link>
       <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>

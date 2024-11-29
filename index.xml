@@ -6,8 +6,15 @@
     <description>Recent content on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 22 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:4321/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regional Sensitivity Analysis</title>
+      <link>//localhost:4321/blog/2024-11-29-rsa/</link>
+      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/blog/2024-11-29-rsa/</guid>
+      <description>Overview of Regional Sensitivity Analysis.</description>
+    </item>
     <item>
       <title>[Poster] Sensitivity of Bayesian Decision Analysis: A tool for robust climate adaptation decision-making</title>
       <link>//localhost:4321/talk/2024_compass-conference-poster/</link>
