@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hypervolume on Cecina Babich Morrow</title>
-    <link>//localhost:4321/tags/hypervolume/</link>
+    <link>https://babichmorrowc.github.io/tags/hypervolume/</link>
     <description>Recent content in Hypervolume on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4321/tags/hypervolume/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://babichmorrowc.github.io/tags/hypervolume/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exciting publication news!</title>
-      <link>//localhost:4321/blog/lifehistory-paper-highlight/</link>
+      <link>https://babichmorrowc.github.io/blog/lifehistory-paper-highlight/</link>
       <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/blog/lifehistory-paper-highlight/</guid>
+      <guid>https://babichmorrowc.github.io/blog/lifehistory-paper-highlight/</guid>
       <description>An update on my latest publication 🎉</description>
     </item>
     <item>
       <title>Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>//localhost:4321/publication/lifehistory/</link>
+      <link>https://babichmorrowc.github.io/publication/lifehistory/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/publication/lifehistory/</guid>
+      <guid>https://babichmorrowc.github.io/publication/lifehistory/</guid>
       <description>Exploring the evolution of three dimensionless life history traits across the four major classes of tetrapods.</description>
     </item>
     <item>
       <title>[Talk] Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>//localhost:4321/talk/honors_presentation_2018/</link>
+      <link>https://babichmorrowc.github.io/talk/honors_presentation_2018/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/talk/honors_presentation_2018/</guid>
+      <guid>https://babichmorrowc.github.io/talk/honors_presentation_2018/</guid>
       <description>Biology Senior Honors presentation on dimensionless life history metrics across the major classes of tetrapods.</description>
     </item>
     <item>
       <title>[Poster] Macroevolution of dimensionless life histories in amniotes</title>
-      <link>//localhost:4321/talk/tree_2017/</link>
+      <link>https://babichmorrowc.github.io/talk/tree_2017/</link>
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/talk/tree_2017/</guid>
+      <guid>https://babichmorrowc.github.io/talk/tree_2017/</guid>
       <description>Investigating the evolution of dimensionless life history traits across amniotes.</description>
     </item>
     <item>
       <title>New approaches for delineating n‐dimensional hypervolumes</title>
-      <link>//localhost:4321/publication/hypervolumes/</link>
+      <link>https://babichmorrowc.github.io/publication/hypervolumes/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/publication/hypervolumes/</guid>
+      <guid>https://babichmorrowc.github.io/publication/hypervolumes/</guid>
       <description>Two new algorithms for creating n-dimenstional hypervolumes.</description>
     </item>
     <item>
       <title>[Poster] Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
-      <link>//localhost:4321/talk/ibs_2017/</link>
+      <link>https://babichmorrowc.github.io/talk/ibs_2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/talk/ibs_2017/</guid>
+      <guid>https://babichmorrowc.github.io/talk/ibs_2017/</guid>
       <description>Poster comparing different hypervolume methods for ecological applications.</description>
     </item>
     <item>
       <title>Hypervolume methods</title>
-      <link>//localhost:4321/project/hypervolumes/</link>
+      <link>https://babichmorrowc.github.io/project/hypervolumes/</link>
       <pubDate>Wed, 27 Jul 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/project/hypervolumes/</guid>
+      <guid>https://babichmorrowc.github.io/project/hypervolumes/</guid>
       <description></description>
     </item>
     <item>
       <title>Tetrapod life history traits</title>
-      <link>//localhost:4321/project/life_history/</link>
+      <link>https://babichmorrowc.github.io/project/life_history/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:4321/project/life_history/</guid>
+      <guid>https://babichmorrowc.github.io/project/life_history/</guid>
       <description></description>
     </item>
   </channel>
