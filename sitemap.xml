@@ -2,360 +2,369 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://babichmorrowc.github.io/talk/2025-06-02_ai-climate-health/</loc>
+    <loc>http://localhost:4321/talk/2025-06-02_ai-climate-health/</loc>
     <lastmod>2025-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/bda/</loc>
+    <loc>http://localhost:4321/tags/bda/</loc>
     <lastmod>2025-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/</loc>
+    <loc>http://localhost:4321/</loc>
     <lastmod>2025-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/</loc>
+    <loc>http://localhost:4321/tags/</loc>
     <lastmod>2025-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/</loc>
+    <loc>http://localhost:4321/talk/</loc>
     <lastmod>2025-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/</loc>
+    <loc>http://localhost:4321/talk/2025-04-10_epsrc-poster/</loc>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4321/categories/</loc>
     <lastmod>2025-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/</loc>
+    <loc>http://localhost:4321/blog/2025-02-25-jit/</loc>
+    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4321/blog/</loc>
+    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4321/tags/python/</loc>
+    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4321/categories/python/</loc>
+    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4321/blog/2024-11-29-rsa/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2024-11-29-rsa/</loc>
+    <loc>http://localhost:4321/tags/statistics/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/statistics/</loc>
+    <loc>http://localhost:4321/categories/statistics/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/statistics/</loc>
-    <lastmod>2024-11-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/talk/2024_compass-conference-poster/</loc>
+    <loc>http://localhost:4321/talk/2024_compass-conference-poster/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/2024_compass-conference-talk/</loc>
+    <loc>http://localhost:4321/talk/2024_compass-conference-talk/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2024-09-23-bias-variance/</loc>
+    <loc>http://localhost:4321/blog/2024-09-23-bias-variance/</loc>
     <lastmod>2024-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/r/</loc>
+    <loc>http://localhost:4321/tags/r/</loc>
     <lastmod>2024-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/r/</loc>
+    <loc>http://localhost:4321/categories/r/</loc>
     <lastmod>2024-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2024-08-17-how-brat-is-it/</loc>
+    <loc>http://localhost:4321/blog/2024-08-17-how-brat-is-it/</loc>
     <lastmod>2024-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/</loc>
+    <loc>http://localhost:4321/blog/2024-07-26-regularized_leastsquares/</loc>
     <lastmod>2024-07-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/2024_met-office-talk/</loc>
+    <loc>http://localhost:4321/talk/2024_met-office-talk/</loc>
     <lastmod>2024-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/contact/</loc>
+    <loc>http://localhost:4321/contact/</loc>
     <lastmod>2024-07-02T13:38:41-06:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/form/</loc>
+    <loc>http://localhost:4321/form/</loc>
     <lastmod>2024-07-02T13:38:41-06:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2024-07-02-leastsquares-regression/</loc>
+    <loc>http://localhost:4321/blog/2024-07-02-leastsquares-regression/</loc>
     <lastmod>2024-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/project/bayesian_decision_analysis/</loc>
+    <loc>http://localhost:4321/project/bayesian_decision_analysis/</loc>
     <lastmod>2024-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/bda/</loc>
+    <loc>http://localhost:4321/categories/bda/</loc>
     <lastmod>2024-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/project/</loc>
+    <loc>http://localhost:4321/project/</loc>
     <lastmod>2024-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/python/</loc>
-    <lastmod>2024-06-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/categories/python/</loc>
-    <lastmod>2024-06-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/talk/miniproject_2024/</loc>
+    <loc>http://localhost:4321/talk/miniproject_2024/</loc>
     <lastmod>2024-05-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/bootcamp_2023/</loc>
+    <loc>http://localhost:4321/talk/bootcamp_2023/</loc>
     <lastmod>2023-12-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/mental-health/</loc>
+    <loc>http://localhost:4321/tags/mental-health/</loc>
     <lastmod>2022-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/mental-health/</loc>
+    <loc>http://localhost:4321/categories/mental-health/</loc>
     <lastmod>2022-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/project/mental_health_outcomes/</loc>
+    <loc>http://localhost:4321/project/mental_health_outcomes/</loc>
     <lastmod>2022-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/publication/clin_fin_mh_outcomes/</loc>
+    <loc>http://localhost:4321/publication/clin_fin_mh_outcomes/</loc>
     <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/publication/</loc>
+    <loc>http://localhost:4321/publication/</loc>
     <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/biogeography/</loc>
+    <loc>http://localhost:4321/tags/biogeography/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/biogeography/</loc>
+    <loc>http://localhost:4321/categories/biogeography/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/publication/rangeestimates/</loc>
+    <loc>http://localhost:4321/publication/rangeestimates/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/species-distribution-modeling/</loc>
+    <loc>http://localhost:4321/tags/species-distribution-modeling/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/species-distribution-modeling/</loc>
+    <loc>http://localhost:4321/categories/species-distribution-modeling/</loc>
     <lastmod>2022-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/lifehistory-paper-highlight/</loc>
+    <loc>http://localhost:4321/blog/lifehistory-paper-highlight/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/hypervolume/</loc>
+    <loc>http://localhost:4321/tags/hypervolume/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/hypervolume/</loc>
+    <loc>http://localhost:4321/categories/hypervolume/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/life-history/</loc>
+    <loc>http://localhost:4321/tags/life-history/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/life-history/</loc>
+    <loc>http://localhost:4321/categories/life-history/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/publication/lifehistory/</loc>
+    <loc>http://localhost:4321/publication/lifehistory/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/google-api-creds/</loc>
+    <loc>http://localhost:4321/blog/google-api-creds/</loc>
     <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/google/</loc>
+    <loc>http://localhost:4321/tags/google/</loc>
     <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/google/</loc>
+    <loc>http://localhost:4321/categories/google/</loc>
     <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/google-account-creds/</loc>
+    <loc>http://localhost:4321/blog/google-account-creds/</loc>
     <lastmod>2020-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/bash/</loc>
+    <loc>http://localhost:4321/tags/bash/</loc>
     <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/bash/</loc>
+    <loc>http://localhost:4321/categories/bash/</loc>
     <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/scheduling-r/</loc>
+    <loc>http://localhost:4321/blog/scheduling-r/</loc>
     <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/bio_on_tap_2020/</loc>
+    <loc>http://localhost:4321/talk/bio_on_tap_2020/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/education/</loc>
+    <loc>http://localhost:4321/tags/education/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/education/</loc>
+    <loc>http://localhost:4321/categories/education/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/outreach/</loc>
+    <loc>http://localhost:4321/tags/outreach/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/outreach/</loc>
+    <loc>http://localhost:4321/categories/outreach/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2020-01-03-adding-featured-images-to-posts/</loc>
+    <loc>http://localhost:4321/blog/2020-01-03-adding-featured-images-to-posts/</loc>
     <lastmod>2020-01-02T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/website/</loc>
+    <loc>http://localhost:4321/tags/website/</loc>
     <lastmod>2020-01-02T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/website/</loc>
+    <loc>http://localhost:4321/categories/website/</loc>
     <lastmod>2020-01-02T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2020-01-02-changing-fonts-in-rmarkdown-pdfs/</loc>
+    <loc>http://localhost:4321/blog/2020-01-02-changing-fonts-in-rmarkdown-pdfs/</loc>
     <lastmod>2020-01-02T11:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/publication/_index-old/</loc>
+    <loc>http://localhost:4321/publication/_index-old/</loc>
     <lastmod>2019-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tutorial/</loc>
+    <loc>http://localhost:4321/tutorial/</loc>
     <lastmod>2019-10-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-10-11-google-fonts/</loc>
+    <loc>http://localhost:4321/blog/2019-10-11-google-fonts/</loc>
     <lastmod>2019-10-11T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-09-26-mode-api-instructions/</loc>
+    <loc>http://localhost:4321/blog/2019-09-26-mode-api-instructions/</loc>
     <lastmod>2019-09-26T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-09-26-git-workflow1/</loc>
+    <loc>http://localhost:4321/blog/2019-09-26-git-workflow1/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/github/</loc>
+    <loc>http://localhost:4321/tags/github/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/github/</loc>
+    <loc>http://localhost:4321/categories/github/</loc>
     <lastmod>2019-09-17T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/career/</loc>
+    <loc>http://localhost:4321/tags/career/</loc>
     <lastmod>2019-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/career/</loc>
+    <loc>http://localhost:4321/categories/career/</loc>
     <lastmod>2019-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/goldwater-highlight/</loc>
+    <loc>http://localhost:4321/blog/goldwater-highlight/</loc>
     <lastmod>2019-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/ibs_2019/</loc>
+    <loc>http://localhost:4321/talk/ibs_2019/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/bradypus/</loc>
+    <loc>http://localhost:4321/tags/bradypus/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/bradypus/</loc>
+    <loc>http://localhost:4321/categories/bradypus/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/mammalogy_2019/</loc>
+    <loc>http://localhost:4321/talk/mammalogy_2019/</loc>
     <lastmod>2019-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/machine-learning/</loc>
+    <loc>http://localhost:4321/tags/machine-learning/</loc>
     <lastmod>2019-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/machine-learning/</loc>
+    <loc>http://localhost:4321/categories/machine-learning/</loc>
     <lastmod>2019-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/helenfellow_june2019/</loc>
+    <loc>http://localhost:4321/talk/helenfellow_june2019/</loc>
     <lastmod>2019-06-13T11:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-06-07-usb/</loc>
+    <loc>http://localhost:4321/blog/2019-06-07-usb/</loc>
     <lastmod>2019-06-07T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-05-23-highres-figures/</loc>
+    <loc>http://localhost:4321/blog/2019-05-23-highres-figures/</loc>
     <lastmod>2019-05-23T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/</loc>
+    <loc>http://localhost:4321/blog/2019-04-12-sdm-threshold/</loc>
     <lastmod>2019-04-12T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/brownscholars_ratiotalk_2019/</loc>
+    <loc>http://localhost:4321/talk/brownscholars_ratiotalk_2019/</loc>
     <lastmod>2019-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-03-18-alpha-hull/</loc>
+    <loc>http://localhost:4321/blog/2019-03-18-alpha-hull/</loc>
     <lastmod>2019-03-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/nysdm_march2019/</loc>
+    <loc>http://localhost:4321/talk/nysdm_march2019/</loc>
     <lastmod>2019-03-15T14:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/la_lgbt_careertalk_2019/</loc>
+    <loc>http://localhost:4321/talk/la_lgbt_careertalk_2019/</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/lgbt/</loc>
+    <loc>http://localhost:4321/tags/lgbt/</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/lgbt/</loc>
+    <loc>http://localhost:4321/categories/lgbt/</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/earth-science/</loc>
+    <loc>http://localhost:4321/tags/earth-science/</loc>
     <lastmod>2019-02-20T22:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/hackathon/</loc>
+    <loc>http://localhost:4321/tags/hackathon/</loc>
     <lastmod>2019-02-20T22:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/hackathon/</loc>
+    <loc>http://localhost:4321/categories/hackathon/</loc>
     <lastmod>2019-02-20T22:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-02-20-meteoritecluster1/</loc>
+    <loc>http://localhost:4321/blog/2019-02-20-meteoritecluster1/</loc>
     <lastmod>2019-02-20T22:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/meteorites/</loc>
+    <loc>http://localhost:4321/tags/meteorites/</loc>
     <lastmod>2019-02-20T22:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-02-20-pythonrmd/</loc>
+    <loc>http://localhost:4321/blog/2019-02-20-pythonrmd/</loc>
     <lastmod>2019-02-20T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-02-14-hackathon/</loc>
+    <loc>http://localhost:4321/blog/2019-02-14-hackathon/</loc>
     <lastmod>2019-02-14T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/evolution/</loc>
+    <loc>http://localhost:4321/tags/evolution/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/evolution/</loc>
+    <loc>http://localhost:4321/categories/evolution/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/</loc>
+    <loc>http://localhost:4321/blog/2019-01-09-grafting-trees/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/phylogenetics/</loc>
+    <loc>http://localhost:4321/tags/phylogenetics/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/phylogenetics/</loc>
+    <loc>http://localhost:4321/categories/phylogenetics/</loc>
     <lastmod>2019-01-18T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2019-01-03-debugging-r/</loc>
+    <loc>http://localhost:4321/blog/2019-01-03-debugging-r/</loc>
     <lastmod>2019-01-03T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2018-12-12-add-google-doc/</loc>
+    <loc>http://localhost:4321/blog/2018-12-12-add-google-doc/</loc>
     <lastmod>2018-12-12T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2018-12-11-order-items/</loc>
+    <loc>http://localhost:4321/blog/2018-12-11-order-items/</loc>
     <lastmod>2018-12-11T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/blog/2018-12-7-create-website/</loc>
+    <loc>http://localhost:4321/blog/2018-12-7-create-website/</loc>
     <lastmod>2018-12-07T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/project/bradypus/</loc>
+    <loc>http://localhost:4321/project/bradypus/</loc>
     <lastmod>2018-09-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/honors_presentation_2018/</loc>
+    <loc>http://localhost:4321/privacy/</loc>
+    <lastmod>2018-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4321/talk/honors_presentation_2018/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/hypervolumes/</loc>
+    <loc>http://localhost:4321/categories/hypervolumes/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/tree_2017/</loc>
+    <loc>http://localhost:4321/talk/tree_2017/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/publication/hypervolumes/</loc>
+    <loc>http://localhost:4321/publication/hypervolumes/</loc>
     <lastmod>2017-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/talk/ibs_2017/</loc>
+    <loc>http://localhost:4321/talk/ibs_2017/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/bien/</loc>
+    <loc>http://localhost:4321/tags/bien/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/bien/</loc>
+    <loc>http://localhost:4321/categories/bien/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/categories/biodiversity/</loc>
+    <loc>http://localhost:4321/categories/biodiversity/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/plant-biodiversity/</loc>
+    <loc>http://localhost:4321/tags/plant-biodiversity/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/project/hypervolumes/</loc>
+    <loc>http://localhost:4321/project/hypervolumes/</loc>
     <lastmod>2016-07-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/project/life_history/</loc>
+    <loc>http://localhost:4321/project/life_history/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/authors/babichmorrowc/</loc>
+    <loc>http://localhost:4321/authors/babichmorrowc/</loc>
   </url><url>
-    <loc>https://babichmorrowc.github.io/google7f36843d88791048/</loc>
+    <loc>http://localhost:4321/google7f36843d88791048/</loc>
   </url><url>
-    <loc>https://babichmorrowc.github.io/about/</loc>
+    <loc>http://localhost:4321/about/</loc>
   </url><url>
-    <loc>https://babichmorrowc.github.io/authors/</loc>
+    <loc>http://localhost:4321/authors/</loc>
   </url><url>
-    <loc>https://babichmorrowc.github.io/series/</loc>
+    <loc>http://localhost:4321/series/</loc>
   </url><url>
-    <loc>https://babichmorrowc.github.io/slides/</loc>
+    <loc>http://localhost:4321/slides/</loc>
   </url><url>
-    <loc>https://babichmorrowc.github.io/slides/example-slides/</loc>
+    <loc>http://localhost:4321/slides/example-slides/</loc>
   </url>
 </urlset>

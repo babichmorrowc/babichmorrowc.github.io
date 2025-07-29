@@ -2,122 +2,143 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Talks and Posters on Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/talk/</link>
+    <link>http://localhost:4321/talk/</link>
     <description>Recent content in Talks and Posters on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 02 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://babichmorrowc.github.io/talk/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:4321/talk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Talk &#43; Poster] From risk to action: Climate decision-making under deep uncertainty</title>
-      <link>https://babichmorrowc.github.io/talk/2025-06-02_ai-climate-health/</link>
+      <link>http://localhost:4321/talk/2025-06-02_ai-climate-health/</link>
       <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/2025-06-02_ai-climate-health/</guid>
+      <guid>http://localhost:4321/talk/2025-06-02_ai-climate-health/</guid>
       <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
     </item>
     <item>
       <title>[Poster] Sensitivity of Bayesian Decision Analysis: A tool for robust climate adaptation decision-making</title>
-      <link>https://babichmorrowc.github.io/talk/2024_compass-conference-poster/</link>
+      <link>http://localhost:4321/talk/2025-04-10_epsrc-poster/</link>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/talk/2025-04-10_epsrc-poster/</guid>
+      <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
+    </item>
+    <item>
+      <title>[Poster] Sensitivity of Bayesian Decision Analysis: A tool for robust climate adaptation decision-making</title>
+      <link>http://localhost:4321/talk/2025-02-26_met-office-studentship/</link>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/talk/2025-02-26_met-office-studentship/</guid>
+      <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
+    </item>
+    <item>
+      <title>[Poster] Sensitivity of Bayesian Decision Analysis: A tool for robust climate adaptation decision-making</title>
+      <link>http://localhost:4321/talk/2024_compass-conference-poster/</link>
       <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/2024_compass-conference-poster/</guid>
+      <guid>http://localhost:4321/talk/2024_compass-conference-poster/</guid>
       <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
     </item>
     <item>
       <title>[Talk] Bayesian Decision Analysis: a crash course</title>
-      <link>https://babichmorrowc.github.io/talk/2024_compass-conference-talk/</link>
+      <link>http://localhost:4321/talk/2024_compass-conference-talk/</link>
       <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/2024_compass-conference-talk/</guid>
+      <guid>http://localhost:4321/talk/2024_compass-conference-talk/</guid>
       <description>Lightning talk introducing BDA via a toy example.</description>
     </item>
     <item>
       <title>[Talk] Sensitivity of Bayesian Decision Analysis to decision attributes: A tool for robust climate adaptation decision making</title>
-      <link>https://babichmorrowc.github.io/talk/2024_met-office-talk/</link>
+      <link>http://localhost:4321/talk/2024_met-office-talk/</link>
       <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/2024_met-office-talk/</guid>
+      <guid>http://localhost:4321/talk/2024_met-office-talk/</guid>
       <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
     </item>
     <item>
       <title>[Talk] Bayesian Decision Analysis for climate decision-making: Sensitivity to decision attributes</title>
-      <link>https://babichmorrowc.github.io/talk/miniproject_2024/</link>
+      <link>http://localhost:4321/talk/miniproject_2024/</link>
       <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/miniproject_2024/</guid>
+      <guid>http://localhost:4321/talk/miniproject_2024/</guid>
       <description>Investigating the sensitivity of BDA to changes in cost-related decision attributes for an idealized example.</description>
     </item>
     <item>
+      <title>[Talk] Bayesian Decision Analysis for climate decision-making</title>
+      <link>http://localhost:4321/talk/2024-05-01_sustainability-showcase/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/talk/2024-05-01_sustainability-showcase/</guid>
+      <description>Sensitivity of BDA in an idealised example of heat-stress.</description>
+    </item>
+    <item>
       <title>[Talk] The Use of Utility: Utility functions in a Bayesian Decision Analysis framework</title>
-      <link>https://babichmorrowc.github.io/talk/bootcamp_2023/</link>
+      <link>http://localhost:4321/talk/bootcamp_2023/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/bootcamp_2023/</guid>
+      <guid>http://localhost:4321/talk/bootcamp_2023/</guid>
       <description>My presentation for the Bootcamp unit of the Compass PhD program.</description>
     </item>
     <item>
       <title>[Outreach] Sad strategies: making really bad ideas work for you</title>
-      <link>https://babichmorrowc.github.io/talk/bio_on_tap_2020/</link>
+      <link>http://localhost:4321/talk/bio_on_tap_2020/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/bio_on_tap_2020/</guid>
+      <guid>http://localhost:4321/talk/bio_on_tap_2020/</guid>
       <description>Outreach talk as part of &#xA;&lt;a href=&#34;https://www.facebook.com/biologyontap/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Biology on Tap&lt;/a&gt;, a monthly event for biology popular science talks.</description>
     </item>
     <item>
       <title>[Talk] Delineating parapatric ranges using species distribution models and support vector machines: An example with three-toed sloths (Bradypus)</title>
-      <link>https://babichmorrowc.github.io/talk/ibs_2019/</link>
+      <link>http://localhost:4321/talk/ibs_2019/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/ibs_2019/</guid>
+      <guid>http://localhost:4321/talk/ibs_2019/</guid>
       <description>Applying support vector machines to refine range estimates for three species of &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>[Poster] Improving species range estimates for an arboreal species group with a parapatric distribution</title>
-      <link>https://babichmorrowc.github.io/talk/mammalogy_2019/</link>
+      <link>http://localhost:4321/talk/mammalogy_2019/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/mammalogy_2019/</guid>
+      <guid>http://localhost:4321/talk/mammalogy_2019/</guid>
       <description>Using support vector machines to mask out biotically unsuitable areas improves species range estimates for &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>Talk: Using SVMs to delineate parapatric ranges: An example with three-toed sloths (Bradypus)</title>
-      <link>https://babichmorrowc.github.io/talk/helenfellow_june2019/</link>
+      <link>http://localhost:4321/talk/helenfellow_june2019/</link>
       <pubDate>Thu, 13 Jun 2019 11:30:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/helenfellow_june2019/</guid>
+      <guid>http://localhost:4321/talk/helenfellow_june2019/</guid>
       <description>Applying support vector machines to incorporate biotic information into range estimates for three species of &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>[Outreach] Big vs. Small: Using ratios to compare life history strategies</title>
-      <link>https://babichmorrowc.github.io/talk/brownscholars_ratiotalk_2019/</link>
+      <link>http://localhost:4321/talk/brownscholars_ratiotalk_2019/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/brownscholars_ratiotalk_2019/</guid>
+      <guid>http://localhost:4321/talk/brownscholars_ratiotalk_2019/</guid>
       <description>Outreach talk for high school students in the first year of the Brown Scholars program to start off their unit on paleoneurobiology.</description>
     </item>
     <item>
       <title>[Talk] Using SVMs to model ranges of congeneric sloth species</title>
-      <link>https://babichmorrowc.github.io/talk/nysdm_march2019/</link>
+      <link>http://localhost:4321/talk/nysdm_march2019/</link>
       <pubDate>Fri, 15 Mar 2019 14:30:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/nysdm_march2019/</guid>
+      <guid>http://localhost:4321/talk/nysdm_march2019/</guid>
       <description>Incorporating biotic information to guide range estimates of three species of &lt;em&gt;Bradypus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>[Outreach] STEM careers in museums</title>
-      <link>https://babichmorrowc.github.io/talk/la_lgbt_careertalk_2019/</link>
+      <link>http://localhost:4321/talk/la_lgbt_careertalk_2019/</link>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/la_lgbt_careertalk_2019/</guid>
+      <guid>http://localhost:4321/talk/la_lgbt_careertalk_2019/</guid>
       <description>Outreach talk to Los Angeles LGBT Youth Center talking about my work at AMNH.</description>
     </item>
     <item>
       <title>[Talk] Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>https://babichmorrowc.github.io/talk/honors_presentation_2018/</link>
+      <link>http://localhost:4321/talk/honors_presentation_2018/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/honors_presentation_2018/</guid>
+      <guid>http://localhost:4321/talk/honors_presentation_2018/</guid>
       <description>Biology Senior Honors presentation on dimensionless life history metrics across the major classes of tetrapods.</description>
     </item>
     <item>
       <title>[Poster] Macroevolution of dimensionless life histories in amniotes</title>
-      <link>https://babichmorrowc.github.io/talk/tree_2017/</link>
+      <link>http://localhost:4321/talk/tree_2017/</link>
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/tree_2017/</guid>
+      <guid>http://localhost:4321/talk/tree_2017/</guid>
       <description>Investigating the evolution of dimensionless life history traits across amniotes.</description>
     </item>
     <item>
       <title>[Poster] Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods</title>
-      <link>https://babichmorrowc.github.io/talk/ibs_2017/</link>
+      <link>http://localhost:4321/talk/ibs_2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://babichmorrowc.github.io/talk/ibs_2017/</guid>
+      <guid>http://localhost:4321/talk/ibs_2017/</guid>
       <description>Poster comparing different hypervolume methods for ecological applications.</description>
     </item>
   </channel>
