@@ -2,66 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BDA on Cecina Babich Morrow</title>
-    <link>http://localhost:4321/tags/bda/</link>
+    <link>https://babichmorrowc.github.io/tags/bda/</link>
     <description>Recent content in BDA on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 02 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:4321/tags/bda/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://babichmorrowc.github.io/tags/bda/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Talk &#43; Poster] From risk to action: Climate decision-making under deep uncertainty</title>
-      <link>http://localhost:4321/talk/2025-06-02_ai-climate-health/</link>
+      <link>https://babichmorrowc.github.io/talk/2025-06-02_ai-climate-health/</link>
       <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/talk/2025-06-02_ai-climate-health/</guid>
+      <guid>https://babichmorrowc.github.io/talk/2025-06-02_ai-climate-health/</guid>
       <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
     </item>
     <item>
       <title>[Poster] Sensitivity of Bayesian Decision Analysis: A tool for robust climate adaptation decision-making</title>
-      <link>http://localhost:4321/talk/2025-04-10_epsrc-poster/</link>
+      <link>https://babichmorrowc.github.io/talk/2025-04-10_epsrc-poster/</link>
       <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/talk/2025-04-10_epsrc-poster/</guid>
+      <guid>https://babichmorrowc.github.io/talk/2025-04-10_epsrc-poster/</guid>
       <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
     </item>
     <item>
       <title>[Poster] Sensitivity of Bayesian Decision Analysis: A tool for robust climate adaptation decision-making</title>
-      <link>http://localhost:4321/talk/2024_compass-conference-poster/</link>
+      <link>https://babichmorrowc.github.io/talk/2025-02-26_met-office-studentship/</link>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://babichmorrowc.github.io/talk/2025-02-26_met-office-studentship/</guid>
+      <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
+    </item>
+    <item>
+      <title>[Poster] Sensitivity of Bayesian Decision Analysis: A tool for robust climate adaptation decision-making</title>
+      <link>https://babichmorrowc.github.io/talk/2024_compass-conference-poster/</link>
       <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/talk/2024_compass-conference-poster/</guid>
+      <guid>https://babichmorrowc.github.io/talk/2024_compass-conference-poster/</guid>
       <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
     </item>
     <item>
       <title>[Talk] Bayesian Decision Analysis: a crash course</title>
-      <link>http://localhost:4321/talk/2024_compass-conference-talk/</link>
+      <link>https://babichmorrowc.github.io/talk/2024_compass-conference-talk/</link>
       <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/talk/2024_compass-conference-talk/</guid>
+      <guid>https://babichmorrowc.github.io/talk/2024_compass-conference-talk/</guid>
       <description>Lightning talk introducing BDA via a toy example.</description>
     </item>
     <item>
       <title>[Talk] Sensitivity of Bayesian Decision Analysis to decision attributes: A tool for robust climate adaptation decision making</title>
-      <link>http://localhost:4321/talk/2024_met-office-talk/</link>
+      <link>https://babichmorrowc.github.io/talk/2024_met-office-talk/</link>
       <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/talk/2024_met-office-talk/</guid>
+      <guid>https://babichmorrowc.github.io/talk/2024_met-office-talk/</guid>
       <description>Uncertainty and sensitivity analysis of BDA applied to an idealised example of heat stress mitigation.</description>
     </item>
     <item>
       <title>Bayesian Decision Analysis</title>
-      <link>http://localhost:4321/project/bayesian_decision_analysis/</link>
+      <link>https://babichmorrowc.github.io/project/bayesian_decision_analysis/</link>
       <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/project/bayesian_decision_analysis/</guid>
+      <guid>https://babichmorrowc.github.io/project/bayesian_decision_analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>[Talk] Bayesian Decision Analysis for climate decision-making: Sensitivity to decision attributes</title>
-      <link>http://localhost:4321/talk/miniproject_2024/</link>
+      <link>https://babichmorrowc.github.io/talk/miniproject_2024/</link>
       <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/talk/miniproject_2024/</guid>
+      <guid>https://babichmorrowc.github.io/talk/miniproject_2024/</guid>
       <description>Investigating the sensitivity of BDA to changes in cost-related decision attributes for an idealized example.</description>
     </item>
     <item>
+      <title>[Talk] Bayesian Decision Analysis for climate decision-making</title>
+      <link>https://babichmorrowc.github.io/talk/2024-05-01_sustainability-showcase/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://babichmorrowc.github.io/talk/2024-05-01_sustainability-showcase/</guid>
+      <description>Sensitivity of BDA in an idealised example of heat-stress.</description>
+    </item>
+    <item>
       <title>[Talk] The Use of Utility: Utility functions in a Bayesian Decision Analysis framework</title>
-      <link>http://localhost:4321/talk/bootcamp_2023/</link>
+      <link>https://babichmorrowc.github.io/talk/bootcamp_2023/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/talk/bootcamp_2023/</guid>
+      <guid>https://babichmorrowc.github.io/talk/bootcamp_2023/</guid>
       <description>My presentation for the Bootcamp unit of the Compass PhD program.</description>
     </item>
   </channel>
