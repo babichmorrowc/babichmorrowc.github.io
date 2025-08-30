@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Website on Cecina Babich Morrow</title>
-    <link>https://babichmorrowc.github.io/tags/website/</link>
+    <link>http://localhost:4321/tags/website/</link>
     <description>Recent content in Website on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 02 Jan 2020 21:13:14 -0500</lastBuildDate>
-    <atom:link href="https://babichmorrowc.github.io/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:4321/tags/website/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adding featured images to posts</title>
-      <link>https://babichmorrowc.github.io/blog/2020-01-03-adding-featured-images-to-posts/</link>
+      <link>http://localhost:4321/blog/2020-01-03-adding-featured-images-to-posts/</link>
       <pubDate>Thu, 02 Jan 2020 21:13:14 -0500</pubDate>
-      <guid>https://babichmorrowc.github.io/blog/2020-01-03-adding-featured-images-to-posts/</guid>
+      <guid>http://localhost:4321/blog/2020-01-03-adding-featured-images-to-posts/</guid>
       <description>Adding featured images to posts in the Hugo Academic theme.</description>
     </item>
     <item>
       <title>Python in RMarkdown</title>
-      <link>https://babichmorrowc.github.io/blog/2019-02-20-pythonrmd/</link>
+      <link>http://localhost:4321/blog/2019-02-20-pythonrmd/</link>
       <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>https://babichmorrowc.github.io/blog/2019-02-20-pythonrmd/</guid>
+      <guid>http://localhost:4321/blog/2019-02-20-pythonrmd/</guid>
       <description>Using &lt;code&gt;reticulate&lt;/code&gt; to add Python to RMarkdown.</description>
     </item>
     <item>
       <title>Adding Google Slides to website</title>
-      <link>https://babichmorrowc.github.io/blog/2018-12-12-add-google-doc/</link>
+      <link>http://localhost:4321/blog/2018-12-12-add-google-doc/</link>
       <pubDate>Wed, 12 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>https://babichmorrowc.github.io/blog/2018-12-12-add-google-doc/</guid>
+      <guid>http://localhost:4321/blog/2018-12-12-add-google-doc/</guid>
       <description>Embedding Google Slides on a Hugo site.</description>
     </item>
     <item>
       <title>Ordering website components</title>
-      <link>https://babichmorrowc.github.io/blog/2018-12-11-order-items/</link>
+      <link>http://localhost:4321/blog/2018-12-11-order-items/</link>
       <pubDate>Tue, 11 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>https://babichmorrowc.github.io/blog/2018-12-11-order-items/</guid>
+      <guid>http://localhost:4321/blog/2018-12-11-order-items/</guid>
       <description>Changing the order of Hugo website components.</description>
     </item>
     <item>
       <title>Creating this website</title>
-      <link>https://babichmorrowc.github.io/blog/2018-12-7-create-website/</link>
+      <link>http://localhost:4321/blog/2018-12-7-create-website/</link>
       <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>https://babichmorrowc.github.io/blog/2018-12-7-create-website/</guid>
+      <guid>http://localhost:4321/blog/2018-12-7-create-website/</guid>
       <description>My saga of creating this website.</description>
     </item>
   </channel>

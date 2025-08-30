@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
   
                            
      
@@ -31,16 +31,16 @@
 <meta property="og:title" content="Grafting phylogenies | Cecina Babich Morrow">
 <meta property="og:description" content="Using R to graft phylogenies together." />
 <meta property="og:type" content="page" />
-<meta property="og:url" content="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/" />
+<meta property="og:url" content="http://localhost:4321/blog/2019-01-09-grafting-trees/" />
 <meta property="og:locale" content="en">
 
 
 
 
     
-        <meta property="og:image" content="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/featured.png" >
+        <meta property="og:image" content="http://localhost:4321/blog/2019-01-09-grafting-trees/featured.png" >
         <meta property="twitter:card" content="summary_large_image">
-        <meta name="twitter:image" content="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/featured.png" >
+        <meta name="twitter:image" content="http://localhost:4321/blog/2019-01-09-grafting-trees/featured.png" >
     
     
   
@@ -49,7 +49,7 @@
   <meta itemprop="datePublished" content="2019-01-18T21:13:14-05:00">
   <meta itemprop="dateModified" content="2019-01-18T21:13:14-05:00">
   <meta itemprop="wordCount" content="1706">
-  <meta itemprop="image" content="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/featured.png">
+  <meta itemprop="image" content="http://localhost:4321/blog/2019-01-09-grafting-trees/featured.png">
   <meta itemprop="keywords" content="R,Phylogenetics,Evolution">
   
   
@@ -89,7 +89,7 @@
       <div class="grid-container">
 <header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
   <nav class="site-nav db dt-l w-100" role="navigation">
-    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://babichmorrowc.github.io/" title="Home">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="http://localhost:4321/" title="Home">
       <img src="/img/favicon_io/favicon.ico" class="dib db-l h2 w-auto" alt="Cecina Babich Morrow">
     </a>
     <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
@@ -135,7 +135,7 @@
       <header class="post-header">
         <h1 class="f1 lh-solid measure-narrow mb3 fw4">Grafting phylogenies</h1>
         <h4 class="f4 mt0 mb4 lh-title measure">Using R to graft phylogenies together.</h4>
-        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="https://babichmorrowc.github.io/categories/r">R</a>  <a href="https://babichmorrowc.github.io/categories/phylogenetics">phylogenetics</a>  <a href="https://babichmorrowc.github.io/categories/evolution">evolution</a> </p>
+        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="http://localhost:4321/categories/r">R</a>  <a href="http://localhost:4321/categories/phylogenetics">phylogenetics</a>  <a href="http://localhost:4321/categories/evolution">evolution</a> </p>
         <p class="f7 db mv0 ttu">January 18, 2019</p>
 
       
@@ -174,22 +174,22 @@ Figure 1 from Uyeda et al. 2017
 <pre class="r"><code>length(amphibiantree$tip.label)
 ## [1] 2871</code></pre>
 <pre class="r"><code>plot(amphibiantree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
-<p><img src="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>For squamates, I used the Zheng and Wiens time-calibrated phylogeny (Zheng and Wiens 2016).</p>
 <pre class="r"><code>length(squamatetree$tip.label)
 ## [1] 378</code></pre>
 <pre class="r"><code>plot(squamatetree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
-<p><img src="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>For birds, I used the Jetz phylogeny (Jetz et al. 2012).</p>
 <pre class="r"><code>length(birdtree$tip.label)
 ## [1] 9993</code></pre>
 <pre class="r"><code>plot(birdtree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
-<p><img src="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>For mammals, I used the supertree from Fritz et al. 2009.</p>
 <pre class="r"><code>length(mammaltree$tip.label)
 ## [1] 5020</code></pre>
 <pre class="r"><code>plot(mammaltree, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
-<p><img src="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="reading-in-trees" class="section level2">
 <h2>Reading in trees</h2>
@@ -219,13 +219,13 @@ Nnode &lt;- 4
 ordertree &lt;- list(edge=edge, Nnode=Nnode, tip.label=tip.labels, edge.length=edge.length)
 class(ordertree) &lt;- &#39;phylo&#39;
 plot(ordertree)</code></pre>
-<p><img src="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>To visualize the results, we can add tip labels, node labels, and edge labels to the tree with the branch lengths:</p>
 <pre class="r"><code>plot(ordertree)
 tiplabels()
 nodelabels()
 edgelabels(ordertree$edge.length, bg=&quot;black&quot;, col=&quot;white&quot;, font=2)</code></pre>
-<p><img src="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <div id="getting-rid-of-fish" class="section level3">
 <h3>Getting rid of fish</h3>
 <p>Since I didn’t have fish, I needed to make a few modifications. First, <code>tip.labels</code> didn’t need “fish” in it anymore:</p>
@@ -247,7 +247,7 @@ tip.labels &lt;- c(&quot;amphib&quot;, &quot;squam&quot;, &quot;birds&quot;, &qu
 class(ordertree) &lt;- &#39;phylo&#39;
 plot(ordertree)
 edgelabels(ordertree$edge.length, bg=&quot;black&quot;, col=&quot;white&quot;, font=2)</code></pre>
-<p><img src="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>…I was ready to go with an order-level tree onto which I could graft my individual phylogenies!</p>
 </div>
 <div id="node-dates" class="section level3">
@@ -281,7 +281,7 @@ ordertree &lt;- list(edge=edge, Nnode=Nnode, tip.label=tip.labels, edge.length=e
 class(ordertree) &lt;- &#39;phylo&#39;
 plot(ordertree)
 edgelabels(ordertree$edge.length, bg=&quot;black&quot;, col=&quot;white&quot;, font=2)</code></pre>
-<p><img src="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <pre class="r"><code>tree_list &lt;- list(amphib=amphibiantree, birds=birdtree, squam=squamatetree, mamm=mammaltree)
 class(tree_list) &lt;- &quot;multiPhylo&quot;</code></pre>
 </div>
@@ -296,7 +296,7 @@ classtree &lt;- nodelabel.phylo(ordertree, otax, ncores=1)
 
 res &lt;- glomogram.phylo(classtree, tree_list)
 plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
-<p><img src="https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="/blog/2019-01-09-grafting-trees/index_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p>Voila - a tree with 18262 species of tetrapods!</p>
 </div>
 </div>
@@ -333,14 +333,14 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
   
   <dl class="f6 lh-copy">
     <dt class="fw7">Categories:</dt>
-    <dd class="fw5 ml0"> <a href="https://babichmorrowc.github.io/categories/r">R</a>  <a href="https://babichmorrowc.github.io/categories/phylogenetics">phylogenetics</a>  <a href="https://babichmorrowc.github.io/categories/evolution">evolution</a> </dd>
+    <dd class="fw5 ml0"> <a href="http://localhost:4321/categories/r">R</a>  <a href="http://localhost:4321/categories/phylogenetics">phylogenetics</a>  <a href="http://localhost:4321/categories/evolution">evolution</a> </dd>
   </dl>
   
   
   
   <dl class="f6 lh-copy">
     <dt class="fw7">Tags:</dt>
-    <dd class="fw5 ml0"> <a href="https://babichmorrowc.github.io/tags/r">R</a>  <a href="https://babichmorrowc.github.io/tags/phylogenetics">phylogenetics</a>  <a href="https://babichmorrowc.github.io/tags/evolution">evolution</a> </dd>
+    <dd class="fw5 ml0"> <a href="http://localhost:4321/tags/r">R</a>  <a href="http://localhost:4321/tags/phylogenetics">phylogenetics</a>  <a href="http://localhost:4321/tags/evolution">evolution</a> </dd>
   </dl>
   
   <dl class="f6 lh-copy">
@@ -361,12 +361,12 @@ plot(res, type = &quot;fan&quot;, show.tip.label = FALSE)</code></pre>
   
   
     <a class="prev dtc pr2 tl v-top fw6"
-    href="https://babichmorrowc.github.io/blog/2019-02-14-hackathon/">&larr; #HackTheSolarSystem</a>
+    href="http://localhost:4321/blog/2019-02-14-hackathon/">&larr; #HackTheSolarSystem</a>
   
   
   
     <a class="next dtc pl2 tr v-top fw6"
-    href="https://babichmorrowc.github.io/blog/2019-01-03-debugging-r/">Debugging in R &rarr;</a>
+    href="http://localhost:4321/blog/2019-01-03-debugging-r/">Debugging in R &rarr;</a>
   
 </div>
 

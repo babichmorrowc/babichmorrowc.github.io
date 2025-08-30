@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
   
                            
      
@@ -31,16 +31,16 @@
 <meta property="og:title" content="Least squares regression: Part 2 | Cecina Babich Morrow">
 <meta property="og:description" content="A little more least squares regression." />
 <meta property="og:type" content="page" />
-<meta property="og:url" content="https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/" />
+<meta property="og:url" content="http://localhost:4321/blog/2024-07-26-regularized_leastsquares/" />
 <meta property="og:locale" content="en">
 
 
 
 
     
-        <meta property="og:image" content="https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/featured.jpg" >
+        <meta property="og:image" content="http://localhost:4321/blog/2024-07-26-regularized_leastsquares/featured.jpg" >
         <meta property="twitter:card" content="summary_large_image">
-        <meta name="twitter:image" content="https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/featured.jpg" >
+        <meta name="twitter:image" content="http://localhost:4321/blog/2024-07-26-regularized_leastsquares/featured.jpg" >
     
     
   
@@ -49,7 +49,7 @@
   <meta itemprop="datePublished" content="2024-07-26T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-07-26T00:00:00+00:00">
   <meta itemprop="wordCount" content="2007">
-  <meta itemprop="image" content="https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/featured.jpg">
+  <meta itemprop="image" content="http://localhost:4321/blog/2024-07-26-regularized_leastsquares/featured.jpg">
   <meta itemprop="keywords" content="Statistics,R">
   
   
@@ -89,7 +89,7 @@
       <div class="grid-container">
 <header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
   <nav class="site-nav db dt-l w-100" role="navigation">
-    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://babichmorrowc.github.io/" title="Home">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="http://localhost:4321/" title="Home">
       <img src="/img/favicon_io/favicon.ico" class="dib db-l h2 w-auto" alt="Cecina Babich Morrow">
     </a>
     <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
@@ -135,7 +135,7 @@
       <header class="post-header">
         <h1 class="f1 lh-solid measure-narrow mb3 fw4">Least squares regression: Part 2</h1>
         <h4 class="f4 mt0 mb4 lh-title measure">A little more least squares regression.</h4>
-        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="https://babichmorrowc.github.io/categories/statistics">statistics</a>  <a href="https://babichmorrowc.github.io/categories/r">R</a> </p>
+        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="http://localhost:4321/categories/statistics">statistics</a>  <a href="http://localhost:4321/categories/r">R</a> </p>
         <p class="f7 db mv0 ttu">July 26, 2024</p>
 
       
@@ -277,7 +277,7 @@ predictions. As the degree <code>\(b\)</code> of our feature transformation func
 </span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">ggplot</span>(data <span style="color:#000;font-weight:bold">=</span> generated_data, <span style="color:#900;font-weight:bold">aes</span>(x <span style="color:#000;font-weight:bold">=</span> x_val, y <span style="color:#000;font-weight:bold">=</span> y_val)) <span style="color:#000;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">geom_point</span>() <span style="color:#000;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">theme_bw</span>()
-</span></span></code></pre></div><img src="https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+</span></span></code></pre></div><img src="/blog/2024-07-26-regularized_leastsquares/index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 <p>We&rsquo;ll start with running a standard linear least squares, equivalent to a feature transform where <code>\(b = 1\)</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Model with b = 1 -----------------------------------------------------</span>
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Fit linear least squares on the training data</span>
@@ -299,7 +299,7 @@ predictions. As the degree <code>\(b\)</code> of our feature transformation func
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">geom_point</span>(<span style="color:#900;font-weight:bold">aes</span>(x <span style="color:#000;font-weight:bold">=</span> x_val, y <span style="color:#000;font-weight:bold">=</span> y_val)) <span style="color:#000;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">geom_line</span>(<span style="color:#900;font-weight:bold">aes</span>(x <span style="color:#000;font-weight:bold">=</span> x_val, y <span style="color:#000;font-weight:bold">=</span> preds_1), color <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;red&#34;</span>) <span style="color:#000;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">theme_bw</span>()
-</span></span></code></pre></div><img src="https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+</span></span></code></pre></div><img src="/blog/2024-07-26-regularized_leastsquares/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 <p>We&rsquo;re clearly not capturing the non-linear pattern in the data very well. Let&rsquo;s try a very flexible feature transformation with <code>\(b = 9\)</code> to see if that addresses our problem:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Model with b = 9 -----------------------------------------------------</span>
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Fit linear least squares on the training data</span>
@@ -321,7 +321,7 @@ predictions. As the degree <code>\(b\)</code> of our feature transformation func
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">geom_point</span>(<span style="color:#900;font-weight:bold">aes</span>(x <span style="color:#000;font-weight:bold">=</span> x_val, y <span style="color:#000;font-weight:bold">=</span> y_val)) <span style="color:#000;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">geom_line</span>(<span style="color:#900;font-weight:bold">aes</span>(x <span style="color:#000;font-weight:bold">=</span> x_val, y <span style="color:#000;font-weight:bold">=</span> preds_9), color <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;red&#34;</span>) <span style="color:#000;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">theme_bw</span>()
-</span></span></code></pre></div><img src="https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+</span></span></code></pre></div><img src="/blog/2024-07-26-regularized_leastsquares/index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 <p>We are seeing some wiggliness (a highly technical term) to our prediction line that we know doesn&rsquo;t reflect the underlying pattern in our data, however. This indicates overfitting, where our model is too tuned into the random variation in our sample and loses the ability to generalize to unseen data.</p>
 
 
@@ -392,7 +392,7 @@ predictions. As the degree <code>\(b\)</code> of our feature transformation func
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">scale_x_continuous</span>(breaks <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span><span style="color:#000;font-weight:bold">:</span><span style="color:#099">10</span>) <span style="color:#000;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">labs</span>(x <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;b&#34;</span>, y <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;Cross-validation error&#34;</span>) <span style="color:#000;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">theme_bw</span>()
-</span></span></code></pre></div><img src="https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/index_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+</span></span></code></pre></div><img src="/blog/2024-07-26-regularized_leastsquares/index_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 <p>We have the lowest cross-validation error at <code>\(b = 4\)</code>. Let&rsquo;s visualize what that looks like in terms of predictions on our whole dataset:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Model with b = 4 -----------------------------------------------------</span>
 </span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Fit linear least squares on the training data</span>
@@ -411,7 +411,7 @@ predictions. As the degree <code>\(b\)</code> of our feature transformation func
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">geom_point</span>(<span style="color:#900;font-weight:bold">aes</span>(x <span style="color:#000;font-weight:bold">=</span> x_val, y <span style="color:#000;font-weight:bold">=</span> y_val)) <span style="color:#000;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">geom_line</span>(<span style="color:#900;font-weight:bold">aes</span>(x <span style="color:#000;font-weight:bold">=</span> x_val, y <span style="color:#000;font-weight:bold">=</span> preds_4), color <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;red&#34;</span>) <span style="color:#000;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">theme_bw</span>()
-</span></span></code></pre></div><img src="https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+</span></span></code></pre></div><img src="/blog/2024-07-26-regularized_leastsquares/index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 <p>We have successfully de-wiggled our model!</p>
 
 
@@ -438,14 +438,14 @@ predictions. As the degree <code>\(b\)</code> of our feature transformation func
   
   <dl class="f6 lh-copy">
     <dt class="fw7">Categories:</dt>
-    <dd class="fw5 ml0"> <a href="https://babichmorrowc.github.io/categories/statistics">statistics</a>  <a href="https://babichmorrowc.github.io/categories/r">R</a> </dd>
+    <dd class="fw5 ml0"> <a href="http://localhost:4321/categories/statistics">statistics</a>  <a href="http://localhost:4321/categories/r">R</a> </dd>
   </dl>
   
   
   
   <dl class="f6 lh-copy">
     <dt class="fw7">Tags:</dt>
-    <dd class="fw5 ml0"> <a href="https://babichmorrowc.github.io/tags/statistics">statistics</a>  <a href="https://babichmorrowc.github.io/tags/r">R</a> </dd>
+    <dd class="fw5 ml0"> <a href="http://localhost:4321/tags/statistics">statistics</a>  <a href="http://localhost:4321/tags/r">R</a> </dd>
   </dl>
   
   <dl class="f6 lh-copy">
@@ -466,12 +466,12 @@ predictions. As the degree <code>\(b\)</code> of our feature transformation func
   
   
     <a class="prev dtc pr2 tl v-top fw6"
-    href="https://babichmorrowc.github.io/blog/2024-08-17-how-brat-is-it/">&larr; brat and it&#39;s the same but it&#39;s a blog post so it&#39;s not</a>
+    href="http://localhost:4321/blog/2024-08-17-how-brat-is-it/">&larr; brat and it&#39;s the same but it&#39;s a blog post so it&#39;s not</a>
   
   
   
     <a class="next dtc pl2 tr v-top fw6"
-    href="https://babichmorrowc.github.io/blog/2024-07-02-leastsquares-regression/">Least squares regression: Part 1 &rarr;</a>
+    href="http://localhost:4321/blog/2024-07-02-leastsquares-regression/">Least squares regression: Part 1 &rarr;</a>
   
 </div>
 
