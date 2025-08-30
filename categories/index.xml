@@ -2,185 +2,185 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Cecina Babich Morrow</title>
-    <link>http://localhost:4321/categories/</link>
+    <link>https://babichmorrowc.github.io/categories/</link>
     <description>Recent content in Categories on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:4321/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Python</title>
-      <link>http://localhost:4321/categories/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/python/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://babichmorrowc.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Statistics</title>
-      <link>http://localhost:4321/categories/statistics/</link>
+      <link>https://babichmorrowc.github.io/categories/statistics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/statistics/</guid>
+      <guid>https://babichmorrowc.github.io/categories/statistics/</guid>
       <description></description>
     </item>
     <item>
       <title>R</title>
-      <link>http://localhost:4321/categories/r/</link>
+      <link>https://babichmorrowc.github.io/categories/r/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/r/</guid>
+      <guid>https://babichmorrowc.github.io/categories/r/</guid>
       <description></description>
     </item>
     <item>
       <title>BDA</title>
-      <link>http://localhost:4321/categories/bda/</link>
+      <link>https://babichmorrowc.github.io/categories/bda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/bda/</guid>
+      <guid>https://babichmorrowc.github.io/categories/bda/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://babichmorrowc.github.io/categories/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://babichmorrowc.github.io/categories/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Mental Health</title>
-      <link>http://localhost:4321/categories/mental-health/</link>
+      <link>https://babichmorrowc.github.io/categories/mental-health/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/mental-health/</guid>
+      <guid>https://babichmorrowc.github.io/categories/mental-health/</guid>
       <description></description>
     </item>
     <item>
       <title>Biogeography</title>
-      <link>http://localhost:4321/categories/biogeography/</link>
+      <link>https://babichmorrowc.github.io/categories/biogeography/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/biogeography/</guid>
+      <guid>https://babichmorrowc.github.io/categories/biogeography/</guid>
       <description></description>
     </item>
     <item>
       <title>Species Distribution Modeling</title>
-      <link>http://localhost:4321/categories/species-distribution-modeling/</link>
+      <link>https://babichmorrowc.github.io/categories/species-distribution-modeling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/species-distribution-modeling/</guid>
+      <guid>https://babichmorrowc.github.io/categories/species-distribution-modeling/</guid>
       <description></description>
     </item>
     <item>
       <title>Hypervolume</title>
-      <link>http://localhost:4321/categories/hypervolume/</link>
+      <link>https://babichmorrowc.github.io/categories/hypervolume/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/hypervolume/</guid>
+      <guid>https://babichmorrowc.github.io/categories/hypervolume/</guid>
       <description></description>
     </item>
     <item>
       <title>Life History</title>
-      <link>http://localhost:4321/categories/life-history/</link>
+      <link>https://babichmorrowc.github.io/categories/life-history/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/life-history/</guid>
+      <guid>https://babichmorrowc.github.io/categories/life-history/</guid>
       <description></description>
     </item>
     <item>
       <title>Google</title>
-      <link>http://localhost:4321/categories/google/</link>
+      <link>https://babichmorrowc.github.io/categories/google/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/google/</guid>
+      <guid>https://babichmorrowc.github.io/categories/google/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>http://localhost:4321/categories/bash/</link>
+      <link>https://babichmorrowc.github.io/categories/bash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/bash/</guid>
+      <guid>https://babichmorrowc.github.io/categories/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Education</title>
-      <link>http://localhost:4321/categories/education/</link>
+      <link>https://babichmorrowc.github.io/categories/education/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/education/</guid>
+      <guid>https://babichmorrowc.github.io/categories/education/</guid>
       <description></description>
     </item>
     <item>
       <title>Outreach</title>
-      <link>http://localhost:4321/categories/outreach/</link>
+      <link>https://babichmorrowc.github.io/categories/outreach/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/outreach/</guid>
+      <guid>https://babichmorrowc.github.io/categories/outreach/</guid>
       <description></description>
     </item>
     <item>
       <title>Website</title>
-      <link>http://localhost:4321/categories/website/</link>
+      <link>https://babichmorrowc.github.io/categories/website/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/website/</guid>
+      <guid>https://babichmorrowc.github.io/categories/website/</guid>
       <description></description>
     </item>
     <item>
       <title>GitHub</title>
-      <link>http://localhost:4321/categories/github/</link>
+      <link>https://babichmorrowc.github.io/categories/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/github/</guid>
+      <guid>https://babichmorrowc.github.io/categories/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Career</title>
-      <link>http://localhost:4321/categories/career/</link>
+      <link>https://babichmorrowc.github.io/categories/career/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/career/</guid>
+      <guid>https://babichmorrowc.github.io/categories/career/</guid>
       <description></description>
     </item>
     <item>
       <title>Bradypus</title>
-      <link>http://localhost:4321/categories/bradypus/</link>
+      <link>https://babichmorrowc.github.io/categories/bradypus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/bradypus/</guid>
+      <guid>https://babichmorrowc.github.io/categories/bradypus/</guid>
       <description></description>
     </item>
     <item>
       <title>Machine Learning</title>
-      <link>http://localhost:4321/categories/machine-learning/</link>
+      <link>https://babichmorrowc.github.io/categories/machine-learning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/machine-learning/</guid>
+      <guid>https://babichmorrowc.github.io/categories/machine-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>LGBT</title>
-      <link>http://localhost:4321/categories/lgbt/</link>
+      <link>https://babichmorrowc.github.io/categories/lgbt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/lgbt/</guid>
+      <guid>https://babichmorrowc.github.io/categories/lgbt/</guid>
       <description></description>
     </item>
     <item>
       <title>Hackathon</title>
-      <link>http://localhost:4321/categories/hackathon/</link>
+      <link>https://babichmorrowc.github.io/categories/hackathon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/hackathon/</guid>
+      <guid>https://babichmorrowc.github.io/categories/hackathon/</guid>
       <description></description>
     </item>
     <item>
       <title>Evolution</title>
-      <link>http://localhost:4321/categories/evolution/</link>
+      <link>https://babichmorrowc.github.io/categories/evolution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/evolution/</guid>
+      <guid>https://babichmorrowc.github.io/categories/evolution/</guid>
       <description></description>
     </item>
     <item>
       <title>Phylogenetics</title>
-      <link>http://localhost:4321/categories/phylogenetics/</link>
+      <link>https://babichmorrowc.github.io/categories/phylogenetics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/phylogenetics/</guid>
+      <guid>https://babichmorrowc.github.io/categories/phylogenetics/</guid>
       <description></description>
     </item>
     <item>
       <title>Hypervolumes</title>
-      <link>http://localhost:4321/categories/hypervolumes/</link>
+      <link>https://babichmorrowc.github.io/categories/hypervolumes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/hypervolumes/</guid>
+      <guid>https://babichmorrowc.github.io/categories/hypervolumes/</guid>
       <description></description>
     </item>
     <item>
       <title>BIEN</title>
-      <link>http://localhost:4321/categories/bien/</link>
+      <link>https://babichmorrowc.github.io/categories/bien/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/bien/</guid>
+      <guid>https://babichmorrowc.github.io/categories/bien/</guid>
       <description></description>
     </item>
     <item>
       <title>Biodiversity</title>
-      <link>http://localhost:4321/categories/biodiversity/</link>
+      <link>https://babichmorrowc.github.io/categories/biodiversity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/categories/biodiversity/</guid>
+      <guid>https://babichmorrowc.github.io/categories/biodiversity/</guid>
       <description></description>
     </item>
   </channel>
