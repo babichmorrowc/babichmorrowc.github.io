@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sensitivity Analysis on Cecina Babich Morrow</title>
+    <link>https://babichmorrowc.github.io/categories/sensitivity-analysis/</link>
+    <description>Recent content in Sensitivity Analysis on Cecina Babich Morrow</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://babichmorrowc.github.io/categories/sensitivity-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From climate risk to action: Analysing adaptation decision robustness under uncertainty</title>
+      <link>https://babichmorrowc.github.io/publication/bda_sensitivity/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://babichmorrowc.github.io/publication/bda_sensitivity/</guid>
+      <description>Demonstration of the importance of performing uncertainty and sensitivity analyses on climate adaptation decisions.</description>
+    </item>
+  </channel>
+</rss>
