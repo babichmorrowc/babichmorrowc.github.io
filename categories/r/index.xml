@@ -2,192 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Cecina Babich Morrow</title>
-    <link>http://localhost:4321/categories/r/</link>
+    <link>https://babichmorrowc.github.io/categories/r/</link>
     <description>Recent content in R on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:4321/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://babichmorrowc.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bias-variance decomposition</title>
-      <link>http://localhost:4321/blog/2024-09-23-bias-variance/</link>
+      <link>https://babichmorrowc.github.io/blog/2024-09-23-bias-variance/</link>
       <pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/2024-09-23-bias-variance/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2024-09-23-bias-variance/</guid>
       <description>Decomposition of expected loss.</description>
     </item>
     <item>
       <title>brat and it&#39;s the same but it&#39;s a blog post so it&#39;s not</title>
-      <link>http://localhost:4321/blog/2024-08-17-how-brat-is-it/</link>
+      <link>https://babichmorrowc.github.io/blog/2024-08-17-how-brat-is-it/</link>
       <pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/2024-08-17-how-brat-is-it/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2024-08-17-how-brat-is-it/</guid>
       <description>An attempt to answer the pressing question, how brat is this color?</description>
     </item>
     <item>
       <title>Least squares regression: Part 2</title>
-      <link>http://localhost:4321/blog/2024-07-26-regularized_leastsquares/</link>
+      <link>https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/</link>
       <pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/2024-07-26-regularized_leastsquares/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2024-07-26-regularized_leastsquares/</guid>
       <description>Feature transforms, overfitting, and cross-validation.</description>
     </item>
     <item>
       <title>Least squares regression: Part 1</title>
-      <link>http://localhost:4321/blog/2024-07-02-leastsquares-regression/</link>
+      <link>https://babichmorrowc.github.io/blog/2024-07-02-leastsquares-regression/</link>
       <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/2024-07-02-leastsquares-regression/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2024-07-02-leastsquares-regression/</guid>
       <description>Introduction to least squares regression.</description>
     </item>
     <item>
       <title>Mental health outcomes</title>
-      <link>http://localhost:4321/project/mental_health_outcomes/</link>
+      <link>https://babichmorrowc.github.io/project/mental_health_outcomes/</link>
       <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/project/mental_health_outcomes/</guid>
+      <guid>https://babichmorrowc.github.io/project/mental_health_outcomes/</guid>
       <description></description>
     </item>
     <item>
       <title>Clinical and Financial Outcomes Associated With a Workplace Mental Health Program Before and During the COVID-19 Pandemic</title>
-      <link>http://localhost:4321/publication/clin_fin_mh_outcomes/</link>
+      <link>https://babichmorrowc.github.io/publication/clin_fin_mh_outcomes/</link>
       <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/publication/clin_fin_mh_outcomes/</guid>
+      <guid>https://babichmorrowc.github.io/publication/clin_fin_mh_outcomes/</guid>
       <description>Study showing reduced depression and anxiety symptoms in employees participating in a workplace mental health program.</description>
     </item>
     <item>
       <title>Operationalizing expert knowledge in species’ range estimates using diverse data types</title>
-      <link>http://localhost:4321/publication/rangeestimates/</link>
+      <link>https://babichmorrowc.github.io/publication/rangeestimates/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/publication/rangeestimates/</guid>
+      <guid>https://babichmorrowc.github.io/publication/rangeestimates/</guid>
       <description>Workflow for making and refining species range estimates, introducing a new R package, &lt;code&gt;maskRangeR&lt;/code&gt;.</description>
     </item>
     <item>
       <title>Macroevolution of dimensionless life history metrics in tetrapods</title>
-      <link>http://localhost:4321/publication/lifehistory/</link>
+      <link>https://babichmorrowc.github.io/publication/lifehistory/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/publication/lifehistory/</guid>
+      <guid>https://babichmorrowc.github.io/publication/lifehistory/</guid>
       <description>Exploring the evolution of three dimensionless life history traits across the four major classes of tetrapods.</description>
     </item>
     <item>
       <title>Getting your own Google API credentials for R</title>
-      <link>http://localhost:4321/blog/google-api-creds/</link>
+      <link>https://babichmorrowc.github.io/blog/google-api-creds/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/google-api-creds/</guid>
+      <guid>https://babichmorrowc.github.io/blog/google-api-creds/</guid>
       <description>How to handle Google API quota issues with the &lt;code&gt;googlesheets4&lt;/code&gt; package.</description>
     </item>
     <item>
       <title>Publishing to RStudio Connect with Google credentials</title>
-      <link>http://localhost:4321/blog/google-account-creds/</link>
+      <link>https://babichmorrowc.github.io/blog/google-account-creds/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/google-account-creds/</guid>
+      <guid>https://babichmorrowc.github.io/blog/google-account-creds/</guid>
       <description>How to integrate R and Google Drive non-interactively.</description>
     </item>
     <item>
       <title>Scheduling R Scripts</title>
-      <link>http://localhost:4321/blog/scheduling-r/</link>
+      <link>https://babichmorrowc.github.io/blog/scheduling-r/</link>
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/scheduling-r/</guid>
+      <guid>https://babichmorrowc.github.io/blog/scheduling-r/</guid>
       <description>Options for using Cron or Launchd to schedule R scripts.</description>
     </item>
     <item>
       <title>Changing fonts in RMarkdown PDFs</title>
-      <link>http://localhost:4321/blog/2020-01-02-changing-fonts-in-rmarkdown-pdfs/</link>
+      <link>https://babichmorrowc.github.io/blog/2020-01-02-changing-fonts-in-rmarkdown-pdfs/</link>
       <pubDate>Thu, 02 Jan 2020 11:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2020-01-02-changing-fonts-in-rmarkdown-pdfs/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2020-01-02-changing-fonts-in-rmarkdown-pdfs/</guid>
       <description>Changing the font of RMarkdown PDF body text.</description>
     </item>
     <item>
       <title>Putting Google Fonts in R graphs</title>
-      <link>http://localhost:4321/blog/2019-10-11-google-fonts/</link>
+      <link>https://babichmorrowc.github.io/blog/2019-10-11-google-fonts/</link>
       <pubDate>Fri, 11 Oct 2019 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2019-10-11-google-fonts/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2019-10-11-google-fonts/</guid>
       <description>How to use a Google Font in R.</description>
     </item>
     <item>
       <title>Accessing Mode data in R</title>
-      <link>http://localhost:4321/blog/2019-09-26-mode-api-instructions/</link>
+      <link>https://babichmorrowc.github.io/blog/2019-09-26-mode-api-instructions/</link>
       <pubDate>Thu, 26 Sep 2019 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2019-09-26-mode-api-instructions/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2019-09-26-mode-api-instructions/</guid>
       <description>Tips and tricks for pulling data from Mode Analytics into R.</description>
     </item>
     <item>
       <title>Copying R libraries to a USB</title>
-      <link>http://localhost:4321/blog/2019-06-07-usb/</link>
+      <link>https://babichmorrowc.github.io/blog/2019-06-07-usb/</link>
       <pubDate>Fri, 07 Jun 2019 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2019-06-07-usb/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2019-06-07-usb/</guid>
       <description>Copying R and its packages to USB.</description>
     </item>
     <item>
       <title>Setting resolution and aspect ratios in R</title>
-      <link>http://localhost:4321/blog/2019-05-23-highres-figures/</link>
+      <link>https://babichmorrowc.github.io/blog/2019-05-23-highres-figures/</link>
       <pubDate>Thu, 23 May 2019 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2019-05-23-highres-figures/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2019-05-23-highres-figures/</guid>
       <description>Tips and tricks for saving figures in R.</description>
     </item>
     <item>
       <title>Thresholding species distribution models</title>
-      <link>http://localhost:4321/blog/2019-04-12-sdm-threshold/</link>
+      <link>https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/</link>
       <pubDate>Fri, 12 Apr 2019 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2019-04-12-sdm-threshold/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/</guid>
       <description>Thresholding continuous SDMs to binary presence-absence maps.</description>
     </item>
     <item>
       <title>Converting alpha hulls to spatial objects</title>
-      <link>http://localhost:4321/blog/2019-03-18-alpha-hull/</link>
+      <link>https://babichmorrowc.github.io/blog/2019-03-18-alpha-hull/</link>
       <pubDate>Mon, 18 Mar 2019 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2019-03-18-alpha-hull/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2019-03-18-alpha-hull/</guid>
       <description>Creating an R package to convert α-hulls to &lt;code&gt;sp&lt;/code&gt; objects.</description>
     </item>
     <item>
       <title>Python in RMarkdown</title>
-      <link>http://localhost:4321/blog/2019-02-20-pythonrmd/</link>
+      <link>https://babichmorrowc.github.io/blog/2019-02-20-pythonrmd/</link>
       <pubDate>Wed, 20 Feb 2019 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2019-02-20-pythonrmd/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2019-02-20-pythonrmd/</guid>
       <description>Using &lt;code&gt;reticulate&lt;/code&gt; to add Python to RMarkdown.</description>
     </item>
     <item>
       <title>Grafting phylogenies</title>
-      <link>http://localhost:4321/blog/2019-01-09-grafting-trees/</link>
+      <link>https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/</link>
       <pubDate>Fri, 18 Jan 2019 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2019-01-09-grafting-trees/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2019-01-09-grafting-trees/</guid>
       <description>Using R to graft phylogenies together.</description>
     </item>
     <item>
       <title>Debugging in R</title>
-      <link>http://localhost:4321/blog/2019-01-03-debugging-r/</link>
+      <link>https://babichmorrowc.github.io/blog/2019-01-03-debugging-r/</link>
       <pubDate>Thu, 03 Jan 2019 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2019-01-03-debugging-r/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2019-01-03-debugging-r/</guid>
       <description>Debugging tips and strategies.</description>
     </item>
     <item>
       <title>Creating this website</title>
-      <link>http://localhost:4321/blog/2018-12-7-create-website/</link>
+      <link>https://babichmorrowc.github.io/blog/2018-12-7-create-website/</link>
       <pubDate>Fri, 07 Dec 2018 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2018-12-7-create-website/</guid>
+      <guid>https://babichmorrowc.github.io/blog/2018-12-7-create-website/</guid>
       <description>My saga of creating this website.</description>
     </item>
     <item>
       <title>Distribution modeling of *Bradypus*</title>
-      <link>http://localhost:4321/project/bradypus/</link>
+      <link>https://babichmorrowc.github.io/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/project/bradypus/</guid>
+      <guid>https://babichmorrowc.github.io/project/bradypus/</guid>
       <description>Species distribution modelling of &lt;em&gt;Bradypus variegatus&lt;/em&gt;, &lt;em&gt;B. tridactylus&lt;/em&gt;, and &lt;em&gt;B. torquatus&lt;/em&gt;.</description>
     </item>
     <item>
       <title>New approaches for delineating n‐dimensional hypervolumes</title>
-      <link>http://localhost:4321/publication/hypervolumes/</link>
+      <link>https://babichmorrowc.github.io/publication/hypervolumes/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/publication/hypervolumes/</guid>
+      <guid>https://babichmorrowc.github.io/publication/hypervolumes/</guid>
       <description>Two new algorithms for creating n-dimenstional hypervolumes.</description>
     </item>
     <item>
       <title>Hypervolume methods</title>
-      <link>http://localhost:4321/project/hypervolumes/</link>
+      <link>https://babichmorrowc.github.io/project/hypervolumes/</link>
       <pubDate>Wed, 27 Jul 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/project/hypervolumes/</guid>
+      <guid>https://babichmorrowc.github.io/project/hypervolumes/</guid>
       <description></description>
     </item>
     <item>
       <title>Tetrapod life history traits</title>
-      <link>http://localhost:4321/project/life_history/</link>
+      <link>https://babichmorrowc.github.io/project/life_history/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/project/life_history/</guid>
+      <guid>https://babichmorrowc.github.io/project/life_history/</guid>
       <description></description>
     </item>
   </channel>

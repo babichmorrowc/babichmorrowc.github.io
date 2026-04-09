@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+<html lang="en" dir="ltr"><head>
   
                            
      
@@ -31,16 +31,16 @@
 <meta property="og:title" content="Thresholding species distribution models | Cecina Babich Morrow">
 <meta property="og:description" content="Thresholding continuous SDMs to binary presence-absence maps." />
 <meta property="og:type" content="page" />
-<meta property="og:url" content="http://localhost:4321/blog/2019-04-12-sdm-threshold/" />
+<meta property="og:url" content="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/" />
 <meta property="og:locale" content="en">
 
 
 
 
     
-        <meta property="og:image" content="http://localhost:4321/blog/2019-04-12-sdm-threshold/featured.png" >
+        <meta property="og:image" content="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/featured.png" >
         <meta property="twitter:card" content="summary_large_image">
-        <meta name="twitter:image" content="http://localhost:4321/blog/2019-04-12-sdm-threshold/featured.png" >
+        <meta name="twitter:image" content="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/featured.png" >
     
     
   
@@ -49,7 +49,7 @@
   <meta itemprop="datePublished" content="2019-04-12T21:13:14-05:00">
   <meta itemprop="dateModified" content="2019-04-12T21:13:14-05:00">
   <meta itemprop="wordCount" content="996">
-  <meta itemprop="image" content="http://localhost:4321/blog/2019-04-12-sdm-threshold/featured.png">
+  <meta itemprop="image" content="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/featured.png">
   <meta itemprop="keywords" content="R,Species Distribution Modeling">
   
   
@@ -89,7 +89,7 @@
       <div class="grid-container">
 <header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
   <nav class="site-nav db dt-l w-100" role="navigation">
-    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="http://localhost:4321/" title="Home">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://babichmorrowc.github.io/" title="Home">
       <img src="/img/favicon_io/favicon.ico" class="dib db-l h2 w-auto" alt="Cecina Babich Morrow">
     </a>
     <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
@@ -135,7 +135,7 @@
       <header class="post-header">
         <h1 class="f1 lh-solid measure-narrow mb3 fw4">Thresholding species distribution models</h1>
         <h4 class="f4 mt0 mb4 lh-title measure">Thresholding continuous SDMs to binary presence-absence maps.</h4>
-        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="http://localhost:4321/categories/r">R</a>  <a href="http://localhost:4321/categories/species-distribution-modeling">species distribution modeling</a> </p>
+        <p class="f6 measure lh-copy mv1">By Cecina Babich Morrow in <a href="https://babichmorrowc.github.io/categories/r">R</a>  <a href="https://babichmorrowc.github.io/categories/species-distribution-modeling">species distribution modeling</a> </p>
         <p class="f7 db mv0 ttu">April 12, 2019</p>
 
       
@@ -211,19 +211,19 @@ sloth_occs &lt;- read.csv(&quot;../../../static/SDMs/variegatus_occ.csv&quot;)
 
 plot(sloth_sdm)
 points(sloth_occs[,2:3], pch = 19, cex = 0.5)</code></pre>
-<p><img src="/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>We can apply both MTP and P10 thresholds to the SDM based on the location of the occurrence points:</p>
 <pre class="r"><code>sloth_mtp &lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &quot;mtp&quot;)
 plot(sloth_mtp)</code></pre>
-<p><img src="/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <pre class="r"><code>
 sloth_p10 &lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &quot;p10&quot;)
 plot(sloth_p10)</code></pre>
-<p><img src="/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<p><img src="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
 <p>We could also make either of these thresholded SDMs into a binary prediction in the following way:</p>
 <pre class="r"><code>sloth_mtp_bin &lt;- sdm_threshold(sloth_sdm, sloth_occs[,2:3], &quot;mtp&quot;, binary = TRUE)
 plot(sloth_mtp_bin)</code></pre>
-<p><img src="/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="generalization" class="section level2">
 <h2>Generalization</h2>
@@ -262,19 +262,19 @@ xy &lt;- data.frame(x = runif(20, min = -150, max = 150), y = runif(20, min = -7
 
 plot(raster1)
 points(xy)</code></pre>
-<p><img src="/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Now we can apply the function to see the MTP and P10 thresholded rasters:</p>
 <pre class="r"><code>mtp_raster &lt;- raster_threshold(input_raster = raster1, points = xy, type = &quot;mtp&quot;, binary = TRUE)
 plot(mtp_raster)</code></pre>
-<p><img src="/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <pre class="r"><code>
 p10_raster &lt;- raster_threshold(input_raster = raster1, points = xy, type = &quot;p10&quot;, binary = TRUE)
 plot(p10_raster)</code></pre>
-<p><img src="/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<p><img src="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
 <p>We can also use a user-inputted threshold to remove all parts of the raster with values lower than 20:</p>
 <pre class="r"><code>user_raster &lt;- raster_threshold(input_raster = raster1, threshold = 20)
 plot(user_raster)</code></pre>
-<p><img src="/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="https://babichmorrowc.github.io/blog/2019-04-12-sdm-threshold/index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 
         
@@ -290,14 +290,14 @@ plot(user_raster)</code></pre>
   
   <dl class="f6 lh-copy">
     <dt class="fw7">Categories:</dt>
-    <dd class="fw5 ml0"> <a href="http://localhost:4321/categories/r">R</a>  <a href="http://localhost:4321/categories/species-distribution-modeling">species distribution modeling</a> </dd>
+    <dd class="fw5 ml0"> <a href="https://babichmorrowc.github.io/categories/r">R</a>  <a href="https://babichmorrowc.github.io/categories/species-distribution-modeling">species distribution modeling</a> </dd>
   </dl>
   
   
   
   <dl class="f6 lh-copy">
     <dt class="fw7">Tags:</dt>
-    <dd class="fw5 ml0"> <a href="http://localhost:4321/tags/r">R</a>  <a href="http://localhost:4321/tags/species-distribution-modeling">species distribution modeling</a> </dd>
+    <dd class="fw5 ml0"> <a href="https://babichmorrowc.github.io/tags/r">R</a>  <a href="https://babichmorrowc.github.io/tags/species-distribution-modeling">species distribution modeling</a> </dd>
   </dl>
   
   <dl class="f6 lh-copy">
@@ -318,12 +318,12 @@ plot(user_raster)</code></pre>
   
   
     <a class="prev dtc pr2 tl v-top fw6"
-    href="http://localhost:4321/blog/2019-05-23-highres-figures/">&larr; Setting resolution and aspect ratios in R</a>
+    href="https://babichmorrowc.github.io/blog/2019-05-23-highres-figures/">&larr; Setting resolution and aspect ratios in R</a>
   
   
   
     <a class="next dtc pl2 tr v-top fw6"
-    href="http://localhost:4321/blog/2019-03-18-alpha-hull/">Converting alpha hulls to spatial objects &rarr;</a>
+    href="https://babichmorrowc.github.io/blog/2019-03-18-alpha-hull/">Converting alpha hulls to spatial objects &rarr;</a>
   
 </div>
 
