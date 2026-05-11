@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://babichmorrowc.github.io/</loc>
+    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://babichmorrowc.github.io/blog/</loc>
+    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://babichmorrowc.github.io/talk/2026-04-01_digital-futures/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/tags/bda/</loc>
-    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/tags/</loc>
@@ -64,9 +67,6 @@
   </url><url>
     <loc>https://babichmorrowc.github.io/talk/2025-02-26_met-office-studentship/</loc>
     <lastmod>2025-02-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/blog/</loc>
-    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/blog/2024-11-29-rsa/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
