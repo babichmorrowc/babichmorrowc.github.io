@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://babichmorrowc.github.io/categories/</loc>
+    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://babichmorrowc.github.io/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://babichmorrowc.github.io/blog/2026-05-11-jit/</loc>
+    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://babichmorrowc.github.io/blog/</loc>
+    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://babichmorrowc.github.io/tags/python/</loc>
+    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://babichmorrowc.github.io/categories/python/</loc>
+    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://babichmorrowc.github.io/tags/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/talk/2026-04-01_digital-futures/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/tags/bda/</loc>
-    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/tags/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/talk/</loc>
@@ -33,9 +45,6 @@
     <lastmod>2025-10-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/categories/bda/</loc>
-    <lastmod>2025-09-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/categories/</loc>
     <lastmod>2025-09-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/publication/bda_sensitivity/</loc>
@@ -108,12 +117,6 @@
     <lastmod>2024-06-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/project/</loc>
-    <lastmod>2024-06-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/tags/python/</loc>
-    <lastmod>2024-06-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/categories/python/</loc>
     <lastmod>2024-06-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/talk/miniproject_2024/</loc>
