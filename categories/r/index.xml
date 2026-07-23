@@ -6,8 +6,22 @@
     <description>Recent content in R on Cecina Babich Morrow</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://babichmorrowc.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maternity data linkage</title>
+      <link>https://babichmorrowc.github.io/project/maternity_data_linkage/</link>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://babichmorrowc.github.io/project/maternity_data_linkage/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bristol–Uganda Collaborative Training Visit on Health Data Science</title>
+      <link>https://babichmorrowc.github.io/teaching/bristol_uganda_data_week/</link>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://babichmorrowc.github.io/teaching/bristol_uganda_data_week/</guid>
+      <description>In June 2026, members of MIHRI (the Mayuge Institute for Global Health Sciences Research and Innovation) visited Bristol for Bristol Data Week. I prepared training materials for overall data science skills, including Git/GitHub and R, as well as probabilistic data linkage. You can find all of the materials in the following GitHub repository: https://github.com/babichmorrowc/bristol-uganda-data-week. If you have any questions about these resources, please let me know!</description>
+    </item>
     <item>
       <title>Bias-variance decomposition</title>
       <link>https://babichmorrowc.github.io/blog/2024-09-23-bias-variance/</link>
@@ -163,6 +177,13 @@
       <description>My saga of creating this website.</description>
     </item>
     <item>
+      <title>Brown Scholars Internship program</title>
+      <link>https://babichmorrowc.github.io/teaching/sloth_squad/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://babichmorrowc.github.io/teaching/sloth_squad/</guid>
+      <description>From 2018-2019, I taught programming skills to high school women. You can find a description of the internship and lesson plans I created in the following GitHub repository: https://github.com/babichmorrowc/SlothSquad2018-9. If you have any questions about these resources, please let me know!</description>
+    </item>
+    <item>
       <title>Distribution modeling of *Bradypus*</title>
       <link>https://babichmorrowc.github.io/project/bradypus/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
@@ -174,7 +195,7 @@
       <link>https://babichmorrowc.github.io/publication/hypervolumes/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       <guid>https://babichmorrowc.github.io/publication/hypervolumes/</guid>
-      <description>Two new algorithms for creating n-dimenstional hypervolumes.</description>
+      <description>Two new algorithms for creating n-dimensional hypervolumes.</description>
     </item>
     <item>
       <title>Hypervolume methods</title>

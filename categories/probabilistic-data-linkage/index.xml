@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Probabilistic Data Linkage on Cecina Babich Morrow</title>
+    <link>https://babichmorrowc.github.io/categories/probabilistic-data-linkage/</link>
+    <description>Recent content in Probabilistic Data Linkage on Cecina Babich Morrow</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://babichmorrowc.github.io/categories/probabilistic-data-linkage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maternity data linkage</title>
+      <link>https://babichmorrowc.github.io/project/maternity_data_linkage/</link>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://babichmorrowc.github.io/project/maternity_data_linkage/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bristol–Uganda Collaborative Training Visit on Health Data Science</title>
+      <link>https://babichmorrowc.github.io/teaching/bristol_uganda_data_week/</link>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://babichmorrowc.github.io/teaching/bristol_uganda_data_week/</guid>
+      <description>In June 2026, members of MIHRI (the Mayuge Institute for Global Health Sciences Research and Innovation) visited Bristol for Bristol Data Week. I prepared training materials for overall data science skills, including Git/GitHub and R, as well as probabilistic data linkage. You can find all of the materials in the following GitHub repository: https://github.com/babichmorrowc/bristol-uganda-data-week. If you have any questions about these resources, please let me know!</description>
+    </item>
+  </channel>
+</rss>
