@@ -2,10 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://babichmorrowc.github.io/categories/</loc>
-    <lastmod>2026-07-23T00:00:00+00:00</lastmod>
+    <loc>https://babichmorrowc.github.io/talk/2026-10-10_150th-anniversary/</loc>
+    <lastmod>2026-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://babichmorrowc.github.io/tags/bda/</loc>
+    <lastmod>2026-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/</loc>
+    <lastmod>2026-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://babichmorrowc.github.io/tags/</loc>
+    <lastmod>2026-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://babichmorrowc.github.io/talk/</loc>
+    <lastmod>2026-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://babichmorrowc.github.io/talk/2026-09-09_ncira/</loc>
+    <lastmod>2026-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://babichmorrowc.github.io/categories/</loc>
     <lastmod>2026-07-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/project/maternity_data_linkage/</loc>
@@ -32,19 +47,10 @@
     <loc>https://babichmorrowc.github.io/categories/statistics/</loc>
     <lastmod>2026-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://babichmorrowc.github.io/tags/</loc>
-    <lastmod>2026-07-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://babichmorrowc.github.io/teaching/</loc>
     <lastmod>2026-07-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/talk/2026-07-08_rmets/</loc>
-    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/tags/bda/</loc>
-    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://babichmorrowc.github.io/talk/</loc>
     <lastmod>2026-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://babichmorrowc.github.io/talk/2026-07-06_rmets-student/</loc>
